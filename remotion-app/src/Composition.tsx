@@ -321,7 +321,7 @@ const CameraCloser: React.FC<{x: number; y: number; zoom: number; children: Reac
   </div>
 );
 
-const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
+const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({children, hidePillow}) => (
   <AbsoluteFill style={{backgroundColor: "#1c2440"}}>
     {/* soft spotlight behind the character so a dark silhouette still pops */}
     <div
@@ -400,18 +400,20 @@ const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
     {/* bed legs for grounding */}
     <div style={{position: "absolute", bottom: 120, left: 280, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
     <div style={{position: "absolute", bottom: 120, left: 780, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
-    <div
-      style={{
-        position: "absolute",
-        bottom: 300,
-        left: 300,
-        width: 160,
-        height: 70,
-        background: "#dfe4f5",
-        borderRadius: 12,
-        boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
-      }}
-    />
+    {!hidePillow && (
+      <div
+        style={{
+          position: "absolute",
+          bottom: 300,
+          left: 300,
+          width: 160,
+          height: 70,
+          background: "#dfe4f5",
+          borderRadius: 12,
+          boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
+        }}
+      />
+    )}
     {/* nightstand + clock */}
     <div
       style={{
@@ -684,7 +686,7 @@ export const SleepDemo30s: React.FC = () => {
       <Sequence from={527} durationInFrames={119}>
         <SceneFade duration={119}>
           <CameraCloser x={560} y={700} zoom={1.5}>
-            <Bedroom>
+            <Bedroom hidePillow>
               <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.85} faceTilt={-5} stillness />
               <Blanket />
               <PillowCover startFrame={15} headX={560} headY={718} />

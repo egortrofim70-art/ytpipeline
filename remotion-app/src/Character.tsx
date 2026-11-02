@@ -93,6 +93,7 @@ export const Character: React.FC<CharacterProps> = ({
 		grad: `charHeadGrad${instanceCounter++}`,
 		glow: `charGlow${instanceCounter++}`,
 		shadow: `charShadow${instanceCounter++}`,
+		phoneClip: `charPhoneClip${instanceCounter++}`,
 	}).current;
 
 	// Ease from a neutral resting face into the target expression over the
@@ -146,6 +147,11 @@ export const Character: React.FC<CharacterProps> = ({
 		durationInFrames: 12,
 	});
 	const frontArmAngle = -armSwing2 - armRaise * 120 * raiseAnim;
+	// Subtle thumb-scroll wobble on top of the arm's counter-rotation, plus a
+	// slow upward scroll of the feed lines, so a held phone reads as "being
+	// used" instead of a static prop welded to the hand.
+	const phoneWobble = -frontArmAngle + Math.sin(frame / 9) * 3;
+	const scrollY = frame * 0.6;
 
 	// Idle motion: a slow weight-settle breathing cycle (not a pure levitating
 	// sine) - rises slowly, settles back down with a touch of ease, and the
@@ -161,12 +167,17 @@ export const Character: React.FC<CharacterProps> = ({
 	const groundRise = Math.max(0, bob); // >0 while character is "up" in its idle cycle
 	const shadowScale = 1 - groundRise * 0.025;
 
+	// Collar is a small rounded U-notch right at the neck opening, not one
+	// curve spanning the full shoulder width (that read as the whole collar
+	// line being warped/bent instead of a clean crew-neck cut).
+	const collarHalf = NECK_W / 2 + 6;
 	const shirtPath = `
 		M ${-SHOULDER_W / 2} 0
 		L ${-WAIST_W / 2} ${SHIRT_H}
 		L ${WAIST_W / 2} ${SHIRT_H}
 		L ${SHOULDER_W / 2} 0
-		Q 0 ${12} ${-SHOULDER_W / 2} 0
+		L ${collarHalf} 0
+		Q 0 16 ${-collarHalf} 0
 		Z
 	`;
 
@@ -209,10 +220,29 @@ export const Character: React.FC<CharacterProps> = ({
 					// counter-rotate by -frontArmAngle so the phone stays visually
 					// upright no matter how the arm is angled, like something
 					// actually held in a hand rather than welded to the forearm
-					<g transform={`translate(0 ${ARM_LEN + 6}) rotate(${-frontArmAngle})`}>
+					<g transform={`translate(0 ${ARM_LEN + 6}) rotate(${phoneWobble})`}>
 						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.55} filter={`url(#${ids.glow})`} />
 						<rect x={-13} y={-22} width={26} height={44} rx={5} fill="#0d1a33" stroke="#4a90ff" strokeWidth={2} />
 						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.9} />
+						{/* scrolling feed lines inside the screen, clipped to the screen
+							rect, so the phone reads as "being used" instead of a static prop */}
+						<clipPath id={ids.phoneClip}>
+							<rect x={-9} y={-17} width={18} height={30} rx={2} />
+						</clipPath>
+						<g clipPath={`url(#${ids.phoneClip})`}>
+							{[0, 1, 2, 3, 4, 5].map((i) => (
+								<rect
+									key={i}
+									x={-6}
+									y={((scrollY + i * 12) % 60) - 17}
+									width={12}
+									height={4}
+									rx={1}
+									fill="#0d1a33"
+									opacity={0.5}
+								/>
+							))}
+						</g>
 					</g>
 				)}
 			</g>
