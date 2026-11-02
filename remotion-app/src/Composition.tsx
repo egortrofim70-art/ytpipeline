@@ -182,8 +182,8 @@ const HookText: React.FC = () => {
           lineHeight: 1.15,
         }}
       >
-        ¿Y SI NO PUDIERAS DORMIR<br />
-        <span style={{color: "#FFD400"}}>NUNCA MÁS?</span>
+        А ЧТО ЕСЛИ ТЫ<br />
+        <span style={{color: "#FFD400"}}>БОЛЬШЕ НЕ СМОЖЕШЬ СПАТЬ?</span>
       </div>
     </AbsoluteFill>
   );
@@ -253,11 +253,42 @@ const HoursCounter: React.FC<{startHour: number; endHour: number}> = ({
         fontFamily: "sans-serif",
       }}
     >
-      <div style={{fontSize: 22, opacity: 0.75, letterSpacing: 1}}>HORAS SIN DORMIR</div>
+      <div style={{fontSize: 22, opacity: 0.75, letterSpacing: 1}}>ЧАСОВ БЕЗ СНА</div>
       <div style={{fontSize: 44, fontWeight: 900, color: "#FFD400"}}>
         {hours.toFixed(1)}
       </div>
     </div>
+  );
+};
+
+// Crossfades a scene in/out and adds a slow Ken-Burns drift, so cuts between
+// Sequences read as edited shots instead of a slideshow snapping between
+// frames. `duration` must be passed explicitly: useVideoConfig() returns the
+// ROOT composition's duration, not the enclosing Sequence's.
+const SceneFade: React.FC<{children: React.ReactNode; duration: number; zoomFrom?: number; zoomTo?: number}> = ({
+  children,
+  duration,
+  zoomFrom = 1,
+  zoomTo = 1.06,
+}) => {
+  const frame = useCurrentFrame();
+  const fadeFrames = Math.min(10, Math.floor(duration / 4));
+  const opacity = interpolate(
+    frame,
+    [0, fadeFrames, duration - fadeFrames, duration],
+    [0, 1, 1, 0],
+    {extrapolateLeft: "clamp", extrapolateRight: "clamp"}
+  );
+  const scale = interpolate(frame, [0, duration], [zoomFrom, zoomTo], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+    output: "perceptual-scale",
+  });
+  return (
+    <AbsoluteFill style={{opacity, scale}}>
+      {children}
+    </AbsoluteFill>
   );
 };
 
@@ -376,17 +407,17 @@ const FactCard: React.FC = () => {
             marginBottom: 24,
           }}
         >
-          ENFERMEDAD REAL
+          РЕАЛЬНЫЙ ДИАГНОЗ
         </div>
         <div
           style={{
             color: "#ffffff",
             fontFamily: "sans-serif",
             fontWeight: 900,
-            fontSize: 72,
+            fontSize: 64,
           }}
         >
-          INSOMNIO FAMILIAR FATAL
+          ФАТАЛЬНАЯ СЕМЕЙНАЯ БЕССОННИЦА
         </div>
       </div>
     </AbsoluteFill>
@@ -423,44 +454,52 @@ export const SleepDemo30s: React.FC = () => {
 
       {/* 3s-10.6s: tucked in bed, tired (audio 0-4.6s) */}
       <Sequence from={90} durationInFrames={138}>
-        <Bedroom>
-          <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
-          {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
-          <div
-            style={{
-              position: "absolute",
-              left: 300,
-              top: 790,
-              width: 480,
-              height: 290,
-              background: "#33407a",
-              borderRadius: "40px 40px 16px 16px",
-              boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
-            }}
-          />
-          <HoursCounter startHour={0} endHour={1} />
-        </Bedroom>
+        <SceneFade duration={138}>
+          <Bedroom>
+            <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
+            {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
+            <div
+              style={{
+                position: "absolute",
+                left: 300,
+                top: 790,
+                width: 480,
+                height: 290,
+                background: "#33407a",
+                borderRadius: "40px 40px 16px 16px",
+                boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
+              }}
+            />
+            <HoursCounter startHour={0} endHour={1} />
+          </Bedroom>
+        </SceneFade>
       </Sequence>
 
       {/* 10.6s-21.2s: sits up, scared (audio 4.6-8.16s) */}
       <Sequence from={228} durationInFrames={107}>
-        <Bedroom>
-          <Character x={560} y={760} scale={1.3} expression="scared" bobbing />
-          <HoursCounter startHour={1} endHour={4} />
-        </Bedroom>
+        <SceneFade duration={107}>
+          <Bedroom>
+            <Character x={560} y={760} scale={1.3} expression="scared" bobbing />
+            <HoursCounter startHour={1} endHour={4} />
+          </Bedroom>
+        </SceneFade>
       </Sequence>
 
       {/* 21.2s-25.3s: standing, shocked, counter accelerates (audio 8.16-12.32s) */}
       <Sequence from={335} durationInFrames={125}>
-        <Bedroom>
-          <Character x={560} y={760} scale={1.3} expression="shocked" bobbing />
-          <HoursCounter startHour={4} endHour={72} />
-        </Bedroom>
+        <SceneFade duration={125}>
+          <Bedroom>
+            <Character x={560} y={760} scale={1.3} expression="shocked" bobbing />
+            <HoursCounter startHour={4} endHour={72} />
+          </Bedroom>
+        </SceneFade>
       </Sequence>
 
       {/* 25.3s onward: fact card (audio 12.32s onward) */}
       <Sequence from={460} durationInFrames={300}>
-        <FactCard />
+        <SceneFade duration={300} zoomTo={1.1}>
+          <FactCard />
+        </SceneFade>
       </Sequence>
 
       {/* captions run on top of everything, synced to the real audio timings */}
