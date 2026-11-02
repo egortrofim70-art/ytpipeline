@@ -295,13 +295,28 @@ const SceneFade: React.FC<{children: React.ReactNode; duration: number; zoomFrom
 // Simulates a closer camera shot: scales the whole scene up around a fixed
 // point instead of a plain "zoom the character bigger", so the framing
 // actually feels like different cuts/angles between scenes.
+const FRAME_W = 1920;
+const FRAME_H = 1080;
+
 const CameraCloser: React.FC<{x: number; y: number; zoom: number; children: React.ReactNode}> = ({
   x,
   y,
   zoom,
   children,
 }) => (
-  <div style={{position: "absolute", inset: 0, transform: `scale(${zoom})`, transformOrigin: `${x}px ${y}px`}}>
+  // scale() around transformOrigin pins (x,y) at its OWN screen coordinate -
+  // it does not recenter it. The translate() afterward (applied in the
+  // already-scaled space, i.e. second) carries that pinned point from (x,y)
+  // to the actual frame centre, so the focus subject ends up centred
+  // instead of stuck wherever it happened to be laid out in the scene.
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      transform: `translate(${FRAME_W / 2 - x}px, ${FRAME_H / 2 - y}px) scale(${zoom})`,
+      transformOrigin: `${x}px ${y}px`,
+    }}
+  >
     {children}
   </div>
 );
@@ -413,6 +428,42 @@ const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
   </AbsoluteFill>
 );
 
+// A bedside lamp that flicks on partway through a scene - a concrete, visible
+// event ("something changed") instead of the same static room across cuts.
+const NightstandLamp: React.FC<{onFrame: number}> = ({onFrame}) => {
+  const frame = useCurrentFrame();
+  const t = interpolate(frame, [onFrame, onFrame + 1, onFrame + 4, onFrame + 10], [0, 1, 0.7, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 260,
+          left: 895,
+          width: 8,
+          height: 50,
+          background: "#3a3f5c",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: 300,
+          left: 865,
+          width: 70,
+          height: 50,
+          borderRadius: "30px 30px 10px 10px",
+          background: `rgba(255,214,140,${0.25 + t * 0.6})`,
+          boxShadow: t > 0 ? `0 0 ${40 * t}px ${18 * t}px rgba(255,200,120,${0.5 * t})` : "none",
+        }}
+      />
+    </>
+  );
+};
+
 const FactCard: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
@@ -495,7 +546,7 @@ export const SleepDemo30s: React.FC = () => {
       {/* 3s-6.9s: tucked in bed, tired (audio 0-3.88s) — wide establishing shot */}
       <Sequence from={90} durationInFrames={116}>
         <SceneFade duration={116}>
-          <CameraCloser x={560} y={720} zoom={1.25}>
+          <CameraCloser x={560} y={720} zoom={1.6}>
             <Bedroom>
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
@@ -517,12 +568,14 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 6.9s-13.3s: sits up, scared — camera pushes in closer, hands up near face */}
+      {/* 6.9s-13.3s: sits up, scared — camera pushes in closer, hands up near face,
+          bedside lamp flicks on partway through for a visible "something changed" beat */}
       <Sequence from={206} durationInFrames={194}>
         <SceneFade duration={194}>
           <CameraCloser x={620} y={700} zoom={1.55}>
             <Bedroom>
-              <Character x={620} y={740} scale={1.3} expression="scared" armRaise={0.6} faceTilt={-4} bobbing />
+              <Character x={620} y={740} scale={1.3} expression="scared" armRaise={0.6} faceTilt={-4} stillness />
+              <NightstandLamp onFrame={40} />
               <HoursCounter startHour={1} endHour={4} />
             </Bedroom>
           </CameraCloser>
@@ -534,7 +587,8 @@ export const SleepDemo30s: React.FC = () => {
         <SceneFade duration={109}>
           <CameraCloser x={480} y={680} zoom={1.85}>
             <Bedroom>
-              <Character x={480} y={720} scale={1.3} expression="shocked" armRaise={1} faceTilt={5} bobbing />
+              <Character x={480} y={720} scale={1.3} expression="shocked" armRaise={1} faceTilt={5} stillness />
+              <NightstandLamp onFrame={0} />
               <HoursCounter startHour={4} endHour={72} />
             </Bedroom>
           </CameraCloser>

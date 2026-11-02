@@ -19,11 +19,12 @@ export type CharacterProps = {
 	headColor?: string;
 	glow?: boolean; // soft colored rim halo to pop off a dark background
 	transitionInFrames?: number; // how long it takes to settle into `expression` on mount
+	stillness?: boolean; // freeze idle bob/sway for a tense, held reaction pose (no "shivering" at tight zooms)
 };
 
 const HEAD_R = 58;
-const NECK_H = 20;
-const NECK_W = HEAD_R * 0.36;
+const NECK_H = 13;
+const NECK_W = HEAD_R * 0.38;
 const SHOULDER_W = 54;
 const WAIST_W = 42;
 const SHIRT_H = 70;
@@ -80,6 +81,7 @@ export const Character: React.FC<CharacterProps> = ({
 	headColor = '#0A0A0A',
 	glow = true,
 	transitionInFrames = 14,
+	stillness = false,
 }) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
@@ -141,8 +143,9 @@ export const Character: React.FC<CharacterProps> = ({
 	// contact shadow shrinks/grows inversely so the character reads as
 	// grounded instead of floating in place.
 	const idleCycle = (frame / fps) * (Math.PI * 2) * 0.55;
-	const bob = bobbing && !lying && !isMoving ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 2.5 : 0;
-	const sway = bobbing && !lying && !isMoving ? Math.sin(idleCycle * 0.5) * 1.5 : 0;
+	const idleActive = bobbing && !lying && !isMoving && !stillness;
+	const bob = idleActive ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 2.5 : 0;
+	const sway = idleActive ? Math.sin(idleCycle * 0.5) * 1.5 : 0;
 
 	const totalY = y + bob - walkBob;
 	const totalX = x - (lying ? SHIRT_H / 2 + HEAD_R * 0.3 : 0) + sway;
@@ -187,8 +190,10 @@ export const Character: React.FC<CharacterProps> = ({
 			<g transform={`translate(12 ${SHIRT_H / 2}) rotate(${legSwing2})`}>
 				<line x1={0} y1={0} x2={0} y2={LEG_LEN} stroke={forGlow ? shirtColor : pantsColor} strokeWidth={LIMB_STROKE} strokeLinecap="round" />
 			</g>
-			<path d={shirtPath} fill={shirtColor} />
+			{/* neck drawn BEFORE the shirt so the collar tucks over its base
+			    instead of the neck sitting on top of the sweater */}
 			<path d={neckPath} fill={forGlow ? shirtColor : headColor} opacity={forGlow ? 1 : 0.92} />
+			<path d={shirtPath} fill={shirtColor} />
 			<g
 				transform={`translate(${SHOULDER_W / 2 - 3} 8) rotate(${
 					-armSwing2 - armRaise * 120 * raiseAnim
