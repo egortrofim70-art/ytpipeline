@@ -20,11 +20,13 @@ export type CharacterProps = {
 	glow?: boolean; // soft colored rim halo to pop off a dark background
 	transitionInFrames?: number; // how long it takes to settle into `expression` on mount
 	stillness?: boolean; // freeze idle bob/sway for a tense, held reaction pose (no "shivering" at tight zooms)
+	toss?: boolean; // slow side-to-side rock, for "tossing and turning, can't sleep"
+	prop?: 'phone' | null; // small held prop attached to the raised front hand
 };
 
 const HEAD_R = 58;
-const NECK_H = 13;
-const NECK_W = HEAD_R * 0.38;
+const NECK_H = 9;
+const NECK_W = HEAD_R * 0.4;
 const SHOULDER_W = 54;
 const WAIST_W = 42;
 const SHIRT_H = 70;
@@ -82,6 +84,8 @@ export const Character: React.FC<CharacterProps> = ({
 	glow = true,
 	transitionInFrames = 14,
 	stillness = false,
+	toss = false,
+	prop = null,
 }) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
@@ -129,7 +133,8 @@ export const Character: React.FC<CharacterProps> = ({
 	const armSwing2 = isMoving ? Math.sin(walkPhase) * armAmp : lying ? 4 : 0;
 	const walkBob = isMoving ? Math.abs(Math.sin(walkPhase)) * (running ? 10 : 5) : 0;
 	const lean = running ? 12 : 0;
-	const wholeBodyRotation = lean + (lying ? -90 : 0);
+	const tossAngle = toss ? Math.sin((frame / fps) * Math.PI * 2 * 0.3) * 7 : 0;
+	const wholeBodyRotation = lean + tossAngle + (lying ? -90 : 0);
 
 	const raiseAnim = spring({
 		frame,
@@ -200,6 +205,13 @@ export const Character: React.FC<CharacterProps> = ({
 				})`}
 			>
 				<line x1={0} y1={0} x2={0} y2={ARM_LEN} stroke={shirtColor} strokeWidth={LIMB_STROKE} strokeLinecap="round" />
+				{prop === 'phone' && !forGlow && (
+					<g transform={`translate(0 ${ARM_LEN + 6})`}>
+						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.55} filter={`url(#${ids.glow})`} />
+						<rect x={-13} y={-22} width={26} height={44} rx={5} fill="#0d1a33" stroke="#4a90ff" strokeWidth={2} />
+						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.9} />
+					</g>
+				)}
 			</g>
 			<g transform={`translate(0 ${headCenterY + SHIRT_H / 2}) rotate(${faceTilt})`}>
 				<circle cx={0} cy={0} r={HEAD_R} fill={forGlow ? shirtColor : `url(#${ids.grad})`} />

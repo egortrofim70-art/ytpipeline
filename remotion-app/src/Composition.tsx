@@ -33,7 +33,7 @@ export const MyComposition = () => {
       <Composition
         id="SleepDemo30s"
         component={SleepDemo30s}
-        durationInFrames={680}
+        durationInFrames={1000}
         fps={30}
         width={1920}
         height={1080}
@@ -516,20 +516,95 @@ const FactCard: React.FC = () => {
   );
 };
 
-// Timings copied verbatim from the Mike-voice RU order's subtitles.srt (audio-relative seconds).
+// Timings copied verbatim from the extended "night 1 montage" order's subtitles.srt (audio-relative seconds).
 const CAPTION_CUES: CaptionCue[] = [
-  {fromSec: 0.0, toSec: 2.56, text: "Представь: однажды ночью ты просто"},
-  {fromSec: 2.6, toSec: 3.88, text: "перестаёшь засыпать."},
-  {fromSec: 4.08, toSec: 6.76, text: "Не бессонница на одну ночь — навсегда."},
-  {fromSec: 6.96, toSec: 9.36, text: "Проходят дни, а тело ни на секунду не"},
-  {fromSec: 9.44, toSec: 10.32, text: "отдыхает."},
-  {fromSec: 10.4, toSec: 12.96, text: "Это реальный диагноз: фатальная семейная"},
-  {fromSec: 13.04, toSec: 13.96, text: "бессонница."},
-  {fromSec: 14.16, toSec: 15.92, text: "Сегодня расскажу, что происходит с"},
-  {fromSec: 15.96, toSec: 18.56, text: "мозгом, когда сон исчезает навсегда."},
+  {fromSec: 0.0, toSec: 2.64, text: "Представь: однажды ночью ты просто"},
+  {fromSec: 2.72, toSec: 4.12, text: "перестаёшь засыпать."},
+  {fromSec: 4.4, toSec: 5.4, text: "Ночь первая."},
+  {fromSec: 5.6, toSec: 8.0, text: "Ты листаешь телефон, просто ждёшь, когда"},
+  {fromSec: 8.08, toSec: 8.72, text: "придёт сон."},
+  {fromSec: 9.12, toSec: 9.76, text: "Час."},
+  {fromSec: 9.92, toSec: 10.88, text: "Потом ещё один."},
+  {fromSec: 11.2, toSec: 13.36, text: "Ты ворочаешься с боку на бок, пытаешься"},
+  {fromSec: 13.4, toSec: 14.56, text: "устроиться удобнее."},
+  {fromSec: 14.72, toSec: 17.08, text: "Хватаешь подушку, накрываешь голову —"},
+  {fromSec: 17.12, toSec: 18.52, text: "лишь бы не видеть время."},
+  {fromSec: 18.72, toSec: 19.92, text: "Но сон не идёт."},
+  {fromSec: 20.08, toSec: 20.84, text: "Совсем."},
+  {fromSec: 21.04, toSec: 23.68, text: "Это реальный диагноз: фатальная семейная"},
+  {fromSec: 23.76, toSec: 24.68, text: "бессонница."},
+  {fromSec: 24.88, toSec: 26.68, text: "Сегодня расскажу, что происходит с"},
+  {fromSec: 26.72, toSec: 29.36, text: "мозгом, когда сон исчезает навсегда."},
 ];
 
 const AUDIO_START_FRAME = 90; // 3s silent hook before the voice begins
+
+const Blanket: React.FC = () => (
+  <div
+    style={{
+      position: "absolute",
+      left: 300,
+      top: 790,
+      width: 480,
+      height: 290,
+      background: "#33407a",
+      borderRadius: "40px 40px 16px 16px",
+      boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
+    }}
+  />
+);
+
+const NightBadge: React.FC<{n: number; atFrame: number}> = ({n, atFrame}) => {
+  const frame = useCurrentFrame();
+  const opacity = interpolate(frame, [atFrame, atFrame + 10, atFrame + 55, atFrame + 65], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 60,
+        left: 60,
+        opacity,
+        color: "#ffffff",
+        fontFamily: "sans-serif",
+        fontWeight: 900,
+        fontSize: 40,
+        letterSpacing: 2,
+        textTransform: "uppercase",
+      }}
+    >
+      Ночь {n}
+    </div>
+  );
+};
+
+// Pillow pulled up over the face partway through the scene - a visible action
+// beat instead of a static held pose.
+const PillowCover: React.FC<{startFrame: number}> = ({startFrame}) => {
+  const frame = useCurrentFrame();
+  const t = interpolate(frame, [startFrame, startFrame + 18], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.3, 0, 0.2, 1),
+  });
+  const top = interpolate(t, [0, 1], [900, 560]);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: 480,
+        top,
+        width: 220,
+        height: 110,
+        background: "#eef1fb",
+        borderRadius: 24,
+        boxShadow: "0 10px 20px rgba(0,0,0,0.35)",
+      }}
+    />
+  );
+};
 
 export const SleepDemo30s: React.FC = () => {
   return (
@@ -539,65 +614,104 @@ export const SleepDemo30s: React.FC = () => {
         <HookText />
       </Sequence>
 
-      <Sequence from={AUDIO_START_FRAME} durationInFrames={557}>
-        <Audio src={staticFile("voice_ru_mike.mp3")} />
+      <Sequence from={AUDIO_START_FRAME} durationInFrames={881}>
+        <Audio src={staticFile("voice_montage.mp3")} />
       </Sequence>
 
-      {/* 3s-6.9s: tucked in bed, tired (audio 0-3.88s) — wide establishing shot */}
-      <Sequence from={90} durationInFrames={116}>
-        <SceneFade duration={116}>
+      {/* 3s-7.1s (audio 0-4.12s): tucked in bed, tired — wide establishing shot, "Ночь 1" badge appears */}
+      <Sequence from={90} durationInFrames={123}>
+        <SceneFade duration={123}>
           <CameraCloser x={560} y={720} zoom={1.6}>
             <Bedroom>
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
-              {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: 300,
-                  top: 790,
-                  width: 480,
-                  height: 290,
-                  background: "#33407a",
-                  borderRadius: "40px 40px 16px 16px",
-                  boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
-                }}
-              />
-              <HoursCounter startHour={0} endHour={1} />
+              <Blanket />
+              <NightBadge n={1} atFrame={40} />
+              <HoursCounter startHour={0} endHour={0.1} />
             </Bedroom>
           </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 6.9s-13.3s: sits up, scared — camera pushes in closer, hands up near face,
-          bedside lamp flicks on partway through for a visible "something changed" beat */}
-      <Sequence from={206} durationInFrames={194}>
-        <SceneFade duration={194}>
+      {/* 7.1s-11.7s (audio 4.12-8.72s): phone in hand, screen glow on face */}
+      <Sequence from={213} durationInFrames={139}>
+        <SceneFade duration={139}>
           <CameraCloser x={620} y={700} zoom={1.55}>
             <Bedroom>
-              <Character x={620} y={740} scale={1.3} expression="scared" armRaise={0.6} faceTilt={-4} stillness />
-              <NightstandLamp onFrame={40} />
-              <HoursCounter startHour={1} endHour={4} />
+              <Character x={620} y={740} scale={1.3} expression="neutral" armRaise={0.75} faceTilt={-6} prop="phone" stillness />
+              <HoursCounter startHour={0.1} endHour={1} />
             </Bedroom>
           </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 13.3s-17s: standing, shocked, counter accelerates — tightest, off-center shot */}
-      <Sequence from={400} durationInFrames={109}>
+      {/* 11.7s-13.4s (audio 8.72-10.88s): quick time-passing beat, different angle, counter ticks visibly */}
+      <Sequence from={352} durationInFrames={52}>
+        <SceneFade duration={52}>
+          <CameraCloser x={560} y={850} zoom={1.3}>
+            <Bedroom>
+              <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
+              <Blanket />
+              <HoursCounter startHour={1} endHour={2} />
+            </Bedroom>
+          </CameraCloser>
+        </SceneFade>
+      </Sequence>
+
+      {/* 13.4s-17.6s (audio 10.88-14.56s): tossing and turning side to side */}
+      <Sequence from={404} durationInFrames={123}>
+        <SceneFade duration={123}>
+          <CameraCloser x={560} y={720} zoom={1.65}>
+            <Bedroom>
+              <Character x={560} y={760} scale={1.3} expression="angry" toss faceTilt={-8} />
+              <Blanket />
+              <HoursCounter startHour={2} endHour={3} />
+            </Bedroom>
+          </CameraCloser>
+        </SceneFade>
+      </Sequence>
+
+      {/* 17.6s-21.6s (audio 14.56-18.52s): grabs the pillow, pulls it over the head */}
+      <Sequence from={527} durationInFrames={119}>
+        <SceneFade duration={119}>
+          <CameraCloser x={560} y={700} zoom={1.5}>
+            <Bedroom>
+              <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.5} stillness />
+              <Blanket />
+              <PillowCover startFrame={20} />
+              <HoursCounter startHour={3} endHour={4} />
+            </Bedroom>
+          </CameraCloser>
+        </SceneFade>
+      </Sequence>
+
+      {/* 21.6s-23.7s (audio 18.52-20.84s): "Но сон не идёт. Совсем." — frustrated, hands on head, tight shot */}
+      <Sequence from={646} durationInFrames={63}>
+        <SceneFade duration={63}>
+          <CameraCloser x={560} y={680} zoom={1.9}>
+            <Bedroom>
+              <Character x={560} y={740} scale={1.3} expression="angry" armRaise={1} faceTilt={3} stillness />
+              <HoursCounter startHour={4} endHour={5} />
+            </Bedroom>
+          </CameraCloser>
+        </SceneFade>
+      </Sequence>
+
+      {/* 23.7s-27.3s (audio 20.84-24.68s): diagnosis reveal — standing, shocked, lamp flicks on */}
+      <Sequence from={709} durationInFrames={109}>
         <SceneFade duration={109}>
           <CameraCloser x={480} y={680} zoom={1.85}>
             <Bedroom>
               <Character x={480} y={720} scale={1.3} expression="shocked" armRaise={1} faceTilt={5} stillness />
               <NightstandLamp onFrame={0} />
-              <HoursCounter startHour={4} endHour={72} />
+              <HoursCounter startHour={5} endHour={24} />
             </Bedroom>
           </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 17s onward: fact card (audio 13.96s onward) */}
-      <Sequence from={509} durationInFrames={168}>
-        <SceneFade duration={168} zoomTo={1.1}>
+      {/* 27.3s onward (audio 24.68s onward): fact card */}
+      <Sequence from={818} durationInFrames={180}>
+        <SceneFade duration={180} zoomTo={1.1}>
           <FactCard />
         </SceneFade>
       </Sequence>
