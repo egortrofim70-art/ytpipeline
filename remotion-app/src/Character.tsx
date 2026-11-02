@@ -117,9 +117,12 @@ export const Character: React.FC<CharacterProps> = ({
 	const showBrows = settle > 0.05 && (target.browY > -50 || settle < 1);
 
 	// Blink independent of expression: a quick vertical eye-close every ~3.7s.
+	// Suppressed during the expression-settle window so a scene cut doesn't
+	// show two eye animations stacking (settle easing the eye size +
+	// a blink) at once, which read as a glitch rather than two separate beats.
 	const blinkPeriod = 110;
 	const blinkPhase = frame % blinkPeriod;
-	const blinkT = blinkPhase < 6 ? Math.sin((blinkPhase / 6) * Math.PI) : 0;
+	const blinkT = frame > transitionInFrames + 4 && blinkPhase < 6 ? Math.sin((blinkPhase / 6) * Math.PI) : 0;
 	const blinkScale = 1 - blinkT * 0.9;
 
 	const isMoving = (walking || running) && !lying;
@@ -142,13 +145,14 @@ export const Character: React.FC<CharacterProps> = ({
 		config: {damping: 14, stiffness: 120},
 		durationInFrames: 12,
 	});
+	const frontArmAngle = -armSwing2 - armRaise * 120 * raiseAnim;
 
 	// Idle motion: a slow weight-settle breathing cycle (not a pure levitating
 	// sine) - rises slowly, settles back down with a touch of ease, and the
 	// contact shadow shrinks/grows inversely so the character reads as
 	// grounded instead of floating in place.
 	const idleCycle = (frame / fps) * (Math.PI * 2) * 0.55;
-	const idleActive = bobbing && !lying && !isMoving && !stillness;
+	const idleActive = bobbing && !lying && !isMoving && !stillness && !toss;
 	const bob = idleActive ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 2.5 : 0;
 	const sway = idleActive ? Math.sin(idleCycle * 0.5) * 1.5 : 0;
 
@@ -199,14 +203,13 @@ export const Character: React.FC<CharacterProps> = ({
 			    instead of the neck sitting on top of the sweater */}
 			<path d={neckPath} fill={forGlow ? shirtColor : headColor} opacity={forGlow ? 1 : 0.92} />
 			<path d={shirtPath} fill={shirtColor} />
-			<g
-				transform={`translate(${SHOULDER_W / 2 - 3} 8) rotate(${
-					-armSwing2 - armRaise * 120 * raiseAnim
-				})`}
-			>
+			<g transform={`translate(${SHOULDER_W / 2 - 3} 8) rotate(${frontArmAngle})`}>
 				<line x1={0} y1={0} x2={0} y2={ARM_LEN} stroke={shirtColor} strokeWidth={LIMB_STROKE} strokeLinecap="round" />
 				{prop === 'phone' && !forGlow && (
-					<g transform={`translate(0 ${ARM_LEN + 6})`}>
+					// counter-rotate by -frontArmAngle so the phone stays visually
+					// upright no matter how the arm is angled, like something
+					// actually held in a hand rather than welded to the forearm
+					<g transform={`translate(0 ${ARM_LEN + 6}) rotate(${-frontArmAngle})`}>
 						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.55} filter={`url(#${ids.glow})`} />
 						<rect x={-13} y={-22} width={26} height={44} rx={5} fill="#0d1a33" stroke="#4a90ff" strokeWidth={2} />
 						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.9} />

@@ -580,27 +580,34 @@ const NightBadge: React.FC<{n: number; atFrame: number}> = ({n, atFrame}) => {
   );
 };
 
-// Pillow pulled up over the face partway through the scene - a visible action
-// beat instead of a static held pose.
-const PillowCover: React.FC<{startFrame: number}> = ({startFrame}) => {
+// Pillow pulled up over the face partway through the scene - starts from the
+// bed's own pillow (Bedroom: bottom 300 left 300 w160 h70, screen-space
+// origin ~300,710) and actually ends up overlapping the character's face,
+// instead of materializing out of nowhere and landing above the head.
+const PillowCover: React.FC<{startFrame: number; headX: number; headY: number}> = ({startFrame, headX, headY}) => {
   const frame = useCurrentFrame();
   const t = interpolate(frame, [startFrame, startFrame + 18], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.3, 0, 0.2, 1),
   });
-  const top = interpolate(t, [0, 1], [900, 560]);
+  const left = interpolate(t, [0, 1], [300, headX - 95]);
+  const top = interpolate(t, [0, 1], [710, headY - 55]);
+  const width = interpolate(t, [0, 1], [160, 190]);
+  const height = interpolate(t, [0, 1], [70, 150]);
+  const rot = interpolate(t, [0, 1], [0, -8]);
   return (
     <div
       style={{
         position: "absolute",
-        left: 480,
+        left,
         top,
-        width: 220,
-        height: 110,
+        width,
+        height,
         background: "#eef1fb",
         borderRadius: 24,
         boxShadow: "0 10px 20px rgba(0,0,0,0.35)",
+        transform: `rotate(${rot}deg)`,
       }}
     />
   );
@@ -632,12 +639,13 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 7.1s-11.7s (audio 4.12-8.72s): phone in hand, screen glow on face */}
+      {/* 7.1s-11.7s (audio 4.12-8.72s): phone in hand, screen glow on face - still in bed */}
       <Sequence from={213} durationInFrames={139}>
         <SceneFade duration={139}>
           <CameraCloser x={620} y={700} zoom={1.55}>
             <Bedroom>
-              <Character x={620} y={740} scale={1.3} expression="neutral" armRaise={0.75} faceTilt={-6} prop="phone" stillness />
+              <Character x={620} y={740} scale={1.3} expression="tired" armRaise={0.75} faceTilt={-6} prop="phone" stillness />
+              <Blanket />
               <HoursCounter startHour={0.1} endHour={1} />
             </Bedroom>
           </CameraCloser>
@@ -647,7 +655,7 @@ export const SleepDemo30s: React.FC = () => {
       {/* 11.7s-13.4s (audio 8.72-10.88s): quick time-passing beat, different angle, counter ticks visibly */}
       <Sequence from={352} durationInFrames={52}>
         <SceneFade duration={52}>
-          <CameraCloser x={560} y={850} zoom={1.3}>
+          <CameraCloser x={560} y={850} zoom={1.7}>
             <Bedroom>
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               <Blanket />
@@ -657,12 +665,13 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 13.4s-17.6s (audio 10.88-14.56s): tossing and turning side to side */}
+      {/* 13.4s-17.6s (audio 10.88-14.56s): tossing and turning side to side - toss drives its own
+          rotation, no separate static faceTilt fighting it (that combo read as a seizure) */}
       <Sequence from={404} durationInFrames={123}>
         <SceneFade duration={123}>
           <CameraCloser x={560} y={720} zoom={1.65}>
             <Bedroom>
-              <Character x={560} y={760} scale={1.3} expression="angry" toss faceTilt={-8} />
+              <Character x={560} y={760} scale={1.3} expression="angry" toss />
               <Blanket />
               <HoursCounter startHour={2} endHour={3} />
             </Bedroom>
@@ -670,27 +679,42 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 17.6s-21.6s (audio 14.56-18.52s): grabs the pillow, pulls it over the head */}
+      {/* 17.6s-21.6s (audio 14.56-18.52s): reaches for the bed's own pillow (not a random
+          object), pulls it up and actually over the face - arm raised to sell the grab */}
       <Sequence from={527} durationInFrames={119}>
         <SceneFade duration={119}>
           <CameraCloser x={560} y={700} zoom={1.5}>
             <Bedroom>
-              <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.5} stillness />
+              <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.85} faceTilt={-5} stillness />
               <Blanket />
-              <PillowCover startFrame={20} />
+              <PillowCover startFrame={15} headX={560} headY={718} />
               <HoursCounter startHour={3} endHour={4} />
             </Bedroom>
           </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 21.6s-23.7s (audio 18.52-20.84s): "Но сон не идёт. Совсем." — frustrated, hands on head, tight shot */}
-      <Sequence from={646} durationInFrames={63}>
-        <SceneFade duration={63}>
-          <CameraCloser x={560} y={680} zoom={1.9}>
+      {/* 21.6s-22.7s (audio 18.52-19.92s): "Но сон не идёт." — still in bed, hand over face, defeated */}
+      <Sequence from={646} durationInFrames={36}>
+        <SceneFade duration={36}>
+          <CameraCloser x={560} y={700} zoom={1.6}>
             <Bedroom>
-              <Character x={560} y={740} scale={1.3} expression="angry" armRaise={1} faceTilt={3} stillness />
-              <HoursCounter startHour={4} endHour={5} />
+              <Character x={560} y={740} scale={1.3} expression="tired" armRaise={0.9} faceTilt={-3} stillness />
+              <Blanket />
+              <HoursCounter startHour={4} endHour={4.5} />
+            </Bedroom>
+          </CameraCloser>
+        </SceneFade>
+      </Sequence>
+
+      {/* 22.7s-23.7s (audio 19.92-20.84s): "Совсем." — sits up, out of the blanket, bridges into
+          the next (standing) shot instead of freezing on the exact same frame */}
+      <Sequence from={682} durationInFrames={27}>
+        <SceneFade duration={27}>
+          <CameraCloser x={560} y={650} zoom={1.9}>
+            <Bedroom>
+              <Character x={560} y={740} scale={1.3} expression="angry" faceTilt={4} stillness />
+              <HoursCounter startHour={4.5} endHour={5} />
             </Bedroom>
           </CameraCloser>
         </SceneFade>
