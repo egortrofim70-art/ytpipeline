@@ -22,8 +22,8 @@ export type CharacterProps = {
 };
 
 const HEAD_R = 58;
-const NECK_H = 16;
-const NECK_W = HEAD_R * 0.46;
+const NECK_H = 20;
+const NECK_W = HEAD_R * 0.36;
 const SHOULDER_W = 54;
 const WAIST_W = 42;
 const SHIRT_H = 70;
@@ -86,6 +86,7 @@ export const Character: React.FC<CharacterProps> = ({
 	const ids = React.useRef({
 		grad: `charHeadGrad${instanceCounter++}`,
 		glow: `charGlow${instanceCounter++}`,
+		shadow: `charShadow${instanceCounter++}`,
 	}).current;
 
 	// Ease from a neutral resting face into the target expression over the
@@ -140,8 +141,8 @@ export const Character: React.FC<CharacterProps> = ({
 	// contact shadow shrinks/grows inversely so the character reads as
 	// grounded instead of floating in place.
 	const idleCycle = (frame / fps) * (Math.PI * 2) * 0.55;
-	const bob = bobbing && !lying && !isMoving ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 5 : 0;
-	const sway = bobbing && !lying && !isMoving ? Math.sin(idleCycle * 0.5) * 3 : 0;
+	const bob = bobbing && !lying && !isMoving ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 2.5 : 0;
+	const sway = bobbing && !lying && !isMoving ? Math.sin(idleCycle * 0.5) * 1.5 : 0;
 
 	const totalY = y + bob - walkBob;
 	const totalX = x - (lying ? SHIRT_H / 2 + HEAD_R * 0.3 : 0) + sway;
@@ -157,11 +158,14 @@ export const Character: React.FC<CharacterProps> = ({
 		Z
 	`;
 
+	// Simple straight column, NOT tapered - a trapezoid that flares wider
+	// toward the shoulders read as an upside-down funnel sitting on the
+	// collar (reported by the user). A plain rect reads as a neck.
 	const neckPath = `
-		M ${-NECK_W / 2} ${-NECK_H}
-		L ${-NECK_W / 2 - 4} 0
-		L ${NECK_W / 2 + 4} 0
-		L ${NECK_W / 2} ${-NECK_H}
+		M ${-NECK_W / 2} ${-NECK_H - 4}
+		L ${-NECK_W / 2} 4
+		L ${NECK_W / 2} 4
+		L ${NECK_W / 2} ${-NECK_H - 4}
 		Z
 	`;
 
@@ -220,6 +224,9 @@ export const Character: React.FC<CharacterProps> = ({
 				<filter id={ids.glow} x="-60%" y="-60%" width="220%" height="220%">
 					<feGaussianBlur stdDeviation="10" />
 				</filter>
+				<filter id={ids.shadow} x="-60%" y="-60%" width="220%" height="220%">
+					<feGaussianBlur stdDeviation="3" />
+				</filter>
 			</defs>
 
 			<g transform={`translate(0 ${SHIRT_H / 2}) rotate(${wholeBodyRotation})`}>
@@ -233,10 +240,10 @@ export const Character: React.FC<CharacterProps> = ({
 					<ellipse
 						cx={0}
 						cy={SHIRT_H + LEG_LEN + 6}
-						rx={60 * shadowScale}
-						ry={14 * shadowScale}
-						fill="rgba(0,0,0,0.4)"
-						filter={`url(#${ids.glow})`}
+						rx={58 * shadowScale}
+						ry={11 * shadowScale}
+						fill="rgba(0,0,0,0.6)"
+						filter={`url(#${ids.shadow})`}
 					/>
 				)}
 

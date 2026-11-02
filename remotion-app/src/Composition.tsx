@@ -292,6 +292,20 @@ const SceneFade: React.FC<{children: React.ReactNode; duration: number; zoomFrom
   );
 };
 
+// Simulates a closer camera shot: scales the whole scene up around a fixed
+// point instead of a plain "zoom the character bigger", so the framing
+// actually feels like different cuts/angles between scenes.
+const CameraCloser: React.FC<{x: number; y: number; zoom: number; children: React.ReactNode}> = ({
+  x,
+  y,
+  zoom,
+  children,
+}) => (
+  <div style={{position: "absolute", inset: 0, transform: `scale(${zoom})`, transformOrigin: `${x}px ${y}px`}}>
+    {children}
+  </div>
+);
+
 const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
   <AbsoluteFill style={{backgroundColor: "#1c2440"}}>
     {/* soft spotlight behind the character so a dark silhouette still pops */}
@@ -333,7 +347,19 @@ const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
         }}
       />
     </div>
-    {/* bed */}
+    {/* bed: headboard + frame + mattress-top highlight, so the shape reads
+        clearly as a bed instead of an ambiguous colored block */}
+    <div
+      style={{
+        position: "absolute",
+        bottom: 160,
+        left: 230,
+        width: 40,
+        height: 260,
+        background: "#1a2147",
+        borderRadius: "10px 10px 0 0",
+      }}
+    />
     <div
       style={{
         position: "absolute",
@@ -341,10 +367,24 @@ const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
         left: 260,
         width: 560,
         height: 180,
-        background: "#2a3360",
+        background: "#232c55",
         borderRadius: 16,
       }}
     />
+    <div
+      style={{
+        position: "absolute",
+        bottom: 220,
+        left: 268,
+        width: 544,
+        height: 40,
+        background: "#30397a",
+        borderRadius: 10,
+      }}
+    />
+    {/* bed legs for grounding */}
+    <div style={{position: "absolute", bottom: 120, left: 280, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
+    <div style={{position: "absolute", bottom: 120, left: 780, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
     <div
       style={{
         position: "absolute",
@@ -354,6 +394,7 @@ const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
         height: 70,
         background: "#dfe4f5",
         borderRadius: 12,
+        boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
       }}
     />
     {/* nightstand + clock */}
@@ -451,46 +492,52 @@ export const SleepDemo30s: React.FC = () => {
         <Audio src={staticFile("voice_ru_mike.mp3")} />
       </Sequence>
 
-      {/* 3s-6.9s: tucked in bed, tired (audio 0-3.88s) */}
+      {/* 3s-6.9s: tucked in bed, tired (audio 0-3.88s) — wide establishing shot */}
       <Sequence from={90} durationInFrames={116}>
         <SceneFade duration={116}>
-          <Bedroom>
-            <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
-            {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
-            <div
-              style={{
-                position: "absolute",
-                left: 300,
-                top: 790,
-                width: 480,
-                height: 290,
-                background: "#33407a",
-                borderRadius: "40px 40px 16px 16px",
-                boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
-              }}
-            />
-            <HoursCounter startHour={0} endHour={1} />
-          </Bedroom>
+          <CameraCloser x={560} y={720} zoom={1.25}>
+            <Bedroom>
+              <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
+              {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: 300,
+                  top: 790,
+                  width: 480,
+                  height: 290,
+                  background: "#33407a",
+                  borderRadius: "40px 40px 16px 16px",
+                  boxShadow: "0 -4px 14px rgba(0,0,0,0.25) inset",
+                }}
+              />
+              <HoursCounter startHour={0} endHour={1} />
+            </Bedroom>
+          </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 6.9s-13.3s: sits up, scared (audio 3.88-10.32s) */}
+      {/* 6.9s-13.3s: sits up, scared — camera pushes in closer, hands up near face */}
       <Sequence from={206} durationInFrames={194}>
         <SceneFade duration={194}>
-          <Bedroom>
-            <Character x={560} y={760} scale={1.3} expression="scared" bobbing />
-            <HoursCounter startHour={1} endHour={4} />
-          </Bedroom>
+          <CameraCloser x={620} y={700} zoom={1.55}>
+            <Bedroom>
+              <Character x={620} y={740} scale={1.3} expression="scared" armRaise={0.6} faceTilt={-4} bobbing />
+              <HoursCounter startHour={1} endHour={4} />
+            </Bedroom>
+          </CameraCloser>
         </SceneFade>
       </Sequence>
 
-      {/* 13.3s-17s: standing, shocked, counter accelerates (audio 10.32-13.96s) */}
+      {/* 13.3s-17s: standing, shocked, counter accelerates — tightest, off-center shot */}
       <Sequence from={400} durationInFrames={109}>
         <SceneFade duration={109}>
-          <Bedroom>
-            <Character x={560} y={760} scale={1.3} expression="shocked" bobbing />
-            <HoursCounter startHour={4} endHour={72} />
-          </Bedroom>
+          <CameraCloser x={480} y={680} zoom={1.85}>
+            <Bedroom>
+              <Character x={480} y={720} scale={1.3} expression="shocked" armRaise={1} faceTilt={5} bobbing />
+              <HoursCounter startHour={4} endHour={72} />
+            </Bedroom>
+          </CameraCloser>
         </SceneFade>
       </Sequence>
 
