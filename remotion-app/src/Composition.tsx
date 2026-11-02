@@ -33,7 +33,7 @@ export const MyComposition = () => {
       <Composition
         id="SleepDemo30s"
         component={SleepDemo30s}
-        durationInFrames={760}
+        durationInFrames={680}
         fps={30}
         width={1920}
         height={1080}
@@ -424,18 +424,17 @@ const FactCard: React.FC = () => {
   );
 };
 
-// Timings copied verbatim from the v4 TTS order's subtitles.srt (audio-relative seconds).
+// Timings copied verbatim from the Mike-voice RU order's subtitles.srt (audio-relative seconds).
 const CAPTION_CUES: CaptionCue[] = [
-  {fromSec: 0.0, toSec: 3.44, text: "Imagina que una noche, simplemente, dejas"},
-  {fromSec: 3.48, toSec: 4.6, text: "de poder dormir."},
-  {fromSec: 4.88, toSec: 6.48, text: "No es insomnio normal."},
-  {fromSec: 6.72, toSec: 8.16, text: "Es algo que no se va."},
-  {fromSec: 8.64, toSec: 11.04, text: "Pasan los días, y tu cuerpo nunca"},
-  {fromSec: 11.12, toSec: 11.76, text: "descansa."},
-  {fromSec: 12.32, toSec: 15.52, text: "Esto es real: se llama insomnio familiar"},
-  {fromSec: 15.6, toSec: 18.32, text: "fatal, y hoy te voy a contar qué le pasa"},
-  {fromSec: 18.4, toSec: 20.56, text: "a tu cerebro cuando el sueño desaparece"},
-  {fromSec: 20.64, toSec: 21.68, text: "para siempre."},
+  {fromSec: 0.0, toSec: 2.56, text: "Представь: однажды ночью ты просто"},
+  {fromSec: 2.6, toSec: 3.88, text: "перестаёшь засыпать."},
+  {fromSec: 4.08, toSec: 6.76, text: "Не бессонница на одну ночь — навсегда."},
+  {fromSec: 6.96, toSec: 9.36, text: "Проходят дни, а тело ни на секунду не"},
+  {fromSec: 9.44, toSec: 10.32, text: "отдыхает."},
+  {fromSec: 10.4, toSec: 12.96, text: "Это реальный диагноз: фатальная семейная"},
+  {fromSec: 13.04, toSec: 13.96, text: "бессонница."},
+  {fromSec: 14.16, toSec: 15.92, text: "Сегодня расскажу, что происходит с"},
+  {fromSec: 15.96, toSec: 18.56, text: "мозгом, когда сон исчезает навсегда."},
 ];
 
 const AUDIO_START_FRAME = 90; // 3s silent hook before the voice begins
@@ -448,13 +447,13 @@ export const SleepDemo30s: React.FC = () => {
         <HookText />
       </Sequence>
 
-      <Sequence from={AUDIO_START_FRAME} durationInFrames={649}>
-        <Audio src={staticFile("voice_demo_v4.mp3")} />
+      <Sequence from={AUDIO_START_FRAME} durationInFrames={557}>
+        <Audio src={staticFile("voice_ru_mike.mp3")} />
       </Sequence>
 
-      {/* 3s-10.6s: tucked in bed, tired (audio 0-4.6s) */}
-      <Sequence from={90} durationInFrames={138}>
-        <SceneFade duration={138}>
+      {/* 3s-6.9s: tucked in bed, tired (audio 0-3.88s) */}
+      <Sequence from={90} durationInFrames={116}>
+        <SceneFade duration={116}>
           <Bedroom>
             <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
             {/* blanket tucked up to the chin so the "lying in bed" read doesn't need a broken body rotation */}
@@ -475,9 +474,9 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 10.6s-21.2s: sits up, scared (audio 4.6-8.16s) */}
-      <Sequence from={228} durationInFrames={107}>
-        <SceneFade duration={107}>
+      {/* 6.9s-13.3s: sits up, scared (audio 3.88-10.32s) */}
+      <Sequence from={206} durationInFrames={194}>
+        <SceneFade duration={194}>
           <Bedroom>
             <Character x={560} y={760} scale={1.3} expression="scared" bobbing />
             <HoursCounter startHour={1} endHour={4} />
@@ -485,9 +484,9 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 21.2s-25.3s: standing, shocked, counter accelerates (audio 8.16-12.32s) */}
-      <Sequence from={335} durationInFrames={125}>
-        <SceneFade duration={125}>
+      {/* 13.3s-17s: standing, shocked, counter accelerates (audio 10.32-13.96s) */}
+      <Sequence from={400} durationInFrames={109}>
+        <SceneFade duration={109}>
           <Bedroom>
             <Character x={560} y={760} scale={1.3} expression="shocked" bobbing />
             <HoursCounter startHour={4} endHour={72} />
@@ -495,9 +494,9 @@ export const SleepDemo30s: React.FC = () => {
         </SceneFade>
       </Sequence>
 
-      {/* 25.3s onward: fact card (audio 12.32s onward) */}
-      <Sequence from={460} durationInFrames={300}>
-        <SceneFade duration={300} zoomTo={1.1}>
+      {/* 17s onward: fact card (audio 13.96s onward) */}
+      <Sequence from={509} durationInFrames={168}>
+        <SceneFade duration={168} zoomTo={1.1}>
           <FactCard />
         </SceneFade>
       </Sequence>
