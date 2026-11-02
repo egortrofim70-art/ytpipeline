@@ -1,0 +1,6 @@
+.env
+node_modules/
+*.mp4
+remotion-app/out/
+remotion-app/.turbo/
+backup.zip
