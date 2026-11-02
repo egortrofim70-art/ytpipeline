@@ -321,7 +321,7 @@ const CameraCloser: React.FC<{x: number; y: number; zoom: number; children: Reac
   </div>
 );
 
-const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({children, hidePillow}) => (
+const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
   <AbsoluteFill style={{backgroundColor: "#1c2440"}}>
     {/* soft spotlight behind the character so a dark silhouette still pops */}
     <div
@@ -370,7 +370,7 @@ const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({
         bottom: 160,
         left: 230,
         width: 40,
-        height: 260,
+        height: 310,
         background: "#1a2147",
         borderRadius: "10px 10px 0 0",
       }}
@@ -381,7 +381,7 @@ const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({
         bottom: 160,
         left: 260,
         width: 560,
-        height: 180,
+        height: 230,
         background: "#232c55",
         borderRadius: 16,
       }}
@@ -389,7 +389,7 @@ const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({
     <div
       style={{
         position: "absolute",
-        bottom: 220,
+        bottom: 270,
         left: 268,
         width: 544,
         height: 40,
@@ -400,20 +400,6 @@ const Bedroom: React.FC<{children?: React.ReactNode; hidePillow?: boolean}> = ({
     {/* bed legs for grounding */}
     <div style={{position: "absolute", bottom: 120, left: 280, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
     <div style={{position: "absolute", bottom: 120, left: 780, width: 14, height: 40, background: "#141a35", borderRadius: 3}} />
-    {!hidePillow && (
-      <div
-        style={{
-          position: "absolute",
-          bottom: 300,
-          left: 300,
-          width: 160,
-          height: 70,
-          background: "#dfe4f5",
-          borderRadius: 12,
-          boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
-        }}
-      />
-    )}
     {/* nightstand + clock */}
     <div
       style={{
@@ -582,10 +568,41 @@ const NightBadge: React.FC<{n: number; atFrame: number}> = ({n, atFrame}) => {
   );
 };
 
+// Single source of truth for where the character's own pillow rests behind
+// his head - used by both RestPillow (the pillow he's lying on) and
+// PillowCover (the same pillow, pulled onto his face), so it's visibly one
+// object moving, never two pillows on screen at once.
+const pillowRest = (headX: number, headY: number) => ({
+  left: headX - 115,
+  top: headY + 6,
+  width: 230,
+  height: 110,
+});
+
+// The pillow the character's head rests on - drawn behind the character so
+// the head overlaps it, instead of a bed-fixed pillow that drifts out of
+// sync with wherever the character is framed in a given shot.
+const RestPillow: React.FC<{headX: number; headY: number}> = ({headX, headY}) => {
+  const r = pillowRest(headX, headY);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: r.left,
+        top: r.top,
+        width: r.width,
+        height: r.height,
+        background: "#dfe4f5",
+        borderRadius: 30,
+        boxShadow: "0 6px 14px rgba(0,0,0,0.3)",
+      }}
+    />
+  );
+};
+
 // Pillow pulled up over the face partway through the scene - starts from the
-// bed's own pillow (Bedroom: bottom 300 left 300 w160 h70, screen-space
-// origin ~300,710) and actually ends up overlapping the character's face,
-// instead of materializing out of nowhere and landing above the head.
+// exact resting position above (same pillow he was lying on, not a second
+// one materializing out of nowhere) and ends up overlapping the face.
 const PillowCover: React.FC<{startFrame: number; headX: number; headY: number}> = ({startFrame, headX, headY}) => {
   const frame = useCurrentFrame();
   const t = interpolate(frame, [startFrame, startFrame + 18], [0, 1], {
@@ -593,10 +610,11 @@ const PillowCover: React.FC<{startFrame: number; headX: number; headY: number}> 
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.3, 0, 0.2, 1),
   });
-  const left = interpolate(t, [0, 1], [300, headX - 95]);
-  const top = interpolate(t, [0, 1], [710, headY - 55]);
-  const width = interpolate(t, [0, 1], [160, 190]);
-  const height = interpolate(t, [0, 1], [70, 150]);
+  const rest = pillowRest(headX, headY);
+  const left = interpolate(t, [0, 1], [rest.left, headX - 95]);
+  const top = interpolate(t, [0, 1], [rest.top, headY - 55]);
+  const width = interpolate(t, [0, 1], [rest.width, 190]);
+  const height = interpolate(t, [0, 1], [rest.height, 150]);
   const rot = interpolate(t, [0, 1], [0, -8]);
   return (
     <div
@@ -632,6 +650,7 @@ export const SleepDemo30s: React.FC = () => {
         <SceneFade duration={123}>
           <CameraCloser x={560} y={720} zoom={1.6}>
             <Bedroom>
+              <RestPillow headX={560} headY={718} />
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               <Blanket />
               <NightBadge n={1} atFrame={40} />
@@ -644,9 +663,10 @@ export const SleepDemo30s: React.FC = () => {
       {/* 7.1s-11.7s (audio 4.12-8.72s): phone in hand, screen glow on face - still in bed */}
       <Sequence from={213} durationInFrames={139}>
         <SceneFade duration={139}>
-          <CameraCloser x={620} y={700} zoom={1.55}>
+          <CameraCloser x={640} y={680} zoom={1.75}>
             <Bedroom>
-              <Character x={620} y={740} scale={1.3} expression="tired" armRaise={0.75} faceTilt={-6} prop="phone" stillness />
+              <RestPillow headX={620} headY={698} />
+              <Character x={620} y={740} scale={1.3} expression="tired" armRaise={0.95} faceTilt={-6} prop="phone" stillness />
               <Blanket />
               <HoursCounter startHour={0.1} endHour={1} />
             </Bedroom>
@@ -659,6 +679,7 @@ export const SleepDemo30s: React.FC = () => {
         <SceneFade duration={52}>
           <CameraCloser x={560} y={850} zoom={1.7}>
             <Bedroom>
+              <RestPillow headX={560} headY={718} />
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               <Blanket />
               <HoursCounter startHour={1} endHour={2} />
@@ -673,6 +694,7 @@ export const SleepDemo30s: React.FC = () => {
         <SceneFade duration={123}>
           <CameraCloser x={560} y={720} zoom={1.65}>
             <Bedroom>
+              <RestPillow headX={560} headY={718} />
               <Character x={560} y={760} scale={1.3} expression="angry" toss />
               <Blanket />
               <HoursCounter startHour={2} endHour={3} />
@@ -686,7 +708,7 @@ export const SleepDemo30s: React.FC = () => {
       <Sequence from={527} durationInFrames={119}>
         <SceneFade duration={119}>
           <CameraCloser x={560} y={700} zoom={1.5}>
-            <Bedroom hidePillow>
+            <Bedroom>
               <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.85} faceTilt={-5} stillness />
               <Blanket />
               <PillowCover startFrame={15} headX={560} headY={718} />
@@ -701,6 +723,7 @@ export const SleepDemo30s: React.FC = () => {
         <SceneFade duration={36}>
           <CameraCloser x={560} y={700} zoom={1.6}>
             <Bedroom>
+              <RestPillow headX={560} headY={698} />
               <Character x={560} y={740} scale={1.3} expression="tired" armRaise={0.9} faceTilt={-3} stillness />
               <Blanket />
               <HoursCounter startHour={4} endHour={4.5} />

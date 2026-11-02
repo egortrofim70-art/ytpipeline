@@ -184,10 +184,14 @@ export const Character: React.FC<CharacterProps> = ({
 	// Simple straight column, NOT tapered - a trapezoid that flares wider
 	// toward the shoulders read as an upside-down funnel sitting on the
 	// collar (reported by the user). A plain rect reads as a neck.
+	// Bottom edge goes well past the collar notch's deepest point (16) so
+	// the shirt always fully overlaps the neck's sides - otherwise a sliver
+	// of background showed through between the neck's short bottom edge and
+	// the collar curve, reading as the neck never actually meeting the shirt.
 	const neckPath = `
 		M ${-NECK_W / 2} ${-NECK_H - 4}
-		L ${-NECK_W / 2} 4
-		L ${NECK_W / 2} 4
+		L ${-NECK_W / 2} 24
+		L ${NECK_W / 2} 24
 		L ${NECK_W / 2} ${-NECK_H - 4}
 		Z
 	`;
@@ -220,24 +224,26 @@ export const Character: React.FC<CharacterProps> = ({
 					// counter-rotate by -frontArmAngle so the phone stays visually
 					// upright no matter how the arm is angled, like something
 					// actually held in a hand rather than welded to the forearm
-					<g transform={`translate(0 ${ARM_LEN + 6}) rotate(${phoneWobble})`}>
-						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.55} filter={`url(#${ids.glow})`} />
-						<rect x={-13} y={-22} width={26} height={44} rx={5} fill="#0d1a33" stroke="#4a90ff" strokeWidth={2} />
-						<rect x={-9} y={-17} width={18} height={30} rx={2} fill="#9fd4ff" opacity={0.9} />
+					<g transform={`translate(0 ${ARM_LEN + 10}) rotate(${phoneWobble})`}>
+						{/* phone sized up from the original prop so it actually reads as
+							a phone in frame instead of a small blur near the hand */}
+						<rect x={-13} y={-24} width={26} height={42} rx={3} fill="#9fd4ff" opacity={0.55} filter={`url(#${ids.glow})`} />
+						<rect x={-18} y={-30} width={36} height={60} rx={7} fill="#0d1a33" stroke="#4a90ff" strokeWidth={2.5} />
+						<rect x={-13} y={-24} width={26} height={42} rx={3} fill="#9fd4ff" opacity={0.9} />
 						{/* scrolling feed lines inside the screen, clipped to the screen
 							rect, so the phone reads as "being used" instead of a static prop */}
 						<clipPath id={ids.phoneClip}>
-							<rect x={-9} y={-17} width={18} height={30} rx={2} />
+							<rect x={-13} y={-24} width={26} height={42} rx={3} />
 						</clipPath>
 						<g clipPath={`url(#${ids.phoneClip})`}>
 							{[0, 1, 2, 3, 4, 5].map((i) => (
 								<rect
 									key={i}
-									x={-6}
-									y={((scrollY + i * 12) % 60) - 17}
-									width={12}
-									height={4}
-									rx={1}
+									x={-9}
+									y={((scrollY + i * 16) % 80) - 24}
+									width={18}
+									height={6}
+									rx={1.5}
 									fill="#0d1a33"
 									opacity={0.5}
 								/>
