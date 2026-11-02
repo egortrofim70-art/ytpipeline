@@ -165,7 +165,11 @@ export const Character: React.FC<CharacterProps> = ({
 		Z
 	`;
 
-	const headCenterY = -(SHIRT_H - 2 + NECK_H + HEAD_R);
+	// Head sits directly on top of the neck, which sits on top of the shirt
+	// (shirt top = local y 0, neck spans -NECK_H..0): headCenterY is expressed
+	// relative to the outer group's own translate(SHIRT_H/2), so we subtract
+	// that back out to land the head's bottom edge exactly on the neck's top.
+	const headCenterY = -(NECK_H + HEAD_R) - SHIRT_H / 2;
 	const mouth = mouthPath(face.mouthWidth, face.mouthCurve, Math.max(face.mouthOpen, 2.5));
 
 	const Silhouette = ({forGlow}: {forGlow?: boolean}) => (
