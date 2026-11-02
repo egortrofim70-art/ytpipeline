@@ -11,6 +11,7 @@ import {
 import { Audio } from "@remotion/media";
 import { Character, type Expression, type CharacterProps } from "./Character";
 import insomniaBeatsData from "./insomniaBeats.json";
+import painBeatsData from "./painBeats.json";
 
 export const MyComposition = () => {
   return (
@@ -44,6 +45,15 @@ export const MyComposition = () => {
         id="InsomniaFullES"
         component={InsomniaFullES}
         durationInFrames={18900}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {/* durationInFrames = 90 (lead-in) + ceil(530.42s * 30fps) + 180 (outro) ≈ 16183, padded slightly */}
+      <Composition
+        id="PainFullES"
+        component={PainFullES}
+        durationInFrames={16200}
         fps={30}
         width={1920}
         height={1080}
@@ -538,6 +548,99 @@ const VoidStage: React.FC<{children?: React.ReactNode}> = ({children}) => (
           "radial-gradient(circle, rgba(90,110,170,0.3) 0%, rgba(90,110,170,0.1) 45%, rgba(90,110,170,0) 72%)",
       }}
     />
+    {children}
+  </AbsoluteFill>
+);
+
+// Daytime park/playground - bright flat sky+grass instead of another dark
+// interior, so outdoor "kid playing" beats read as a genuinely different
+// place, not the same room with the lights changed.
+const ParkScene: React.FC<{children?: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill style={{backgroundColor: "#8fd0f0"}}>
+    {/* sun glow */}
+    <div
+      style={{
+        position: "absolute",
+        left: 1500,
+        top: 80,
+        width: 220,
+        height: 220,
+        borderRadius: "50%",
+        background: "radial-gradient(circle, rgba(255,240,180,0.9) 0%, rgba(255,240,180,0.25) 55%, rgba(255,240,180,0) 75%)",
+      }}
+    />
+    {/* far treeline */}
+    <div style={{position: "absolute", left: 80, top: 480, width: 260, height: 260, borderRadius: "50%", background: "#4f9e5c"}} />
+    <div style={{position: "absolute", left: 1480, top: 450, width: 300, height: 300, borderRadius: "50%", background: "#4a9456"}} />
+    {/* ground */}
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 0, top: 650, backgroundColor: "#6fbf6f"}} />
+    {/* slide, grounding the "parque" reading */}
+    <div style={{position: "absolute", left: 1280, bottom: 90, width: 16, height: 260, background: "#d4541f", borderRadius: 6}} />
+    <div style={{position: "absolute", left: 1150, bottom: 80, width: 180, height: 300, background: "#e8732f", borderRadius: "90px 90px 0 16px", transform: "rotate(18deg)", transformOrigin: "bottom right"}} />
+    {children}
+  </AbsoluteFill>
+);
+
+// Home kitchen - counter + stove, for the "tocó la olla hirviendo" beat.
+const KitchenScene: React.FC<{children?: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill style={{backgroundColor: "#f0ead6"}}>
+    <div style={{position: "absolute", left: 0, right: 0, top: 0, height: 600, backgroundColor: "#e3dcc5"}} />
+    {/* counter */}
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 260, height: 50, backgroundColor: "#8a6a4a"}} />
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 0, height: 260, backgroundColor: "#5c4530"}} />
+    {/* stove top */}
+    <div style={{position: "absolute", left: 680, bottom: 310, width: 320, height: 18, backgroundColor: "#2a2a2a", borderRadius: 4}} />
+    {/* pot, glowing red-hot rim to sell "hirviendo" without needing steam particles */}
+    <div style={{position: "absolute", left: 790, bottom: 318, width: 120, height: 90, backgroundColor: "#4a4a52", borderRadius: "10px 10px 4px 4px"}} />
+    <div style={{position: "absolute", left: 790, bottom: 400, width: 120, height: 14, backgroundColor: "#ff7a3c", borderRadius: 7, boxShadow: "0 0 30px 10px rgba(255,120,50,0.5)"}} />
+    {children}
+  </AbsoluteFill>
+);
+
+// Bathroom mirror - for the self-inspection beats ("revisa su cuerpo frente
+// al espejo"), a deliberately different framing device: the character faces
+// its own reflection instead of the camera.
+const MirrorScene: React.FC<{children?: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill style={{backgroundColor: "#dce4ea"}}>
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 0, height: 320, backgroundColor: "#c3cdd4"}} />
+    {/* mirror frame */}
+    <div
+      style={{
+        position: "absolute",
+        left: 660,
+        top: 110,
+        width: 600,
+        height: 760,
+        borderRadius: 16,
+        background: "#aab8c2",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+      }}
+    />
+    <div
+      style={{
+        position: "absolute",
+        left: 680,
+        top: 130,
+        width: 560,
+        height: 720,
+        borderRadius: 10,
+        background: "linear-gradient(135deg, #eef5f8 0%, #d7e3e8 100%)",
+      }}
+    />
+    {children}
+  </AbsoluteFill>
+);
+
+// City sidewalk - for the adult "zapatos nuevos / vidrio roto" everyday-risk beat.
+const StreetScene: React.FC<{children?: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill style={{backgroundColor: "#cdd6e0"}}>
+    <div style={{position: "absolute", left: 0, right: 0, top: 0, height: 640, backgroundColor: "#b9c4d1"}} />
+    {/* building silhouettes */}
+    <div style={{position: "absolute", left: 120, top: 180, width: 220, height: 460, backgroundColor: "#8f9db0"}} />
+    <div style={{position: "absolute", left: 1540, top: 100, width: 260, height: 540, backgroundColor: "#8695a8"}} />
+    {/* sidewalk */}
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 0, top: 640, backgroundColor: "#9aa3ad"}} />
+    <div style={{position: "absolute", left: 0, right: 0, bottom: 300, height: 6, backgroundColor: "#848d96"}} />
     {children}
   </AbsoluteFill>
 );
@@ -1175,6 +1278,175 @@ export const InsomniaFullES: React.FC = () => {
       </Sequence>
 
       <SyncedCaptions cues={allCues} offsetFrames={INSOMNIA_AUDIO_START} />
+    </AbsoluteFill>
+  );
+};
+
+// --- PainFullES: ~9min ES documentary on congenital insensitivity to pain ---
+
+type PainBeat = InsomniaBeat;
+const PAIN_BEATS = painBeatsData as PainBeat[];
+const PAIN_AUDIO_START = 90;
+const PAIN_AUDIO_DURATION_SEC = 530.42;
+
+// Full-body standing anchor shared by every outdoor/indoor scene below (not
+// covered by a blanket like the bed scenes, so it needs its own grounding):
+// at scale 1.3 the character's foot-shadow lands ~285px below its y anchor,
+// so y=640 puts feet near the bottom third of frame and the head comfortably
+// in the upper-middle, instead of guessing per scene and over/under-shooting
+// the ground line.
+const STANDING_Y = 640;
+
+type PainVisual =
+  | {type: "void"; expr: Expression; running?: boolean; armRaise?: number; faceTilt?: number}
+  | {type: "park" | "kitchen" | "mirror" | "street"; x: number; zoom: number; pose: Partial<CharacterProps>}
+  | {
+      type: "bed";
+      x: number; y: number; zoom: number;
+      pose: Partial<CharacterProps>;
+      pillow?: boolean; blanket?: boolean; lamp?: boolean;
+    }
+  | {type: "info"; eyebrow: string; title: string; body?: string};
+
+const PAIN_VISUALS: PainVisual[] = [
+  /* 0  hook */ {type: "void", expr: "scared"},
+  /* 1  bicicleta, no duele */ {type: "void", expr: "happy", running: true},
+  /* 2  "suena como un superpoder" */ {type: "void", expr: "smug"},
+  /* 3  cae del resbaladilla, sigue jugando */ {type: "park", x: 960, zoom: 1.3, pose: {expression: "happy"}},
+  /* 4  toca la olla hirviendo */ {type: "kitchen", x: 820, zoom: 1.35, pose: {expression: "neutral", armRaise: 0.6, faceTilt: -4}},
+  /* 5  los padres se dan cuenta */ {type: "void", expr: "scared"},
+  /* 6  explicación: señales de dolor no llegan */ {
+    type: "info", eyebrow: "LA CAUSA", title: "Las señales de dolor nunca\nllegan al cerebro", body: "Insensibilidad congénita al dolor",
+  },
+  /* 7  tobillo roto jugando al fútbol */ {type: "park", x: 960, zoom: 1.35, pose: {expression: "happy", running: true}},
+  /* 8  la mayoría se equivoca */ {type: "void", expr: "smug"},
+  /* 9  "sin esa alarma..." */ {type: "void", expr: "scared"},
+  /* 10 inspeccionar el cuerpo */ {type: "mirror", x: 960, zoom: 1.3, pose: {expression: "tired", faceTilt: -3}},
+  /* 11 raspadura infectada */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", stillness: true}, pillow: true, blanket: true, lamp: true,
+  },
+  /* 12 Pakistán 2006 */ {type: "info", eyebrow: "EL CASO QUE LO CAMBIÓ TODO", title: "Pakistán, 2006", body: "Universidad de Cambridge · Dr. Geoffrey Woods"},
+  /* 13 gen SCN9A / Nature */ {type: "info", eyebrow: "EL DESCUBRIMIENTO", title: "El gen SCN9A", body: "Publicado en Nature · el primer gen ligado directamente al dolor"},
+  /* 14 explicación del canal de sodio */ {
+    type: "info", eyebrow: "CÓMO FUNCIONA", title: "Un canal de sodio\nroto en las neuronas", body: "Sin él, la señal de dolor nunca sale del cuerpo",
+  },
+  /* 15 otros sentidos funcionan bien */ {
+    type: "info", eyebrow: "LO MÁS LLAMATIVO", title: "Todos los demás sentidos\nfuncionan perfectamente", body: "Frío, calor, presión, tacto — solo falta la alarma de dolor",
+  },
+  /* 16 no sudan / temperatura */ {
+    type: "info", eyebrow: "UN RIESGO EXTRA", title: "Tampoco sudan con normalidad", body: "El mismo sistema nervioso regula la temperatura corporal",
+  },
+  /* 17 colapso por calor */ {type: "park", x: 960, zoom: 1.4, pose: {expression: "tired", faceTilt: 3, stillness: true}},
+  /* 18 médicos enseñan miedo consciente */ {type: "void", expr: "scared"},
+  /* 19 dentista */ {type: "void", expr: "tired"},
+  /* 20 espejo cada mañana */ {type: "mirror", x: 960, zoom: 1.3, pose: {expression: "tired"}},
+  /* 21 zapatos nuevos / vidrio */ {type: "street", x: 960, zoom: 1.3, pose: {expression: "scared", faceTilt: -2}},
+  /* 22 bloquear el canal, nuevos analgésicos */ {
+    type: "info", eyebrow: "EL LADO ESPERANZADOR", title: "La clave para nuevos\nanalgésicos", body: "Bloquear el mismo canal de sodio, de forma temporal y controlada",
+  },
+  /* 23 tan potente como la morfina */ {
+    type: "info", eyebrow: "EL POTENCIAL", title: "Tan potente como la morfina,\nsin el riesgo de adicción", body: "",
+  },
+  /* 24 ensayos clínicos */ {type: "info", eyebrow: "AHORA MISMO", title: "Ensayos clínicos en curso", body: "Varias farmacéuticas, en este momento"},
+  /* 25 reflexión final */ {type: "void", expr: "tired"},
+  /* 26 CTA */ {type: "void", expr: "scared"},
+];
+
+const PainBeatScene: React.FC<{visual: PainVisual; duration: number}> = ({visual, duration}) => {
+  if (visual.type === "void") {
+    return (
+      <SceneFade duration={duration}>
+        <VoidStage>
+          <Character
+            x={960}
+            y={760}
+            scale={1.5}
+            expression={visual.expr}
+            running={visual.running ?? false}
+            armRaise={visual.armRaise ?? 0}
+            faceTilt={visual.faceTilt ?? 0}
+            bobbing={!visual.running}
+          />
+        </VoidStage>
+      </SceneFade>
+    );
+  }
+  if (visual.type === "bed") {
+    const scale = 1.3;
+    const headX = visual.x;
+    const headY = visual.y - 32 * scale;
+    return (
+      <SceneFade duration={duration}>
+        <CameraCloser x={visual.x} y={visual.y - 60} zoom={visual.zoom}>
+          <Bedroom>
+            {visual.pillow && <RestPillow headX={headX} headY={headY} />}
+            <Character x={visual.x} y={visual.y} scale={scale} {...visual.pose} />
+            {visual.blanket && <Blanket />}
+            {visual.lamp && <NightstandLamp onFrame={0} />}
+          </Bedroom>
+        </CameraCloser>
+      </SceneFade>
+    );
+  }
+  if (visual.type === "info") {
+    return (
+      <SceneFade duration={duration}>
+        <InfoCard eyebrow={visual.eyebrow} title={visual.title} body={visual.body} />
+      </SceneFade>
+    );
+  }
+  // park | kitchen | mirror | street - full-body standing scenes on a light
+  // background, so `glow` (the dark-backdrop rim halo) is switched off.
+  const Scene = visual.type === "park" ? ParkScene : visual.type === "kitchen" ? KitchenScene : visual.type === "mirror" ? MirrorScene : StreetScene;
+  return (
+    <SceneFade duration={duration}>
+      <CameraCloser x={visual.x} y={STANDING_Y - 40} zoom={visual.zoom}>
+        <Scene>
+          <Character x={visual.x} y={STANDING_Y} scale={1.3} glow={false} {...visual.pose} />
+        </Scene>
+      </CameraCloser>
+    </SceneFade>
+  );
+};
+
+export const PainFullES: React.FC = () => {
+  const {fps} = useVideoConfig();
+  const allCues: CaptionCue[] = PAIN_BEATS.flatMap((b) => b.cues);
+  const audioDurationFrames = Math.ceil(PAIN_AUDIO_DURATION_SEC * fps);
+
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060a"}}>
+      <Sequence from={0} durationInFrames={PAIN_AUDIO_START}>
+        <VoidStage>
+          <Character x={960} y={780} scale={1.6} expression="scared" bobbing />
+        </VoidStage>
+      </Sequence>
+
+      <Sequence from={PAIN_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
+        <Audio src={staticFile("voice_pain_es.mp3")} />
+      </Sequence>
+
+      {PAIN_BEATS.map((beat, i) => {
+        const visual = PAIN_VISUALS[beat.para_index];
+        const fromFrame = PAIN_AUDIO_START + Math.round(beat.from_sec * fps);
+        const nextFromSec = i + 1 < PAIN_BEATS.length ? PAIN_BEATS[i + 1].from_sec : PAIN_AUDIO_DURATION_SEC;
+        const toFrame = PAIN_AUDIO_START + Math.round(nextFromSec * fps);
+        const duration = Math.max(1, toFrame - fromFrame);
+        return (
+          <Sequence key={beat.para_index} from={fromFrame} durationInFrames={duration}>
+            <PainBeatScene visual={visual} duration={duration} />
+          </Sequence>
+        );
+      })}
+
+      <Sequence from={PAIN_AUDIO_START + audioDurationFrames} durationInFrames={180}>
+        <SceneFade duration={180} zoomTo={1.1}>
+          <InfoCard eyebrow="INSENSIBILIDAD CONGÉNITA AL DOLOR" title="Una condición real." body="Gracias por ver hasta el final." />
+        </SceneFade>
+      </Sequence>
+
+      <SyncedCaptions cues={allCues} offsetFrames={PAIN_AUDIO_START} />
     </AbsoluteFill>
   );
 };
