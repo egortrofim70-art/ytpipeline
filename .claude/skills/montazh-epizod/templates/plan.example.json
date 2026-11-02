@@ -1,0 +1,35 @@
+{
+  "source": "Ролик.MOV",
+  "words": "words.json",
+  "out": "Ролик — эпизод v1.mp4",
+  "work_dir": "_work_ep",
+  "assets": "screens",
+
+  "cuts": {"takes": [[5.1, 7.9], [32.3, 38.7], [39.6, 42.1], [48.2, 50.3], [89.4, 96.1]], "max_gap": 0.25},
+  "voice_gain_db": 0,
+  "voice_fx": {},
+  "music": {"file": "<папка с вашими материалами>/Музыка/трек.mp3",
+            "db": -30, "until_out": 16.67, "fade_in": 0.3, "fade_out": 0.3, "duck": false},
+
+  "subs": {
+    "replace": {"пах": "пак"},
+    "fix": {"36.16": "Premiere", "36.18": "Pro"},
+    "off": []
+  },
+  "plashka": {"style": "black"},
+
+  "scenes": [
+    {"at": 5.1, "kind": "split", "seam": 0.5, "plashka": "white",
+     "media": [{"src": "meme.mp4", "start": 0.0}]},
+    {"at": 32.6, "kind": "split", "seam": 0.63,
+     "media": [{"src": "explorer.mp4", "start": 3.0},
+               {"at": 35.1, "src": "explorer.mp4", "start": 12.4},
+               {"at": 35.5, "src": "explorer.mp4", "start": 18.0},
+               {"at": 39.65, "src": "explorer.mp4", "start": 30.2, "zoom": [1.0, 1.08], "focus": [0.3, 0.4]}]},
+    {"at": 48.45, "kind": "face"},
+    {"at": 89.4, "kind": "split", "seam": 0.505,
+     "media": [{"src": "telegram.mp4", "start": 1.0, "enter": "zoom", "focus": [0.62, 0.3]},
+               {"at": 90.92, "src": "telegram.mp4", "start": 6.5, "enter": "fade"}]},
+    {"at": 92.06, "kind": "outro"}
+  ]
+}

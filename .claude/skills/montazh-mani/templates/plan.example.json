@@ -1,0 +1,39 @@
+{
+  "source": "../../Ролик.mp4",
+  "words": "words.json",
+  "out": "../../Ролик — мани v1.mp4",
+  "work_dir": "_work_mani",
+  "assets": "screens",
+  "face": "auto",
+  "cuts": {"max_gap": 0.3, "takes": [[8.4, 11.5], [50.4, 52.7], [62.9, 66.15], [77.0, 79.5], [81.5, 87.9]]},
+  "voice_gain_db": 0,
+
+  "subs": {"accent": ["миллионером", 10.43, "посчитаем", 64.27, 77.12, "откладывать"]},
+
+  "scenes": [
+    {"at": 8.35, "kind": "split", "head": "Можно стать\n[миллионером?]", "head_at": [8.35, 9.07, 9.23],
+     "media": [{"src": "A_hero.png", "url": "kopilka.ru", "y": [0.22, 0.26],
+                "marks": [{"at": 10.43, "kind": "outline", "box": [0.071, 0.673, 0.471, 0.839]}]}]},
+    {"at": 50.54, "kind": "face"},
+    {"at": 62.85, "kind": "split",
+     "media": [{"src": "A_hero.png", "url": "kopilka.ru"},
+               {"at": 63.89, "src": "B_table.png", "url": "kopilka.ru/calc",
+                "marks": [{"at": 64.07, "kind": "select", "box": [0.458, 0.208, 0.623, 0.292]},
+                          {"at": 64.27, "kind": "select", "box": [0.458, 0.358, 0.695, 0.442]}]}]},
+    {"at": 76.8, "kind": "dark", "enter": "whip",
+     "media": [{"src": "B_table.png", "url": "kopilka.ru/calc", "zoom": [1.25, 1.35], "focus": [0.55, 0.5],
+                "marks": [{"at": 77.12, "kind": "select", "box": [0.458, 0.508, 0.7275, 0.592]}],
+                "cursor": [[76.9, 0.85, 0.85], [77.5, 0.62, 0.57]]}]},
+    {"at": 82.23, "kind": "split"},
+    {"at": 84.97, "kind": "white", "enter": "fade",
+     "media": [{"src": "B_table.png", "url": "kopilka.ru/calc",
+                "marks": [{"at": 86.21, "kind": "outline", "box": [0.458, 0.658, 0.7616, 0.742]}]}]}
+  ],
+
+  "elements": [
+    {"type": "sticky", "at": 82.23, "pos": [0.5, 0.28], "lines": ["тратить всё", "ждать чуда"],
+     "row_at": [82.77, 83.67], "text": "просто [откладывать]", "outline_at": 83.93},
+    {"type": "icons", "at": 85.03, "pos": [0.5, 0.185], "row_at": [85.03, 86.21, 87.01],
+     "items": ["🏦", "💰", "📈"]}
+  ]
+}

@@ -1,0 +1,6 @@
+Положите сюда шрифты SF Pro Display (Apple, бесплатно: developer.apple.com/fonts):
+SFProDisplay-Bold.otf
+SFProDisplay-Semibold.otf
+SFProDisplay-Medium.otf
+SFProDisplay-Regular.otf
+Лицензия Apple не разрешает их пересылать, поэтому в архиве их нет.
