@@ -1,5 +1,5 @@
 import React from 'react';
-import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 export type Expression = 'neutral' | 'happy' | 'scared' | 'shocked' | 'tired' | 'smug' | 'angry';
 
@@ -10,7 +10,7 @@ export type CharacterProps = {
 	expression?: Expression;
 	walking?: boolean;
 	running?: boolean;
-	lying?: boolean; // rotates the WHOLE rig 90° as one rigid unit (bed pose)
+	lying?: boolean;
 	bobbing?: boolean;
 	armRaise?: number; // 0..1, raises right arm (e.g. pointing/waving)
 	faceTilt?: number; // degrees, subtle head-only tilt (curious look)
@@ -18,42 +18,51 @@ export type CharacterProps = {
 	pantsColor?: string;
 	headColor?: string;
 	glow?: boolean; // soft colored rim halo to pop off a dark background
+	transitionInFrames?: number; // how long it takes to settle into `expression` on mount
 };
 
-// True stickman proportions (reference: big round head, thin uniform-width
-// line limbs, no hands/shoes blobs, simple colored shirt shape, almost no
-// neck overlap).
 const HEAD_R = 58;
-const NECK_OVERLAP = 4;
-const SHOULDER_W = 54; // shirt width at top, narrower than head diameter
+const NECK_H = 16;
+const NECK_W = HEAD_R * 0.46;
+const SHOULDER_W = 54;
 const WAIST_W = 42;
 const SHIRT_H = 70;
-const LIMB_STROKE = 9; // thin stick line thickness
+const LIMB_STROKE = 9;
 const ARM_LEN = 78;
 const LEG_LEN = 108;
 
-const EXPRESSIONS: Record<
-	Expression,
-	{browAngle: number; browY: number; mouth: string; eyeScale: number}
-> = {
-	neutral: {browAngle: 0, browY: -100, mouth: 'M -13 17 Q 0 20 13 17', eyeScale: 1},
-	happy: {browAngle: 0, browY: -100, mouth: 'M -14 11 Q 0 28 14 11', eyeScale: 1},
-	scared: {browAngle: 16, browY: -6, mouth: 'M -10 21 Q 0 15 10 21', eyeScale: 1.2},
-	shocked: {
-		browAngle: 20,
-		browY: -9,
-		mouth: 'M -7 15 Q 0 32 7 15 Q 0 36 -7 15 Z',
-		eyeScale: 1.35,
-	},
-	tired: {browAngle: -2, browY: 7, mouth: 'M -12 18 Q 0 15 12 18', eyeScale: 0.5},
-	smug: {browAngle: -12, browY: -3, mouth: 'M -13 14 Q -2 19 15 8', eyeScale: 0.8},
-	angry: {browAngle: -18, browY: -2, mouth: 'M -12 22 Q 0 17 12 22', eyeScale: 0.9},
+// Mouth is built from 4 numbers so it can be smoothly interpolated between
+// any two expressions instead of snapping between hand-drawn path strings:
+// width = half-width, curve = up(+)/down(-) bend of the lip line,
+// open = vertical gap between the top and bottom lip (0 = thin closed line).
+type FaceParams = {
+	browAngle: number;
+	browY: number; // -100 sentinel = no eyebrows drawn
+	eyeScale: number;
+	mouthWidth: number;
+	mouthCurve: number;
+	mouthOpen: number;
 };
 
-// `browY: -100` is a sentinel meaning "no eyebrows" (neutral/happy in the
-// reference channel often show no brows at all, just eyes + mouth).
+const FACE: Record<Expression, FaceParams> = {
+	neutral: {browAngle: 0, browY: -100, eyeScale: 1, mouthWidth: 13, mouthCurve: 3, mouthOpen: 4},
+	happy: {browAngle: 0, browY: -100, eyeScale: 1, mouthWidth: 15, mouthCurve: 17, mouthOpen: 4},
+	scared: {browAngle: 16, browY: -6, eyeScale: 1.2, mouthWidth: 10, mouthCurve: -6, mouthOpen: 5},
+	shocked: {browAngle: 20, browY: -9, eyeScale: 1.35, mouthWidth: 8, mouthCurve: 0, mouthOpen: 22},
+	tired: {browAngle: -2, browY: 7, eyeScale: 0.5, mouthWidth: 12, mouthCurve: -3, mouthOpen: 3},
+	smug: {browAngle: -12, browY: -3, eyeScale: 0.8, mouthWidth: 15, mouthCurve: 9, mouthOpen: 4},
+	angry: {browAngle: -18, browY: -2, eyeScale: 0.9, mouthWidth: 12, mouthCurve: -5, mouthOpen: 5},
+};
 
-let gradientIdCounter = 0;
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+function mouthPath(width: number, curve: number, open: number): string {
+	const top = -open / 2 + curve;
+	const bottom = open / 2 + curve;
+	return `M ${-width} 0 Q 0 ${top} ${width} 0 Q 0 ${bottom} ${-width} 0 Z`;
+}
+
+let instanceCounter = 0;
 
 export const Character: React.FC<CharacterProps> = ({
 	x = 0,
@@ -70,16 +79,41 @@ export const Character: React.FC<CharacterProps> = ({
 	pantsColor = '#111111',
 	headColor = '#0A0A0A',
 	glow = true,
+	transitionInFrames = 14,
 }) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const gradId = React.useRef(`charHeadGrad${gradientIdCounter++}`).current;
-	const glowId = React.useRef(`charGlow${gradientIdCounter++}`).current;
+	const ids = React.useRef({
+		grad: `charHeadGrad${instanceCounter++}`,
+		glow: `charGlow${instanceCounter++}`,
+	}).current;
 
-	const expr = EXPRESSIONS[expression];
-	const showBrows = expr.browY > -50;
+	// Ease from a neutral resting face into the target expression over the
+	// first `transitionInFrames` local frames, instead of snapping instantly
+	// the moment a Sequence cuts to a new pose - this is what reads as
+	// "animated" rather than "slideshow with a new expression pasted on".
+	const target = FACE[expression];
+	const settle = interpolate(frame, [0, transitionInFrames], [0, 1], {
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+		easing: Easing.bezier(0.16, 1, 0.3, 1),
+	});
+	const rest = FACE.neutral;
+	const face: FaceParams = {
+		browAngle: lerp(rest.browAngle, target.browAngle, settle),
+		browY: lerp(rest.browY < -50 ? 10 : rest.browY, target.browY < -50 ? 10 : target.browY, settle),
+		eyeScale: lerp(rest.eyeScale, target.eyeScale, settle),
+		mouthWidth: lerp(rest.mouthWidth, target.mouthWidth, settle),
+		mouthCurve: lerp(rest.mouthCurve, target.mouthCurve, settle),
+		mouthOpen: lerp(rest.mouthOpen, target.mouthOpen, settle),
+	};
+	const showBrows = settle > 0.05 && (target.browY > -50 || settle < 1);
 
-	const bob = bobbing && !lying ? Math.sin((frame / fps) * Math.PI * 2 * 0.9) * 3 : 0;
+	// Blink independent of expression: a quick vertical eye-close every ~3.7s.
+	const blinkPeriod = 110;
+	const blinkPhase = frame % blinkPeriod;
+	const blinkT = blinkPhase < 6 ? Math.sin((blinkPhase / 6) * Math.PI) : 0;
+	const blinkScale = 1 - blinkT * 0.9;
 
 	const isMoving = (walking || running) && !lying;
 	const speedMul = running ? 3.4 : 2.2;
@@ -101,11 +135,18 @@ export const Character: React.FC<CharacterProps> = ({
 		durationInFrames: 12,
 	});
 
+	// Idle motion: a slow weight-settle breathing cycle (not a pure levitating
+	// sine) - rises slowly, settles back down with a touch of ease, and the
+	// contact shadow shrinks/grows inversely so the character reads as
+	// grounded instead of floating in place.
+	const idleCycle = (frame / fps) * (Math.PI * 2) * 0.55;
+	const bob = bobbing && !lying && !isMoving ? (Math.sin(idleCycle) * 0.5 + Math.sin(idleCycle * 2) * 0.15) * 5 : 0;
+	const sway = bobbing && !lying && !isMoving ? Math.sin(idleCycle * 0.5) * 3 : 0;
+
 	const totalY = y + bob - walkBob;
-	// When lying, the rig rotates -90° around the shirt's mid-point; shift the
-	// whole svg left so the character (head now pointing left) still sits with
-	// its torso roughly where x/y was aimed, instead of swinging off-screen.
-	const totalX = x - (lying ? SHIRT_H / 2 + HEAD_R * 0.3 : 0);
+	const totalX = x - (lying ? SHIRT_H / 2 + HEAD_R * 0.3 : 0) + sway;
+	const groundRise = Math.max(0, bob); // >0 while character is "up" in its idle cycle
+	const shadowScale = 1 - groundRise * 0.025;
 
 	const shirtPath = `
 		M ${-SHOULDER_W / 2} 0
@@ -116,7 +157,16 @@ export const Character: React.FC<CharacterProps> = ({
 		Z
 	`;
 
-	const headCenterY = -(SHIRT_H - NECK_OVERLAP + HEAD_R);
+	const neckPath = `
+		M ${-NECK_W / 2} ${-NECK_H}
+		L ${-NECK_W / 2 - 4} 0
+		L ${NECK_W / 2 + 4} 0
+		L ${NECK_W / 2} ${-NECK_H}
+		Z
+	`;
+
+	const headCenterY = -(SHIRT_H - 2 + NECK_H + HEAD_R);
+	const mouth = mouthPath(face.mouthWidth, face.mouthCurve, Math.max(face.mouthOpen, 2.5));
 
 	const Silhouette = ({forGlow}: {forGlow?: boolean}) => (
 		<>
@@ -130,6 +180,7 @@ export const Character: React.FC<CharacterProps> = ({
 				<line x1={0} y1={0} x2={0} y2={LEG_LEN} stroke={forGlow ? shirtColor : pantsColor} strokeWidth={LIMB_STROKE} strokeLinecap="round" />
 			</g>
 			<path d={shirtPath} fill={shirtColor} />
+			<path d={neckPath} fill={forGlow ? shirtColor : headColor} opacity={forGlow ? 1 : 0.92} />
 			<g
 				transform={`translate(${SHOULDER_W / 2 - 3} 8) rotate(${
 					-armSwing2 - armRaise * 120 * raiseAnim
@@ -138,7 +189,7 @@ export const Character: React.FC<CharacterProps> = ({
 				<line x1={0} y1={0} x2={0} y2={ARM_LEN} stroke={shirtColor} strokeWidth={LIMB_STROKE} strokeLinecap="round" />
 			</g>
 			<g transform={`translate(0 ${headCenterY + SHIRT_H / 2}) rotate(${faceTilt})`}>
-				<circle cx={0} cy={0} r={HEAD_R} fill={forGlow ? shirtColor : `url(#${gradId})`} />
+				<circle cx={0} cy={0} r={HEAD_R} fill={forGlow ? shirtColor : `url(#${ids.grad})`} />
 			</g>
 		</>
 	);
@@ -157,55 +208,56 @@ export const Character: React.FC<CharacterProps> = ({
 			}}
 		>
 			<defs>
-				<radialGradient id={gradId} cx="38%" cy="32%" r="75%">
+				<radialGradient id={ids.grad} cx="38%" cy="32%" r="75%">
 					<stop offset="0%" stopColor="#3a3a3a" />
 					<stop offset="45%" stopColor="#151515" />
 					<stop offset="100%" stopColor={headColor} />
 				</radialGradient>
-				<filter id={glowId} x="-60%" y="-60%" width="220%" height="220%">
+				<filter id={ids.glow} x="-60%" y="-60%" width="220%" height="220%">
 					<feGaussianBlur stdDeviation="10" />
 				</filter>
 			</defs>
 
 			<g transform={`translate(0 ${SHIRT_H / 2}) rotate(${wholeBodyRotation})`}>
-				{/* soft colored halo behind the character so it reads against a dark bg */}
 				{glow && (
-					<g opacity={0.45} filter={`url(#${glowId})`}>
+					<g opacity={0.45} filter={`url(#${ids.glow})`}>
 						<Silhouette forGlow />
 					</g>
 				)}
 
-				{/* grounding shadow (skip while lying flat) */}
 				{!lying && (
 					<ellipse
 						cx={0}
 						cy={SHIRT_H + LEG_LEN + 6}
-						rx={60}
-						ry={14}
-						fill="rgba(0,0,0,0.35)"
-						filter={`url(#${glowId})`}
+						rx={60 * shadowScale}
+						ry={14 * shadowScale}
+						fill="rgba(0,0,0,0.4)"
+						filter={`url(#${ids.glow})`}
 					/>
 				)}
 
 				<Silhouette />
 
-				{/* face (kept separate so eyes/brows/mouth sit above the glow + gradient head) */}
 				<g transform={`translate(0 ${headCenterY + SHIRT_H / 2}) rotate(${faceTilt})`}>
 					{showBrows && (
 						<>
-							<g transform={`translate(${-HEAD_R * 0.33} ${-HEAD_R * 0.18 + expr.browY}) rotate(${-expr.browAngle})`}>
+							<g transform={`translate(${-HEAD_R * 0.33} ${-HEAD_R * 0.18 + face.browY}) rotate(${-face.browAngle})`}>
 								<rect x={-12} y={-3} width={24} height={5} rx={2.5} fill="#ffffff" />
 							</g>
-							<g transform={`translate(${HEAD_R * 0.33} ${-HEAD_R * 0.18 + expr.browY}) rotate(${expr.browAngle})`}>
+							<g transform={`translate(${HEAD_R * 0.33} ${-HEAD_R * 0.18 + face.browY}) rotate(${face.browAngle})`}>
 								<rect x={-12} y={-3} width={24} height={5} rx={2.5} fill="#ffffff" />
 							</g>
 						</>
 					)}
 
-					<ellipse cx={-HEAD_R * 0.32} cy={0} rx={7.5 * expr.eyeScale} ry={9 * expr.eyeScale} fill="#ffffff" />
-					<ellipse cx={HEAD_R * 0.32} cy={0} rx={7.5 * expr.eyeScale} ry={9 * expr.eyeScale} fill="#ffffff" />
+					<g transform={`translate(${-HEAD_R * 0.32} 0) scale(1 ${blinkScale})`}>
+						<ellipse cx={0} cy={0} rx={7.5 * face.eyeScale} ry={9 * face.eyeScale} fill="#ffffff" />
+					</g>
+					<g transform={`translate(${HEAD_R * 0.32} 0) scale(1 ${blinkScale})`}>
+						<ellipse cx={0} cy={0} rx={7.5 * face.eyeScale} ry={9 * face.eyeScale} fill="#ffffff" />
+					</g>
 
-					<path d={expr.mouth} transform="translate(0 15)" stroke="#ffffff" strokeWidth={4} strokeLinecap="round" fill="none" />
+					<path d={mouth} transform="translate(0 15)" fill="#ffffff" />
 				</g>
 			</g>
 		</svg>
