@@ -9,7 +9,8 @@ import {
   staticFile,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { Character, type Expression } from "./Character";
+import { Character, type Expression, type CharacterProps } from "./Character";
+import insomniaBeatsData from "./insomniaBeats.json";
 
 export const MyComposition = () => {
   return (
@@ -34,6 +35,15 @@ export const MyComposition = () => {
         id="SleepDemo30s"
         component={SleepDemo30s}
         durationInFrames={1000}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {/* durationInFrames = 90 (lead-in) + ceil(620.88s * 30fps) + 180 (outro) ≈ 18897, padded slightly */}
+      <Composition
+        id="InsomniaFullES"
+        component={InsomniaFullES}
+        durationInFrames={18900}
         fps={30}
         width={1920}
         height={1080}
@@ -229,13 +239,17 @@ const SyncedCaptions: React.FC<{cues: CaptionCue[]; offsetFrames: number}> = ({
   );
 };
 
-const HoursCounter: React.FC<{startHour: number; endHour: number}> = ({
+// `duration` must be passed explicitly (the enclosing Sequence's own
+// durationInFrames) - useVideoConfig() returns the ROOT composition's
+// duration, not the Sequence's, so interpolating against it made the
+// counter barely move within any scene shorter than the whole video.
+const HoursCounter: React.FC<{startHour: number; endHour: number; duration: number}> = ({
   startHour,
   endHour,
+  duration,
 }) => {
   const frame = useCurrentFrame();
-  const {durationInFrames} = useVideoConfig();
-  const hours = interpolate(frame, [0, durationInFrames], [startHour, endHour], {
+  const hours = interpolate(frame, [0, duration], [startHour, endHour], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -504,6 +518,155 @@ const FactCard: React.FC = () => {
   );
 };
 
+// --- Components for the long-form ES documentary (InsomniaFullES) ---
+
+// Plain dark backdrop for "direct to camera" narrator beats (hook, transition
+// questions, closing CTA) - no bedroom, just the character and a soft vignette,
+// so these read as distinct shot types from the bed scenes instead of reusing
+// the same room for everything.
+const VoidStage: React.FC<{children?: React.ReactNode}> = ({children}) => (
+  <AbsoluteFill style={{backgroundColor: "#0a0c16"}}>
+    <div
+      style={{
+        position: "absolute",
+        left: 960 - 500,
+        top: 540 - 500,
+        width: 1000,
+        height: 1000,
+        borderRadius: "50%",
+        background:
+          "radial-gradient(circle, rgba(90,110,170,0.3) 0%, rgba(90,110,170,0.1) 45%, rgba(90,110,170,0) 72%)",
+      }}
+    />
+    {children}
+  </AbsoluteFill>
+);
+
+// Day counter, same mechanics as HoursCounter but for the multi-week time
+// jumps in the documentary section (duration = the enclosing Sequence's own
+// durationInFrames, never the root composition's).
+const DayCounter: React.FC<{startDay: number; endDay: number; duration: number}> = ({
+  startDay,
+  endDay,
+  duration,
+}) => {
+  const frame = useCurrentFrame();
+  const day = interpolate(frame, [0, duration], [startDay, endDay], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 50,
+        right: 60,
+        background: "rgba(10,10,20,0.6)",
+        border: "2px solid #FFD400",
+        borderRadius: 14,
+        padding: "14px 24px",
+        color: "#ffffff",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{fontSize: 22, opacity: 0.75, letterSpacing: 1}}>DÍAS SIN DORMIR</div>
+      <div style={{fontSize: 44, fontWeight: 900, color: "#FFD400"}}>{Math.floor(day)}</div>
+    </div>
+  );
+};
+
+// Flexible fact/explainer card - eyebrow label + title + optional body line,
+// reused for the science/history sections instead of hand-building a unique
+// layout per fact.
+const InfoCard: React.FC<{eyebrow: string; title: string; body?: string}> = ({eyebrow, title, body}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const scale = interpolate(frame, [0, 0.3 * fps], [0.85, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+    output: "perceptual-scale",
+  });
+  const opacity = interpolate(frame, [0, 0.3 * fps], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060a", justifyContent: "center", alignItems: "center"}}>
+      <div style={{opacity, scale, textAlign: "center", maxWidth: 1500, padding: "0 60px"}}>
+        <div
+          style={{
+            display: "inline-block",
+            border: "2px solid #FFD400",
+            borderRadius: 999,
+            padding: "8px 24px",
+            color: "#FFD400",
+            fontFamily: "sans-serif",
+            fontWeight: 700,
+            fontSize: 24,
+            marginBottom: 24,
+          }}
+        >
+          {eyebrow}
+        </div>
+        <div style={{color: "#ffffff", fontFamily: "sans-serif", fontWeight: 900, fontSize: 58, lineHeight: 1.2, whiteSpace: "pre-line"}}>
+          {title}
+        </div>
+        {body && (
+          <div style={{color: "#b8bfe0", fontFamily: "sans-serif", fontWeight: 500, fontSize: 30, marginTop: 28, lineHeight: 1.4}}>
+            {body}
+          </div>
+        )}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// Side-profile brain outline with the thalamus highlighted and a progressive
+// "erosion" of damage dots (0 = healthy, 1 = riddled with holes) - the one
+// piece of genuine medical visualization in the science section instead of
+// just text cards back to back.
+const BrainDiagram: React.FC<{erosion: number}> = ({erosion}) => {
+  const holes = Array.from({length: 14}, (_, i) => {
+    const angle = (i / 14) * Math.PI * 2;
+    const r = 28 + (i % 3) * 10;
+    return {
+      cx: Math.cos(angle) * r,
+      cy: Math.sin(angle) * r * 0.75,
+      show: erosion > i / 14,
+    };
+  });
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060a", justifyContent: "center", alignItems: "center"}}>
+      <svg width="620" height="620" viewBox="-200 -200 400 400">
+        <path
+          d="M -90 -20 C -95 -70 -50 -110 0 -108 C 55 -110 100 -70 95 -15
+             C 115 0 112 35 90 45 C 95 70 70 90 45 82 C 35 100 5 105 -10 88
+             C -40 100 -75 80 -75 50 C -100 45 -105 10 -90 -20 Z"
+          fill="none"
+          stroke="#6d7bd6"
+          strokeWidth={5}
+        />
+        {/* thalamus - small highlighted core at the brain's center */}
+        <ellipse cx={0} cy={-10} rx={42} ry={26} fill="#FFD400" opacity={0.85} />
+        <text x={0} y={-10} textAnchor="middle" dominantBaseline="middle" fontSize={11} fontWeight={900} fontFamily="sans-serif" fill="#1a1a1a">
+          TÁLAMO
+        </text>
+        {holes.map((h, i) => (
+          <circle
+            key={i}
+            cx={h.cx}
+            cy={h.cy - 10}
+            r={5}
+            fill="#05060a"
+            opacity={h.show ? 1 : 0}
+          />
+        ))}
+      </svg>
+    </AbsoluteFill>
+  );
+};
+
 // Timings copied verbatim from the extended "night 1 montage" order's subtitles.srt (audio-relative seconds).
 const CAPTION_CUES: CaptionCue[] = [
   {fromSec: 0.0, toSec: 2.64, text: "Представь: однажды ночью ты просто"},
@@ -654,9 +817,9 @@ export const SleepDemo30s: React.FC = () => {
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               <Blanket />
               <NightBadge n={1} atFrame={40} />
-              <HoursCounter startHour={0} endHour={0.1} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={0} endHour={0.1} duration={123} />
         </SceneFade>
       </Sequence>
 
@@ -668,9 +831,9 @@ export const SleepDemo30s: React.FC = () => {
               <RestPillow headX={620} headY={698} />
               <Character x={620} y={740} scale={1.3} expression="tired" armRaise={0.95} faceTilt={-6} prop="phone" stillness />
               <Blanket />
-              <HoursCounter startHour={0.1} endHour={1} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={0.1} endHour={1} duration={139} />
         </SceneFade>
       </Sequence>
 
@@ -682,9 +845,9 @@ export const SleepDemo30s: React.FC = () => {
               <RestPillow headX={560} headY={718} />
               <Character x={560} y={760} scale={1.3} expression="tired" bobbing />
               <Blanket />
-              <HoursCounter startHour={1} endHour={2} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={1} endHour={2} duration={52} />
         </SceneFade>
       </Sequence>
 
@@ -697,9 +860,9 @@ export const SleepDemo30s: React.FC = () => {
               <RestPillow headX={560} headY={718} />
               <Character x={560} y={760} scale={1.3} expression="angry" toss />
               <Blanket />
-              <HoursCounter startHour={2} endHour={3} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={2} endHour={3} duration={123} />
         </SceneFade>
       </Sequence>
 
@@ -712,9 +875,9 @@ export const SleepDemo30s: React.FC = () => {
               <Character x={560} y={760} scale={1.3} expression="tired" armRaise={0.85} faceTilt={-5} stillness />
               <Blanket />
               <PillowCover startFrame={15} headX={560} headY={718} />
-              <HoursCounter startHour={3} endHour={4} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={3} endHour={4} duration={119} />
         </SceneFade>
       </Sequence>
 
@@ -726,9 +889,9 @@ export const SleepDemo30s: React.FC = () => {
               <RestPillow headX={560} headY={698} />
               <Character x={560} y={740} scale={1.3} expression="tired" armRaise={0.9} faceTilt={-3} stillness />
               <Blanket />
-              <HoursCounter startHour={4} endHour={4.5} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={4} endHour={4.5} duration={36} />
         </SceneFade>
       </Sequence>
 
@@ -739,9 +902,9 @@ export const SleepDemo30s: React.FC = () => {
           <CameraCloser x={560} y={650} zoom={1.9}>
             <Bedroom>
               <Character x={560} y={740} scale={1.3} expression="angry" faceTilt={4} stillness />
-              <HoursCounter startHour={4.5} endHour={5} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={4.5} endHour={5} duration={27} />
         </SceneFade>
       </Sequence>
 
@@ -752,9 +915,9 @@ export const SleepDemo30s: React.FC = () => {
             <Bedroom>
               <Character x={480} y={720} scale={1.3} expression="shocked" armRaise={1} faceTilt={5} stillness />
               <NightstandLamp onFrame={0} />
-              <HoursCounter startHour={5} endHour={24} />
-            </Bedroom>
+              </Bedroom>
           </CameraCloser>
+          <HoursCounter startHour={5} endHour={24} duration={109} />
         </SceneFade>
       </Sequence>
 
@@ -767,6 +930,251 @@ export const SleepDemo30s: React.FC = () => {
 
       {/* captions run on top of everything, synced to the real audio timings */}
       <SyncedCaptions cues={CAPTION_CUES} offsetFrames={AUDIO_START_FRAME} />
+    </AbsoluteFill>
+  );
+};
+
+// --- InsomniaFullES: ~10min ES documentary, built from the real TTS timing ---
+
+type InsomniaBeat = {
+  para_index: number;
+  text: string;
+  from_sec: number;
+  to_sec: number;
+  cues: {fromSec: number; toSec: number; text: string}[];
+};
+const INSOMNIA_BEATS = insomniaBeatsData as InsomniaBeat[];
+const INSOMNIA_AUDIO_START = 90; // 3s lead-in before the voice starts, same pattern as SleepDemo30s
+const INSOMNIA_AUDIO_DURATION_SEC = 620.88;
+
+// One visual treatment per script paragraph (indexed by para_index) - keeps
+// 27 scenes' worth of staging in one data table instead of hand-duplicating
+// Sequence/CameraCloser/Bedroom JSX 27 times.
+type BeatVisual =
+  | {type: "void"; expr: Expression; armRaise?: number; faceTilt?: number}
+  | {
+      type: "bed";
+      x: number;
+      y: number;
+      zoom: number;
+      pose: Partial<CharacterProps>;
+      dayRange?: [number, number];
+      pillow?: boolean;
+      blanket?: boolean;
+      lamp?: boolean;
+    }
+  | {type: "brain"; erosion: number}
+  | {type: "info"; eyebrow: string; title: string; body?: string};
+
+const INSOMNIA_VISUALS: BeatVisual[] = [
+  /* 0  hook pt1 */ {type: "void", expr: "scared"},
+  /* 1  hook pt2 */ {type: "void", expr: "tired"},
+  /* 2  Noche uno */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", bobbing: true},
+    dayRange: [0, 0.5], pillow: true, blanket: true,
+  },
+  /* 3  Silvano 1984 */ {
+    type: "bed", x: 620, y: 740, zoom: 1.55,
+    pose: {expression: "tired", armRaise: 0.3, faceTilt: -6, stillness: true},
+    pillow: true, blanket: true,
+  },
+  /* 4  "la maldición" */ {
+    type: "bed", x: 560, y: 720, zoom: 1.65,
+    pose: {expression: "scared", stillness: true},
+    pillow: true, blanket: true,
+  },
+  /* 5  Día tres */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", bobbing: true},
+    dayRange: [3, 3.5], pillow: true, blanket: true,
+  },
+  /* 6  Día siete */ {
+    type: "bed", x: 560, y: 720, zoom: 1.7,
+    pose: {expression: "scared", stillness: true},
+    dayRange: [7, 7.5], pillow: true, blanket: true,
+  },
+  /* 7  Día quince */ {
+    type: "bed", x: 560, y: 700, zoom: 1.75,
+    pose: {expression: "shocked", stillness: true},
+    dayRange: [15, 15.5], pillow: true, blanket: true,
+  },
+  /* 8  Día treinta */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", armRaise: 0.2, stillness: true},
+    dayRange: [30, 30.5], pillow: true, blanket: true,
+  },
+  /* 9  transition question */ {type: "void", expr: "scared"},
+  /* 10 tálamo */ {type: "brain", erosion: 0.15},
+  /* 11 "¿qué lo está destruyendo?" */ {type: "void", expr: "scared"},
+  /* 12 prión explanation */ {type: "brain", erosion: 0.5},
+  /* 13 vacas locas / CJD / hereditary */ {
+    type: "info",
+    eyebrow: "ENFERMEDADES PRIÓNICAS",
+    title: "La misma familia que las\nvacas locas y Creutzfeldt-Jakob",
+    body: "Hereditaria · 50% de probabilidad · rastreada hasta 1765",
+  },
+  /* 14 Lugaresi / Gambetti */ {
+    type: "info",
+    eyebrow: "EL DESCUBRIMIENTO",
+    title: "Bolonia, 1986 → mutación\nidentificada en 1992",
+    body: "Dr. Elio Lugaresi · Dr. Pierluigi Gambetti",
+  },
+  /* 15 esporádico */ {
+    type: "info",
+    eyebrow: "UNA VARIANTE AÚN MÁS RARA",
+    title: "Insomnio Fatal Esporádico",
+    body: "Sin antecedentes familiares · aparece al azar · mismo desenlace",
+  },
+  /* 16 Día 45 */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", stillness: true},
+    dayRange: [45, 45.5], pillow: true, blanket: true,
+  },
+  /* 17 coma inducido */ {
+    type: "bed", x: 480, y: 680, zoom: 1.85,
+    pose: {expression: "scared", armRaise: 0.5, stillness: true},
+    pillow: false, blanket: false, lamp: true,
+  },
+  /* 18 Día 60 */ {
+    type: "bed", x: 560, y: 760, zoom: 1.6,
+    pose: {expression: "tired", stillness: true},
+    dayRange: [60, 60.5], pillow: true, blanket: true,
+  },
+  /* 19 Día 90 */ {
+    type: "bed", x: 560, y: 740, zoom: 1.65,
+    pose: {expression: "tired", faceTilt: -4, stillness: true},
+    dayRange: [90, 90.5], pillow: true, blanket: true,
+  },
+  /* 20 Día 120 */ {
+    type: "bed", x: 560, y: 720, zoom: 1.7,
+    pose: {expression: "tired", faceTilt: 3, stillness: true},
+    dayRange: [120, 120.5], pillow: true, blanket: true,
+  },
+  /* 21 priones no son organismos vivos */ {
+    type: "info",
+    eyebrow: "POR QUÉ NO HAY CURA",
+    title: "Los priones no son\norganismos vivos",
+    body: "Nada vivo que matar · el sistema inmune no los reconoce · casi indestructibles",
+  },
+  /* 22 CRISPR / doxiciclina */ {
+    type: "info",
+    eyebrow: "INVESTIGACIÓN ACTUAL",
+    title: "CRISPR y terapia génica\nexperimental",
+    body: "Ensayos con doxiciclina · aún sin cura confirmada",
+  },
+  /* 23 7-36 meses */ {
+    type: "info",
+    eyebrow: "PRONÓSTICO",
+    title: "7–36 meses",
+    body: "desde el primer síntoma hasta la muerte",
+  },
+  /* 24 <100 familias */ {
+    type: "info",
+    eyebrow: "UNA ENFERMEDAD EXTREMADAMENTE RARA",
+    title: "Menos de 100 familias",
+    body: "conocidas en todo el planeta",
+  },
+  /* 25 closing reflection */ {type: "void", expr: "tired"},
+  /* 26 CTA */ {type: "void", expr: "scared"},
+];
+
+const InsomniaBeatScene: React.FC<{visual: BeatVisual; duration: number}> = ({visual, duration}) => {
+  if (visual.type === "void") {
+    return (
+      <SceneFade duration={duration}>
+        <VoidStage>
+          <Character
+            x={960}
+            y={760}
+            scale={1.5}
+            expression={visual.expr}
+            armRaise={visual.armRaise ?? 0}
+            faceTilt={visual.faceTilt ?? 0}
+            bobbing
+          />
+        </VoidStage>
+      </SceneFade>
+    );
+  }
+  if (visual.type === "bed") {
+    const scale = 1.3;
+    const headX = visual.x;
+    const headY = visual.y - 32 * scale;
+    return (
+      <SceneFade duration={duration}>
+        <CameraCloser x={visual.x} y={visual.y - 60} zoom={visual.zoom}>
+          <Bedroom>
+            {visual.pillow && <RestPillow headX={headX} headY={headY} />}
+            <Character x={visual.x} y={visual.y} scale={scale} {...visual.pose} />
+            {visual.blanket && <Blanket />}
+            {visual.lamp && <NightstandLamp onFrame={0} />}
+          </Bedroom>
+        </CameraCloser>
+        {/* counter lives outside CameraCloser - that group is scaled/translated
+            for the camera push-in, which would otherwise fling a fixed-corner
+            UI element far off screen instead of keeping it pinned in place */}
+        {visual.dayRange && (
+          <DayCounter startDay={visual.dayRange[0]} endDay={visual.dayRange[1]} duration={duration} />
+        )}
+      </SceneFade>
+    );
+  }
+  if (visual.type === "brain") {
+    return (
+      <SceneFade duration={duration}>
+        <BrainDiagram erosion={visual.erosion} />
+      </SceneFade>
+    );
+  }
+  return (
+    <SceneFade duration={duration}>
+      <InfoCard eyebrow={visual.eyebrow} title={visual.title} body={visual.body} />
+    </SceneFade>
+  );
+};
+
+export const InsomniaFullES: React.FC = () => {
+  const {fps} = useVideoConfig();
+  const allCues: CaptionCue[] = INSOMNIA_BEATS.flatMap((b) => b.cues);
+  const audioDurationFrames = Math.ceil(INSOMNIA_AUDIO_DURATION_SEC * fps);
+
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060a"}}>
+      <Sequence from={0} durationInFrames={INSOMNIA_AUDIO_START}>
+        <VoidStage>
+          <Character x={960} y={780} scale={1.6} expression="scared" bobbing />
+        </VoidStage>
+      </Sequence>
+
+      <Sequence from={INSOMNIA_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
+        <Audio src={staticFile("voice_insomnia_es.mp3")} />
+      </Sequence>
+
+      {INSOMNIA_BEATS.map((beat, i) => {
+        const visual = INSOMNIA_VISUALS[beat.para_index];
+        const fromFrame = INSOMNIA_AUDIO_START + Math.round(beat.from_sec * fps);
+        // Each beat's shot holds through to the START of the next beat (not
+        // just to its own last caption cue) so there's no silent gap/flash
+        // between paragraphs during the natural pause in the narration.
+        const nextFromSec =
+          i + 1 < INSOMNIA_BEATS.length ? INSOMNIA_BEATS[i + 1].from_sec : INSOMNIA_AUDIO_DURATION_SEC;
+        const toFrame = INSOMNIA_AUDIO_START + Math.round(nextFromSec * fps);
+        const duration = Math.max(1, toFrame - fromFrame);
+        return (
+          <Sequence key={beat.para_index} from={fromFrame} durationInFrames={duration}>
+            <InsomniaBeatScene visual={visual} duration={duration} />
+          </Sequence>
+        );
+      })}
+
+      <Sequence from={INSOMNIA_AUDIO_START + audioDurationFrames} durationInFrames={180}>
+        <SceneFade duration={180} zoomTo={1.1}>
+          <InfoCard eyebrow="INSOMNIO FAMILIAR FATAL" title="Una enfermedad real." body="Gracias por ver hasta el final." />
+        </SceneFade>
+      </Sequence>
+
+      <SyncedCaptions cues={allCues} offsetFrames={INSOMNIA_AUDIO_START} />
     </AbsoluteFill>
   );
 };
