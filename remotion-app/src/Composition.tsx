@@ -1757,6 +1757,38 @@ const PARALLAX_CAPTIONS: CaptionCue[] = [
 const PARALLAX_AUDIO_START = 15; // 0.5s, just enough for a clean fade-in, no dead air
 const PARALLAX_AUDIO_DURATION_SEC = 18.56;
 
+// "2D character in a 3D-feeling world": the layers themselves only ever
+// slide horizontally (that's PARALLAX_TOTAL_DIST/worldX above - the walk
+// forward). What was missing was a CAMERA that moves independently of that
+// walk - zoom, vertical pan, dutch tilt, hard cuts - the same shot-switching
+// trick used in ThreeTest's real 3D camera, done here with a single CSS
+// transform wrapped around the whole parallax stack instead of a WebGL
+// camera object. scale never drops below 1 (and rotated shots keep enough
+// scale margin) so a tilt/zoom never exposes empty canvas at the corners.
+type CameraShot = {
+  fromSec: number;
+  toSec: number;
+  scaleFrom: number;
+  scaleTo: number;
+  rotateDeg: number;
+  originX: string;
+  originY: string;
+  panX: number;
+  panY: number;
+};
+const CAMERA_SHOTS: CameraShot[] = [
+  // Shot 1 (hook): slow creeping push-in, dead center - lets the walk cycle read clean first.
+  {fromSec: 0, toSec: 4.0, scaleFrom: 1.0, scaleTo: 1.08, rotateDeg: 0, originX: "50%", originY: "58%", panX: 0, panY: 0},
+  // Shot 2 (hard cut): dutch tilt + push further in on "navsegda" - first jolt.
+  {fromSec: 4.0, toSec: 6.9, scaleFrom: 1.18, scaleTo: 1.28, rotateDeg: -3, originX: "47%", originY: "55%", panX: -20, panY: 0},
+  // Shot 3 (hard cut): pulls back out, drifts right - "days passing" reads as the camera itself drifting past him.
+  {fromSec: 6.9, toSec: 10.3, scaleFrom: 1.05, scaleTo: 1.12, rotateDeg: 0, originX: "53%", originY: "60%", panX: 35, panY: -6},
+  // Shot 4 (hard cut): crash-zoom on the face for the diagnosis reveal.
+  {fromSec: 10.3, toSec: 14.0, scaleFrom: 1.7, scaleTo: 1.9, rotateDeg: 2, originX: "50%", originY: "49%", panX: 0, panY: -10},
+  // Shot 5 (hard cut): pulls back wide again, opposite tilt, for the closing lines.
+  {fromSec: 14.0, toSec: 18.6, scaleFrom: 1.08, scaleTo: 1.18, rotateDeg: 2, originX: "50%", originY: "58%", panX: -18, panY: 0},
+];
+
 export const ParallaxTest30s: React.FC = () => {
   const {fps} = useVideoConfig();
   const frame = useCurrentFrame();
@@ -1771,6 +1803,9 @@ export const ParallaxTest30s: React.FC = () => {
 
   const localSec = localFrame / fps;
   const beat = PARALLAX_BEATS.find((b) => localSec >= b.fromSec && localSec < b.toSec) ?? PARALLAX_BEATS[PARALLAX_BEATS.length - 1];
+  const shot = CAMERA_SHOTS.find((s) => localSec >= s.fromSec && localSec < s.toSec) ?? CAMERA_SHOTS[CAMERA_SHOTS.length - 1];
+  const shotProgress = interpolate(localSec, [shot.fromSec, shot.toSec], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  const camScale = interpolate(shotProgress, [0, 1], [shot.scaleFrom, shot.scaleTo], {easing: Easing.inOut(Easing.ease)});
 
   return (
     <AbsoluteFill style={{backgroundColor: "#05060e"}}>
@@ -1778,17 +1813,26 @@ export const ParallaxTest30s: React.FC = () => {
         <Audio src={staticFile("voice_ru_mike.mp3")} />
       </Sequence>
 
-      <ParallaxNightCity worldX={worldX}>
-        <Character
-          x={960}
-          y={700}
-          scale={1.35}
-          expression={beat.expr}
-          armRaise={beat.armRaise ?? 0}
-          faceTilt={beat.faceTilt ?? 0}
-          walking
-        />
-      </ParallaxNightCity>
+      <AbsoluteFill
+        style={{
+          transform: `translate(${shot.panX}px, ${shot.panY}px) rotate(${shot.rotateDeg}deg) scale(${camScale})`,
+          transformOrigin: `${shot.originX} ${shot.originY}`,
+        }}
+      >
+        <ParallaxNightCity worldX={worldX}>
+          <Character
+            x={960}
+            y={700}
+            scale={1.35}
+            expression={beat.expr}
+            armRaise={beat.armRaise ?? 0}
+            faceTilt={beat.faceTilt ?? 0}
+            walking
+          />
+        </ParallaxNightCity>
+      </AbsoluteFill>
+
+      {localSec >= 10.3 && <StampText text="ДИАГНОЗ" startFrame={PARALLAX_AUDIO_START + Math.round(10.6 * fps)} />}
 
       <SyncedCaptions cues={PARALLAX_CAPTIONS} offsetFrames={PARALLAX_AUDIO_START} />
     </AbsoluteFill>
