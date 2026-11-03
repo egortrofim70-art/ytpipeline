@@ -12,6 +12,7 @@ import { Audio } from "@remotion/media";
 import { Character, type Expression, type CharacterProps } from "./Character";
 import insomniaBeatsData from "./insomniaBeats.json";
 import painBeatsData from "./painBeats.json";
+import { ThreeTest30s } from "./ThreeTest";
 
 export const MyComposition = () => {
   return (
@@ -61,6 +62,14 @@ export const MyComposition = () => {
       <Composition
         id="ParallaxTest30s"
         component={ParallaxTest30s}
+        durationInFrames={660}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="ThreeTest30s"
+        component={ThreeTest30s}
         durationInFrames={660}
         fps={30}
         width={1920}
@@ -1690,7 +1699,12 @@ const ParallaxNightCity: React.FC<{worldX: number; children?: React.ReactNode}> 
           rooftop ledge near the start, a bench mid-journey, a lamppost near
           the end - this is what actually sells "he's going somewhere" */}
       <div style={{position: "absolute", inset: 0, transform: `translateX(${nearShift}px)`}}>
-        <div style={{position: "absolute", left: 0, right: -5000, bottom: 0, height: 140, background: "#0c0f1f"}} />
+        {/* visibly lighter than the sky, with a lit top edge line, so the
+            ground plane actually reads as a surface instead of blending
+            into the background - previously both were near-black and the
+            character looked like he had nothing under him */}
+        <div style={{position: "absolute", left: 0, right: -5000, bottom: 0, height: 140, background: "#232a44"}} />
+        <div style={{position: "absolute", left: 0, right: -5000, bottom: 138, height: 3, background: "#3a4468"}} />
         {/* rooftop ledge, screen-centered near worldX=0 */}
         <div style={{position: "absolute", left: 760, bottom: 100, width: 420, height: 24, background: "#23294a"}} />
         <div style={{position: "absolute", left: 760, bottom: 100, width: 14, height: 90, background: "#23294a"}} />
