@@ -319,31 +319,54 @@ const SceneFade: React.FC<{children: React.ReactNode; duration: number; zoomFrom
 // Simulates a closer camera shot: scales the whole scene up around a fixed
 // point instead of a plain "zoom the character bigger", so the framing
 // actually feels like different cuts/angles between scenes.
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
 const FRAME_W = 1920;
 const FRAME_H = 1080;
 
-const CameraCloser: React.FC<{x: number; y: number; zoom: number; children: React.ReactNode}> = ({
-  x,
-  y,
-  zoom,
-  children,
-}) => (
+// panTo + duration turn this into an actual moving camera (drift to a second
+// framing over the shot) instead of a locked-off static shot with only
+// SceneFade's barely-perceptible centered Ken Burns - needed for any beat
+// long enough (10s+) that a fixed frame reads as "nothing is happening",
+// e.g. a 20s running shot where the character jogs in place against a
+// motionless camera.
+const CameraCloser: React.FC<{
+  x: number;
+  y: number;
+  zoom: number;
+  panTo?: {x: number; y: number; zoom?: number};
+  duration?: number;
+  children: React.ReactNode;
+}> = ({x, y, zoom, panTo, duration, children}) => {
+  const frame = useCurrentFrame();
+  const t = panTo && duration
+    ? interpolate(frame, [0, duration], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+        easing: Easing.bezier(0.4, 0, 0.6, 1),
+      })
+    : 0;
+  const cx = panTo ? lerp(x, panTo.x, t) : x;
+  const cy = panTo ? lerp(y, panTo.y, t) : y;
+  const cz = panTo ? lerp(zoom, panTo.zoom ?? zoom, t) : zoom;
   // scale() around transformOrigin pins (x,y) at its OWN screen coordinate -
   // it does not recenter it. The translate() afterward (applied in the
   // already-scaled space, i.e. second) carries that pinned point from (x,y)
   // to the actual frame centre, so the focus subject ends up centred
   // instead of stuck wherever it happened to be laid out in the scene.
-  <div
-    style={{
-      position: "absolute",
-      inset: 0,
-      transform: `translate(${FRAME_W / 2 - x}px, ${FRAME_H / 2 - y}px) scale(${zoom})`,
-      transformOrigin: `${x}px ${y}px`,
-    }}
-  >
-    {children}
-  </div>
-);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        transform: `translate(${FRAME_W / 2 - cx}px, ${FRAME_H / 2 - cy}px) scale(${cz})`,
+        transformOrigin: `${cx}px ${cy}px`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Bedroom: React.FC<{children?: React.ReactNode}> = ({children}) => (
   <AbsoluteFill style={{backgroundColor: "#1c2440"}}>
@@ -725,18 +748,66 @@ const InfoCard: React.FC<{eyebrow: string; title: string; body?: string}> = ({ey
   );
 };
 
+// Bold kinetic word-stamp that pops in over a scene, holds, then fades -
+// the "НЕ ЖАЛКО"-style punctuation beat from the reference channel: a
+// one-word punchline slammed over the action instead of only relying on
+// spoken narration + captions to land a beat.
+const StampText: React.FC<{text: string; startFrame: number; color?: string}> = ({text, startFrame, color = "#FFD400"}) => {
+  const frame = useCurrentFrame();
+  const local = frame - startFrame;
+  if (local < 0 || local > 50) return null;
+  const scale = interpolate(local, [0, 6, 10], [0.4, 1.15, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.34, 1.56, 0.64, 1),
+    output: "perceptual-scale",
+  });
+  const rotate = interpolate(local, [0, 6], [-8, -3], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  const opacity = interpolate(local, [0, 4, 40, 50], [0, 1, 1, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  return (
+    <AbsoluteFill style={{justifyContent: "center", alignItems: "center", pointerEvents: "none"}}>
+      <div
+        style={{
+          opacity,
+          scale,
+          rotate: `${rotate}deg`,
+          color,
+          fontFamily: "sans-serif",
+          fontWeight: 900,
+          fontSize: 110,
+          textTransform: "uppercase",
+          textShadow: "0 6px 0 rgba(0,0,0,0.35)",
+          WebkitTextStroke: "4px #05060a",
+          paintOrder: "stroke fill",
+        }}
+      >
+        {text}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 // Side-profile brain outline with the thalamus highlighted and a progressive
 // "erosion" of damage dots (0 = healthy, 1 = riddled with holes) - the one
 // piece of genuine medical visualization in the science section instead of
 // just text cards back to back.
-const BrainDiagram: React.FC<{erosion: number}> = ({erosion}) => {
+// `erosion` is the TARGET value reached by the end of the shot - holes
+// appear progressively from 0 over `duration` instead of the whole diagram
+// sitting frozen at its final state for the entire beat (which, at 20-35s
+// per beat, read as a single static screenshot with a mild zoom).
+const BrainDiagram: React.FC<{erosion: number; duration: number}> = ({erosion, duration}) => {
+  const frame = useCurrentFrame();
+  const liveErosion = interpolate(frame, [duration * 0.15, duration * 0.9], [0, erosion], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   const holes = Array.from({length: 14}, (_, i) => {
     const angle = (i / 14) * Math.PI * 2;
     const r = 28 + (i % 3) * 10;
     return {
       cx: Math.cos(angle) * r,
       cy: Math.sin(angle) * r * 0.75,
-      show: erosion > i / 14,
+      show: liveErosion > i / 14,
     };
   });
   return (
@@ -1047,14 +1118,17 @@ type InsomniaBeat = {
   cues: {fromSec: number; toSec: number; text: string}[];
 };
 const INSOMNIA_BEATS = insomniaBeatsData as InsomniaBeat[];
-const INSOMNIA_AUDIO_START = 90; // 3s lead-in before the voice starts, same pattern as SleepDemo30s
+// Was 90 (3s dead idle before anything happens) - same fix as PainFullES,
+// confirmed by a reviewed reference channel's retention data: viewers drop
+// before second 1, so no silent lead-in, ever.
+const INSOMNIA_AUDIO_START = 3;
 const INSOMNIA_AUDIO_DURATION_SEC = 620.88;
 
 // One visual treatment per script paragraph (indexed by para_index) - keeps
 // 27 scenes' worth of staging in one data table instead of hand-duplicating
 // Sequence/CameraCloser/Bedroom JSX 27 times.
 type BeatVisual =
-  | {type: "void"; expr: Expression; armRaise?: number; faceTilt?: number}
+  | {type: "void"; expr: Expression; armRaise?: number; faceTilt?: number; stamp?: string}
   | {
       type: "bed";
       x: number;
@@ -1065,9 +1139,11 @@ type BeatVisual =
       pillow?: boolean;
       blanket?: boolean;
       lamp?: boolean;
+      panTo?: {x: number; y: number; zoom?: number};
     }
   | {type: "brain"; erosion: number}
-  | {type: "info"; eyebrow: string; title: string; body?: string};
+  | {type: "info"; eyebrow: string; title: string; body?: string}
+  | {type: "info-sequence"; cards: {eyebrow: string; title: string; body?: string}[]};
 
 const INSOMNIA_VISUALS: BeatVisual[] = [
   /* 0  hook pt1 */ {type: "void", expr: "scared"},
@@ -1077,30 +1153,34 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
     pose: {expression: "tired", bobbing: true},
     dayRange: [0, 0.5], pillow: true, blanket: true,
   },
-  /* 3  Silvano 1984 */ {
+  /* 3  Silvano 1984 - 28s, needs camera drift, not a locked-off frame */ {
     type: "bed", x: 620, y: 740, zoom: 1.55,
     pose: {expression: "tired", armRaise: 0.3, faceTilt: -6, stillness: true},
     pillow: true, blanket: true,
+    panTo: {x: 540, y: 740, zoom: 1.8},
   },
-  /* 4  "la maldición" */ {
+  /* 4  "la maldición" - 26s */ {
     type: "bed", x: 560, y: 720, zoom: 1.65,
     pose: {expression: "scared", stillness: true},
     pillow: true, blanket: true,
+    panTo: {x: 620, y: 700, zoom: 1.85},
   },
   /* 5  Día tres */ {
     type: "bed", x: 560, y: 760, zoom: 1.6,
     pose: {expression: "tired", bobbing: true},
     dayRange: [3, 3.5], pillow: true, blanket: true,
   },
-  /* 6  Día siete */ {
+  /* 6  Día siete - 27s */ {
     type: "bed", x: 560, y: 720, zoom: 1.7,
     pose: {expression: "scared", stillness: true},
     dayRange: [7, 7.5], pillow: true, blanket: true,
+    panTo: {x: 500, y: 700, zoom: 1.9},
   },
-  /* 7  Día quince */ {
+  /* 7  Día quince - 27s */ {
     type: "bed", x: 560, y: 700, zoom: 1.75,
     pose: {expression: "shocked", stillness: true},
     dayRange: [15, 15.5], pillow: true, blanket: true,
+    panTo: {x: 620, y: 680, zoom: 1.95},
   },
   /* 8  Día treinta */ {
     type: "bed", x: 560, y: 760, zoom: 1.6,
@@ -1111,17 +1191,19 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
   /* 10 tálamo */ {type: "brain", erosion: 0.15},
   /* 11 "¿qué lo está destruyendo?" */ {type: "void", expr: "scared"},
   /* 12 prión explanation */ {type: "brain", erosion: 0.5},
-  /* 13 vacas locas / CJD / hereditary */ {
-    type: "info",
-    eyebrow: "ENFERMEDADES PRIÓNICAS",
-    title: "La misma familia que las\nvacas locas y Creutzfeldt-Jakob",
-    body: "Hereditaria · 50% de probabilidad · rastreada hasta 1765",
+  /* 13 vacas locas / CJD / hereditary - 33.5s, split into 2 cards */ {
+    type: "info-sequence",
+    cards: [
+      {eyebrow: "ENFERMEDADES PRIÓNICAS", title: "La misma familia que las\nvacas locas y Creutzfeldt-Jakob", body: "Todas son enfermedades priónicas"},
+      {eyebrow: "ÚNICA EN UN SENTIDO", title: "Es hereditaria", body: "50% de probabilidad · rastreada hasta 1765"},
+    ],
   },
-  /* 14 Lugaresi / Gambetti */ {
-    type: "info",
-    eyebrow: "EL DESCUBRIMIENTO",
-    title: "Bolonia, 1986 → mutación\nidentificada en 1992",
-    body: "Dr. Elio Lugaresi · Dr. Pierluigi Gambetti",
+  /* 14 Lugaresi / Gambetti - 36s, split into 2 cards */ {
+    type: "info-sequence",
+    cards: [
+      {eyebrow: "EL DESCUBRIMIENTO", title: "Bolonia, 1986", body: "Dr. Elio Lugaresi le puso nombre a la enfermedad"},
+      {eyebrow: "SEIS AÑOS DESPUÉS", title: "La mutación exacta,\nidentificada en 1992", body: "Dr. Pierluigi Gambetti"},
+    ],
   },
   /* 15 esporádico */ {
     type: "info",
@@ -1134,25 +1216,28 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
     pose: {expression: "tired", stillness: true},
     dayRange: [45, 45.5], pillow: true, blanket: true,
   },
-  /* 17 coma inducido */ {
+  /* 17 coma inducido - 37s, the single worst offender, needs the most drift */ {
     type: "bed", x: 480, y: 680, zoom: 1.85,
     pose: {expression: "scared", armRaise: 0.5, stillness: true},
     pillow: false, blanket: false, lamp: true,
+    panTo: {x: 560, y: 650, zoom: 2.1},
   },
   /* 18 Día 60 */ {
     type: "bed", x: 560, y: 760, zoom: 1.6,
     pose: {expression: "tired", stillness: true},
     dayRange: [60, 60.5], pillow: true, blanket: true,
   },
-  /* 19 Día 90 */ {
+  /* 19 Día 90 - 27s */ {
     type: "bed", x: 560, y: 740, zoom: 1.65,
     pose: {expression: "tired", faceTilt: -4, stillness: true},
     dayRange: [90, 90.5], pillow: true, blanket: true,
+    panTo: {x: 500, y: 720, zoom: 1.85},
   },
-  /* 20 Día 120 */ {
+  /* 20 Día 120 - 23s */ {
     type: "bed", x: 560, y: 720, zoom: 1.7,
     pose: {expression: "tired", faceTilt: 3, stillness: true},
     dayRange: [120, 120.5], pillow: true, blanket: true,
+    panTo: {x: 610, y: 700, zoom: 1.9},
   },
   /* 21 priones no son organismos vivos */ {
     type: "info",
@@ -1189,13 +1274,14 @@ const InsomniaBeatScene: React.FC<{visual: BeatVisual; duration: number}> = ({vi
         <VoidStage>
           <Character
             x={960}
-            y={760}
+            y={620}
             scale={1.5}
             expression={visual.expr}
             armRaise={visual.armRaise ?? 0}
             faceTilt={visual.faceTilt ?? 0}
             bobbing
           />
+          {visual.stamp && <StampText text={visual.stamp} startFrame={8} />}
         </VoidStage>
       </SceneFade>
     );
@@ -1206,7 +1292,13 @@ const InsomniaBeatScene: React.FC<{visual: BeatVisual; duration: number}> = ({vi
     const headY = visual.y - 32 * scale;
     return (
       <SceneFade duration={duration}>
-        <CameraCloser x={visual.x} y={visual.y - 60} zoom={visual.zoom}>
+        <CameraCloser
+          x={visual.x}
+          y={visual.y - 60}
+          zoom={visual.zoom}
+          panTo={visual.panTo ? {x: visual.panTo.x, y: visual.panTo.y - 60, zoom: visual.panTo.zoom} : undefined}
+          duration={duration}
+        >
           <Bedroom>
             {visual.pillow && <RestPillow headX={headX} headY={headY} />}
             <Character x={visual.x} y={visual.y} scale={scale} {...visual.pose} />
@@ -1226,8 +1318,22 @@ const InsomniaBeatScene: React.FC<{visual: BeatVisual; duration: number}> = ({vi
   if (visual.type === "brain") {
     return (
       <SceneFade duration={duration}>
-        <BrainDiagram erosion={visual.erosion} />
+        <BrainDiagram erosion={visual.erosion} duration={duration} />
       </SceneFade>
+    );
+  }
+  if (visual.type === "info-sequence") {
+    const segDuration = Math.floor(duration / visual.cards.length);
+    return (
+      <>
+        {visual.cards.map((card, i) => (
+          <Sequence key={i} from={i * segDuration} durationInFrames={i === visual.cards.length - 1 ? duration - i * segDuration : segDuration}>
+            <SceneFade duration={i === visual.cards.length - 1 ? duration - i * segDuration : segDuration}>
+              <InfoCard eyebrow={card.eyebrow} title={card.title} body={card.body} />
+            </SceneFade>
+          </Sequence>
+        ))}
+      </>
     );
   }
   return (
@@ -1244,12 +1350,6 @@ export const InsomniaFullES: React.FC = () => {
 
   return (
     <AbsoluteFill style={{backgroundColor: "#05060a"}}>
-      <Sequence from={0} durationInFrames={INSOMNIA_AUDIO_START}>
-        <VoidStage>
-          <Character x={960} y={780} scale={1.6} expression="scared" bobbing />
-        </VoidStage>
-      </Sequence>
-
       <Sequence from={INSOMNIA_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
         <Audio src={staticFile("voice_insomnia_es.mp3")} />
       </Sequence>
@@ -1286,7 +1386,11 @@ export const InsomniaFullES: React.FC = () => {
 
 type PainBeat = InsomniaBeat;
 const PAIN_BEATS = painBeatsData as PainBeat[];
-const PAIN_AUDIO_START = 90;
+// Was 90 (3s of the character just idling before anything happens) - a
+// reviewed reference channel's videos all start on an intriguing moment
+// within the first frame, never dead air; 3 of silent idle is exactly the
+// "viewers drop before second 1" killer their own retention data flagged.
+const PAIN_AUDIO_START = 3;
 const PAIN_AUDIO_DURATION_SEC = 530.42;
 
 // Full-body standing anchor shared by every outdoor/indoor scene below (not
@@ -1298,27 +1402,39 @@ const PAIN_AUDIO_DURATION_SEC = 530.42;
 const STANDING_Y = 640;
 
 type PainVisual =
-  | {type: "void"; expr: Expression; running?: boolean; armRaise?: number; faceTilt?: number}
-  | {type: "park" | "kitchen" | "mirror" | "street"; x: number; zoom: number; pose: Partial<CharacterProps>}
+  | {type: "void"; expr: Expression; running?: boolean; armRaise?: number; faceTilt?: number; stamp?: string}
+  | {
+      type: "park" | "kitchen" | "mirror" | "street";
+      x: number; zoom: number; pose: Partial<CharacterProps>;
+      // optional camera drift to a second framing over the shot, instead of
+      // a locked-off static frame - needed once a beat runs 15s+
+      panTo?: {x: number; zoom?: number};
+    }
   | {
       type: "bed";
       x: number; y: number; zoom: number;
       pose: Partial<CharacterProps>;
       pillow?: boolean; blanket?: boolean; lamp?: boolean;
     }
-  | {type: "info"; eyebrow: string; title: string; body?: string};
+  | {type: "info"; eyebrow: string; title: string; body?: string}
+  // a long info beat (20s+) split into 2-3 cards shown in sequence instead
+  // of one card sitting frozen on screen for the whole beat
+  | {type: "info-sequence"; cards: {eyebrow: string; title: string; body?: string}[]};
 
 const PAIN_VISUALS: PainVisual[] = [
   /* 0  hook */ {type: "void", expr: "scared"},
-  /* 1  bicicleta, no duele */ {type: "void", expr: "happy", running: true},
-  /* 2  "suena como un superpoder" */ {type: "void", expr: "smug"},
+  /* 1  bicicleta, no duele */ {type: "void", expr: "happy", running: true, stamp: "CERO DOLOR"},
+  /* 2  "suena como un superpoder" */ {type: "void", expr: "smug", stamp: "¿SUPERPODER?"},
   /* 3  cae del resbaladilla, sigue jugando */ {type: "park", x: 960, zoom: 1.3, pose: {expression: "happy"}},
   /* 4  toca la olla hirviendo */ {type: "kitchen", x: 820, zoom: 1.35, pose: {expression: "neutral", armRaise: 0.6, faceTilt: -4}},
   /* 5  los padres se dan cuenta */ {type: "void", expr: "scared"},
   /* 6  explicación: señales de dolor no llegan */ {
     type: "info", eyebrow: "LA CAUSA", title: "Las señales de dolor nunca\nllegan al cerebro", body: "Insensibilidad congénita al dolor",
   },
-  /* 7  tobillo roto jugando al fútbol */ {type: "park", x: 960, zoom: 1.35, pose: {expression: "happy", running: true}},
+  /* 7  tobillo roto jugando al fútbol - 20s is too long for a locked-off
+         frame of someone jogging in place, so the camera actually drifts
+         across the scene instead of just sitting on a mild centered zoom */
+  {type: "park", x: 700, zoom: 1.35, pose: {expression: "happy", running: true}, panTo: {x: 1250, zoom: 1.55}},
   /* 8  la mayoría se equivoca */ {type: "void", expr: "smug"},
   /* 9  "sin esa alarma..." */ {type: "void", expr: "scared"},
   /* 10 inspeccionar el cuerpo */ {type: "mirror", x: 960, zoom: 1.3, pose: {expression: "tired", faceTilt: -3}},
@@ -1326,7 +1442,15 @@ const PAIN_VISUALS: PainVisual[] = [
     type: "bed", x: 560, y: 760, zoom: 1.6,
     pose: {expression: "tired", stillness: true}, pillow: true, blanket: true, lamp: true,
   },
-  /* 12 Pakistán 2006 */ {type: "info", eyebrow: "EL CASO QUE LO CAMBIÓ TODO", title: "Pakistán, 2006", body: "Universidad de Cambridge · Dr. Geoffrey Woods"},
+  /* 12 Pakistán 2006 - this paragraph runs 46s, way too long to sit on one
+         frozen card, so it's a sequence of 2 */
+  {
+    type: "info-sequence",
+    cards: [
+      {eyebrow: "EL CASO QUE LO CAMBIÓ TODO", title: "Pakistán, 2006", body: "Un niño de 14 años, artista callejero"},
+      {eyebrow: "SIN NINGÚN DOLOR", title: "Caminaba sobre carbones\nencendidos", body: "Universidad de Cambridge · Dr. Geoffrey Woods"},
+    ],
+  },
   /* 13 gen SCN9A / Nature */ {type: "info", eyebrow: "EL DESCUBRIMIENTO", title: "El gen SCN9A", body: "Publicado en Nature · el primer gen ligado directamente al dolor"},
   /* 14 explicación del canal de sodio */ {
     type: "info", eyebrow: "CÓMO FUNCIONA", title: "Un canal de sodio\nroto en las neuronas", body: "Sin él, la señal de dolor nunca sale del cuerpo",
@@ -1360,7 +1484,7 @@ const PainBeatScene: React.FC<{visual: PainVisual; duration: number}> = ({visual
         <VoidStage>
           <Character
             x={960}
-            y={760}
+            y={620}
             scale={1.5}
             expression={visual.expr}
             running={visual.running ?? false}
@@ -1368,6 +1492,7 @@ const PainBeatScene: React.FC<{visual: PainVisual; duration: number}> = ({visual
             faceTilt={visual.faceTilt ?? 0}
             bobbing={!visual.running}
           />
+          {visual.stamp && <StampText text={visual.stamp} startFrame={8} />}
         </VoidStage>
       </SceneFade>
     );
@@ -1396,12 +1521,32 @@ const PainBeatScene: React.FC<{visual: PainVisual; duration: number}> = ({visual
       </SceneFade>
     );
   }
+  if (visual.type === "info-sequence") {
+    const segDuration = Math.floor(duration / visual.cards.length);
+    return (
+      <>
+        {visual.cards.map((card, i) => (
+          <Sequence key={i} from={i * segDuration} durationInFrames={i === visual.cards.length - 1 ? duration - i * segDuration : segDuration}>
+            <SceneFade duration={i === visual.cards.length - 1 ? duration - i * segDuration : segDuration}>
+              <InfoCard eyebrow={card.eyebrow} title={card.title} body={card.body} />
+            </SceneFade>
+          </Sequence>
+        ))}
+      </>
+    );
+  }
   // park | kitchen | mirror | street - full-body standing scenes on a light
   // background, so `glow` (the dark-backdrop rim halo) is switched off.
   const Scene = visual.type === "park" ? ParkScene : visual.type === "kitchen" ? KitchenScene : visual.type === "mirror" ? MirrorScene : StreetScene;
   return (
     <SceneFade duration={duration}>
-      <CameraCloser x={visual.x} y={STANDING_Y - 40} zoom={visual.zoom}>
+      <CameraCloser
+        x={visual.x}
+        y={STANDING_Y - 40}
+        zoom={visual.zoom}
+        panTo={visual.panTo ? {x: visual.panTo.x, y: STANDING_Y - 40, zoom: visual.panTo.zoom} : undefined}
+        duration={duration}
+      >
         <Scene>
           <Character x={visual.x} y={STANDING_Y} scale={1.3} glow={false} {...visual.pose} />
         </Scene>
@@ -1417,12 +1562,6 @@ export const PainFullES: React.FC = () => {
 
   return (
     <AbsoluteFill style={{backgroundColor: "#05060a"}}>
-      <Sequence from={0} durationInFrames={PAIN_AUDIO_START}>
-        <VoidStage>
-          <Character x={960} y={780} scale={1.6} expression="scared" bobbing />
-        </VoidStage>
-      </Sequence>
-
       <Sequence from={PAIN_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
         <Audio src={staticFile("voice_pain_es.mp3")} />
       </Sequence>
