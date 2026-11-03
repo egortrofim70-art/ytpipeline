@@ -58,6 +58,14 @@ export const MyComposition = () => {
         width={1920}
         height={1080}
       />
+      <Composition
+        id="ParallaxTest30s"
+        component={ParallaxTest30s}
+        durationInFrames={660}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
     </>
   );
 };
@@ -1586,6 +1594,189 @@ export const PainFullES: React.FC = () => {
       </Sequence>
 
       <SyncedCaptions cues={allCues} offsetFrames={PAIN_AUDIO_START} />
+    </AbsoluteFill>
+  );
+};
+
+// --- ParallaxTest30s: proof-of-concept for "2D character moving through a
+// continuous depth-layered world" instead of cutting between flat static
+// backgrounds. No 3D engine - just several wide background layers scrolling
+// at different speeds under a camera-fixed character, which is the cheap
+// trick that sells "walking through a real place" (classic side-scroller
+// parallax). One continuous night-city journey: rooftop ledge -> street ->
+// bench, instead of 3-4 completely separate Scene components. ---
+
+const PARALLAX_TOTAL_DIST = 3400; // px the nearest layer travels over the whole shot
+
+// Each layer's own horizontal span must be wide enough to cover
+// PARALLAX_TOTAL_DIST * speed plus one screen width, or it runs out before
+// the shot ends.
+const ParallaxNightCity: React.FC<{worldX: number; children?: React.ReactNode}> = ({worldX, children}) => {
+  const farShift = -worldX * PARALLAX_TOTAL_DIST * 0.12;
+  const midShift = -worldX * PARALLAX_TOTAL_DIST * 0.4;
+  const nearShift = -worldX * PARALLAX_TOTAL_DIST * 1.0;
+
+  const farBuildings = [60, 220, 420, 640, 900, 1150, 1400, 1700, 2000, 2300, 2600, 2950, 3300, 3650, 4000].map((left, i) => (
+    <div
+      key={i}
+      style={{
+        position: "absolute",
+        left,
+        bottom: 0,
+        width: 90 + (i % 3) * 30,
+        height: 140 + (i % 4) * 60,
+        background: "#141a33",
+      }}
+    />
+  ));
+
+  const midBuildings = [40, 260, 520, 820, 1150, 1500, 1880, 2280, 2700, 3140].map((left, i) => (
+    <div
+      key={i}
+      style={{
+        position: "absolute",
+        left,
+        bottom: 0,
+        width: 160 + (i % 3) * 50,
+        height: 260 + (i % 5) * 90,
+        background: "#1c2440",
+      }}
+    >
+      {/* lit windows - just a handful so it reads as "building at night" */}
+      {[0, 1, 2, 3, 4, 5].map((w) => (
+        <div
+          key={w}
+          style={{
+            position: "absolute",
+            left: 18 + (w % 2) * 40,
+            top: 30 + Math.floor(w / 2) * 50,
+            width: 16,
+            height: 22,
+            background: w % 3 === 0 ? "#ffdd88" : "#2a3358",
+          }}
+        />
+      ))}
+    </div>
+  ));
+
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060e", overflow: "hidden"}}>
+      {/* stars + moon - near-static, furthest depth */}
+      <div style={{position: "absolute", inset: 0, transform: `translateX(${farShift * 0.2}px)`}}>
+        <div
+          style={{
+            position: "absolute",
+            left: 1500,
+            top: 90,
+            width: 110,
+            height: 110,
+            borderRadius: "50%",
+            background: "#fff6d9",
+            boxShadow: "0 0 60px 14px rgba(255,246,217,0.35)",
+          }}
+        />
+        {[100, 300, 500, 750, 980, 1250, 1600, 1850].map((l, i) => (
+          <div key={i} style={{position: "absolute", left: l, top: 40 + (i % 4) * 60, width: 3, height: 3, borderRadius: "50%", background: "#cfd7ff", opacity: 0.8}} />
+        ))}
+      </div>
+
+      {/* far skyline */}
+      <div style={{position: "absolute", inset: 0, transform: `translateX(${farShift}px)`}}>{farBuildings}</div>
+
+      {/* mid buildings with lit windows */}
+      <div style={{position: "absolute", inset: 0, transform: `translateX(${midShift}px)`}}>{midBuildings}</div>
+
+      {/* near layer: ground + the specific set-pieces the character passes:
+          rooftop ledge near the start, a bench mid-journey, a lamppost near
+          the end - this is what actually sells "he's going somewhere" */}
+      <div style={{position: "absolute", inset: 0, transform: `translateX(${nearShift}px)`}}>
+        <div style={{position: "absolute", left: 0, right: -5000, bottom: 0, height: 140, background: "#0c0f1f"}} />
+        {/* rooftop ledge, screen-centered near worldX=0 */}
+        <div style={{position: "absolute", left: 760, bottom: 100, width: 420, height: 24, background: "#23294a"}} />
+        <div style={{position: "absolute", left: 760, bottom: 100, width: 14, height: 90, background: "#23294a"}} />
+        <div style={{position: "absolute", left: 1166, bottom: 100, width: 14, height: 90, background: "#23294a"}} />
+        {/* bench, screen-centered around worldX=0.45 */}
+        <div style={{position: "absolute", left: 760 + PARALLAX_TOTAL_DIST * 0.45, bottom: 100, width: 220, height: 14, background: "#3a2f22"}} />
+        <div style={{position: "absolute", left: 770 + PARALLAX_TOTAL_DIST * 0.45, bottom: 60, width: 14, height: 44, background: "#2a2118"}} />
+        <div style={{position: "absolute", left: 950 + PARALLAX_TOTAL_DIST * 0.45, bottom: 60, width: 14, height: 44, background: "#2a2118"}} />
+        {/* lamppost, screen-centered around worldX=0.85 */}
+        <div style={{position: "absolute", left: 950 + PARALLAX_TOTAL_DIST * 0.85, bottom: 100, width: 8, height: 220, background: "#1a1d2e"}} />
+        <div
+          style={{
+            position: "absolute",
+            left: 900 + PARALLAX_TOTAL_DIST * 0.85,
+            bottom: 300,
+            width: 110,
+            height: 110,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,214,140,0.55) 0%, rgba(255,214,140,0.1) 60%, rgba(255,214,140,0) 80%)",
+          }}
+        />
+      </div>
+
+      {children}
+    </AbsoluteFill>
+  );
+};
+
+type ParallaxBeat = {fromSec: number; toSec: number; expr: Expression; armRaise?: number; faceTilt?: number};
+const PARALLAX_BEATS: ParallaxBeat[] = [
+  {fromSec: 0, toSec: 4.0, expr: "tired"},
+  {fromSec: 4.0, toSec: 6.9, expr: "scared", faceTilt: -4},
+  {fromSec: 6.9, toSec: 10.3, expr: "tired", armRaise: 0.3},
+  {fromSec: 10.3, toSec: 14.0, expr: "shocked", armRaise: 0.6},
+  {fromSec: 14.0, toSec: 18.6, expr: "tired", faceTilt: 4},
+];
+
+const PARALLAX_CAPTIONS: CaptionCue[] = [
+  {fromSec: 0.0, toSec: 2.56, text: "Представь: однажды ночью ты просто"},
+  {fromSec: 2.6, toSec: 3.88, text: "перестаёшь засыпать."},
+  {fromSec: 4.08, toSec: 6.76, text: "Не бессонница на одну ночь — навсегда."},
+  {fromSec: 6.96, toSec: 9.36, text: "Проходят дни, а тело ни на секунду не"},
+  {fromSec: 9.44, toSec: 10.32, text: "отдыхает."},
+  {fromSec: 10.4, toSec: 12.96, text: "Это реальный диагноз: фатальная семейная"},
+  {fromSec: 13.04, toSec: 13.96, text: "бессонница."},
+  {fromSec: 14.16, toSec: 15.92, text: "Сегодня расскажу, что происходит с"},
+  {fromSec: 15.96, toSec: 18.56, text: "мозгом, когда сон исчезает навсегда."},
+];
+
+const PARALLAX_AUDIO_START = 15; // 0.5s, just enough for a clean fade-in, no dead air
+const PARALLAX_AUDIO_DURATION_SEC = 18.56;
+
+export const ParallaxTest30s: React.FC = () => {
+  const {fps} = useVideoConfig();
+  const frame = useCurrentFrame();
+  const localFrame = frame - PARALLAX_AUDIO_START;
+  const audioDurationFrames = Math.ceil(PARALLAX_AUDIO_DURATION_SEC * fps);
+
+  const worldX = interpolate(localFrame, [0, audioDurationFrames], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.inOut(Easing.ease),
+  });
+
+  const localSec = localFrame / fps;
+  const beat = PARALLAX_BEATS.find((b) => localSec >= b.fromSec && localSec < b.toSec) ?? PARALLAX_BEATS[PARALLAX_BEATS.length - 1];
+
+  return (
+    <AbsoluteFill style={{backgroundColor: "#05060e"}}>
+      <Sequence from={PARALLAX_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
+        <Audio src={staticFile("voice_ru_mike.mp3")} />
+      </Sequence>
+
+      <ParallaxNightCity worldX={worldX}>
+        <Character
+          x={960}
+          y={660}
+          scale={1.35}
+          expression={beat.expr}
+          armRaise={beat.armRaise ?? 0}
+          faceTilt={beat.faceTilt ?? 0}
+          stillness
+        />
+      </ParallaxNightCity>
+
+      <SyncedCaptions cues={PARALLAX_CAPTIONS} offsetFrames={PARALLAX_AUDIO_START} />
     </AbsoluteFill>
   );
 };

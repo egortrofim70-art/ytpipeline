@@ -293,12 +293,20 @@ export const Character: React.FC<CharacterProps> = ({
 				)}
 
 				{!lying && (
+					// Feet sit at LEG_LEN below the *leg* group's own origin, which is
+					// translated an EXTRA SHIRT_H/2 relative to this outer group (the
+					// legs live in their own nested <g translate(... SHIRT_H/2)>) - the
+					// old formula (SHIRT_H + LEG_LEN + 6) ignored that second offset and
+					// placed the shadow ~41px below the actual feet, reading as a
+					// disconnected blob floating under the character instead of a
+					// contact shadow. Matching the same SHIRT_H/2 + LEG_LEN here puts
+					// it directly under the feet, just below).
 					<ellipse
 						cx={0}
-						cy={SHIRT_H + LEG_LEN + 6}
-						rx={58 * shadowScale}
-						ry={11 * shadowScale}
-						fill="rgba(0,0,0,0.6)"
+						cy={SHIRT_H / 2 + LEG_LEN + 4}
+						rx={62 * shadowScale}
+						ry={14 * shadowScale}
+						fill="rgba(0,0,0,0.65)"
 						filter={`url(#${ids.shadow})`}
 					/>
 				)}
