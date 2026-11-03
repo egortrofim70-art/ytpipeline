@@ -1733,11 +1733,15 @@ const ParallaxNightCity: React.FC<{worldX: number; children?: React.ReactNode}> 
   );
 };
 
-type ParallaxBeat = {fromSec: number; toSec: number; expr: Expression; armRaise?: number; faceTilt?: number};
+// `walking: false` on the "тело ни на секунду не отдыхает" beat: he stops
+// and stands by the bench prop that the camera is drifting past in Shot 3,
+// instead of looping the walk cycle with no reason to - direct fix for
+// "куда он бежит, что он вообще делает", not just a camera/lighting note.
+type ParallaxBeat = {fromSec: number; toSec: number; expr: Expression; armRaise?: number; faceTilt?: number; walking?: boolean};
 const PARALLAX_BEATS: ParallaxBeat[] = [
   {fromSec: 0, toSec: 4.0, expr: "tired"},
   {fromSec: 4.0, toSec: 6.9, expr: "scared", faceTilt: -4},
-  {fromSec: 6.9, toSec: 10.3, expr: "tired", armRaise: 0.3},
+  {fromSec: 6.9, toSec: 10.3, expr: "tired", armRaise: 0.3, walking: false},
   {fromSec: 10.3, toSec: 14.0, expr: "shocked", armRaise: 0.6},
   {fromSec: 14.0, toSec: 18.6, expr: "tired", faceTilt: 4},
 ];
@@ -1832,10 +1836,17 @@ export const ParallaxTest30s: React.FC = () => {
             expression={beat.expr}
             armRaise={beat.armRaise ?? 0}
             faceTilt={beat.faceTilt ?? 0}
-            walking
+            walking={beat.walking ?? true}
           />
         </ParallaxNightCity>
       </AbsoluteFill>
+
+      {/* HUD counter stays pinned to the screen, outside the camera transform
+          above, same as the "БЕЗ ИНТЕРНЕТА" / day-counter badges in both
+          reference breakdowns - a recurring overlay, not a one-off stamp. */}
+      <Sequence from={PARALLAX_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
+        <HoursCounter startHour={46} endHour={94} duration={audioDurationFrames} />
+      </Sequence>
 
       {localSec >= 10.3 && <StampText text="ДИАГНОЗ" startFrame={PARALLAX_AUDIO_START + Math.round(10.6 * fps)} />}
 
