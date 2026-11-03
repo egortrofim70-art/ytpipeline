@@ -50,6 +50,19 @@ const Character3D: React.FC<{
 
   const face = FACE[expression];
 
+  // Emissive baseline on every material - meshStandardMaterial goes pure
+  // black wherever no light reaches it, which is exactly what made the
+  // whole character vanish into the night sky. A small self-glow keeps the
+  // silhouette readable regardless of how the scene lighting shakes out,
+  // the same job Character.tsx's SVG "glow" halo does in 2D.
+  const headMat = <meshStandardMaterial color={HEAD_BLACK} emissive="#2a2a2a" emissiveIntensity={0.5} roughness={0.4} />;
+  const shirtMat = <meshStandardMaterial color={SHIRT_YELLOW} emissive={SHIRT_YELLOW} emissiveIntensity={0.25} />;
+  const pantsMat = <meshStandardMaterial color={PANTS_DARK} emissive="#2a2a2a" emissiveIntensity={0.4} />;
+
+  // The whole rig faces -Z (negative) on purpose: the camera dollies in the
+  // -Z direction over the course of the shot (camZ decreases), so "forward"
+  // for the character has to be -Z too, or he walks backward relative to
+  // his own face - which is exactly the bug reported ("head's behind him").
   return (
     <group position={[x, walkBob, z]}>
       {/* contact shadow - a simple dark disc right at ground level under the
@@ -62,73 +75,87 @@ const Character3D: React.FC<{
       {/* legs */}
       <group position={[-0.08, 0.5, 0]} rotation={[legSwing, 0, 0]}>
         <mesh position={[0, -0.3, 0]}>
-          <cylinderGeometry args={[0.035, 0.035, 0.6, 8]} />
-          <meshStandardMaterial color={PANTS_DARK} />
+          <cylinderGeometry args={[0.04, 0.04, 0.6, 10]} />
+          {pantsMat}
         </mesh>
       </group>
       <group position={[0.08, 0.5, 0]} rotation={[legSwing2, 0, 0]}>
         <mesh position={[0, -0.3, 0]}>
-          <cylinderGeometry args={[0.035, 0.035, 0.6, 8]} />
-          <meshStandardMaterial color={PANTS_DARK} />
+          <cylinderGeometry args={[0.04, 0.04, 0.6, 10]} />
+          {pantsMat}
         </mesh>
       </group>
 
-      {/* torso (shirt) */}
+      {/* torso (shirt) - a near-constant radius with rounded ends instead of
+          a sharply tapered 8-sided cylinder, which read as "a cone" rather
+          than a sweater */}
       <mesh position={[0, 0.78, 0]}>
-        <cylinderGeometry args={[0.16, 0.22, 0.55, 8]} />
-        <meshStandardMaterial color={SHIRT_YELLOW} />
+        <capsuleGeometry args={[0.19, 0.38, 6, 16]} />
+        {shirtMat}
+      </mesh>
+
+      {/* shoulder joints - a small sphere right where each arm attaches, so
+          the arm reads as part of the body instead of a stick floating
+          beside a separate torso shape */}
+      <mesh position={[-0.24, 1.0, 0]}>
+        <sphereGeometry args={[0.07, 10, 10]} />
+        {shirtMat}
+      </mesh>
+      <mesh position={[0.24, 1.0, 0]}>
+        <sphereGeometry args={[0.07, 10, 10]} />
+        {shirtMat}
       </mesh>
 
       {/* arms */}
       <group position={[-0.24, 1.0, 0]} rotation={[armSwing, 0, 0]}>
         <mesh position={[0, -0.26, 0]}>
-          <cylinderGeometry args={[0.035, 0.035, 0.5, 8]} />
-          <meshStandardMaterial color={SHIRT_YELLOW} />
+          <cylinderGeometry args={[0.04, 0.04, 0.5, 10]} />
+          {shirtMat}
         </mesh>
       </group>
       <group position={[0.24, 1.0, 0]} rotation={[armSwing2, 0, 0]}>
         <mesh position={[0, -0.26, 0]}>
-          <cylinderGeometry args={[0.035, 0.035, 0.5, 8]} />
-          <meshStandardMaterial color={SHIRT_YELLOW} />
+          <cylinderGeometry args={[0.04, 0.04, 0.5, 10]} />
+          {shirtMat}
         </mesh>
       </group>
 
       {/* neck */}
       <mesh position={[0, 1.08, 0]}>
-        <cylinderGeometry args={[0.07, 0.07, 0.08, 8]} />
-        <meshStandardMaterial color={HEAD_BLACK} />
+        <cylinderGeometry args={[0.07, 0.07, 0.08, 10]} />
+        {headMat}
       </mesh>
 
       {/* head */}
       <mesh position={[0, 1.28, 0]}>
         <sphereGeometry args={[0.22, 24, 24]} />
-        <meshStandardMaterial color={HEAD_BLACK} roughness={0.4} metalness={0.1} />
+        {headMat}
       </mesh>
-      {/* soft colored rim light behind the head so it doesn't vanish into a
-          dark night sky - the 2D rig's "glow" halo, done here as a point
-          light instead of an SVG blur filter */}
-      <pointLight position={[0, 1.28, -0.3]} color={SHIRT_YELLOW} intensity={1.4} distance={2} decay={1.5} />
+      {/* soft colored rim light BEHIND the head relative to the direction
+          he's facing (+Z, since the rig now faces -Z) */}
+      <pointLight position={[0, 1.28, 0.3]} color={SHIRT_YELLOW} intensity={1.4} distance={2} decay={1.5} />
 
-      {/* eyes */}
-      <mesh position={[-0.08, 1.3, 0.19]} scale={[1, face.eyeScale, 1]}>
+      {/* eyes/brows/mouth all at NEGATIVE z - the face is on the -Z side,
+          matching the direction of travel */}
+      <mesh position={[-0.08, 1.3, -0.19]} scale={[1, face.eyeScale, 1]}>
         <sphereGeometry args={[0.03, 10, 10]} />
         <meshBasicMaterial color="#ffffff" />
       </mesh>
-      <mesh position={[0.08, 1.3, 0.19]} scale={[1, face.eyeScale, 1]}>
+      <mesh position={[0.08, 1.3, -0.19]} scale={[1, face.eyeScale, 1]}>
         <sphereGeometry args={[0.03, 10, 10]} />
         <meshBasicMaterial color="#ffffff" />
       </mesh>
       {/* brows */}
-      <mesh position={[-0.08, 1.35, 0.2]} rotation={[0, 0, (-face.browAngle * Math.PI) / 180]}>
+      <mesh position={[-0.08, 1.35, -0.2]} rotation={[0, 0, (face.browAngle * Math.PI) / 180]}>
         <boxGeometry args={[0.07, 0.015, 0.01]} />
         <meshBasicMaterial color="#ffffff" />
       </mesh>
-      <mesh position={[0.08, 1.35, 0.2]} rotation={[0, 0, (face.browAngle * Math.PI) / 180]}>
+      <mesh position={[0.08, 1.35, -0.2]} rotation={[0, 0, (-face.browAngle * Math.PI) / 180]}>
         <boxGeometry args={[0.07, 0.015, 0.01]} />
         <meshBasicMaterial color="#ffffff" />
       </mesh>
       {/* mouth */}
-      <mesh position={[0, 1.22 + face.mouthCurve * 0.04, 0.2]} rotation={[0, 0, Math.PI]}>
+      <mesh position={[0, 1.22 + face.mouthCurve * 0.04, -0.2]} rotation={[0, Math.PI, Math.PI]}>
         <torusGeometry args={[0.05, 0.008, 6, 12, Math.PI]} />
         <meshBasicMaterial color="#ffffff" />
       </mesh>
@@ -162,7 +189,7 @@ const City3D: React.FC = () => {
       {/* ground */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -30]}>
         <planeGeometry args={[30, 80]} />
-        <meshStandardMaterial color="#1a2036" />
+        <meshStandardMaterial color="#2a3458" emissive="#161c38" emissiveIntensity={0.6} />
       </mesh>
       {/* moon */}
       <mesh position={[6, 6, -40]}>
@@ -173,7 +200,7 @@ const City3D: React.FC = () => {
         <group key={i} position={[b.x, b.h / 2, b.z]}>
           <mesh>
             <boxGeometry args={[b.w, b.h, b.d]} />
-            <meshStandardMaterial color={b.color} />
+            <meshStandardMaterial color={b.color} emissive={b.color} emissiveIntensity={0.5} />
           </mesh>
           {/* a few lit windows per building */}
           {[0, 1, 2, 3].map((w) => (
@@ -273,6 +300,42 @@ const Captions3D: React.FC = () => {
   );
 };
 
+// Kinetic word-stamp overlay at the diagnosis reveal beat (shot C, the
+// front crash-in) - the 2D rig's StampText trick, ported as a plain HTML
+// overlay on top of the WebGL canvas. Proves 2D graphic "pop" elements
+// layer over real 3D exactly the same way they do over the flat SVG rig.
+const DiagnosisStamp: React.FC = () => {
+  const frame = useCurrentFrame();
+  const local = frame - AUDIO_START - Math.round(11 * 30);
+  if (local < 0 || local > 70) return null;
+  const scale = interpolate(local, [0, 6, 10], [0.4, 1.15, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.34, 1.56, 0.64, 1),
+    output: "perceptual-scale",
+  });
+  const opacity = interpolate(local, [0, 4, 60, 70], [0, 1, 1, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  return (
+    <AbsoluteFill style={{justifyContent: "flex-start", alignItems: "center", paddingTop: 90, pointerEvents: "none"}}>
+      <div
+        style={{
+          opacity,
+          scale,
+          color: "#FFD400",
+          fontFamily: "sans-serif",
+          fontWeight: 900,
+          fontSize: 90,
+          textTransform: "uppercase",
+          WebkitTextStroke: "4px #05060a",
+          paintOrder: "stroke fill",
+        }}
+      >
+        ДИАГНОЗ
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 export const ThreeTest30s: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps, width, height} = useVideoConfig();
@@ -285,12 +348,13 @@ export const ThreeTest30s: React.FC = () => {
     easing: Easing.inOut(Easing.ease),
   });
 
-  // The camera dollies forward through the city block (real 3D movement,
-  // not a layer-speed illusion) while staying behind/beside the character
-  // at a fixed offset, like a tracking shot following someone walking.
-  const totalDolly = 46;
-  const camZ = 6 - progress * totalDolly;
-  const charZ = camZ - 4.2;
+  // The character's own progress through the world is continuous and
+  // independent of whatever the camera is doing - he just keeps walking
+  // forward at a steady pace for the whole shot, while the camera cuts
+  // between completely different kinds of coverage on him (dolly, orbit,
+  // front close-up, dolly again), the way an edited scene actually covers
+  // one continuous action from several angles instead of one static shot.
+  const charZ = 2 - progress * 40;
   const isMoving = true;
   const walkPhase = (frame / fps) * Math.PI * 2 * 1.4;
 
@@ -301,8 +365,52 @@ export const ThreeTest30s: React.FC = () => {
     () => new THREE.PerspectiveCamera(50, width / height, 0.1, 200),
     [width, height]
   );
-  camera.position.set(0.6, 1.5, camZ);
-  camera.lookAt(0, 1.1, charZ - 3);
+
+  let camX: number, camY: number, camZ: number, lookX: number, lookY: number, lookZ: number;
+
+  if (localSec < 6) {
+    // Shot A: tracking dolly behind/beside him, same as the first pass.
+    camX = 0.6;
+    camY = 1.5;
+    camZ = charZ + 4.2;
+    lookX = 0;
+    lookY = 1.1;
+    lookZ = charZ - 3;
+  } else if (localSec < 11) {
+    // Shot B: low, fast orbit around him - a hard cut into a completely
+    // different kind of coverage, not just a continuation of shot A's move.
+    const orbitT = (localSec - 6) / 5;
+    const orbitAngle = orbitT * Math.PI * 1.4;
+    const radius = 2.3;
+    camX = Math.sin(orbitAngle) * radius;
+    camY = 0.85;
+    camZ = charZ + Math.cos(orbitAngle) * radius;
+    lookX = 0;
+    lookY = 1.15;
+    lookZ = charZ;
+  } else if (localSec < 14) {
+    // Shot C: hard cut to a front crash-in close-up for the diagnosis beat -
+    // camera ahead of him (more negative Z, since he faces -Z) looking back
+    // at his actual face instead of the back of his head.
+    const t = (localSec - 11) / 3;
+    camX = 0;
+    camY = 1.32;
+    camZ = charZ - (1.4 - t * 0.7);
+    lookX = 0;
+    lookY = 1.26;
+    lookZ = charZ;
+  } else {
+    // Shot D: resumes the dolly from the opposite side for the close.
+    camX = -0.6;
+    camY = 1.4;
+    camZ = charZ + 3.4;
+    lookX = 0;
+    lookY = 1.1;
+    lookZ = charZ - 2.5;
+  }
+
+  camera.position.set(camX, camY, camZ);
+  camera.lookAt(lookX, lookY, lookZ);
   camera.updateProjectionMatrix();
 
   return (
@@ -316,16 +424,17 @@ export const ThreeTest30s: React.FC = () => {
             staying hard-black silhouettes - also gives a free depth cue and
             stops the frame going to solid black past a few buildings */}
         <fog attach="fog" args={["#11162c", 6, 30]} />
-        <ambientLight intensity={1.1} color="#5a6cb0" />
-        <directionalLight position={[5, 10, 2]} intensity={0.5} color="#cfd7ff" />
+        <ambientLight intensity={1.9} color="#6a7cc0" />
+        <directionalLight position={[5, 10, 2]} intensity={0.7} color="#cfd7ff" />
         {/* light that travels with the camera, like a fill light on a night
             shoot - keeps whatever's in frame (character included) actually
             visible instead of relying on the moon/windows alone */}
-        <pointLight position={[0.6, 2.2, camZ + 1.5]} intensity={1.4} color="#aab6ff" distance={10} decay={1.5} />
+        <pointLight position={[0.6, 2.2, charZ]} intensity={1.8} color="#aab6ff" distance={10} decay={1.5} />
         <City3D />
         <Character3D x={0} z={charZ} walkPhase={walkPhase} expression={beat.expr} isMoving={isMoving} />
       </ThreeCanvas>
 
+      <DiagnosisStamp />
       <Captions3D />
     </AbsoluteFill>
   );
