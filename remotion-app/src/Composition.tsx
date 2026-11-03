@@ -1767,12 +1767,12 @@ export const ParallaxTest30s: React.FC = () => {
       <ParallaxNightCity worldX={worldX}>
         <Character
           x={960}
-          y={660}
+          y={700}
           scale={1.35}
           expression={beat.expr}
           armRaise={beat.armRaise ?? 0}
           faceTilt={beat.faceTilt ?? 0}
-          stillness
+          walking
         />
       </ParallaxNightCity>
 
