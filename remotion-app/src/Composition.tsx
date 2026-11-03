@@ -62,7 +62,7 @@ export const MyComposition = () => {
       <Composition
         id="ParallaxTest30s"
         component={ParallaxTest30s}
-        durationInFrames={660}
+        durationInFrames={587}
         fps={30}
         width={1920}
         height={1080}
@@ -1760,17 +1760,17 @@ const PARALLAX_AUDIO_DURATION_SEC = 18.56;
 // "2D character in a 3D-feeling world": the layers themselves only ever
 // slide horizontally (that's PARALLAX_TOTAL_DIST/worldX above - the walk
 // forward). What was missing was a CAMERA that moves independently of that
-// walk - zoom, vertical pan, dutch tilt, hard cuts - the same shot-switching
-// trick used in ThreeTest's real 3D camera, done here with a single CSS
-// transform wrapped around the whole parallax stack instead of a WebGL
-// camera object. scale never drops below 1 (and rotated shots keep enough
-// scale margin) so a tilt/zoom never exposes empty canvas at the corners.
+// walk - zoom, pan, hard cuts - the same shot-switching trick used in
+// ThreeTest's real 3D camera, done here with a single CSS transform
+// wrapped around the whole parallax stack instead of a WebGL camera
+// object. No rotation (dutch tilt read as a mistake, not a choice -
+// dropped per feedback). scale never drops below 1 so a zoom/pan never
+// exposes empty canvas at the edges.
 type CameraShot = {
   fromSec: number;
   toSec: number;
   scaleFrom: number;
   scaleTo: number;
-  rotateDeg: number;
   originX: string;
   originY: string;
   panX: number;
@@ -1778,15 +1778,15 @@ type CameraShot = {
 };
 const CAMERA_SHOTS: CameraShot[] = [
   // Shot 1 (hook): slow creeping push-in, dead center - lets the walk cycle read clean first.
-  {fromSec: 0, toSec: 4.0, scaleFrom: 1.0, scaleTo: 1.08, rotateDeg: 0, originX: "50%", originY: "58%", panX: 0, panY: 0},
-  // Shot 2 (hard cut): dutch tilt + push further in on "navsegda" - first jolt.
-  {fromSec: 4.0, toSec: 6.9, scaleFrom: 1.18, scaleTo: 1.28, rotateDeg: -3, originX: "47%", originY: "55%", panX: -20, panY: 0},
+  {fromSec: 0, toSec: 4.0, scaleFrom: 1.0, scaleTo: 1.08, originX: "50%", originY: "58%", panX: 0, panY: 0},
+  // Shot 2 (hard cut): push further in on "navsegda" - first jolt.
+  {fromSec: 4.0, toSec: 6.9, scaleFrom: 1.18, scaleTo: 1.28, originX: "47%", originY: "55%", panX: -20, panY: 0},
   // Shot 3 (hard cut): pulls back out, drifts right - "days passing" reads as the camera itself drifting past him.
-  {fromSec: 6.9, toSec: 10.3, scaleFrom: 1.05, scaleTo: 1.12, rotateDeg: 0, originX: "53%", originY: "60%", panX: 35, panY: -6},
+  {fromSec: 6.9, toSec: 10.3, scaleFrom: 1.05, scaleTo: 1.12, originX: "53%", originY: "60%", panX: 35, panY: -6},
   // Shot 4 (hard cut): crash-zoom on the face for the diagnosis reveal.
-  {fromSec: 10.3, toSec: 14.0, scaleFrom: 1.7, scaleTo: 1.9, rotateDeg: 2, originX: "50%", originY: "49%", panX: 0, panY: -10},
-  // Shot 5 (hard cut): pulls back wide again, opposite tilt, for the closing lines.
-  {fromSec: 14.0, toSec: 18.6, scaleFrom: 1.08, scaleTo: 1.18, rotateDeg: 2, originX: "50%", originY: "58%", panX: -18, panY: 0},
+  {fromSec: 10.3, toSec: 14.0, scaleFrom: 1.7, scaleTo: 1.9, originX: "50%", originY: "49%", panX: 0, panY: -10},
+  // Shot 5 (hard cut): pulls back wide again for the closing lines.
+  {fromSec: 14.0, toSec: 18.6, scaleFrom: 1.08, scaleTo: 1.18, originX: "50%", originY: "58%", panX: -18, panY: 0},
 ];
 
 export const ParallaxTest30s: React.FC = () => {
@@ -1801,7 +1801,12 @@ export const ParallaxTest30s: React.FC = () => {
     easing: Easing.inOut(Easing.ease),
   });
 
-  const localSec = localFrame / fps;
+  // Clamped to >=0: frames before PARALLAX_AUDIO_START (localFrame negative)
+  // used to produce a negative localSec that matched none of the shot/beat
+  // ranges below, so .find() silently fell through to the LAST entry in
+  // each array (shot 5's tilt, the final beat) instead of the first one -
+  // the "video starts with an unexplained tilt" bug.
+  const localSec = Math.max(0, localFrame / fps);
   const beat = PARALLAX_BEATS.find((b) => localSec >= b.fromSec && localSec < b.toSec) ?? PARALLAX_BEATS[PARALLAX_BEATS.length - 1];
   const shot = CAMERA_SHOTS.find((s) => localSec >= s.fromSec && localSec < s.toSec) ?? CAMERA_SHOTS[CAMERA_SHOTS.length - 1];
   const shotProgress = interpolate(localSec, [shot.fromSec, shot.toSec], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
@@ -1815,7 +1820,7 @@ export const ParallaxTest30s: React.FC = () => {
 
       <AbsoluteFill
         style={{
-          transform: `translate(${shot.panX}px, ${shot.panY}px) rotate(${shot.rotateDeg}deg) scale(${camScale})`,
+          transform: `translate(${shot.panX}px, ${shot.panY}px) scale(${camScale})`,
           transformOrigin: `${shot.originX} ${shot.originY}`,
         }}
       >
