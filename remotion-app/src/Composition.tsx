@@ -1787,11 +1787,66 @@ const CAMERA_SHOTS: CameraShot[] = [
   {fromSec: 4.0, toSec: 6.9, scaleFrom: 1.18, scaleTo: 1.28, originX: "47%", originY: "55%", panX: -20, panY: 0},
   // Shot 3 (hard cut): pulls back out, drifts right - "days passing" reads as the camera itself drifting past him.
   {fromSec: 6.9, toSec: 10.3, scaleFrom: 1.05, scaleTo: 1.12, originX: "53%", originY: "60%", panX: 35, panY: -6},
-  // Shot 4 (hard cut): crash-zoom on the face for the diagnosis reveal.
-  {fromSec: 10.3, toSec: 14.0, scaleFrom: 1.7, scaleTo: 1.9, originX: "50%", originY: "49%", panX: 0, panY: -10},
-  // Shot 5 (hard cut): pulls back wide again for the closing lines.
-  {fromSec: 14.0, toSec: 18.6, scaleFrom: 1.08, scaleTo: 1.18, originX: "50%", originY: "58%", panX: -18, panY: 0},
+  // Shot 4 (hard cut): INSTANT snap to the crash-zoom, flat scale (no in-shot
+  // creep) - a slow building zoom read as "confusing" per feedback. Pop the
+  // stamp, hold barely long enough to read it, cut away. Short on purpose.
+  {fromSec: 10.3, toSec: 12.3, scaleFrom: 1.85, scaleTo: 1.85, originX: "50%", originY: "49%", panX: 0, panY: -10},
+  // Shot 5 (hard cut): pulls back wide for the closing lines. originY anchored
+  // near the character's FEET (~75%, not 58%) - anchoring above his center
+  // made him visually climb toward the top of frame as scale increased over
+  // this shot's ~6s run ("идёт в горку" per feedback): the point above the
+  // zoom origin rises while the point below it sinks, and at the old origin
+  // his head was the point above. Anchoring at his feet means only the world
+  // grows around him, he does not drift vertically.
+  {fromSec: 12.3, toSec: 18.6, scaleFrom: 1.1, scaleTo: 1.18, originX: "50%", originY: "75%", panX: -18, panY: 0},
 ];
+
+// Must match PARALLAX_BEATS[2]'s range (the "тело ни на секунду не отдыхает"
+// beat where walking is set false) - the world stops scrolling exactly when
+// he stops walking, instead of continuing to slide under his static feet
+// (which read as "riding on something", not "standing still").
+const STOP_FROM_SEC = 6.9;
+const STOP_TO_SEC = 10.3;
+
+// Escalating unit progression for the HUD badge - not just a bigger number,
+// the UNIT itself changes (seconds -> minutes -> days -> months -> years) in
+// hard jumps at each beat boundary, matching how the narration's own time
+// references escalate. A single "46.0 -> 94.0 hours" badge that opens
+// already at 46 read as arbitrary/nonsensical at frame 1.
+type SleepCounterStage = {fromSec: number; toSec: number; label: string; valueFrom: number; valueTo: number; decimals?: number};
+const SLEEP_COUNTER_STAGES: SleepCounterStage[] = [
+  {fromSec: 0, toSec: 4.0, label: "СЕКУНД БЕЗ СНА", valueFrom: 0, valueTo: 96},
+  {fromSec: 4.0, toSec: 6.9, label: "МИНУТ БЕЗ СНА", valueFrom: 2, valueTo: 11},
+  {fromSec: 6.9, toSec: 10.3, label: "ДНЕЙ БЕЗ СНА", valueFrom: 3, valueTo: 9},
+  {fromSec: 10.3, toSec: 12.3, label: "МЕСЯЦЕВ БЕЗ СНА", valueFrom: 4, valueTo: 11},
+  {fromSec: 12.3, toSec: 18.6, label: "ЛЕТ БЕЗ СНА", valueFrom: 1, valueTo: 1.8, decimals: 1},
+];
+
+const SleepCounterBadge: React.FC<{localSec: number}> = ({localSec}) => {
+  const stage = SLEEP_COUNTER_STAGES.find((s) => localSec >= s.fromSec && localSec < s.toSec) ?? SLEEP_COUNTER_STAGES[SLEEP_COUNTER_STAGES.length - 1];
+  const value = interpolate(localSec, [stage.fromSec, stage.toSec], [stage.valueFrom, stage.valueTo], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 50,
+        right: 60,
+        background: "rgba(10,10,20,0.6)",
+        border: "2px solid #FFD400",
+        borderRadius: 14,
+        padding: "14px 24px",
+        color: "#ffffff",
+        fontFamily: "sans-serif",
+      }}
+    >
+      <div style={{fontSize: 22, opacity: 0.75, letterSpacing: 1}}>{stage.label}</div>
+      <div style={{fontSize: 44, fontWeight: 900, color: "#FFD400"}}>{value.toFixed(stage.decimals ?? 0)}</div>
+    </div>
+  );
+};
 
 export const ParallaxTest30s: React.FC = () => {
   const {fps} = useVideoConfig();
@@ -1799,7 +1854,19 @@ export const ParallaxTest30s: React.FC = () => {
   const localFrame = frame - PARALLAX_AUDIO_START;
   const audioDurationFrames = Math.ceil(PARALLAX_AUDIO_DURATION_SEC * fps);
 
-  const worldX = interpolate(localFrame, [0, audioDurationFrames], [0, 1], {
+  // Freezes world scroll during the STOP_FROM_SEC..STOP_TO_SEC window so the
+  // background doesn't keep sliding under a character who has stopped
+  // walking (beat 3, walking: false) - without this the world kept scrolling
+  // past his static feet and read as "riding on something" rather than
+  // standing still. Squeezes the paused window out of the timeline so
+  // worldX still reaches exactly 1 by the real end of the audio instead of
+  // needing a sudden catch-up speed-up afterward.
+  const stopFromFrame = Math.round(STOP_FROM_SEC * fps);
+  const stopToFrame = Math.round(STOP_TO_SEC * fps);
+  const pausedFrames = stopToFrame - stopFromFrame;
+  const effectiveFrame =
+    localFrame <= stopFromFrame ? localFrame : localFrame <= stopToFrame ? stopFromFrame : localFrame - pausedFrames;
+  const worldX = interpolate(effectiveFrame, [0, audioDurationFrames - pausedFrames], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.inOut(Easing.ease),
@@ -1844,9 +1911,7 @@ export const ParallaxTest30s: React.FC = () => {
       {/* HUD counter stays pinned to the screen, outside the camera transform
           above, same as the "БЕЗ ИНТЕРНЕТА" / day-counter badges in both
           reference breakdowns - a recurring overlay, not a one-off stamp. */}
-      <Sequence from={PARALLAX_AUDIO_START} durationInFrames={audioDurationFrames + 10}>
-        <HoursCounter startHour={46} endHour={94} duration={audioDurationFrames} />
-      </Sequence>
+      <SleepCounterBadge localSec={localSec} />
 
       {localSec >= 10.3 && <StampText text="ДИАГНОЗ" startFrame={PARALLAX_AUDIO_START + Math.round(10.6 * fps)} />}
 
