@@ -1,6 +1,6 @@
 ---
 name: content-uniqueness
-description: Check a draft video script against transcripts of competitor/reference videos covering the same topic, to catch phrases or sentence structures that ended up too close to the source even after paraphrasing. Use before recording voiceover for any script built on facts also used by other creators (e.g. "what if" explainer videos, documentary-style scripts) — especially when the source material (medical facts, historical facts, Wikipedia-style info) is the same one a competitor already used, so independent paraphrasing can converge on near-identical wording.
+description: Check a draft video script against transcripts of competitor/reference videos covering the same topic, to catch phrases or sentence structures that ended up too close to the source even after paraphrasing. Also builds a quantified "Style Bible" from a batch of reference videos BEFORE writing a script — counts how many references actually use each structural pattern (hook shape, escalating counter, narrative voice, pacing) instead of guessing from a handful of eyeballed examples. Use before recording voiceover for any script built on facts also used by other creators (e.g. "what if" explainer videos, documentary-style scripts) — especially when the source material (medical facts, historical facts, Wikipedia-style info) is the same one a competitor already used, so independent paraphrasing can converge on near-identical wording.
 ---
 
 # Content uniqueness check
@@ -12,10 +12,41 @@ script** because both scripts are paraphrasing the same source sentence.
 
 ## When to use
 
+- **Before writing a new script**, when there's a batch of reference videos
+  (ideally 10+) from successful channels in the same niche — build a Style
+  Bible first (see below) so the script formula is based on a measured count,
+  not a vague impression from the 2-3 videos that happen to be memorable.
 - Before sending a finished script to TTS, when the script was built after
   watching/reading a competitor's video on the same topic.
 - Whenever the user says something like "сделай уникально", "не спиздить",
   "непохоже на референс по тексту".
+
+## Step 0 (optional, do this first if you have a batch of references): build a Style Bible
+
+Don't eyeball a handful of competitor videos and write down "they usually open
+with a hook, then escalate" — that's a guess dressed up as a pattern. Instead:
+
+1. Get `.srt` subtitles for each reference video (if they're not already
+   downloaded with subs, transcribe with `montazh-esse`'s/`montazh-epizod`'s
+   `scripts/transcribe.py`, or reuse the SRT the project's own TTS pipeline
+   downloads for already-produced reference audio).
+2. Optionally, for a handful of the references, build a contact sheet (a
+   frame grid) to scan pacing/composition at a glance instead of scrubbing:
+   ```
+   python3 -E <skill>/scripts/contact_sheet.py ref1.mp4 ref1_sheet.jpg --interval 2
+   ```
+3. Run the quantified analyzer across every reference `.srt` at once:
+   ```
+   python3 -E <skill>/scripts/build_style_bible.py ref1.srt ref2.srt ... --out style_bible.md
+   ```
+4. Read the aggregate counts ("14 of 20 videos open with a fact-first hook,
+   no setup"). Only build the new script's formula around a beat that clears
+   roughly 70% of the sample — a beat 2-3 videos happen to share is
+   coincidence, not the format. The per-reference table in the output is
+   there to sanity-check the aggregate, not just the headline percentages.
+5. Write the actual script using that formula as a guide for *structure and
+   pacing* only — never copy phrasing from the references (that's what the
+   uniqueness check below catches if it slips through anyway).
 
 ## How to run
 
