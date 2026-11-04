@@ -1,0 +1,5 @@
+{
+ "N": {"voice": "ru-RU-DmitryNeural", "rate": "+6%"},
+ "HERO": {"voice": "en-US-AndrewMultilingualNeural", "rate": "+8%"},
+ "FRIEND": {"voice": "en-US-BrianMultilingualNeural", "rate": "+10%", "pitch": "+2Hz"}
+}

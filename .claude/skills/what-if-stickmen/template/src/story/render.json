@@ -1,0 +1,4 @@
+{
+ "long": {"name": "Long", "bed": "sfx/bed.wav"},
+ "short": {"name": "Short", "bed": "sfx/bed.wav", "timeline": "src/story/timeline.json"}
+}

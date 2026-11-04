@@ -1,0 +1,11 @@
+{
+ "ambience": [{"from": "001", "to": "end", "kind": "hall", "gain": 0.05}],
+ "music": [],
+ "sfx": [
+  {"at": "001", "off": 4, "type": "steps", "dur": 2.0, "pan": -0.4},
+  {"at": "002", "off": -6, "type": "steps", "dur": 1.5, "pan": 0.4},
+  {"at": "002", "off": 30, "type": "pop"},
+  {"at": "003", "off": 20, "type": "steps", "dur": 0.6},
+  {"at": "003", "off": 70, "type": "clap"}
+ ]
+}
