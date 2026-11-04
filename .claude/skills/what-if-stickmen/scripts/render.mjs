@@ -28,7 +28,13 @@ if (args.includes('--fresh')) fs.rmSync(dir, {recursive: true, force: true});
 fs.mkdirSync(dir, {recursive: true});
 const out = path.join(ROOT, 'out', `${c.name ?? id}.mp4`);
 // render.json may set "concurrency" (parallel browser tabs, default 6; lower it on weak machines)
-const remotionArgs = (from, to, file, conc = c.concurrency ?? 6) => ['remotion', 'render', id, file, `--frames=${from}-${to}`, '--muted', '--gl=angle', '--concurrency=' + conc, '--crf=18', '--log=error', '--timeout=120000'];
+// --browser-executable: on a sandbox/cloud container with no network access for
+// Remotion's own chrome-headless-shell to finish launching, font loading hangs on
+// delayRender("fonts") until the 120s timeout, consistently (not a flaky one-off) -
+// if a pre-installed Chromium exists at this path (true for Claude Code cloud
+// containers), use it instead; harmless no-op everywhere else.
+const BROWSER = '/opt/pw-browsers/chromium';
+const remotionArgs = (from, to, file, conc = c.concurrency ?? 6) => ['remotion', 'render', id, file, `--frames=${from}-${to}`, '--muted', '--gl=angle', '--concurrency=' + conc, '--crf=18', '--log=error', '--timeout=120000', ...(fs.existsSync(BROWSER) ? ['--browser-executable=' + BROWSER] : [])];
 
 /* quick time estimate: render 30 frames and extrapolate */
 if (args.includes('--estimate')) {
