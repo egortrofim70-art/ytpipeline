@@ -8,12 +8,17 @@
  "style": "insomnia",
  "voiceover": "input/result.mp3",
  "script": "input/script.txt",
- "duration": 26.2,
+ "duration": 33.0,
  "captions": false,
  "bars": "none",
  "fadeIn": 0.2,
  "fadeOut": 0.8,
- "music": { "enabled": false },
- "sfx": { "enabled": true, "gainDb": -6 },
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
  "loudness": -14
 }

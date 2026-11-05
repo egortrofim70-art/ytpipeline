@@ -1,21 +1,21 @@
 // shots/02_phone_dawn.js — s10–s13: the phone at 3am, 5am through the window, gives up and sits on the edge.
-import { E, registerShot, layer, blurLayer, veil, ease, prog, lerp, clamp, seg } from '/engine/core.js';
-import * as FX from '/engine/fx2d.js';
-import { drawFigure, POSES, breathe, posesAt as rigPosesAt } from '/engine/rig2d.js';
-import { bedroom, moonlight, alarmClock, GY, HS, BX, BW, MT, WIN } from '../sets/bedroom.js';
+import { E, registerShot, layer, blurLayer, veil, ease, prog, lerp, key, seg } from '/engine/core.js';
+import { drawFigure, breathe, posesAt } from '/engine/rig2d.js';
+import { bedroom, moonlight, thrownBlanket, GY, HS, BX, BW, WIN } from '../sets/bedroom.js';
 import { topDown, TD } from '../sets/topdown.js';
 import { phoneScreen } from '../sets/props.js';
 import { sleepBadge } from '../sets/badge.js';
 import { HERO, F } from '../cast.js';
 import { camAt, camLerp } from './01_night.js';
 
-// s10 "Ты берёшь телефон —" — ceiling, medium: the hand reaches to the nightstand, the screen lights his face
+// s10 "Ты берёшь телефон —" — ceiling: the arm comes out from under the blanket, picks the phone off the nightstand,
+// brings it up beside his face; the screen lights him blue. The phone never leaves the hand once it's picked up.
+const GRAB = [TD.phone.x, TD.phone.y + 34];                       // hand position that holds the phone where it lies
 registerShot('s10', { draw(g, t, info) {
-  const cam = camLerp(camAt(790, 280, 1.7), camAt(830, 270, 1.82), ease.inOut(t / info.dur));
-  const reach = ease.inOut(prog(t, 0, 0.45)), lift = ease.inOut(prog(t, 0.45, 0.85));
-  const inHand = t > 0.45, px = lerp(TD.phone.x, 830, lift), py = lerp(TD.phone.y, 250, lift);
-  topDown(g, t, cam, { face: F.tired, look: [lerp(-0.6, -0.2, lift), -0.3], reach: reach * (1 - lift * 0.35), handX: px, handY: py,
-    phoneInHand: inHand ? [px, py] : null, phoneLit: ease.out(prog(t, 0.7, 0.85)) });
+  const cam = camLerp(camAt(780, 300, 1.62), camAt(810, 290, 1.74), ease.inOut(t / info.dur));
+  const hand = key(t, [[0, [880, 470]], [0.42, GRAB], [0.52, GRAB], [0.95, [838, 262]]], ease.inOut);
+  const held = t >= 0.47, lit = ease.out(prog(t, 0.72, 0.9));
+  topDown(g, t, cam, { face: F.tired, look: key(t, [[0, [-0.8, 0]], [0.5, [-0.9, -0.2]], [0.95, [-0.7, -0.5]]]), hand, phoneHeld: held, phoneLit: lit });
   sleepBadge(g, info.globalT);
 } });
 
@@ -45,26 +45,22 @@ registerShot('s12', { draw(g, t, info) {
   sleepBadge(g, info.globalT);
 } });
 
-const HUNCH = { ...POSES.sit, head: [16, -166], sh: [6, -140], eF: [30, -104], hF: [46, -84], eB: [22, -104], hB: [40, -82] };
-const PALM = { ...POSES.sit, head: [14, -164], sh: [6, -140], eF: [34, -116], hF: [26, -158], eB: [26, -112], hB: [20, -154] };
+// sitting on the foot end of the bed, in profile, facing the window: hip on the mattress, knees bent over the end,
+// shins hanging down to the floor past the bed. The contact shadow is drawn under the FEET (the rig's default sits under the hip).
+const SIT_SLUMP = { head: [18, -166], sh: [8, -140], hip: [0, -72], eF: [30, -104], hF: [46, -80], eB: [24, -102], hB: [40, -78], kF: [46, -72], fF: [50, 0], kB: [42, -70], fB: [40, 0] };
+const SIT_HANDS = { head: [24, -158], sh: [10, -136], hip: [0, -72], eF: [44, -96], hF: [34, -150], eB: [38, -94], hB: [28, -146], kF: [46, -72], fF: [50, 0], kB: [42, -70], fB: [40, 0] };
+export const SIT_X = BX + BW - 40;
 export function sittingHero(g, M, t, o = {}) {
-  const pose = breathe(rigPosesAt(t, [[0, HUNCH], [o.palmAt ?? 99, PALM]], 0.4), t, 0.6, 2);
-  drawFigure(g, { x: BX + BW - 64, y: GY, s: HS, facing: 1, outfit: HERO, pose, face: o.face || F.tired, blink: (t % 3.1) > 3.0, rim: { color: M.rim, dir: [1, -0.35] } });
-}
-export function pushedBlanket(g) {
-  const bc = '#3c4f96';
-  for (const [x, y, w, h] of [[BX + 120, MT - 34, 220, 70], [BX + 260, MT - 22, 170, 60], [BX + 360, MT - 12, 110, 50]]) {
-    g.beginPath(); g.ellipse(x + w / 2, y + h / 2, w / 2, h / 2, 0, 0, Math.PI * 2); g.fillStyle = bc; g.fill();
-  }
-  g.strokeStyle = 'rgba(0,0,0,.18)'; g.lineWidth = 3; for (const fx of [BX + 200, BX + 300, BX + 390]) { g.beginPath(); g.moveTo(fx, MT - 26); g.quadraticCurveTo(fx + 20, MT, fx + 6, MT + 22); g.stroke(); }
+  const pose = breathe(posesAt(t, [[0, SIT_SLUMP], [o.handsAt ?? 99, SIT_HANDS]], 0.45), t, 0.6, 2);
+  g.fillStyle = 'rgba(0,0,0,.3)'; g.beginPath(); g.ellipse(SIT_X + 46 * HS, GY + 2, 40 * HS * 0.6, 6 * HS, 0, 0, Math.PI * 2); g.fill();
+  drawFigure(g, { x: SIT_X, y: GY, s: HS, facing: 1, outfit: HERO, pose, shadow: false, face: o.face || F.tired, blink: (t % 3.1) > 3.0, rim: { color: M.rim, dir: [1, -0.4] } });
 }
 
-// s13 "Будильник через час, а ты так и не уснул." — sitting on the edge, alarm clock big and soft in the foreground
+// s13 "Будильник через час, а ты так и не уснул." — sits up on the edge, slumped; on "а ты так и не уснул" his head drops into his hands
 registerShot('s13', { draw(g, t, info) {
-  const cam = camLerp(camAt(1110, 680, 1.75), camAt(1125, 670, 1.88), ease.inOut(t / info.dur)), dawn = 0.62;
+  const cam = camLerp(camAt(SIT_X - 40, 650, 1.7), camAt(SIT_X - 30, 640, 1.84), ease.inOut(t / info.dur)), dawn = 0.62;
   const { M } = bedroom(g, t, cam, { dawn, clockH: 5 });
-  layer(g, cam, 1, (g) => { pushedBlanket(g); sittingHero(g, M, t, { palmAt: 1.5 }); });
+  layer(g, cam, 1, (g) => { thrownBlanket(g); sittingHero(g, M, t, { handsAt: 1.5 }); });
   moonlight(g, t, cam, { dawn });
-  blurLayer(g, 9, (g) => alarmClock(g, 880, 770, 130, 5 + t / 3600 * 60, { alarm: 6 }), cam, 1.6);
   sleepBadge(g, info.globalT);
 } });

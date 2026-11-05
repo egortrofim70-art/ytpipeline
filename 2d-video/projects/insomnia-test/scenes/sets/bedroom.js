@@ -91,7 +91,7 @@ function bedBack(g) {
   const wood = '#2e2548', light = shade(wood, 0.25);
   rr(g, BX - 28, MT - 176, 32, GY - (MT - 176), 12); g.fillStyle = wood; g.fill();                     // headboard
   rr(g, BX - 22, MT - 166, 6, 120, 3); g.fillStyle = alpha(light, 0.5); g.fill();
-  rr(g, BX + BW - 6, MT - 40, 24, GY - (MT - 40), 8); g.fillStyle = wood; g.fill();                   // footboard
+  rr(g, BX + BW - 6, MT + 6, 24, GY - (MT + 6), 8); g.fillStyle = wood; g.fill();                     // low footboard (he sits on this end)
   g.fillStyle = shade(wood, -0.15); g.fillRect(BX, MT + 38, BW, 46);                                     // side rail
   g.fillStyle = shade(wood, -0.35); g.fillRect(BX + 8, MT + 84, 14, GY - MT - 84); g.fillRect(BX + BW - 26, MT + 84, 14, GY - MT - 84);
   rr(g, BX, MT, BW, 46, 14); g.fillStyle = '#aab1d6'; g.fill();                                         // mattress
@@ -99,34 +99,37 @@ function bedBack(g) {
   rr(g, BX + 16, MT - 34, 100, 10, 5); g.fillStyle = alpha('#fff', 0.35); g.fill();
 }
 
-// the hero lying under the covers. mode: 'up' (on back, face to ceiling), 'front' (rolled toward camera), 'away' (rolled away)
+// the hero lying under the covers, side view. turn: 0 = on his back, face to the ceiling; 1 = rolled onto his side, away from camera.
+// Everything below the chin is under the blanket; only a yellow collar peeks out at the neck.
 export function lyingHero(g, M, o = {}) {
-  const mode = o.mode || 'up', hx = HEAD.x + (o.dx || 0), hy = HEAD.y + (o.dy || 0), r = HEAD.r;
-  // head + rim (moonlight comes from the upper right)
-  circle(g, hx + r * 0.08, hy - r * 0.06, r * 1.03, M.rim);
+  const turn = clamp(o.turn || 0), hx = HEAD.x - turn * 6, hy = HEAD.y + turn * 2, r = HEAD.r;
+  rr(g, BX + 92, MT - 30, 46, 40, 16); g.fillStyle = '#e0bc0a'; g.fill();                               // collar at the neck
+  circle(g, hx + r * 0.08, hy - r * 0.06, r * 1.03, M.rim);                                             // head + rim (moonlight from upper right)
   circle(g, hx, hy, r, '#0a0c16');
-  if (mode === 'up') { g.save(); g.translate(hx, hy); g.rotate(-Math.PI / 2); face(g, 0, 0, r, { expr: o.expr, look: o.look, blink: o.blink, override: o.face }); g.restore(); }
-  else if (mode === 'front') face(g, hx, hy, r, { expr: o.expr, look: o.look, blink: o.blink, override: o.face, front: true });
-  // blanket: contour follows the body underneath
-  const side = mode === 'up' ? 0 : 1, k = o.rustle || 0;
-  const bump = (base, a) => MT - base - a * side + Math.sin(k * 9) * 3 * (k > 0 ? 1 : 0);
-  const pts = [[BX + 104, MT + 8], [BX + 118, bump(34, 10)], [BX + 190, bump(44, 18)], [BX + 300, bump(42, 14)], [BX + 370, bump(34, 22)], [BX + 450, bump(22, 12)], [BX + 505, bump(30, 6)], [BX + BW + 8, MT - 4]];
+  const fa = 1 - clamp(turn / 0.6);                                                                     // face slides over the top and out of view as he turns away
+  if (fa > 0) { g.save(); g.globalAlpha *= fa; g.translate(hx, hy); g.rotate(-Math.PI / 2 - turn * 1.1); face(g, 0, 0, r, { look: o.look, blink: o.blink, override: o.face, lid: o.lid }); g.restore(); }
+  // blanket contour follows the body: flat when on his back, hip and knees rise when he's on his side
+  const bump = (back, side) => MT - lerp(back, side, turn);
+  const pts = [[BX + 104, MT + 6], [BX + 124, bump(30, 36)], [BX + 190, bump(42, 52)], [BX + 300, bump(40, 44)], [BX + 370, bump(32, 58)], [BX + 450, bump(22, 34)], [BX + 505, bump(28, 30)], [BX + BW + 8, MT - 4]];
   g.beginPath(); g.moveTo(pts[0][0], pts[0][1]);
   for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i]; g.quadraticCurveTo(x0, y0, (x0 + x1) / 2, (y0 + y1) / 2); }
   g.lineTo(BX + BW + 8, MT - 4); g.lineTo(BX + BW + 12, MT + 64); g.lineTo(BX + 100, MT + 64); g.closePath();
   const bc = o.blanket || '#3c4f96';
-  g.fillStyle = linGrad(g, 0, MT - 50, 0, MT + 64, [shade(bc, 0.28), bc, shade(bc, -0.3)]); g.fill();
-  g.save(); g.beginPath(); g.rect(BX + 96, MT - 120, 120, 200); g.clip();                               // folded sheet: a band along the top edge
-  g.beginPath(); g.moveTo(pts[0][0], pts[0][1]);
-  for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i]; g.quadraticCurveTo(x0, y0, (x0 + x1) / 2, (y0 + y1) / 2); }
-  g.strokeStyle = '#cdd3ec'; g.lineWidth = 18; g.lineCap = 'round'; g.stroke(); g.restore();
+  g.fillStyle = linGrad(g, 0, MT - 60, 0, MT + 64, [shade(bc, 0.3), bc, shade(bc, -0.3)]); g.fill();
   g.strokeStyle = alpha('#000', 0.16); g.lineWidth = 3;
-  for (const fx of [BX + 230, BX + 330, BX + 430]) { g.beginPath(); g.moveTo(fx, MT - 20); g.quadraticCurveTo(fx + 14, MT + 20, fx + 4, MT + 58); g.stroke(); }
-  if (o.arm) {                                                                                          // arm flopped out over the covers
-    const a = clamp(o.arm), sh = [BX + 130, MT - 26], el = [lerp(BX + 150, BX + 200, a), lerp(MT - 18, MT - 44, a)], hd = [lerp(BX + 170, BX + 262, a), lerp(MT - 10, MT - 40, a)];
-    seg(g, [sh, el, hd], 22, M.rim); seg(g, [sh, el, hd], 18, '#0a0c16');
-    circle(g, hd[0] + 3, hd[1], 13, M.rim); circle(g, hd[0], hd[1], 12, '#0a0c16');
-  }
+  for (const fx of [BX + 230, BX + 330, BX + 430]) { g.beginPath(); g.moveTo(fx, MT - 18); g.quadraticCurveTo(fx + 14, MT + 20, fx + 4, MT + 58); g.stroke(); }
+}
+
+// the blanket thrown back toward the pillow (he's out of bed): a low, soft mound, not loose blobs
+export function thrownBlanket(g) {
+  const bc = '#3c4f96';
+  g.beginPath(); g.moveTo(BX + 60, MT + 4);
+  g.quadraticCurveTo(BX + 110, MT - 44, BX + 190, MT - 30); g.quadraticCurveTo(BX + 250, MT - 20, BX + 300, MT - 34);
+  g.quadraticCurveTo(BX + 350, MT - 46, BX + 390, MT - 14); g.quadraticCurveTo(BX + 410, MT + 4, BX + 404, MT + 40);
+  g.lineTo(BX + 60, MT + 40); g.closePath();
+  g.fillStyle = linGrad(g, 0, MT - 50, 0, MT + 40, [shade(bc, 0.3), bc, shade(bc, -0.25)]); g.fill();
+  g.strokeStyle = alpha('#000', 0.16); g.lineWidth = 3;
+  for (const [fx, fy] of [[BX + 170, MT - 26], [BX + 280, MT - 28], [BX + 350, MT - 30]]) { g.beginPath(); g.moveTo(fx, fy); g.quadraticCurveTo(fx + 16, fy + 26, fx + 6, MT + 34); g.stroke(); }
 }
 
 // moonlight shafts from the window onto the bed + dust floating in them (drawn last, additive)

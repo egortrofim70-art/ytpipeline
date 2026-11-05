@@ -3,8 +3,8 @@
 import { E, rr, text, measure, glow, alpha, ease, prog, clamp, lerp, FONTS } from '/engine/core.js';
 
 const YEL = '#ffd400';
-// [globalT, value, unit] — times are the spoken words ("час", "второй", "Три", "Пять", "Никогда", … "неделю")
-const STEPS = [[6.08, 1, 'h'], [7.08, 2, 'h'], [11.44, 3, 'h'], [15.04, 5, 'h'], [22.24, 1, 'd'], [22.75, 2, 'd'], [23.15, 3, 'd'], [23.5, 4, 'd'], [23.8, 5, 'd'], [24.1, 6, 'd'], [24.42, 7, 'd']];
+// [globalT, value, unit] — each step lands on its spoken word: "час", "второй", "Три", "Пять", "Первый", "третий", "пятый", "неделю"
+const STEPS = [[6.08, 1, 'h'], [7.08, 2, 'h'], [11.52, 3, 'h'], [15.28, 5, 'h'], [23.52, 1, 'd'], [25.52, 3, 'd'], [27.44, 5, 'd'], [31.12, 7, 'd']];
 const plural = (n, f) => (n % 10 === 1 && n % 100 !== 11 ? f[0] : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? f[1] : f[2]);
 const UNITS = { h: ['ЧАС', 'ЧАСА', 'ЧАСОВ'], d: ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ'] };
 

@@ -99,6 +99,16 @@ export function face(g, hx, hy, r, o = {}) {
       case 'happy': g.strokeStyle = col; g.lineWidth = r * 0.09; g.beginPath(); g.arc(x, ey + r * 0.05, r * 0.13 * s, Math.PI * 1.1, Math.PI * 1.9); g.stroke(); break;
       case 'ring': ring(g, x, ey, r * 0.2 * s, r * 0.085, col); circle(g, x + look[0] * r * 0.06, ey + look[1] * r * 0.06, r * 0.075 * s, col); break;
       case 'wide': circle(g, x, ey, r * 0.2 * s, col); circle(g, x + look[0] * r * 0.08, ey + look[1] * r * 0.08, r * 0.085 * s, ink); break;
+      case 'ball': {                                   // white eyeball, big pupil that travels, optional upper lid (tired)
+        const er = r * 0.2 * s * (ex.eyeSize || 1), pr = er * (ex.pupil || 0.5), lid = clamp(o.lid ?? ex.lid ?? 0);
+        const px = x + look[0] * (er - pr) * 0.95, py = ey + look[1] * (er - pr) * 0.8;
+        circle(g, x, ey, er, col); circle(g, px, py, pr, ink); circle(g, px - pr * 0.35, py - pr * 0.35, pr * 0.28, col);
+        if (lid > 0) { g.save(); g.beginPath(); g.arc(x, ey, er + 1, 0, Math.PI * 2); g.clip(); g.fillStyle = ink; g.fillRect(x - er - 2, ey - er - 2, er * 2 + 4, (er * 2 + 4) * lid); g.restore();
+          seg(g, [[x - er * 0.95, ey - er + er * 2 * lid], [x + er * 0.95, ey - er + er * 2 * lid]], r * 0.035, alpha(col, 0.55)); }
+        const bags = ex.bags || o.bags || 0;
+        if (bags > 0) { g.strokeStyle = alpha('#a898d8', 0.3 + 0.4 * bags); g.lineWidth = r * (0.025 + 0.025 * bags); g.beginPath(); g.arc(x, ey + er * 0.2, er * 1.08, Math.PI * 0.28, Math.PI * 0.72); g.stroke(); }
+        break;
+      }
       default: circle(g, x + look[0] * r * 0.05, ey + look[1] * r * 0.05, r * 0.125 * s, col);
     }
   });
