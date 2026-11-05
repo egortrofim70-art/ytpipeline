@@ -14,13 +14,13 @@ const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; 
 async function loadFonts() {
   const F = [['Fredoka', '600', 'fredoka', 'normal'], ['Fredoka', '700', 'fredoka', 'normal'],
     ...['600', '700', '800', '900'].map(w => ['Nunito', w, 'nunito', 'normal']),
-    ['Playfair Display', '900', 'playfair-display', 'italic']];
+    ['Playfair Display', '900', 'playfair-display', 'italic'], ['Anton', '400', 'anton', 'normal']];
   for (const [fam, weight, pkg, style] of F) {
-    for (const subset of (fam === 'Fredoka' ? ['latin'] : ['latin', 'cyrillic'])) {
+    for (const subset of (fam === 'Fredoka' ? ['latin'] : fam === 'Anton' ? ['latin', 'latin-ext'] : ['latin', 'cyrillic'])) {
       const file = `${pkg}/files/${pkg}-${subset}-${weight}-${style}.woff2`;
       try {
         const ff = new FontFace(fam, `url(/node_modules/@fontsource/${file})`, {
-          weight, style, unicodeRange: subset === 'cyrillic' ? 'U+0400-052F,U+2DE0-2DFF,U+A640-A69F' : 'U+0000-024F,U+1E00-1EFF,U+2000-206F,U+20A0-20CF,U+2100-214F'
+          weight, style, unicodeRange: subset === 'cyrillic' ? 'U+0400-052F,U+2DE0-2DFF,U+A640-A69F' : subset === 'latin-ext' ? 'U+0100-024F,U+1E00-1EFF' : 'U+0000-024F,U+1E00-1EFF,U+2000-206F,U+20A0-20CF,U+2100-214F'
         });
         await ff.load(); document.fonts.add(ff);
       } catch (e) {

@@ -1,0 +1,4 @@
+{ "title": "thumbnails", "duration": 3, "shots": [
+  {"id": "t1", "start": 0, "end": 1, "line": "", "scene": "mirror: DÍA 1 vs DÍA 180", "vignette": true},
+  {"id": "t2", "start": 1, "end": 2, "line": "", "scene": "pillow ECU: NUNCA MÁS", "vignette": true},
+  {"id": "t3", "start": 2, "end": 3, "line": "", "scene": "split 8 H vs 0 H: ESTO ES REAL", "vignette": true} ] }

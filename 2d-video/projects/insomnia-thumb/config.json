@@ -1,0 +1,2 @@
+{ "title": "thumbnails", "language": "es", "speechLanguage": "es", "aspect": "16:9", "resolution": "1080p", "fps": 24, "style": "insomnia",
+  "duration": 3, "captions": false, "bars": "none", "fadeIn": 0, "fadeOut": 0, "music": { "enabled": false }, "sfx": { "enabled": false } }
