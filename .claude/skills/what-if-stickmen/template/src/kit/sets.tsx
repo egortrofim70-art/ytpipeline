@@ -147,16 +147,29 @@ export const Bedroom: React.FC<{night?: boolean; f: number; ring?: boolean}> = (
 	</Svg>
 );
 
-/* Blanket drawn in front of the sleeping hero */
-export const Blanket: React.FC<{night?: boolean; f: number; lift?: number}> = ({night, f, lift = 0}) => (
-	<Svg>
-		<path
-			d={`M1200,${720 - lift} Q1380,${650 + Math.sin(f / 18) * 6 - lift} 1560,${690 - lift} T1880,${700 - lift} L1880,800 Q1540,840 1200,800 Z`}
-			fill={night ? '#3a5fb0' : '#f2b21c'}
-		/>
-		<path d={`M1240,${742 - lift} Q1400,${700 - lift} 1560,${720 - lift}`} stroke={night ? '#5a7fd0' : '#ffd65a'} strokeWidth={8} fill="none" strokeLinecap="round" />
-	</Svg>
-);
+/* Blanket drawn in front of the sleeping hero. A vertical gradient (lighter top edge,
+   darker where it meets the mattress) plus three fold lines of varying weight/opacity
+   give it some volume instead of reading as one flat colour shape. */
+export const Blanket: React.FC<{night?: boolean; f: number; lift?: number}> = ({night, f, lift = 0}) => {
+	const base = night ? '#3a5fb0' : '#f2b21c';
+	const top = lighten(base, 0.22);
+	const bot = darken(base, 0.28);
+	const id = 'blanket' + (night ? 'n' : 'd');
+	const d = `M1200,${720 - lift} Q1380,${650 + Math.sin(f / 18) * 6 - lift} 1560,${690 - lift} T1880,${700 - lift} L1880,800 Q1540,840 1200,800 Z`;
+	return (
+		<Svg>
+			<defs>
+				<Grad id={id} stops={[[0, top], [0.45, base], [1, bot]]} />
+			</defs>
+			<path d={d} fill={`url(#${id})`} />
+			{/* soft contact shadow where the blanket meets the mattress edge */}
+			<path d={`M1200,${798 - lift} Q1540,${838 - lift} 1880,${798 - lift}`} stroke="#000" strokeOpacity={0.14} strokeWidth={16} fill="none" strokeLinecap="round" />
+			<path d={`M1240,${742 - lift} Q1400,${700 - lift} 1560,${720 - lift}`} stroke={night ? '#5a7fd0' : '#ffd65a'} strokeWidth={7} fill="none" strokeLinecap="round" opacity={0.85} />
+			<path d={`M1290,${762 - lift} Q1440,${726 - lift} 1620,${748 - lift}`} stroke={darken(base, 0.18)} strokeWidth={6} fill="none" strokeLinecap="round" opacity={0.55} />
+			<path d={`M1220,${775 - lift} Q1360,${748 - lift} 1500,${764 - lift}`} stroke={top} strokeWidth={4} fill="none" strokeLinecap="round" opacity={0.4} />
+		</Svg>
+	);
+};
 
 /* --------------------------------- kitchen ---------------------------------- */
 
