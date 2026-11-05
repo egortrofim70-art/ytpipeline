@@ -1,0 +1,6 @@
+audio storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/result.mp3
+svc storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/service/subtitles.srt
+svc storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/service/subtitles.vtt
+svc storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/service/subtitles.lrc
+svc storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/service/alignment.csv
+svc storage/127/orders/01a1ab7f-4b64-7316-969e-81ed11088cae/output/chunks/0/service/result.json

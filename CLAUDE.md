@@ -6,9 +6,43 @@
 тестовое видео — про **фатальную семейную бессонницу** (insomnia familiar
 fatal), делается сейчас на русском для проверки пайплайна, потом переводится.
 
+## АКТИВНЫЙ ПАЙПЛАЙН (с 2026-11-05): плагин `2d-video`, только 2D
+
+Юзер выбрал после сравнения: **2D-мир + 2D-персонажи, без 3D** (3D-облёт
+Three.js пробовали, отвергнут — грубые фигуры, ломаная посадка). Remotion
+(`remotion-app/`) и скилл what-if-stickmen — старые, не трогать без запроса.
+
+- Студия: `2d-video/` (canvas + headless Chromium + ffmpeg, НЕ Remotion).
+  Первый запуск: `cd 2d-video && npm install` (Chromium уже пропатчен на
+  `/opt/pw-browsers/chromium` в `render.mjs`), для звука `pip install scipy`.
+- Скилл с правилами: `.claude/skills/make-2d-video/` — **перед любой сценой
+  прочитать `references/style-bible.md` и `render-qc.md`**. Нарушение их
+  (кадры по 9-15 с, только 1-2 типа планов, нет атмосферы) = «нет динамики».
+- Эталонный проект: `2d-video/projects/insomnia-test/` (26 с, 17 шотов,
+  озвучка Lumean «рус», SFX без музыки). Сцены: `scenes/sets/*.js`
+  (bedroom side-view с фикс. геометрией, topdown «камера с потолка»,
+  badge-счётчик, props), `scenes/shots/*.js`.
+- Рабочий цикл: Lumean TTS → `input/result.mp3` + `alignment.csv`
+  (посимвольно → собрать `timeline/words.json`) → shots.json по словам →
+  `node render.mjs --project P --sheet --scale 0.5` → читать PNG, критиковать
+  каждый кадр, чинить → `--stills` → полный рендер → `python3 audio/mix.py
+  --project P --no-music` → QC листом кадров.
+- Исправленные баги плагина (если обновлять kit — перенести заново):
+  `engine/rig2d.js` брови worried/angry были перепутаны (грустный выглядел
+  злым); `wordTime()` в `core.js` не работает с кириллицей (`\w`) — тайминги
+  брать из words.json напрямую; `neutral` в EXPR улыбается — для серьёзных
+  сцен передавать `face:` override (см. `cast.js` → `F`). Стиль `insomnia`
+  добавлен в `engine/styles.js` (мягкая виньетка, без кино-полос:
+  `config.bars: "none"`).
+- Правила юзера к картинке: никаких чёрных полос (letterbox) и чёрного
+  низа; счётчик — карточка с жёлтой рамкой `#FFD400` в правом верхнем углу,
+  «поп» при смене, грамотные окончания, эскалация единиц (часы → дни);
+  лёжа в кровати — голова на подушке, тело ПОД одеялом; ничего «висящего в
+  воздухе»; действия только по словам озвучки, не случайные.
+
 ## Где что лежит
 
-- `remotion-app/` — Remotion-проект, весь рендеринг видео
+- `remotion-app/` — Remotion-проект (старый пайплайн)
   - `src/Character.tsx` — риг персонажа (см. ниже)
   - `src/Composition.tsx` — композиции: `CharacterTest`, `CharacterDemo`,
     `SleepDemo30s` (текущий тестовый ролик про бессонницу)
