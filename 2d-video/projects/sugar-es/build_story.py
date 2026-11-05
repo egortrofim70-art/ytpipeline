@@ -139,6 +139,9 @@ AMB.update({t: {'name': 'roomtone', 'gain': -26} for t in ['kitchenWalk', 'fridg
 AMB.update({t: {'name': 'hum', 'gain': -27} for t in ['tanks', 'bodyTanks', 'fuelSwitch', 'bodyBurn', 'chart', 'compare', 'calendarFlip', 'stopwatch', 'symptom', 'cellBio', 'medal', 'volunteers', 'halfPlate', 'ecg', 'headHunger', 'switchOff', 'ration', 'candles', 'myth', 'balance', 'twoCases', 'recordBook', 'vitamins', 'lind', 'plateDanger', 'ionsDrain', 'people12', 'endCard']})
 AMB.update({t: {'name': 'wind', 'gain': -26} for t in ['cave', 'leningradStreet', 'penguin', 'bearDen', 'shipSea', 'liberation']})
 AMB.update({t: {'name': 'city', 'gain': -26} for t in ['stadium', 'march', 'arrest', 'stairs']})
+AMB.update({t: {'name': 'roomtone', 'gain': -26} for t in ['trashSoda', 'reachSweet', 'kids', 'taste', 'party']})
+AMB.update({t: {'name': 'hum', 'gain': -27} for t in ['hidden', 'cubes', 'dopamine', 'ratChoice', 'liver', 'tooth', 'journal', 'sodaTax', 'octagons']})
+AMB.update({'caneField': {'name': 'wind', 'gain': -27}})
 AMB.update({'windowDawn': {'name': 'wind', 'gain': -27}, 'venice': {'name': 'wind', 'gain': -28}})
 
 

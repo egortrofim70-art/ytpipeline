@@ -6,9 +6,10 @@ import { NIGHT } from './_tpl_night.js';
 import { SCI } from './_tpl_sci.js';
 import { STORY } from './_tpl_story.js';
 import { HUNGER } from './_tpl_hunger.js';
+import { SUGAR } from './_tpl_sugar.js';
 import { sleepBadge } from '../sets/badge.js';
 
-const TPL = { ...NIGHT, ...SCI, ...STORY, ...HUNGER };
+const TPL = { ...NIGHT, ...SCI, ...STORY, ...HUNGER, ...SUGAR };
 
 function stamp(g, t, s) {
   const at = s.at ?? 0.1, k = prog(t, at, at + 0.2); if (t < at) return;

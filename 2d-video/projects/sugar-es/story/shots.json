@@ -1,0 +1,5047 @@
+{
+ "title": "¿Y si dejaras el azúcar?",
+ "duration": 665.059,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "line": "Imagina esto",
+   "scene": "eyesOpen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eyesOpen",
+    "noBadge": true,
+    "openAt": 1.36
+   },
+   "end": 3.4
+  },
+  {
+   "id": "s002",
+   "start": 3.4,
+   "line": "cero azúcar",
+   "scene": "trashSoda",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.05,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "trashSoda",
+    "noBadge": true,
+    "dropAt": 1.72,
+    "stamp": {
+     "text": "CERO AZÚCAR",
+     "at": 0.05,
+     "y": 950,
+     "size": 120
+    }
+   },
+   "end": 5.88
+  },
+  {
+   "id": "s003",
+   "start": 5.88,
+   "line": "Nada de pan dulce",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "donut",
+      "label": "PAN DULCE",
+      "at": 0.05,
+      "cubes": 0
+     },
+     {
+      "icon": "cake",
+      "label": "GALLETAS",
+      "at": 1.76,
+      "cubes": 0
+     }
+    ],
+    "stamp": {
+     "text": "NADA",
+     "at": 0.12,
+     "y": 940,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 10.54
+  },
+  {
+   "id": "s004",
+   "start": 10.54,
+   "line": "Hasta que a las diez",
+   "scene": "reachSweet",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "reachSweet",
+    "noBadge": true,
+    "stopAt": 3.6,
+    "clock": "10:00"
+   },
+   "end": 15.14
+  },
+  {
+   "id": "s005",
+   "start": 15.14,
+   "line": "El primer día",
+   "scene": "symptom",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.5,
+    "badgeAt": 0.36
+   },
+   "end": 17.22
+  },
+  {
+   "id": "s006",
+   "start": 17.22,
+   "line": "Al tercero",
+   "scene": "foodThink",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "foodThink",
+    "foods": [
+     "chocolate",
+     "donut",
+     "cake"
+    ],
+    "gap": 0.3,
+    "badgeAt": 0.28
+   },
+   "end": 19.833
+  },
+  {
+   "id": "s007",
+   "start": 19.833,
+   "line": "Pero en unas semanas",
+   "scene": "taste",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.627,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "taste",
+    "at": 3.107,
+    "badgeAt": 0.627
+   },
+   "end": 25.34
+  },
+  {
+   "id": "s008",
+   "start": 25.34,
+   "line": "Y hay un experimento",
+   "scene": "scientist",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "sepia": false,
+    "lines": [
+     [
+      2.32,
+      "?!"
+     ]
+    ]
+   },
+   "end": 29.38
+  },
+  {
+   "id": "s009",
+   "start": 29.38,
+   "line": "a unas ratas",
+   "scene": "ratChoice",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "ratChoice",
+    "noBadge": true,
+    "at": 0.3,
+    "pctAt": 3.9
+   },
+   "end": 35.207
+  },
+  {
+   "id": "s010",
+   "start": 35.207,
+   "line": "Esto no es una dieta",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "noBadge": true,
+    "at": 2.08,
+    "caption": "UN EXPERIMENTO CON TU CEREBRO",
+    "capAt": 3.32
+   },
+   "end": 39.207
+  },
+  {
+   "id": "s011",
+   "start": 39.207,
+   "line": "Vamos a hacerlo juntos",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "¿Y SI DEJARAS",
+     "EL AZÚCAR?"
+    ],
+    "bg": "room"
+   },
+   "end": 42.287
+  },
+  {
+   "id": "s012",
+   "start": 42.287,
+   "line": "Primero",
+   "scene": "title",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "LAS REGLAS"
+    ],
+    "bg": "blueprint"
+   },
+   "end": 46.607
+  },
+  {
+   "id": "s013",
+   "start": 46.607,
+   "line": "La fruta se queda",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "LAS REGLAS",
+    "items": [
+     {
+      "icon": "apple",
+      "label": "FRUTA: SÍ",
+      "at": 0.28,
+      "hi": 0.28
+     },
+     {
+      "icon": "water",
+      "label": "LECHE: SÍ",
+      "at": 1.72,
+      "hi": 1.72
+     }
+    ]
+   },
+   "end": 49.567
+  },
+  {
+   "id": "s014",
+   "start": 49.567,
+   "line": "Su azúcar viene acompañado",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "apple",
+      "label": "FIBRA",
+      "at": 1.72
+     },
+     {
+      "icon": "water",
+      "label": "AGUA",
+      "at": 2.28
+     },
+     {
+      "icon": "heart",
+      "label": "NUTRIENTES",
+      "at": 2.84,
+      "color": "#ff8a7a"
+     }
+    ]
+   },
+   "end": 54.447
+  },
+  {
+   "id": "s015",
+   "start": 54.447,
+   "line": "Lo que eliminas",
+   "scene": "cubes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cubes",
+    "noBadge": true,
+    "mode": "limit",
+    "at": 0.2,
+    "gap": 0.12,
+    "caption": "FUERA: EL AZÚCAR AÑADIDO",
+    "capAt": 1.72
+   },
+   "end": 56.927
+  },
+  {
+   "id": "s016",
+   "start": 56.927,
+   "line": "el que alguien le puso",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "cake",
+      "label": "PARA QUE TE GUSTE MÁS",
+      "at": 0.05,
+      "cubes": 3
+     }
+    ]
+   },
+   "end": 59.967
+  },
+  {
+   "id": "s017",
+   "start": 59.967,
+   "line": "Y aquí viene el problema",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.56,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "fear",
+    "bg": "office",
+    "stamp": {
+     "text": "ESCONDIDO",
+     "at": 3.56,
+     "y": 950,
+     "size": 110,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 64.207
+  },
+  {
+   "id": "s018",
+   "start": 64.207,
+   "line": "En el pan de caja",
+   "scene": "hidden",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "breadBag",
+      "label": "PAN DE CAJA",
+      "at": 0.05
+     },
+     {
+      "icon": "ketchup",
+      "label": "SALSA DE TOMATE",
+      "at": 1.8,
+      "cubes": 3
+     }
+    ]
+   },
+   "end": 67.167
+  },
+  {
+   "id": "s019",
+   "start": 67.167,
+   "line": "En el yogur de frutas",
+   "scene": "hidden",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "yogurt",
+      "label": "YOGUR DE FRUTAS",
+      "at": 0.05,
+      "cubes": 3
+     },
+     {
+      "icon": "cereal",
+      "label": "CEREAL «INTEGRAL»",
+      "at": 2.04,
+      "cubes": 3
+     }
+    ]
+   },
+   "end": 71.187
+  },
+  {
+   "id": "s020",
+   "start": 71.187,
+   "line": "La Organización Mundial",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "< 10%",
+    "label": "DE LO QUE COMES",
+    "pre": "OMS",
+    "at": 4.36,
+    "icon": "globeI"
+   },
+   "end": 77.187
+  },
+  {
+   "id": "s021",
+   "start": 77.187,
+   "line": "Y lo ideal",
+   "scene": "cubes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cubes",
+    "noBadge": true,
+    "mode": "limit",
+    "at": 0.2,
+    "big": "25 g",
+    "bigAt": 1.16,
+    "caption": "IDEAL: 6 CUCHARADITAS",
+    "capAt": 3.0
+   },
+   "end": 81.507
+  },
+  {
+   "id": "s022",
+   "start": 81.507,
+   "line": "Una lata de refresco",
+   "scene": "cubes",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cubes",
+    "noBadge": true,
+    "mode": "can",
+    "at": 0.3,
+    "gap": 0.22,
+    "caption": "CASI 40 GRAMOS",
+    "capAt": 2.52
+   },
+   "end": 85.187
+  },
+  {
+   "id": "s023",
+   "start": 85.187,
+   "line": "Una sola lata",
+   "scene": "cubes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.88,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cubes",
+    "noBadge": true,
+    "mode": "can",
+    "at": 0,
+    "gap": 0.02,
+    "caption": "TE PASASTE DEL LÍMITE",
+    "capAt": 1.88,
+    "punch": [
+     1.88
+    ]
+   },
+   "end": 89.607
+  },
+  {
+   "id": "s024",
+   "start": 89.607,
+   "line": "Bueno",
+   "scene": "dreamFood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dreamFood",
+    "noBadge": true,
+    "food": "cake"
+   },
+   "end": 92.327
+  },
+  {
+   "id": "s025",
+   "start": 92.327,
+   "line": "Empieza el reloj",
+   "scene": "stopwatch",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "stopwatch",
+    "noBadge": true,
+    "startAt": 0.76,
+    "caption": "EMPIEZA EL RELOJ",
+    "bg": "kitchen"
+   },
+   "end": 94.007
+  },
+  {
+   "id": "s026",
+   "start": 94.007,
+   "line": "Pero espera",
+   "scene": "face",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint"
+   },
+   "end": 97.747
+  },
+  {
+   "id": "s027",
+   "start": 97.747,
+   "line": "Durante casi toda la historia",
+   "scene": "cave",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "cave",
+    "noBadge": true,
+    "mode": "feast",
+    "mammoth": false,
+    "tag": "HACE MILES DE AÑOS"
+   },
+   "end": 102.467
+  },
+  {
+   "id": "s028",
+   "start": 102.467,
+   "line": "y con suerte",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "LO ÚNICO DULCE",
+    "items": [
+     {
+      "icon": "apple",
+      "label": "FRUTA",
+      "at": 0.05
+     },
+     {
+      "icon": "fat",
+      "label": "MIEL",
+      "at": 1.8,
+      "color": "#f2b830"
+     }
+    ]
+   },
+   "end": 104.787
+  },
+  {
+   "id": "s029",
+   "start": 104.787,
+   "line": "En mil cuatrocientos",
+   "scene": "shipSea",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "shipSea",
+    "noBadge": true,
+    "tag": "CRISTÓBAL COLÓN · 1493",
+    "sepia": 0.3
+   },
+   "end": 107.947
+  },
+  {
+   "id": "s030",
+   "start": 107.947,
+   "line": "Cristóbal Colón cargó",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "ESQUEJES DE CAÑA",
+    "capAt": 1.92,
+    "items": [
+     {
+      "icon": "cane",
+      "label": "ISLAS CANARIAS",
+      "at": 0.1,
+      "hi": 1.92,
+      "color": "#5fe39a"
+     }
+    ]
+   },
+   "end": 111.827
+  },
+  {
+   "id": "s031",
+   "start": 111.827,
+   "line": "y los plantó",
+   "scene": "caneField",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "caneField",
+    "noBadge": true,
+    "tag": "LA ESPAÑOLA · 1493",
+    "caption": "CAÑA DE AZÚCAR",
+    "capAt": 0.2
+   },
+   "end": 113.747
+  },
+  {
+   "id": "s032",
+   "start": 113.747,
+   "line": "De ahí",
+   "scene": "globe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "dots": 70,
+    "caption": "EL CARIBE Y AMÉRICA",
+    "capAt": 2.44
+   },
+   "end": 117.427
+  },
+  {
+   "id": "s033",
+   "start": 117.427,
+   "line": "Y el azúcar que en Europa",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.04,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "cube",
+      "label": "UN LUJO DE REYES",
+      "at": 0.1,
+      "cubes": 0,
+      "s": 2.4
+     }
+    ],
+    "stamp": {
+     "text": "PARA TODOS",
+     "at": 4.04,
+     "y": 950,
+     "size": 110
+    }
+   },
+   "end": 122.787
+  },
+  {
+   "id": "s034",
+   "start": 122.787,
+   "line": "Hoy está en todas partes",
+   "scene": "octagons",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "octagons",
+    "noBadge": true,
+    "at": 99,
+    "tag": "HOY"
+   },
+   "end": 124.867
+  },
+  {
+   "id": "s035",
+   "start": 124.867,
+   "line": "México por ejemplo",
+   "scene": "globe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "dots": 30,
+    "caption": "MÉXICO",
+    "capAt": 0.12
+   },
+   "end": 129.507
+  },
+  {
+   "id": "s036",
+   "start": 129.507,
+   "line": "unos ciento sesenta",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "≈ 160 L",
+    "label": "DE REFRESCO POR PERSONA AL AÑO",
+    "pre": "MÉXICO",
+    "at": 0.44,
+    "icon": "soda",
+    "iconColor": "#ff5a4a",
+    "color": "#ff8a7a"
+   },
+   "end": 132.707
+  },
+  {
+   "id": "s037",
+   "start": 132.707,
+   "line": "Y hay un dato",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "JAPÓN",
+     "DESPUÉS DE LA GUERRA"
+    ],
+    "bg": "dark"
+   },
+   "end": 136.487
+  },
+  {
+   "id": "s038",
+   "start": 136.487,
+   "line": "Después de la Segunda Guerra",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "1946",
+      "JAPÓN"
+     ]
+    ],
+    "size": 200,
+    "color": "#c83a3a",
+    "caption": "EL AZÚCAR CASI DESAPARECIÓ",
+    "capAt": 3.76
+   },
+   "end": 141.167
+  },
+  {
+   "id": "s039",
+   "start": 141.167,
+   "line": "de unos quince kilos",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "noBadge": true,
+    "title": "AZÚCAR POR PERSONA EN JAPÓN",
+    "pts": [
+     [
+      0,
+      0.85
+     ],
+     [
+      0.35,
+      0.85
+     ],
+     [
+      0.6,
+      0.06
+     ],
+     [
+      1,
+      0.05
+     ]
+    ],
+    "color": "#ffd400",
+    "xlabels": [
+     [
+      0.2,
+      "ANTES DE LA GUERRA"
+     ],
+     [
+      0.85,
+      "1946"
+     ]
+    ],
+    "endLabel": "−98%",
+    "endAt": 3.16,
+    "until": 3.16,
+    "at": 0
+   },
+   "end": 145.207
+  },
+  {
+   "id": "s040",
+   "start": 145.207,
+   "line": "Y en esos años",
+   "scene": "tooth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "tooth",
+    "noBadge": true,
+    "mode": "clean",
+    "caption": "LAS CARIES BAJARON",
+    "capAt": 1.36
+   },
+   "end": 149.007
+  },
+  {
+   "id": "s041",
+   "start": 149.007,
+   "line": "Diez de la mañana",
+   "scene": "reachSweet",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 4.68,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "reachSweet",
+    "stopAt": 4.68,
+    "clock": "10:00",
+    "stamp": {
+     "text": "HOY NO",
+     "at": 4.68,
+     "y": 950,
+     "size": 120,
+     "color": "#ff5a4a"
+    },
+    "badgeAt": 0.12
+   },
+   "end": 154.387
+  },
+  {
+   "id": "s042",
+   "start": 154.387,
+   "line": "Te das cuenta",
+   "scene": "reachSweet",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "reachSweet",
+    "stopAt": 4.36,
+    "food": "cake"
+   },
+   "end": 159.507
+  },
+  {
+   "id": "s043",
+   "start": 159.507,
+   "line": "Igual que buscas",
+   "scene": "phoneFood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "phoneFood",
+    "mode": "recipes"
+   },
+   "end": 161.747
+  },
+  {
+   "id": "s044",
+   "start": 161.747,
+   "line": "Y no es solo costumbre",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "at": 4.12,
+    "caption": "DOPAMINA",
+    "capAt": 4.12
+   },
+   "end": 166.627
+  },
+  {
+   "id": "s045",
+   "start": 166.627,
+   "line": "la molécula de la recompensa",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "items": [
+     {
+      "icon": "brain",
+      "label": "RECOMPENSA",
+      "at": 0.05,
+      "hi": 0.3
+     }
+    ]
+   },
+   "end": 168.467
+  },
+  {
+   "id": "s046",
+   "start": 168.467,
+   "line": "La misma que se activa",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "food": "chocolate",
+    "at": 0.2,
+    "again": 1.4,
+    "caption": "RECOMPENSA",
+    "capAt": 0.3
+   },
+   "end": 171.767
+  },
+  {
+   "id": "s047",
+   "start": 171.767,
+   "line": "En dos mil siete",
+   "scene": "ratChoice",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "ratChoice",
+    "noBadge": true,
+    "at": 4.12,
+    "pctAt": 99,
+    "tag": "BURDEOS · 2007"
+   },
+   "end": 178.807
+  },
+  {
+   "id": "s048",
+   "start": 178.807,
+   "line": "El noventa y cuatro",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "94%",
+    "label": "ELIGIÓ EL AGUA DULCE",
+    "at": 0.28,
+    "icon": "rat",
+    "iconColor": "#c8ccd8",
+    "color": "#ff7ab0"
+   },
+   "end": 182.167
+  },
+  {
+   "id": "s049",
+   "start": 182.167,
+   "line": "Ojo",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ERAN RATAS,",
+     "NO PERSONAS"
+    ],
+    "bg": "blueprint"
+   },
+   "end": 184.567
+  },
+  {
+   "id": "s050",
+   "start": 184.567,
+   "line": "Pero dice mucho",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "noBadge": true,
+    "food": "candy",
+    "at": 0.3,
+    "caption": "LO DULCE ES MUY FUERTE",
+    "capAt": 1.4
+   },
+   "end": 188.827
+  },
+  {
+   "id": "s051",
+   "start": 188.827,
+   "line": "Mediodía",
+   "scene": "chart",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "title": "AZÚCAR EN LA SANGRE",
+    "pts": [
+     [
+      0,
+      0.4
+     ],
+     [
+      0.1,
+      0.9
+     ],
+     [
+      0.22,
+      0.2
+     ],
+     [
+      0.4,
+      0.88
+     ],
+     [
+      0.52,
+      0.18
+     ],
+     [
+      0.7,
+      0.9
+     ],
+     [
+      0.82,
+      0.2
+     ],
+     [
+      1,
+      0.5
+     ]
+    ],
+    "pts2": [
+     [
+      0,
+      0.5
+     ],
+     [
+      1,
+      0.5
+     ]
+    ],
+    "color": "#ff8a7a",
+    "color2": "#5fe39a",
+    "label1": "CON AZÚCAR",
+    "label2": "SIN AZÚCAR",
+    "badgeAt": 0.12
+   },
+   "end": 193.707
+  },
+  {
+   "id": "s052",
+   "start": 193.707,
+   "line": "Y tampoco esas caídas",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "slow",
+    "bg": "office",
+    "text": "4:00 PM…"
+   },
+   "end": 199.067
+  },
+  {
+   "id": "s053",
+   "start": 199.067,
+   "line": "Día dos",
+   "scene": "symptom",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.45,
+    "badgeAt": 0.44
+   },
+   "end": 201.787
+  },
+  {
+   "id": "s054",
+   "start": 201.787,
+   "line": "Estás de malas",
+   "scene": "angry",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "angry",
+    "word": "¡DÉJAME!",
+    "wordAt": 2.68
+   },
+   "end": 205.647
+  },
+  {
+   "id": "s055",
+   "start": 205.647,
+   "line": "Día tres",
+   "scene": "dreamFood",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dreamFood",
+    "food": "chocolate",
+    "badgeAt": 0.44
+   },
+   "end": 210.707
+  },
+  {
+   "id": "s056",
+   "start": 210.707,
+   "line": "Mucha gente que deja",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "tired",
+    "bg": "office"
+   },
+   "end": 214.747
+  },
+  {
+   "id": "s057",
+   "start": 214.747,
+   "line": "dolor de cabeza cansancio",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "items": [
+     {
+      "icon": "head",
+      "label": "DOLOR DE CABEZA",
+      "at": 0.12
+     },
+     {
+      "icon": "moon",
+      "label": "CANSANCIO",
+      "at": 1.24
+     },
+     {
+      "icon": "flame",
+      "label": "IRRITACIÓN",
+      "at": 2.2,
+      "color": "#ff8a7a"
+     },
+     {
+      "icon": "donut",
+      "label": "ANTOJO",
+      "at": 3.4
+     }
+    ]
+   },
+   "end": 220.087
+  },
+  {
+   "id": "s058",
+   "start": 220.087,
+   "line": "Es una adicción",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "text": [
+     "¿ADICCIÓN",
+     "DE VERDAD?"
+    ],
+    "verdict": "SE DISCUTE",
+    "verdictColor": "#ffd400",
+    "verdictAt": 4.58
+   },
+   "end": 225.387
+  },
+  {
+   "id": "s059",
+   "start": 225.387,
+   "line": "En ratas el azúcar",
+   "scene": "ratChoice",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "ratChoice",
+    "at": 0,
+    "pctAt": 99,
+    "right": "AGUA"
+   },
+   "end": 228.587
+  },
+  {
+   "id": "s060",
+   "start": 228.587,
+   "line": "En humanos",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.2,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint",
+    "stamp": {
+     "text": "NO TAN CLARO",
+     "at": 2.2,
+     "y": 940,
+     "size": 100
+    }
+   },
+   "end": 231.307
+  },
+  {
+   "id": "s061",
+   "start": 231.307,
+   "line": "Pero tu cerebro sí",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "at": 0.3,
+    "again": 1.3,
+    "caption": "UN PREMIO VARIAS VECES AL DÍA",
+    "capAt": 2.76
+   },
+   "end": 235.827
+  },
+  {
+   "id": "s062",
+   "start": 235.827,
+   "line": "Y ahora el premio",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "at": 99,
+    "caption": "Y AHORA NO LLEGA",
+    "capAt": 1.6
+   },
+   "end": 237.967
+  },
+  {
+   "id": "s063",
+   "start": 237.967,
+   "line": "La buena noticia",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 5.96,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "calm",
+    "bg": "kitchen",
+    "word": "ANTOJO",
+    "stamp": {
+     "text": "LUEGO BAJA",
+     "at": 5.96,
+     "y": 950,
+     "size": 110,
+     "color": "#5fe39a"
+    }
+   },
+   "end": 239.167
+  },
+  {
+   "id": "s064",
+   "start": 239.167,
+   "line": "para la mayoría",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "title": "ANTOJO",
+    "pts": [
+     [
+      0,
+      0.5
+     ],
+     [
+      0.25,
+      0.92
+     ],
+     [
+      0.45,
+      0.85
+     ],
+     [
+      1,
+      0.3
+     ]
+    ],
+    "color": "#ff7ab0",
+    "xlabels": [
+     [
+      0.25,
+      "DÍA 2–3"
+     ],
+     [
+      0.9,
+      "DESPUÉS"
+     ]
+    ]
+   },
+   "end": 244.847
+  },
+  {
+   "id": "s065",
+   "start": 244.847,
+   "line": "Una semana sin azúcar",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.24,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "smile",
+    "badgeAt": 0.24
+   },
+   "end": 246.607
+  },
+  {
+   "id": "s066",
+   "start": 246.607,
+   "line": "Tu energía se vuelve",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "title": "TU ENERGÍA",
+    "pts": [
+     [
+      0,
+      0.5
+     ],
+     [
+      1,
+      0.62
+     ]
+    ],
+    "pts2": [
+     [
+      0,
+      0.3
+     ],
+     [
+      0.15,
+      0.85
+     ],
+     [
+      0.3,
+      0.2
+     ],
+     [
+      0.5,
+      0.85
+     ],
+     [
+      0.65,
+      0.2
+     ],
+     [
+      0.85,
+      0.85
+     ],
+     [
+      1,
+      0.3
+     ]
+    ],
+    "color": "#5fe39a",
+    "color2": "#ff8a7a",
+    "label1": "AHORA",
+    "label2": "ANTES"
+   },
+   "end": 251.007
+  },
+  {
+   "id": "s067",
+   "start": 251.007,
+   "line": "Ya no necesitas",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "sipAt": 2.36,
+    "face": "smile"
+   },
+   "end": 254.607
+  },
+  {
+   "id": "s068",
+   "start": 254.607,
+   "line": "Empiezas a leer etiquetas",
+   "scene": "phoneFood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "phoneFood",
+    "mode": "recipes"
+   },
+   "end": 257.847
+  },
+  {
+   "id": "s069",
+   "start": 257.847,
+   "line": "azúcar en el jamón",
+   "scene": "hidden",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "items": [
+     {
+      "icon": "drumstick",
+      "label": "JAMÓN",
+      "at": 0.05,
+      "cubes": 1
+     },
+     {
+      "icon": "breadBag",
+      "label": "PAN",
+      "at": 1.68,
+      "cubes": 2
+     },
+     {
+      "icon": "ketchup",
+      "label": "SALSA DE SOYA",
+      "at": 4.0,
+      "cubes": 1
+     }
+    ]
+   },
+   "end": 262.467
+  },
+  {
+   "id": "s070",
+   "start": 262.467,
+   "line": "Si comías mucha azúcar",
+   "scene": "scale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scale",
+    "from": 78,
+    "to": 76.4
+   },
+   "end": 266.867
+  },
+  {
+   "id": "s071",
+   "start": 266.867,
+   "line": "No por magia",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "items": [
+     {
+      "icon": "soda",
+      "value": "MENOS",
+      "label": "CALORÍAS VACÍAS",
+      "at": 0.1,
+      "color": "#ff8a7a",
+      "size": 110
+     }
+    ]
+   },
+   "end": 270.467
+  },
+  {
+   "id": "s072",
+   "start": 270.467,
+   "line": "Pero lo más interesante",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "hospital"
+   },
+   "end": 273.587
+  },
+  {
+   "id": "s073",
+   "start": 273.587,
+   "line": "Y para verlo",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "SAN FRANCISCO"
+    ],
+    "bg": "dark"
+   },
+   "end": 277.027
+  },
+  {
+   "id": "s074",
+   "start": 277.027,
+   "line": "En dos mil quince",
+   "scene": "scientist",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "sepia": false,
+    "tag": "ROBERT LUSTIG · 2015",
+    "lines": [
+     [
+      4.96,
+      "43 NIÑOS"
+     ],
+     [
+      6.16,
+      "OBESIDAD"
+     ]
+    ]
+   },
+   "end": 280.547
+  },
+  {
+   "id": "s075",
+   "start": 280.547,
+   "line": "hicieron un experimento",
+   "scene": "kids",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kids",
+    "noBadge": true,
+    "caption": "43 NIÑOS",
+    "capAt": 1.44,
+    "tag": "SAN FRANCISCO · 2015"
+   },
+   "end": 285.507
+  },
+  {
+   "id": "s076",
+   "start": 285.507,
+   "line": "Durante diez días",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "from": 1,
+    "to": 10,
+    "at": 0.1,
+    "until": 1.8,
+    "sub": "DÍA",
+    "color": "#3a7ad8"
+   },
+   "end": 288.027
+  },
+  {
+   "id": "s077",
+   "start": 288.027,
+   "line": "Quitaron casi todo",
+   "scene": "cubes",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cubes",
+    "noBadge": true,
+    "mode": "limit",
+    "at": 0,
+    "gap": 0,
+    "caption": "FUERA EL AZÚCAR AÑADIDO",
+    "stamp": {
+     "text": "FUERA",
+     "at": 0.3,
+     "y": 950,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 290.467
+  },
+  {
+   "id": "s078",
+   "start": 290.467,
+   "line": "pero lo reemplazaron",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "EN SU LUGAR",
+    "items": [
+     {
+      "icon": "bread",
+      "label": "PAN",
+      "at": 0.1,
+      "hi": 2.6
+     },
+     {
+      "icon": "plate",
+      "label": "PASTA",
+      "at": 3.16
+     }
+    ]
+   },
+   "end": 294.267
+  },
+  {
+   "id": "s079",
+   "start": 294.267,
+   "line": "Las mismas calorías",
+   "scene": "kids",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kids",
+    "noBadge": true,
+    "tag": "SAN FRANCISCO · 2015",
+    "caption": "LAS MISMAS CALORÍAS",
+    "capAt": 0.1
+   },
+   "end": 297.527
+  },
+  {
+   "id": "s080",
+   "start": 297.527,
+   "line": "pizza hot dogs burritos",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "pizza",
+      "label": "PIZZA",
+      "at": 0.02,
+      "cubes": 0
+     },
+     {
+      "icon": "drumstick",
+      "label": "HOT DOGS",
+      "at": 0.64,
+      "cubes": 0
+     },
+     {
+      "icon": "burger",
+      "label": "BURRITOS",
+      "at": 1.4,
+      "cubes": 0
+     }
+    ]
+   },
+   "end": 299.727
+  },
+  {
+   "id": "s081",
+   "start": 299.727,
+   "line": "La idea era simple",
+   "scene": "kids",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kids",
+    "noBadge": true,
+    "foods": [
+     "burger",
+     "pizza",
+     "drumstick"
+    ]
+   },
+   "end": 304.527
+  },
+  {
+   "id": "s082",
+   "start": 304.527,
+   "line": "Sería por el azúcar",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "hospital",
+    "stamp": {
+     "text": "POR EL AZÚCAR",
+     "at": 0.1,
+     "y": 940,
+     "size": 110
+    }
+   },
+   "end": 306.107
+  },
+  {
+   "id": "s083",
+   "start": 306.107,
+   "line": "Diez días después",
+   "scene": "chart",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "noBadge": true,
+    "title": "TRIGLICÉRIDOS",
+    "pts": [
+     [
+      0,
+      0.9
+     ],
+     [
+      1,
+      0.48
+     ]
+    ],
+    "color": "#ff8a7a",
+    "at": 0.1,
+    "endLabel": "−46%",
+    "endAt": 5.32,
+    "until": 5.32
+   },
+   "end": 312.027
+  },
+  {
+   "id": "s084",
+   "start": 312.027,
+   "line": "El colesterol malo",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "heart",
+      "label": "COLESTEROL MALO ↓",
+      "at": 0.05,
+      "color": "#5fe39a"
+     },
+     {
+      "icon": "flask",
+      "label": "INSULINA MEJOR",
+      "at": 2.12,
+      "color": "#5fe39a"
+     }
+    ]
+   },
+   "end": 317.414
+  },
+  {
+   "id": "s085",
+   "start": 317.414,
+   "line": "casi no habían bajado",
+   "scene": "scale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.533,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scale",
+    "noBadge": true,
+    "from": 61.4,
+    "to": 61.0,
+    "stamp": {
+     "text": "EL MISMO PESO",
+     "at": 1.533,
+     "y": 200,
+     "size": 100,
+     "color": "#ffd400"
+    }
+   },
+   "end": 319.467
+  },
+  {
+   "id": "s086",
+   "start": 319.467,
+   "line": "Es decir",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "MEJORÓ POR DENTRO",
+     "ANTES QUE POR FUERA"
+    ],
+    "bg": "blueprint"
+   },
+   "end": 324.227
+  },
+  {
+   "id": "s087",
+   "start": 324.227,
+   "line": "Por qué pasa esto",
+   "scene": "liver",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "fill",
+    "at": 9,
+    "arrows": false,
+    "caption": "EL HÍGADO",
+    "capAt": 3.333
+   },
+   "end": 328.2
+  },
+  {
+   "id": "s088",
+   "start": 328.2,
+   "line": "El azúcar de mesa",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "vs": "+",
+    "caption": "AZÚCAR DE MESA",
+    "items": [
+     {
+      "icon": "cube",
+      "pct": 0.5,
+      "value": "50%",
+      "label": "GLUCOSA",
+      "at": 1.64,
+      "color": "#9fd8ff"
+     },
+     {
+      "icon": "cube",
+      "pct": 0.5,
+      "value": "50%",
+      "label": "FRUCTOSA",
+      "at": 2.84,
+      "color": "#ff7ab0"
+     }
+    ]
+   },
+   "end": 331.88
+  },
+  {
+   "id": "s089",
+   "start": 331.88,
+   "line": "La glucosa la usa",
+   "scene": "bodyTanks",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "bodyTanks",
+    "noBadge": true,
+    "at": 99
+   },
+   "end": 334.44
+  },
+  {
+   "id": "s090",
+   "start": 334.44,
+   "line": "Pero la fructosa",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "fill",
+    "at": 9,
+    "caption": "LA FRUCTOSA VA AL HÍGADO",
+    "capAt": 0.2
+   },
+   "end": 337.48
+  },
+  {
+   "id": "s091",
+   "start": 337.48,
+   "line": "Cuando llega demasiada",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "fill",
+    "at": 3.44,
+    "caption": "SE CONVIERTE EN GRASA",
+    "capAt": 3.44
+   },
+   "end": 341.48
+  },
+  {
+   "id": "s092",
+   "start": 341.48,
+   "line": "Y esa grasa se puede",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "fill",
+    "at": -3,
+    "arrows": false,
+    "caption": "Y SE QUEDA AHÍ",
+    "capAt": 0.2
+   },
+   "end": 345.0
+  },
+  {
+   "id": "s093",
+   "start": 345.0,
+   "line": "Así se forma",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "HÍGADO GRASO"
+    ],
+    "bg": "red"
+   },
+   "end": 347.24
+  },
+  {
+   "id": "s094",
+   "start": 347.24,
+   "line": "Antes se pensaba",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "flask",
+      "label": "ALCOHOL",
+      "at": 0.1,
+      "hi": 3.24
+     }
+    ]
+   },
+   "end": 351.12
+  },
+  {
+   "id": "s095",
+   "start": 351.12,
+   "line": "Hoy se ve cada vez",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "flask",
+      "label": "ALCOHOL",
+      "at": 0,
+      "cross": 0.2
+     },
+     {
+      "icon": "soda",
+      "label": "AZÚCAR",
+      "at": 0.3,
+      "hi": 2.72,
+      "color": "#ff5a4a"
+     },
+     {
+      "icon": "people",
+      "label": "INCLUSO NIÑOS",
+      "at": 4.0,
+      "color": "#ff8a7a"
+     }
+    ]
+   },
+   "end": 355.84
+  },
+  {
+   "id": "s096",
+   "start": 355.84,
+   "line": "La buena noticia",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "clear",
+    "at": 0.3,
+    "arrows": false,
+    "caption": "SE RECUPERA RÁPIDO",
+    "capAt": 2.56
+   },
+   "end": 359.0
+  },
+  {
+   "id": "s097",
+   "start": 359.0,
+   "line": "En un estudio del mismo",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "from": 1,
+    "to": 9,
+    "at": 0.2,
+    "until": 2.2,
+    "sub": "DÍA",
+    "color": "#2a9a5a",
+    "caption": "MISMO EQUIPO",
+    "capAt": 0.2
+   },
+   "end": 362.84
+  },
+  {
+   "id": "s098",
+   "start": 362.84,
+   "line": "les bajó la grasa",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "noBadge": true,
+    "mode": "clear",
+    "at": 0.1,
+    "arrows": false,
+    "caption": "EN SOLO 9 DÍAS",
+    "capAt": 2.2
+   },
+   "end": 366.36
+  },
+  {
+   "id": "s099",
+   "start": 366.36,
+   "line": "Dos semanas sin azúcar",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "smile",
+    "badgeAt": 0.12
+   },
+   "end": 368.46
+  },
+  {
+   "id": "s100",
+   "start": 368.46,
+   "line": "Y aquí pasa algo",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "street"
+   },
+   "end": 371.92
+  },
+  {
+   "id": "s101",
+   "start": 371.92,
+   "line": "Comes una fresa",
+   "scene": "taste",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "taste",
+    "at": 1.96,
+    "word": "¡MUY DULCE!"
+   },
+   "end": 375.86
+  },
+  {
+   "id": "s102",
+   "start": 375.86,
+   "line": "Tu lengua se está",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "TU LENGUA SE RECALIBRA",
+    "items": [
+     {
+      "icon": "strawberry",
+      "label": "MÁS DULCE",
+      "at": 0.1
+     },
+     {
+      "icon": "brain",
+      "label": "CEREBRO",
+      "at": 6.92,
+      "color": "#ffd400"
+     }
+    ]
+   },
+   "end": 378.74
+  },
+  {
+   "id": "s103",
+   "start": 378.74,
+   "line": "Las células que detectan",
+   "scene": "cellBio",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cellBio",
+    "mode": "eat",
+    "at": 0.2,
+    "caption": "LAS CÉLULAS DEL SABOR SE RENUEVAN",
+    "capAt": 0.2
+   },
+   "end": 384.52
+  },
+  {
+   "id": "s104",
+   "start": 384.52,
+   "line": "En dos mil dieciséis",
+   "scene": "scientist",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "sepia": false,
+    "tag": "FILADELFIA · 2016",
+    "lines": [
+     [
+      6.28,
+      "3 MESES"
+     ],
+     [
+      6.28,
+      "MENOS AZÚCAR"
+     ]
+    ]
+   },
+   "end": 387.96
+  },
+  {
+   "id": "s105",
+   "start": 387.96,
+   "line": "un grupo de personas",
+   "scene": "volunteers",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "volunteers",
+    "noBadge": true,
+    "n": 12,
+    "cols": 6,
+    "gap": 0.05,
+    "bg": "blueprint",
+    "sepia": false,
+    "caption": "3 MESES CON MENOS AZÚCAR",
+    "capAt": 2.84
+   },
+   "end": 391.72
+  },
+  {
+   "id": "s106",
+   "start": 391.72,
+   "line": "Al final",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "vs": "→",
+    "items": [
+     {
+      "icon": "pudding",
+      "value": "NORMAL",
+      "label": "DIETA DE SIEMPRE",
+      "at": 0.1,
+      "color": "#9fd8ff",
+      "size": 80
+     },
+     {
+      "icon": "pudding",
+      "value": "+40%",
+      "label": "MÁS DULCE",
+      "at": 2.6,
+      "color": "#ff7ab0"
+     }
+    ]
+   },
+   "end": 397.56
+  },
+  {
+   "id": "s107",
+   "start": 397.56,
+   "line": "Pero ojo con este detalle",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "text": [
+     "¿EMPEZARON A PREFERIR",
+     "LO MENOS DULCE?"
+    ],
+    "verdict": "NO",
+    "verdictAt": 2.92
+   },
+   "end": 401.92
+  },
+  {
+   "id": "s108",
+   "start": 401.92,
+   "line": "Y cuando el experimento",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "noBadge": true,
+    "title": "AZÚCAR QUE COMÍAN",
+    "pts": [
+     [
+      0,
+      0.8
+     ],
+     [
+      0.15,
+      0.35
+     ],
+     [
+      0.7,
+      0.35
+     ],
+     [
+      0.8,
+      0.8
+     ],
+     [
+      1,
+      0.82
+     ]
+    ],
+    "smooth": false,
+    "color": "#ff7ab0",
+    "xlabels": [
+     [
+      0.4,
+      "EXPERIMENTO"
+     ],
+     [
+      0.9,
+      "DESPUÉS"
+     ]
+    ]
+   },
+   "end": 406.72
+  },
+  {
+   "id": "s109",
+   "start": 406.72,
+   "line": "O sea",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.04,
+     "name": "hit",
+     "gain": -9
+    },
+    {
+     "at": 2.4,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "talk",
+    "bg": "blueprint",
+    "stamp": [
+     {
+      "text": "LA LENGUA CAMBIA",
+      "at": 1.04,
+      "y": 900,
+      "size": 90,
+      "until": 2.4
+     },
+     {
+      "text": "EL HÁBITO ESPERA",
+      "at": 2.4,
+      "y": 900,
+      "size": 90,
+      "color": "#ff5a4a"
+     }
+    ]
+   },
+   "end": 411.54
+  },
+  {
+   "id": "s110",
+   "start": 411.54,
+   "line": "Un mes sin azúcar",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "smile",
+    "badgeAt": 0.28
+   },
+   "end": 413.7
+  },
+  {
+   "id": "s111",
+   "start": 413.7,
+   "line": "Tu boca lo agradece",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "smile",
+    "bg": "office"
+   },
+   "end": 415.32
+  },
+  {
+   "id": "s112",
+   "start": 415.32,
+   "line": "Las bacterias que causan",
+   "scene": "tooth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "tooth",
+    "at": 3.92,
+    "caption": "BACTERIAS + AZÚCAR = ÁCIDO",
+    "capAt": 3.92
+   },
+   "end": 421.8
+  },
+  {
+   "id": "s113",
+   "start": 421.8,
+   "line": "Menos azúcar",
+   "scene": "tooth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "tooth",
+    "mode": "clean",
+    "caption": "MENOS AZÚCAR, MENOS ÁCIDO",
+    "capAt": 0.1
+   },
+   "end": 423.98
+  },
+  {
+   "id": "s114",
+   "start": 423.98,
+   "line": "Según la Organización",
+   "scene": "globe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "dots": 160,
+    "caption": "CARIES SIN TRATAR",
+    "capAt": 2.36
+   },
+   "end": 429.98
+  },
+  {
+   "id": "s115",
+   "start": 429.98,
+   "line": "La tienen unos dos mil",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "value": "2.500",
+    "label": "MILLONES DE PERSONAS",
+    "at": 0.92,
+    "icon": "tooth",
+    "iconColor": "#f2f0ea"
+   },
+   "end": 433.36
+  },
+  {
+   "id": "s116",
+   "start": 433.36,
+   "line": "Y la báscula",
+   "scene": "face",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.32,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint",
+    "stamp": {
+     "text": "DEPENDE",
+     "at": 1.32,
+     "y": 940,
+     "size": 110
+    }
+   },
+   "end": 435.36
+  },
+  {
+   "id": "s117",
+   "start": 435.36,
+   "line": "Si antes tomabas",
+   "scene": "scale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scale",
+    "from": 80,
+    "to": 76.8
+   },
+   "end": 439.12
+  },
+  {
+   "id": "s118",
+   "start": 439.12,
+   "line": "Si casi no comías",
+   "scene": "scale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scale",
+    "from": 70.2,
+    "to": 70.0
+   },
+   "end": 442.32
+  },
+  {
+   "id": "s119",
+   "start": 442.32,
+   "line": "El azúcar no es un veneno",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "text": [
+     "¿VENENO",
+     "MÁGICO?"
+    ],
+    "verdict": "NO",
+    "verdictAt": 1.4
+   },
+   "end": 444.72
+  },
+  {
+   "id": "s120",
+   "start": 444.72,
+   "line": "El problema es la cantidad",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.68,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "items": [
+     {
+      "icon": "cube",
+      "label": "LA CANTIDAD",
+      "at": 0.05,
+      "cubes": 5,
+      "s": 2.0
+     }
+    ],
+    "stamp": {
+     "text": "ESCONDIDO EN TODO",
+     "at": 2.68,
+     "y": 980,
+     "size": 90,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 449.44
+  },
+  {
+   "id": "s121",
+   "start": 449.44,
+   "line": "Ahora",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "MITOS",
+     "DEL AZÚCAR"
+    ],
+    "bg": "dark"
+   },
+   "end": 451.46
+  },
+  {
+   "id": "s122",
+   "start": 451.46,
+   "line": "Mito uno",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "n": 1,
+    "text": [
+     "«EL AZÚCAR MORENO",
+     "ES MÁS SANO»"
+    ],
+    "verdict": "CASI NO",
+    "verdictAt": 3.253
+   },
+   "end": 455.406
+  },
+  {
+   "id": "s123",
+   "start": 455.406,
+   "line": "Tiene un poco de melaza",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "vs": "=",
+    "items": [
+     {
+      "icon": "cube",
+      "value": "BLANCO",
+      "label": "",
+      "at": 0.1,
+      "color": "#f2f0ea",
+      "size": 80
+     },
+     {
+      "icon": "cube",
+      "value": "MORENO",
+      "label": "",
+      "at": 0.6,
+      "color": "#c89a5a",
+      "size": 80
+     }
+    ],
+    "caption": "PRÁCTICAMENTE LO MISMO"
+   },
+   "end": 459.466
+  },
+  {
+   "id": "s124",
+   "start": 459.466,
+   "line": "Mito dos",
+   "scene": "myth",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "n": 2,
+    "text": [
+     "«LA FRUTA ENGORDA",
+     "COMO UN DULCE»"
+    ],
+    "verdict": "NO",
+    "verdictAt": 3.58
+   },
+   "end": 463.566
+  },
+  {
+   "id": "s125",
+   "start": 463.566,
+   "line": "Una manzana tiene azúcar",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "apple",
+      "label": "AZÚCAR",
+      "at": 0.05
+     },
+     {
+      "icon": "bread",
+      "label": "FIBRA",
+      "at": 2.2
+     },
+     {
+      "icon": "water",
+      "label": "AGUA",
+      "at": 2.76
+     }
+    ]
+   },
+   "end": 466.886
+  },
+  {
+   "id": "s126",
+   "start": 466.886,
+   "line": "Es muy difícil comer",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "apple",
+      "label": "FRUTA ENTERA",
+      "at": 0.05,
+      "cubes": 0,
+      "s": 2.2
+     }
+    ]
+   },
+   "end": 469.746
+  },
+  {
+   "id": "s127",
+   "start": 469.746,
+   "line": "Mito tres",
+   "scene": "myth",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "n": 3,
+    "text": [
+     "«EL AZÚCAR PONE A LOS",
+     "NIÑOS HIPERACTIVOS»"
+    ],
+    "verdict": "MITO",
+    "verdictAt": 10.653
+   },
+   "end": 474.999
+  },
+  {
+   "id": "s128",
+   "start": 474.999,
+   "line": "En estudios donde",
+   "scene": "kids",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kids",
+    "noBadge": true,
+    "foods": [
+     "cake2",
+     "donut",
+     "candy"
+    ],
+    "caption": "NADIE SABÍA QUIÉN COMIÓ AZÚCAR",
+    "capAt": 0.3
+   },
+   "end": 481.119
+  },
+  {
+   "id": "s129",
+   "start": 481.119,
+   "line": "Muchas veces son los adultos",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.48,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "smile",
+    "bg": "office",
+    "stamp": {
+     "text": "VEN LO QUE ESPERAN",
+     "at": 2.48,
+     "y": 950,
+     "size": 90
+    }
+   },
+   "end": 484.379
+  },
+  {
+   "id": "s130",
+   "start": 484.379,
+   "line": "Mito cuatro",
+   "scene": "myth",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "n": 4,
+    "text": [
+     "«EDULCORANTES",
+     "Y LISTO»"
+    ],
+    "verdict": "NO TAN RÁPIDO",
+    "verdictColor": "#ffd400",
+    "verdictAt": 1.6
+   },
+   "end": 487.899
+  },
+  {
+   "id": "s131",
+   "start": 487.899,
+   "line": "Sirven a algunas personas",
+   "scene": "trashSoda",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "trashSoda",
+    "noBadge": true,
+    "dropAt": 2.0
+   },
+   "end": 490.552
+  },
+  {
+   "id": "s132",
+   "start": 490.552,
+   "line": "Pero mantienen el gusto",
+   "scene": "dopamine",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "dopamine",
+    "noBadge": true,
+    "food": "candy",
+    "at": 0.3,
+    "caption": "EL GUSTO POR LO MUY DULCE SIGUE",
+    "capAt": 1.907
+   },
+   "end": 492.939
+  },
+  {
+   "id": "s133",
+   "start": 492.939,
+   "line": "y la ciencia sobre ellos",
+   "scene": "scientist",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "sepia": false,
+    "lines": [
+     [
+      2.4,
+      "TODAVÍA ABIERTO"
+     ]
+    ]
+   },
+   "end": 496.419
+  },
+  {
+   "id": "s134",
+   "start": 496.419,
+   "line": "Y ahora",
+   "scene": "title",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "UNA HISTORIA",
+     "DE PELÍCULA"
+    ],
+    "bg": "dark"
+   },
+   "end": 499.459
+  },
+  {
+   "id": "s135",
+   "start": 499.459,
+   "line": "En mil novecientos sesenta",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "1967",
+      "AÑO"
+     ]
+    ],
+    "size": 200,
+    "color": "#8a5a32",
+    "bg": "paper"
+   },
+   "end": 501.459
+  },
+  {
+   "id": "s136",
+   "start": 501.459,
+   "line": "una organización de la industria",
+   "scene": "scientist",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "ancel",
+    "tag": "HARVARD",
+    "lines": [
+     [
+      1.08,
+      "INDUSTRIA DEL AZÚCAR"
+     ],
+     [
+      4.28,
+      "→ HARVARD"
+     ]
+    ]
+   },
+   "end": 506.179
+  },
+  {
+   "id": "s137",
+   "start": 506.179,
+   "line": "para escribir una revisión",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "hiAt": 99
+   },
+   "end": 509.539
+  },
+  {
+   "id": "s138",
+   "start": 509.539,
+   "line": "Unos seis mil quinientos",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "mode": "folder",
+    "stampAt": 0.2,
+    "moneyAt": 0.1,
+    "amount": 6500,
+    "sub": "≈ US$ 50.000 DE HOY",
+    "subAt": 2.92
+   },
+   "end": 514.739
+  },
+  {
+   "id": "s139",
+   "start": 514.739,
+   "line": "La revisión se publicó",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "hiAt": 99,
+    "head": "REVISTA MÉDICA · 1967"
+   },
+   "end": 519.139
+  },
+  {
+   "id": "s140",
+   "start": 519.139,
+   "line": "Le restaba importancia",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "hiAt": 3.56,
+    "head": "REVISTA MÉDICA · 1967"
+   },
+   "end": 523.299
+  },
+  {
+   "id": "s141",
+   "start": 523.299,
+   "line": "Y no decía quién",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "mode": "folder",
+    "stampAt": 1.72,
+    "moneyAt": 99
+   },
+   "end": 525.779
+  },
+  {
+   "id": "s142",
+   "start": 525.779,
+   "line": "Esto salió a la luz",
+   "scene": "scientist",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "sepia": false,
+    "tag": "2016",
+    "lines": [
+     [
+      6.44,
+      "DOCUMENTOS INTERNOS"
+     ]
+    ]
+   },
+   "end": 528.739
+  },
+  {
+   "id": "s143",
+   "start": 528.739,
+   "line": "en dos mil dieciséis cuando",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "mode": "folder",
+    "stampAt": 3.48,
+    "moneyAt": 99,
+    "tag": "2016"
+   },
+   "end": 533.539
+  },
+  {
+   "id": "s144",
+   "start": 533.539,
+   "line": "No hay pruebas",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "text": [
+     "¿LA INDUSTRIA",
+     "ESCRIBIÓ EL TEXTO?"
+    ],
+    "verdict": "SIN PRUEBAS",
+    "verdictColor": "#ffd400",
+    "verdictAt": 0.4
+   },
+   "end": 536.392
+  },
+  {
+   "id": "s145",
+   "start": 536.392,
+   "line": "Pero durante décadas",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "fat",
+      "label": "MIEDO A LA GRASA",
+      "at": 0.1,
+      "color": "#ff5a4a"
+     },
+     {
+      "icon": "cube",
+      "label": "AZÚCAR SIN VIGILANCIA",
+      "at": 3.667
+     }
+    ]
+   },
+   "end": 542.659
+  },
+  {
+   "id": "s146",
+   "start": 542.659,
+   "line": "América Latina",
+   "scene": "globe",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "dots": 40,
+    "caption": "AMÉRICA LATINA",
+    "capAt": 0.1
+   },
+   "end": 545.619
+  },
+  {
+   "id": "s147",
+   "start": 545.619,
+   "line": "En dos mil catorce",
+   "scene": "sodaTax",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sodaTax",
+    "noBadge": true,
+    "at": 2.28,
+    "dropAt": 99
+   },
+   "end": 551.219
+  },
+  {
+   "id": "s148",
+   "start": 551.219,
+   "line": "Ese año las compras",
+   "scene": "sodaTax",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sodaTax",
+    "noBadge": true,
+    "at": -1,
+    "dropAt": 2.76,
+    "drop": 0.12
+   },
+   "end": 556.939
+  },
+  {
+   "id": "s149",
+   "start": 556.939,
+   "line": "Y la gente empezó",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "water",
+      "label": "MÁS AGUA",
+      "at": 0.1,
+      "hi": 2.0
+     }
+    ]
+   },
+   "end": 559.479
+  },
+  {
+   "id": "s150",
+   "start": 559.479,
+   "line": "En dos mil dieciséis",
+   "scene": "octagons",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "octagons",
+    "noBadge": true,
+    "at": 3.64,
+    "gap": 0.25
+   },
+   "end": 565.339
+  },
+  {
+   "id": "s151",
+   "start": 565.339,
+   "line": "Alto en azúcares",
+   "scene": "octagons",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "octagons",
+    "noBadge": true,
+    "at": 0,
+    "gap": 0.08,
+    "caption": "«ALTO EN AZÚCARES»"
+   },
+   "end": 568.179
+  },
+  {
+   "id": "s152",
+   "start": 568.179,
+   "line": "En año y medio",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "noBadge": true,
+    "title": "COMPRA DE BEBIDAS AZUCARADAS · CHILE",
+    "pts": [
+     [
+      0,
+      0.8
+     ],
+     [
+      1,
+      0.6
+     ]
+    ],
+    "color": "#ff8a7a",
+    "endLabel": "≈ −25%",
+    "endAt": 4.36,
+    "until": 4.36
+   },
+   "end": 574.139
+  },
+  {
+   "id": "s153",
+   "start": 574.139,
+   "line": "Y muchas empresas",
+   "scene": "octagons",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "octagons",
+    "noBadge": true,
+    "items": [
+     "cereal",
+     "yogurt",
+     "soda"
+    ],
+    "at": 99,
+    "caption": "CAMBIARON SUS RECETAS",
+    "capAt": 1.68
+   },
+   "end": 577.899
+  },
+  {
+   "id": "s154",
+   "start": 577.899,
+   "line": "Hoy esos octágonos",
+   "scene": "globe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "dots": 60,
+    "caption": "MÉXICO · PERÚ · URUGUAY · …",
+    "capAt": 2.16
+   },
+   "end": 583.139
+  },
+  {
+   "id": "s155",
+   "start": 583.139,
+   "line": "Seguro los has visto",
+   "scene": "octagons",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "octagons",
+    "noBadge": true,
+    "at": 0,
+    "gap": 0.15,
+    "tag": "EN TU COCINA"
+   },
+   "end": 585.779
+  },
+  {
+   "id": "s156",
+   "start": 585.779,
+   "line": "Tres meses sin azúcar",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "smile",
+    "badgeAt": 0.12
+   },
+   "end": 590.019
+  },
+  {
+   "id": "s157",
+   "start": 590.019,
+   "line": "Un postre muy dulce",
+   "scene": "taste",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "taste",
+    "at": 0.5,
+    "word": "¡DEMASIADO!"
+   },
+   "end": 592.819
+  },
+  {
+   "id": "s158",
+   "start": 592.819,
+   "line": "El café sin azúcar",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "sipAt": 0.36,
+    "face": "smile"
+   },
+   "end": 595.539
+  },
+  {
+   "id": "s159",
+   "start": 595.539,
+   "line": "Lo difícil ahora",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "office"
+   },
+   "end": 599.299
+  },
+  {
+   "id": "s160",
+   "start": 599.299,
+   "line": "el pastel de cumpleaños",
+   "scene": "party",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "party",
+    "noAt": 1.8,
+    "word": "NO, GRACIAS",
+    "wordAt": 1.8
+   },
+   "end": 604.919
+  },
+  {
+   "id": "s161",
+   "start": 604.919,
+   "line": "Un año",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "steps": [
+     [
+      0,
+      "365",
+      "DÍAS"
+     ]
+    ],
+    "size": 220,
+    "badgeAt": 0.28
+   },
+   "end": 605.879
+  },
+  {
+   "id": "s162",
+   "start": 605.879,
+   "line": "Comer menos azúcar añadido",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "MENOS RIESGO DE",
+    "items": [
+     {
+      "icon": "flask",
+      "label": "DIABETES TIPO 2",
+      "at": 0.2,
+      "hi": 3.96,
+      "color": "#5fe39a"
+     },
+     {
+      "icon": "tooth",
+      "label": "CARIES",
+      "at": 5.48,
+      "color": "#5fe39a"
+     },
+     {
+      "icon": "liver",
+      "label": "HÍGADO GRASO",
+      "at": 6.28,
+      "color": "#5fe39a"
+     }
+    ]
+   },
+   "end": 613.159
+  },
+  {
+   "id": "s163",
+   "start": 613.159,
+   "line": "No es una garantía",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "text": [
+     "¿UNA GARANTÍA?"
+    ],
+    "verdict": "NO, PERO…",
+    "verdictColor": "#ffd400",
+    "verdictAt": 0.76
+   },
+   "end": 614.652
+  },
+  {
+   "id": "s164",
+   "start": 614.652,
+   "line": "Pero es una de las cosas",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "lines": [
+     "DE LO MÁS CLARO",
+     "QUE DICE LA CIENCIA"
+    ],
+    "bg": "blueprint"
+   },
+   "end": 618.439
+  },
+  {
+   "id": "s165",
+   "start": 618.439,
+   "line": "Y recuerda el experimento",
+   "scene": "chart",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "title": "EL HÁBITO",
+    "pts": [
+     [
+      0,
+      0.35
+     ],
+     [
+      0.6,
+      0.35
+     ],
+     [
+      0.75,
+      0.8
+     ],
+     [
+      1,
+      0.82
+     ]
+    ],
+    "smooth": false,
+    "color": "#ff7ab0",
+    "xlabels": [
+     [
+      0.68,
+      "1 SEMANA"
+     ]
+    ]
+   },
+   "end": 623.399
+  },
+  {
+   "id": "s166",
+   "start": 623.399,
+   "line": "El azúcar no se va",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.08,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "smile",
+    "bg": "street",
+    "stamp": {
+     "text": "SOLO DEJA DE MANDAR",
+     "at": 3.08,
+     "y": 950,
+     "size": 90,
+     "color": "#5fe39a"
+    }
+   },
+   "end": 627.479
+  },
+  {
+   "id": "s167",
+   "start": 627.479,
+   "line": "Entonces",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "¿Y SI DEJARAS",
+     "EL AZÚCAR?"
+    ],
+    "bg": "room"
+   },
+   "end": 630.679
+  },
+  {
+   "id": "s168",
+   "start": 630.679,
+   "line": "El primer día",
+   "scene": "symptom",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.5,
+    "badgeAt": 0.28
+   },
+   "end": 632.919
+  },
+  {
+   "id": "s169",
+   "start": 632.919,
+   "line": "Al tercero",
+   "scene": "dreamFood",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dreamFood",
+    "food": "chocolate",
+    "badgeAt": 0.28
+   },
+   "end": 635.399
+  },
+  {
+   "id": "s170",
+   "start": 635.399,
+   "line": "En una semana",
+   "scene": "chart",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.52,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "chart",
+    "title": "TU ENERGÍA",
+    "pts": [
+     [
+      0,
+      0.5
+     ],
+     [
+      1,
+      0.62
+     ]
+    ],
+    "color": "#5fe39a",
+    "until": 2.0,
+    "badgeAt": 0.52
+   },
+   "end": 638.439
+  },
+  {
+   "id": "s171",
+   "start": 638.439,
+   "line": "En dos la fruta",
+   "scene": "taste",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "taste",
+    "at": 0.8,
+    "badgeAt": 0.28
+   },
+   "end": 640.919
+  },
+  {
+   "id": "s172",
+   "start": 640.919,
+   "line": "Y tu hígado",
+   "scene": "liver",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "liver",
+    "mode": "clear",
+    "at": 0.2,
+    "arrows": false,
+    "caption": "ANTES QUE LA BÁSCULA",
+    "capAt": 3.0
+   },
+   "end": 645.399
+  },
+  {
+   "id": "s173",
+   "start": 645.399,
+   "line": "No se trata de no volver",
+   "scene": "party",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "party",
+    "noBadge": true,
+    "noAt": 99
+   },
+   "end": 648.199
+  },
+  {
+   "id": "s174",
+   "start": 648.199,
+   "line": "Se trata de que tú decidas",
+   "scene": "reachSweet",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.08,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "reachSweet",
+    "noBadge": true,
+    "stopAt": 2.6,
+    "clock": "10:00",
+    "stamp": {
+     "text": "TÚ DECIDES",
+     "at": 1.08,
+     "y": 950,
+     "size": 110,
+     "color": "#5fe39a"
+    }
+   },
+   "end": 652.459
+  },
+  {
+   "id": "s175",
+   "start": 652.459,
+   "line": "Cuántos días aguantarías",
+   "scene": "comment",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "comment",
+    "noBadge": true,
+    "text": "¿Cuántos días aguantarías sin azúcar?",
+    "typeDur": 1.4
+   },
+   "end": 656.379
+  },
+  {
+   "id": "s176",
+   "start": 656.379,
+   "line": "Y suscríbete",
+   "scene": "endCard",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "endCard",
+    "noBadge": true
+   },
+   "end": 665.059
+  }
+ ]
+}
