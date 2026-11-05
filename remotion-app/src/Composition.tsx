@@ -1158,6 +1158,17 @@ type BeatVisual =
       lamp?: boolean;
       panTo?: {x: number; y: number; zoom?: number};
     }
+  // reuses PainFullES's proven location set instead of the single repeated
+  // "Bedroom" - 12 of 27 beats were all "bed" with only camera/pose varying,
+  // same "3-4 locations for 9 minutes" complaint the Pain pass already fixed
+  | {
+      type: "park" | "kitchen" | "mirror" | "street";
+      x: number;
+      zoom: number;
+      pose: Partial<CharacterProps>;
+      dayRange?: [number, number];
+      panTo?: {x: number; zoom?: number};
+    }
   | {type: "brain"; erosion: number}
   | {type: "info"; eyebrow: string; title: string; body?: string}
   | {type: "info-sequence"; cards: {eyebrow: string; title: string; body?: string}[]};
@@ -1182,22 +1193,22 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
     pillow: true, blanket: true,
     panTo: {x: 620, y: 700, zoom: 1.85},
   },
-  /* 5  Día tres */ {
-    type: "bed", x: 560, y: 760, zoom: 1.6,
-    pose: {expression: "tired", bobbing: true},
-    dayRange: [3, 3.5], pillow: true, blanket: true,
+  /* 5  Día tres - gives up on bed, pacing the kitchen for water at 3am */ {
+    type: "kitchen", x: 760, zoom: 1.35,
+    pose: {expression: "tired", armRaise: 0.3},
+    dayRange: [3, 3.5],
   },
-  /* 6  Día siete - 27s */ {
-    type: "bed", x: 560, y: 720, zoom: 1.7,
-    pose: {expression: "scared", stillness: true},
-    dayRange: [7, 7.5], pillow: true, blanket: true,
-    panTo: {x: 500, y: 700, zoom: 1.9},
+  /* 6  Día siete - 27s, a week in, checks himself in the mirror */ {
+    type: "mirror", x: 960, zoom: 1.3,
+    pose: {expression: "scared", faceTilt: -3},
+    dayRange: [7, 7.5],
+    panTo: {x: 960, zoom: 1.55},
   },
-  /* 7  Día quince - 27s */ {
-    type: "bed", x: 560, y: 700, zoom: 1.75,
-    pose: {expression: "shocked", stillness: true},
-    dayRange: [15, 15.5], pillow: true, blanket: true,
-    panTo: {x: 620, y: 680, zoom: 1.95},
+  /* 7  Día quince - 27s, wandering the street at night, can't sit still */ {
+    type: "street", x: 760, zoom: 1.3,
+    pose: {expression: "shocked", faceTilt: 2},
+    dayRange: [15, 15.5],
+    panTo: {x: 1200, zoom: 1.5},
   },
   /* 8  Día treinta */ {
     type: "bed", x: 560, y: 760, zoom: 1.6,
@@ -1228,10 +1239,10 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
     title: "Insomnio Fatal Esporádico",
     body: "Sin antecedentes familiares · aparece al azar · mismo desenlace",
   },
-  /* 16 Día 45 */ {
-    type: "bed", x: 560, y: 760, zoom: 1.6,
-    pose: {expression: "tired", stillness: true},
-    dayRange: [45, 45.5], pillow: true, blanket: true,
+  /* 16 Día 45 - kitchen again, worse this time: shakier, more desperate */ {
+    type: "kitchen", x: 820, zoom: 1.45,
+    pose: {expression: "shocked", armRaise: 0.5, faceTilt: -4},
+    dayRange: [45, 45.5],
   },
   /* 17 coma inducido - 37s, the single worst offender, needs the most drift */ {
     type: "bed", x: 480, y: 680, zoom: 1.85,
@@ -1239,16 +1250,16 @@ const INSOMNIA_VISUALS: BeatVisual[] = [
     pillow: false, blanket: false, lamp: true,
     panTo: {x: 560, y: 650, zoom: 2.1},
   },
-  /* 18 Día 60 */ {
-    type: "bed", x: 560, y: 760, zoom: 1.6,
-    pose: {expression: "tired", stillness: true},
-    dayRange: [60, 60.5], pillow: true, blanket: true,
+  /* 18 Día 60 - mirror again: two months of deterioration visible */ {
+    type: "mirror", x: 960, zoom: 1.4,
+    pose: {expression: "tired", faceTilt: 4},
+    dayRange: [60, 60.5],
   },
-  /* 19 Día 90 - 27s */ {
-    type: "bed", x: 560, y: 740, zoom: 1.65,
-    pose: {expression: "tired", faceTilt: -4, stillness: true},
-    dayRange: [90, 90.5], pillow: true, blanket: true,
-    panTo: {x: 500, y: 720, zoom: 1.85},
+  /* 19 Día 90 - 27s, back on the street, barely functional */ {
+    type: "street", x: 1100, zoom: 1.35,
+    pose: {expression: "tired", faceTilt: -4, armRaise: 0.2},
+    dayRange: [90, 90.5],
+    panTo: {x: 700, zoom: 1.6},
   },
   /* 20 Día 120 - 23s */ {
     type: "bed", x: 560, y: 720, zoom: 1.7,
@@ -1353,9 +1364,34 @@ const InsomniaBeatScene: React.FC<{visual: BeatVisual; duration: number}> = ({vi
       </>
     );
   }
+  if (visual.type === "info") {
+    return (
+      <SceneFade duration={duration}>
+        <InfoCard eyebrow={visual.eyebrow} title={visual.title} body={visual.body} />
+      </SceneFade>
+    );
+  }
+  // park | kitchen | mirror | street - full-body standing scenes on a light
+  // background (same components PainFullES already uses), `glow` off since
+  // that's a dark-backdrop rim halo. Day counter lives outside CameraCloser
+  // here too, for the same reason as the "bed" branch above.
+  const Scene = visual.type === "park" ? ParkScene : visual.type === "kitchen" ? KitchenScene : visual.type === "mirror" ? MirrorScene : StreetScene;
   return (
     <SceneFade duration={duration}>
-      <InfoCard eyebrow={visual.eyebrow} title={visual.title} body={visual.body} />
+      <CameraCloser
+        x={visual.x}
+        y={STANDING_Y - 40}
+        zoom={visual.zoom}
+        panTo={visual.panTo ? {x: visual.panTo.x, y: STANDING_Y - 40, zoom: visual.panTo.zoom} : undefined}
+        duration={duration}
+      >
+        <Scene>
+          <Character x={visual.x} y={STANDING_Y} scale={1.3} glow={false} {...visual.pose} />
+        </Scene>
+      </CameraCloser>
+      {visual.dayRange && (
+        <DayCounter startDay={visual.dayRange[0]} endDay={visual.dayRange[1]} duration={duration} />
+      )}
     </SceneFade>
   );
 };
