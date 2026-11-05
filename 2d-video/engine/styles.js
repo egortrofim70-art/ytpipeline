@@ -32,7 +32,7 @@ export const STYLES = {
   },
   insomnia: {
     name: 'Insomnia Night', desc: 'Midnight Blue with a gentle grade: soft vignette so frame edges never crush to black, warm accents keep their colour.',
-    ink: '#0a0c16', inkFar: '#232a40', feature: '#eef3ff', rimWidth: 4, ui: { ...UI, accent: '#ff8a5c', gold: '#ffd400' },
+    ink: '#0a0c16', inkFar: '#0a0c16', feature: '#eef3ff', rimWidth: 4, ui: { ...UI, accent: '#ff8a5c', gold: '#ffd400' },
     grade: { contrast: 1.04, sat: 0.92, lift: [0.0, 0.015, 0.05], gamma: [0.96, 0.98, 1.03], gain: [0.96, 0.98, 1.06], vignette: 0.32, grain: 0.045, bloom: 0.6 },
     moods: { night: { sky: ['#0b1030', '#1c2456', '#34306a'], wall: '#272c52', floor: '#2b2f52', dark: '#141730', rim: '#b8c8ff', key: '#c9d4ff' }, dusk: { sky: ['#1b2050', '#4a3f7e', '#a0688a', '#e8a07a'], wall: '#33305a', floor: '#30305a' } },
   },

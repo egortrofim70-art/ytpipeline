@@ -1,0 +1,106 @@
+{
+ "title": "¿Y si nunca más pudieras dormir?",
+ "language": "es",
+ "speechLanguage": "es",
+ "aspect": "16:9",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "insomnia",
+ "voiceover": "input/voice.mp3",
+ "script": "input/script_es.md",
+ "duration": 560.895,
+ "captions": false,
+ "bars": "none",
+ "fadeIn": 0.2,
+ "fadeOut": 1.0,
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "badge": [
+  [
+   6.32,
+   1,
+   "h"
+  ],
+  [
+   7.4,
+   2,
+   "h"
+  ],
+  [
+   12.22,
+   3,
+   "h"
+  ],
+  [
+   16.54,
+   5,
+   "h"
+  ],
+  [
+   25.08,
+   1,
+   "d"
+  ],
+  [
+   27.24,
+   3,
+   "d"
+  ],
+  [
+   29.56,
+   5,
+   "d"
+  ],
+  [
+   34.68,
+   1,
+   "w"
+  ],
+  [
+   137.7,
+   1,
+   "w"
+  ],
+  [
+   158.28,
+   2,
+   "w"
+  ],
+  [
+   177.26,
+   1,
+   "m"
+  ],
+  [
+   366.307,
+   "1,5",
+   "m"
+  ],
+  [
+   396.59,
+   2,
+   "m"
+  ],
+  [
+   407.644,
+   3,
+   "m"
+  ],
+  [
+   427.563,
+   4,
+   "m"
+  ],
+  [
+   471.108,
+   18,
+   "m"
+  ]
+ ]
+}

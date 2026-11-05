@@ -1,0 +1,9044 @@
+[
+{
+"word": "Imagina",
+"start": 0.0,
+"end": 0.48,
+"sec": "01"
+},
+{
+"word": "esto",
+"start": 0.64,
+"end": 0.8,
+"sec": "01"
+},
+{
+"word": "te",
+"start": 1.28,
+"end": 1.36,
+"sec": "01"
+},
+{
+"word": "acuestas",
+"start": 1.44,
+"end": 1.84,
+"sec": "01"
+},
+{
+"word": "a",
+"start": 1.867,
+"end": 1.893,
+"sec": "01"
+},
+{
+"word": "dormir",
+"start": 1.92,
+"end": 2.4,
+"sec": "01"
+},
+{
+"word": "cierras",
+"start": 2.8,
+"end": 3.2,
+"sec": "01"
+},
+{
+"word": "los",
+"start": 3.28,
+"end": 3.36,
+"sec": "01"
+},
+{
+"word": "ojos",
+"start": 3.44,
+"end": 3.92,
+"sec": "01"
+},
+{
+"word": "y",
+"start": 4.34,
+"end": 4.42,
+"sec": "01"
+},
+{
+"word": "no",
+"start": 4.5,
+"end": 4.58,
+"sec": "01"
+},
+{
+"word": "pasa",
+"start": 4.66,
+"end": 4.9,
+"sec": "01"
+},
+{
+"word": "nada",
+"start": 4.98,
+"end": 5.22,
+"sec": "01"
+},
+{
+"word": "Pasa",
+"start": 5.64,
+"end": 5.96,
+"sec": "01"
+},
+{
+"word": "una",
+"start": 6.08,
+"end": 6.2,
+"sec": "01"
+},
+{
+"word": "hora",
+"start": 6.32,
+"end": 6.44,
+"sec": "01"
+},
+{
+"word": "Luego",
+"start": 6.92,
+"end": 7.32,
+"sec": "01"
+},
+{
+"word": "otra",
+"start": 7.4,
+"end": 7.64,
+"sec": "01"
+},
+{
+"word": "Das",
+"start": 8.12,
+"end": 8.28,
+"sec": "01"
+},
+{
+"word": "vueltas",
+"start": 8.36,
+"end": 8.68,
+"sec": "01"
+},
+{
+"word": "en",
+"start": 8.76,
+"end": 8.84,
+"sec": "01"
+},
+{
+"word": "la",
+"start": 8.88,
+"end": 8.92,
+"sec": "01"
+},
+{
+"word": "cama",
+"start": 9.0,
+"end": 9.32,
+"sec": "01"
+},
+{
+"word": "cuentas",
+"start": 9.6,
+"end": 9.96,
+"sec": "01"
+},
+{
+"word": "ovejas",
+"start": 10.08,
+"end": 10.6,
+"sec": "01"
+},
+{
+"word": "miras",
+"start": 10.84,
+"end": 11.0,
+"sec": "01"
+},
+{
+"word": "el",
+"start": 11.08,
+"end": 11.16,
+"sec": "01"
+},
+{
+"word": "techo",
+"start": 11.24,
+"end": 11.56,
+"sec": "01"
+},
+{
+"word": "Las",
+"start": 11.98,
+"end": 12.14,
+"sec": "01"
+},
+{
+"word": "tres",
+"start": 12.22,
+"end": 12.38,
+"sec": "01"
+},
+{
+"word": "de",
+"start": 12.46,
+"end": 12.54,
+"sec": "01"
+},
+{
+"word": "la",
+"start": 12.62,
+"end": 12.66,
+"sec": "01"
+},
+{
+"word": "mañana",
+"start": 12.7,
+"end": 13.1,
+"sec": "01"
+},
+{
+"word": "Agarras",
+"start": 13.5,
+"end": 13.9,
+"sec": "01"
+},
+{
+"word": "el",
+"start": 13.98,
+"end": 14.02,
+"sec": "01"
+},
+{
+"word": "celular",
+"start": 14.06,
+"end": 14.46,
+"sec": "01"
+},
+{
+"word": "solo",
+"start": 14.78,
+"end": 15.02,
+"sec": "01"
+},
+{
+"word": "para",
+"start": 15.1,
+"end": 15.18,
+"sec": "01"
+},
+{
+"word": "ver",
+"start": 15.26,
+"end": 15.42,
+"sec": "01"
+},
+{
+"word": "la",
+"start": 15.46,
+"end": 15.5,
+"sec": "01"
+},
+{
+"word": "hora",
+"start": 15.58,
+"end": 15.82,
+"sec": "01"
+},
+{
+"word": "Las",
+"start": 16.3,
+"end": 16.46,
+"sec": "01"
+},
+{
+"word": "cinco",
+"start": 16.54,
+"end": 16.94,
+"sec": "01"
+},
+{
+"word": "La",
+"start": 17.34,
+"end": 17.42,
+"sec": "01"
+},
+{
+"word": "alarma",
+"start": 17.5,
+"end": 17.9,
+"sec": "01"
+},
+{
+"word": "suena",
+"start": 17.98,
+"end": 18.22,
+"sec": "01"
+},
+{
+"word": "en",
+"start": 18.3,
+"end": 18.38,
+"sec": "01"
+},
+{
+"word": "una",
+"start": 18.46,
+"end": 18.62,
+"sec": "01"
+},
+{
+"word": "hora",
+"start": 18.7,
+"end": 18.94,
+"sec": "01"
+},
+{
+"word": "y",
+"start": 19.14,
+"end": 19.18,
+"sec": "01"
+},
+{
+"word": "todavía",
+"start": 19.26,
+"end": 19.74,
+"sec": "01"
+},
+{
+"word": "no",
+"start": 19.82,
+"end": 19.9,
+"sec": "01"
+},
+{
+"word": "te",
+"start": 19.98,
+"end": 20.06,
+"sec": "01"
+},
+{
+"word": "has",
+"start": 20.14,
+"end": 20.22,
+"sec": "01"
+},
+{
+"word": "dormido",
+"start": 20.3,
+"end": 20.7,
+"sec": "01"
+},
+{
+"word": "Ahora",
+"start": 21.12,
+"end": 21.36,
+"sec": "01"
+},
+{
+"word": "imagina",
+"start": 21.48,
+"end": 21.76,
+"sec": "01"
+},
+{
+"word": "que",
+"start": 21.84,
+"end": 22.0,
+"sec": "01"
+},
+{
+"word": "esta",
+"start": 22.12,
+"end": 22.24,
+"sec": "01"
+},
+{
+"word": "noche",
+"start": 22.32,
+"end": 22.64,
+"sec": "01"
+},
+{
+"word": "no",
+"start": 22.8,
+"end": 22.96,
+"sec": "01"
+},
+{
+"word": "termina",
+"start": 23.04,
+"end": 23.52,
+"sec": "01"
+},
+{
+"word": "Nunca",
+"start": 23.94,
+"end": 24.42,
+"sec": "01"
+},
+{
+"word": "El",
+"start": 24.84,
+"end": 24.92,
+"sec": "01"
+},
+{
+"word": "primer",
+"start": 25.08,
+"end": 25.24,
+"sec": "01"
+},
+{
+"word": "día",
+"start": 25.36,
+"end": 25.48,
+"sec": "01"
+},
+{
+"word": "todavía",
+"start": 25.56,
+"end": 26.04,
+"sec": "01"
+},
+{
+"word": "aguantas",
+"start": 26.12,
+"end": 26.6,
+"sec": "01"
+},
+{
+"word": "Al",
+"start": 27.0,
+"end": 27.16,
+"sec": "01"
+},
+{
+"word": "tercero",
+"start": 27.24,
+"end": 27.64,
+"sec": "01"
+},
+{
+"word": "confundes",
+"start": 27.92,
+"end": 28.28,
+"sec": "01"
+},
+{
+"word": "las",
+"start": 28.36,
+"end": 28.44,
+"sec": "01"
+},
+{
+"word": "palabras",
+"start": 28.52,
+"end": 29.0,
+"sec": "01"
+},
+{
+"word": "Al",
+"start": 29.32,
+"end": 29.48,
+"sec": "01"
+},
+{
+"word": "quinto",
+"start": 29.56,
+"end": 29.88,
+"sec": "01"
+},
+{
+"word": "te",
+"start": 30.08,
+"end": 30.12,
+"sec": "01"
+},
+{
+"word": "quedas",
+"start": 30.2,
+"end": 30.44,
+"sec": "01"
+},
+{
+"word": "dormido",
+"start": 30.52,
+"end": 30.92,
+"sec": "01"
+},
+{
+"word": "caminando",
+"start": 31.0,
+"end": 31.56,
+"sec": "01"
+},
+{
+"word": "pero",
+"start": 31.96,
+"end": 32.12,
+"sec": "01"
+},
+{
+"word": "no",
+"start": 32.28,
+"end": 32.36,
+"sec": "01"
+},
+{
+"word": "puedes",
+"start": 32.52,
+"end": 32.84,
+"sec": "01"
+},
+{
+"word": "dormir",
+"start": 32.92,
+"end": 33.32,
+"sec": "01"
+},
+{
+"word": "Y",
+"start": 33.72,
+"end": 33.8,
+"sec": "01"
+},
+{
+"word": "después",
+"start": 33.92,
+"end": 34.28,
+"sec": "01"
+},
+{
+"word": "de",
+"start": 34.32,
+"end": 34.36,
+"sec": "01"
+},
+{
+"word": "una",
+"start": 34.44,
+"end": 34.6,
+"sec": "01"
+},
+{
+"word": "semana",
+"start": 34.68,
+"end": 35.08,
+"sec": "01"
+},
+{
+"word": "Suena",
+"start": 35.8,
+"end": 36.2,
+"sec": "02"
+},
+{
+"word": "a",
+"start": 36.24,
+"end": 36.28,
+"sec": "02"
+},
+{
+"word": "película",
+"start": 36.36,
+"end": 36.84,
+"sec": "02"
+},
+{
+"word": "de",
+"start": 36.88,
+"end": 36.92,
+"sec": "02"
+},
+{
+"word": "terror",
+"start": 37.0,
+"end": 37.4,
+"sec": "02"
+},
+{
+"word": "Pero",
+"start": 37.88,
+"end": 38.04,
+"sec": "02"
+},
+{
+"word": "es",
+"start": 38.12,
+"end": 38.2,
+"sec": "02"
+},
+{
+"word": "un",
+"start": 38.24,
+"end": 38.28,
+"sec": "02"
+},
+{
+"word": "diagnóstico",
+"start": 38.36,
+"end": 39.0,
+"sec": "02"
+},
+{
+"word": "real",
+"start": 39.08,
+"end": 39.48,
+"sec": "02"
+},
+{
+"word": "Se",
+"start": 39.88,
+"end": 40.04,
+"sec": "02"
+},
+{
+"word": "llama",
+"start": 40.12,
+"end": 40.36,
+"sec": "02"
+},
+{
+"word": "insomnio",
+"start": 40.52,
+"end": 41.08,
+"sec": "02"
+},
+{
+"word": "familiar",
+"start": 41.16,
+"end": 41.64,
+"sec": "02"
+},
+{
+"word": "fatal",
+"start": 41.72,
+"end": 42.12,
+"sec": "02"
+},
+{
+"word": "Quien",
+"start": 42.6,
+"end": 42.76,
+"sec": "02"
+},
+{
+"word": "lo",
+"start": 42.84,
+"end": 42.92,
+"sec": "02"
+},
+{
+"word": "tiene",
+"start": 43.0,
+"end": 43.24,
+"sec": "02"
+},
+{
+"word": "deja",
+"start": 43.48,
+"end": 43.72,
+"sec": "02"
+},
+{
+"word": "de",
+"start": 43.76,
+"end": 43.8,
+"sec": "02"
+},
+{
+"word": "dormir",
+"start": 43.84,
+"end": 44.2,
+"sec": "02"
+},
+{
+"word": "de",
+"start": 44.28,
+"end": 44.36,
+"sec": "02"
+},
+{
+"word": "verdad",
+"start": 44.44,
+"end": 44.84,
+"sec": "02"
+},
+{
+"word": "y",
+"start": 45.12,
+"end": 45.16,
+"sec": "02"
+},
+{
+"word": "en",
+"start": 45.24,
+"end": 45.32,
+"sec": "02"
+},
+{
+"word": "promedio",
+"start": 45.44,
+"end": 45.8,
+"sec": "02"
+},
+{
+"word": "en",
+"start": 46.04,
+"end": 46.12,
+"sec": "02"
+},
+{
+"word": "un",
+"start": 46.2,
+"end": 46.28,
+"sec": "02"
+},
+{
+"word": "año",
+"start": 46.32,
+"end": 46.44,
+"sec": "02"
+},
+{
+"word": "y",
+"start": 46.52,
+"end": 46.56,
+"sec": "02"
+},
+{
+"word": "medio",
+"start": 46.6,
+"end": 46.92,
+"sec": "02"
+},
+{
+"word": "muere",
+"start": 47.24,
+"end": 47.56,
+"sec": "02"
+},
+{
+"word": "Hoy",
+"start": 48.04,
+"end": 48.2,
+"sec": "02"
+},
+{
+"word": "te",
+"start": 48.28,
+"end": 48.36,
+"sec": "02"
+},
+{
+"word": "voy",
+"start": 48.44,
+"end": 48.52,
+"sec": "02"
+},
+{
+"word": "a",
+"start": 48.56,
+"end": 48.6,
+"sec": "02"
+},
+{
+"word": "mostrar",
+"start": 48.64,
+"end": 49.0,
+"sec": "02"
+},
+{
+"word": "qué",
+"start": 49.08,
+"end": 49.16,
+"sec": "02"
+},
+{
+"word": "le",
+"start": 49.24,
+"end": 49.32,
+"sec": "02"
+},
+{
+"word": "pasa",
+"start": 49.4,
+"end": 49.64,
+"sec": "02"
+},
+{
+"word": "a",
+"start": 49.68,
+"end": 49.72,
+"sec": "02"
+},
+{
+"word": "tu",
+"start": 49.8,
+"end": 49.88,
+"sec": "02"
+},
+{
+"word": "cuerpo",
+"start": 49.96,
+"end": 50.28,
+"sec": "02"
+},
+{
+"word": "y",
+"start": 50.32,
+"end": 50.36,
+"sec": "02"
+},
+{
+"word": "a",
+"start": 50.4,
+"end": 50.44,
+"sec": "02"
+},
+{
+"word": "tu",
+"start": 50.52,
+"end": 50.56,
+"sec": "02"
+},
+{
+"word": "cerebro",
+"start": 50.6,
+"end": 51.0,
+"sec": "02"
+},
+{
+"word": "cuando",
+"start": 51.16,
+"end": 51.4,
+"sec": "02"
+},
+{
+"word": "el",
+"start": 51.44,
+"end": 51.48,
+"sec": "02"
+},
+{
+"word": "sueño",
+"start": 51.56,
+"end": 51.8,
+"sec": "02"
+},
+{
+"word": "desaparece",
+"start": 51.88,
+"end": 52.52,
+"sec": "02"
+},
+{
+"word": "para",
+"start": 52.6,
+"end": 52.76,
+"sec": "02"
+},
+{
+"word": "siempre",
+"start": 52.84,
+"end": 53.24,
+"sec": "02"
+},
+{
+"word": "Y",
+"start": 53.64,
+"end": 53.72,
+"sec": "02"
+},
+{
+"word": "por",
+"start": 53.8,
+"end": 53.88,
+"sec": "02"
+},
+{
+"word": "qué",
+"start": 53.96,
+"end": 54.04,
+"sec": "02"
+},
+{
+"word": "los",
+"start": 54.12,
+"end": 54.2,
+"sec": "02"
+},
+{
+"word": "médicos",
+"start": 54.28,
+"end": 54.68,
+"sec": "02"
+},
+{
+"word": "todavía",
+"start": 54.76,
+"end": 55.24,
+"sec": "02"
+},
+{
+"word": "no",
+"start": 55.4,
+"end": 55.48,
+"sec": "02"
+},
+{
+"word": "pueden",
+"start": 55.64,
+"end": 55.88,
+"sec": "02"
+},
+{
+"word": "detenerlo",
+"start": 55.96,
+"end": 56.52,
+"sec": "02"
+},
+{
+"word": "En",
+"start": 57.24,
+"end": 57.4,
+"sec": "03"
+},
+{
+"word": "mil",
+"start": 57.48,
+"end": 57.56,
+"sec": "03"
+},
+{
+"word": "novecientos",
+"start": 57.6,
+"end": 58.12,
+"sec": "03"
+},
+{
+"word": "ochenta",
+"start": 58.2,
+"end": 58.44,
+"sec": "03"
+},
+{
+"word": "y",
+"start": 58.48,
+"end": 58.52,
+"sec": "03"
+},
+{
+"word": "cuatro",
+"start": 58.6,
+"end": 58.84,
+"sec": "03"
+},
+{
+"word": "esto",
+"start": 59.32,
+"end": 59.48,
+"sec": "03"
+},
+{
+"word": "le",
+"start": 59.56,
+"end": 59.64,
+"sec": "03"
+},
+{
+"word": "pasó",
+"start": 59.76,
+"end": 59.92,
+"sec": "03"
+},
+{
+"word": "a",
+"start": 59.96,
+"end": 60.04,
+"sec": "03"
+},
+{
+"word": "un",
+"start": 60.08,
+"end": 60.12,
+"sec": "03"
+},
+{
+"word": "hombre",
+"start": 60.2,
+"end": 60.44,
+"sec": "03"
+},
+{
+"word": "en",
+"start": 60.52,
+"end": 60.6,
+"sec": "03"
+},
+{
+"word": "Italia",
+"start": 60.68,
+"end": 61.08,
+"sec": "03"
+},
+{
+"word": "En",
+"start": 61.44,
+"end": 61.48,
+"sec": "03"
+},
+{
+"word": "los",
+"start": 61.56,
+"end": 61.64,
+"sec": "03"
+},
+{
+"word": "artículos",
+"start": 61.72,
+"end": 62.12,
+"sec": "03"
+},
+{
+"word": "médicos",
+"start": 62.2,
+"end": 62.68,
+"sec": "03"
+},
+{
+"word": "lo",
+"start": 62.76,
+"end": 62.84,
+"sec": "03"
+},
+{
+"word": "llaman",
+"start": 62.92,
+"end": 63.24,
+"sec": "03"
+},
+{
+"word": "Silvano",
+"start": 63.32,
+"end": 63.8,
+"sec": "03"
+},
+{
+"word": "Tenía",
+"start": 64.2,
+"end": 64.52,
+"sec": "03"
+},
+{
+"word": "cincuenta",
+"start": 64.56,
+"end": 65.0,
+"sec": "03"
+},
+{
+"word": "y",
+"start": 65.08,
+"end": 65.16,
+"sec": "03"
+},
+{
+"word": "tres",
+"start": 65.28,
+"end": 65.4,
+"sec": "03"
+},
+{
+"word": "años",
+"start": 65.48,
+"end": 65.8,
+"sec": "03"
+},
+{
+"word": "En",
+"start": 66.2,
+"end": 66.28,
+"sec": "03"
+},
+{
+"word": "unas",
+"start": 66.4,
+"end": 66.52,
+"sec": "03"
+},
+{
+"word": "pocas",
+"start": 66.56,
+"end": 66.84,
+"sec": "03"
+},
+{
+"word": "semanas",
+"start": 66.92,
+"end": 67.32,
+"sec": "03"
+},
+{
+"word": "casi",
+"start": 67.56,
+"end": 67.88,
+"sec": "03"
+},
+{
+"word": "dejó",
+"start": 67.96,
+"end": 68.2,
+"sec": "03"
+},
+{
+"word": "de",
+"start": 68.24,
+"end": 68.28,
+"sec": "03"
+},
+{
+"word": "dormir",
+"start": 68.36,
+"end": 68.76,
+"sec": "03"
+},
+{
+"word": "Los",
+"start": 69.16,
+"end": 69.24,
+"sec": "03"
+},
+{
+"word": "médicos",
+"start": 69.32,
+"end": 69.72,
+"sec": "03"
+},
+{
+"word": "dijeron",
+"start": 69.773,
+"end": 70.12,
+"sec": "03"
+},
+{
+"word": "estrés",
+"start": 70.52,
+"end": 71.0,
+"sec": "03"
+},
+{
+"word": "ansiedad",
+"start": 71.28,
+"end": 71.8,
+"sec": "03"
+},
+{
+"word": "depresión",
+"start": 72.12,
+"end": 72.6,
+"sec": "03"
+},
+{
+"word": "Le",
+"start": 73.0,
+"end": 73.08,
+"sec": "03"
+},
+{
+"word": "recetaron",
+"start": 73.16,
+"end": 73.64,
+"sec": "03"
+},
+{
+"word": "pastillas",
+"start": 73.76,
+"end": 74.2,
+"sec": "03"
+},
+{
+"word": "para",
+"start": 74.28,
+"end": 74.36,
+"sec": "03"
+},
+{
+"word": "dormir",
+"start": 74.44,
+"end": 74.76,
+"sec": "03"
+},
+{
+"word": "No",
+"start": 75.16,
+"end": 75.24,
+"sec": "03"
+},
+{
+"word": "sirvieron",
+"start": 75.32,
+"end": 75.88,
+"sec": "03"
+},
+{
+"word": "Ningún",
+"start": 76.24,
+"end": 76.6,
+"sec": "03"
+},
+{
+"word": "medicamento",
+"start": 76.72,
+"end": 77.24,
+"sec": "03"
+},
+{
+"word": "le",
+"start": 77.32,
+"end": 77.4,
+"sec": "03"
+},
+{
+"word": "daba",
+"start": 77.44,
+"end": 77.64,
+"sec": "03"
+},
+{
+"word": "ni",
+"start": 77.72,
+"end": 77.88,
+"sec": "03"
+},
+{
+"word": "un",
+"start": 77.96,
+"end": 78.04,
+"sec": "03"
+},
+{
+"word": "minuto",
+"start": 78.12,
+"end": 78.52,
+"sec": "03"
+},
+{
+"word": "de",
+"start": 78.6,
+"end": 78.68,
+"sec": "03"
+},
+{
+"word": "sueño",
+"start": 78.76,
+"end": 79.08,
+"sec": "03"
+},
+{
+"word": "real",
+"start": 79.16,
+"end": 79.4,
+"sec": "03"
+},
+{
+"word": "Pero",
+"start": 79.76,
+"end": 79.88,
+"sec": "03"
+},
+{
+"word": "lo",
+"start": 79.96,
+"end": 80.04,
+"sec": "03"
+},
+{
+"word": "más",
+"start": 80.12,
+"end": 80.2,
+"sec": "03"
+},
+{
+"word": "escalofriante",
+"start": 80.28,
+"end": 81.08,
+"sec": "03"
+},
+{
+"word": "no",
+"start": 81.16,
+"end": 81.32,
+"sec": "03"
+},
+{
+"word": "era",
+"start": 81.4,
+"end": 81.56,
+"sec": "03"
+},
+{
+"word": "eso",
+"start": 81.72,
+"end": 81.88,
+"sec": "03"
+},
+{
+"word": "Silvano",
+"start": 82.28,
+"end": 82.76,
+"sec": "03"
+},
+{
+"word": "sabía",
+"start": 82.84,
+"end": 83.32,
+"sec": "03"
+},
+{
+"word": "lo",
+"start": 83.36,
+"end": 83.4,
+"sec": "03"
+},
+{
+"word": "que",
+"start": 83.48,
+"end": 83.56,
+"sec": "03"
+},
+{
+"word": "venía",
+"start": 83.64,
+"end": 83.96,
+"sec": "03"
+},
+{
+"word": "Así",
+"start": 84.36,
+"end": 84.6,
+"sec": "03"
+},
+{
+"word": "había",
+"start": 84.68,
+"end": 84.92,
+"sec": "03"
+},
+{
+"word": "muerto",
+"start": 85.0,
+"end": 85.32,
+"sec": "03"
+},
+{
+"word": "su",
+"start": 85.4,
+"end": 85.48,
+"sec": "03"
+},
+{
+"word": "padre",
+"start": 85.6,
+"end": 85.8,
+"sec": "03"
+},
+{
+"word": "Así",
+"start": 86.24,
+"end": 86.44,
+"sec": "03"
+},
+{
+"word": "murieron",
+"start": 86.52,
+"end": 86.84,
+"sec": "03"
+},
+{
+"word": "sus",
+"start": 86.92,
+"end": 87.08,
+"sec": "03"
+},
+{
+"word": "tías",
+"start": 87.16,
+"end": 87.56,
+"sec": "03"
+},
+{
+"word": "y",
+"start": 87.6,
+"end": 87.64,
+"sec": "03"
+},
+{
+"word": "su",
+"start": 87.72,
+"end": 87.8,
+"sec": "03"
+},
+{
+"word": "abuelo",
+"start": 87.88,
+"end": 88.2,
+"sec": "03"
+},
+{
+"word": "Primero",
+"start": 88.64,
+"end": 88.92,
+"sec": "03"
+},
+{
+"word": "dejaban",
+"start": 89.0,
+"end": 89.4,
+"sec": "03"
+},
+{
+"word": "de",
+"start": 89.44,
+"end": 89.48,
+"sec": "03"
+},
+{
+"word": "dormir",
+"start": 89.52,
+"end": 89.88,
+"sec": "03"
+},
+{
+"word": "y",
+"start": 90.2,
+"end": 90.28,
+"sec": "03"
+},
+{
+"word": "uno",
+"start": 90.36,
+"end": 90.6,
+"sec": "03"
+},
+{
+"word": "o",
+"start": 90.76,
+"end": 90.84,
+"sec": "03"
+},
+{
+"word": "dos",
+"start": 90.92,
+"end": 91.08,
+"sec": "03"
+},
+{
+"word": "años",
+"start": 91.12,
+"end": 91.32,
+"sec": "03"
+},
+{
+"word": "después",
+"start": 91.4,
+"end": 91.88,
+"sec": "03"
+},
+{
+"word": "ya",
+"start": 92.2,
+"end": 92.36,
+"sec": "03"
+},
+{
+"word": "no",
+"start": 92.4,
+"end": 92.44,
+"sec": "03"
+},
+{
+"word": "estaban",
+"start": 92.52,
+"end": 92.92,
+"sec": "03"
+},
+{
+"word": "En",
+"start": 93.32,
+"end": 93.4,
+"sec": "03"
+},
+{
+"word": "su",
+"start": 93.44,
+"end": 93.48,
+"sec": "03"
+},
+{
+"word": "familia",
+"start": 93.56,
+"end": 93.96,
+"sec": "03"
+},
+{
+"word": "se",
+"start": 94.0,
+"end": 94.04,
+"sec": "03"
+},
+{
+"word": "hablaba",
+"start": 94.12,
+"end": 94.44,
+"sec": "03"
+},
+{
+"word": "de",
+"start": 94.52,
+"end": 94.6,
+"sec": "03"
+},
+{
+"word": "eso",
+"start": 94.72,
+"end": 94.84,
+"sec": "03"
+},
+{
+"word": "en",
+"start": 94.88,
+"end": 94.92,
+"sec": "03"
+},
+{
+"word": "voz",
+"start": 95.0,
+"end": 95.16,
+"sec": "03"
+},
+{
+"word": "baja",
+"start": 95.24,
+"end": 95.56,
+"sec": "03"
+},
+{
+"word": "Lo",
+"start": 95.88,
+"end": 95.96,
+"sec": "03"
+},
+{
+"word": "llamaban",
+"start": 96.0,
+"end": 96.52,
+"sec": "03"
+},
+{
+"word": "la",
+"start": 96.76,
+"end": 96.84,
+"sec": "03"
+},
+{
+"word": "maldición",
+"start": 96.92,
+"end": 97.56,
+"sec": "03"
+},
+{
+"word": "Nadie",
+"start": 97.96,
+"end": 98.28,
+"sec": "03"
+},
+{
+"word": "sabía",
+"start": 98.36,
+"end": 98.68,
+"sec": "03"
+},
+{
+"word": "todavía",
+"start": 98.76,
+"end": 99.24,
+"sec": "03"
+},
+{
+"word": "que",
+"start": 99.32,
+"end": 99.4,
+"sec": "03"
+},
+{
+"word": "esa",
+"start": 99.52,
+"end": 99.64,
+"sec": "03"
+},
+{
+"word": "maldición",
+"start": 99.72,
+"end": 100.28,
+"sec": "03"
+},
+{
+"word": "tenía",
+"start": 100.36,
+"end": 100.68,
+"sec": "03"
+},
+{
+"word": "nombre",
+"start": 100.84,
+"end": 101.0,
+"sec": "03"
+},
+{
+"word": "científico",
+"start": 101.08,
+"end": 101.72,
+"sec": "03"
+},
+{
+"word": "Cuánto",
+"start": 102.48,
+"end": 102.8,
+"sec": "04"
+},
+{
+"word": "puede",
+"start": 102.88,
+"end": 103.04,
+"sec": "04"
+},
+{
+"word": "aguantar",
+"start": 103.12,
+"end": 103.52,
+"sec": "04"
+},
+{
+"word": "una",
+"start": 103.6,
+"end": 103.68,
+"sec": "04"
+},
+{
+"word": "persona",
+"start": 103.76,
+"end": 104.16,
+"sec": "04"
+},
+{
+"word": "sin",
+"start": 104.24,
+"end": 104.4,
+"sec": "04"
+},
+{
+"word": "dormir",
+"start": 104.48,
+"end": 104.8,
+"sec": "04"
+},
+{
+"word": "El",
+"start": 105.22,
+"end": 105.3,
+"sec": "04"
+},
+{
+"word": "récord",
+"start": 105.38,
+"end": 105.62,
+"sec": "04"
+},
+{
+"word": "oficial",
+"start": 105.7,
+"end": 106.18,
+"sec": "04"
+},
+{
+"word": "es",
+"start": 106.26,
+"end": 106.34,
+"sec": "04"
+},
+{
+"word": "de",
+"start": 106.42,
+"end": 106.58,
+"sec": "04"
+},
+{
+"word": "once",
+"start": 106.66,
+"end": 106.9,
+"sec": "04"
+},
+{
+"word": "días",
+"start": 106.98,
+"end": 107.38,
+"sec": "04"
+},
+{
+"word": "En",
+"start": 107.7,
+"end": 107.78,
+"sec": "04"
+},
+{
+"word": "mil",
+"start": 107.86,
+"end": 107.94,
+"sec": "04"
+},
+{
+"word": "novecientos",
+"start": 108.02,
+"end": 108.5,
+"sec": "04"
+},
+{
+"word": "sesenta",
+"start": 108.58,
+"end": 108.82,
+"sec": "04"
+},
+{
+"word": "y",
+"start": 108.9,
+"end": 108.98,
+"sec": "04"
+},
+{
+"word": "cuatro",
+"start": 109.02,
+"end": 109.22,
+"sec": "04"
+},
+{
+"word": "un",
+"start": 109.5,
+"end": 109.54,
+"sec": "04"
+},
+{
+"word": "estudiante",
+"start": 109.62,
+"end": 110.1,
+"sec": "04"
+},
+{
+"word": "estadounidense",
+"start": 110.18,
+"end": 110.9,
+"sec": "04"
+},
+{
+"word": "Randy",
+"start": 111.14,
+"end": 111.46,
+"sec": "04"
+},
+{
+"word": "Gardner",
+"start": 111.5,
+"end": 111.86,
+"sec": "04"
+},
+{
+"word": "aguantó",
+"start": 112.18,
+"end": 112.58,
+"sec": "04"
+},
+{
+"word": "doscientas",
+"start": 112.66,
+"end": 113.14,
+"sec": "04"
+},
+{
+"word": "sesenta",
+"start": 113.22,
+"end": 113.54,
+"sec": "04"
+},
+{
+"word": "y",
+"start": 113.62,
+"end": 113.7,
+"sec": "04"
+},
+{
+"word": "cuatro",
+"start": 113.74,
+"end": 114.02,
+"sec": "04"
+},
+{
+"word": "horas",
+"start": 114.1,
+"end": 114.34,
+"sec": "04"
+},
+{
+"word": "despierto",
+"start": 114.46,
+"end": 114.9,
+"sec": "04"
+},
+{
+"word": "Al",
+"start": 115.3,
+"end": 115.38,
+"sec": "04"
+},
+{
+"word": "final",
+"start": 115.46,
+"end": 115.7,
+"sec": "04"
+},
+{
+"word": "confundía",
+"start": 115.78,
+"end": 116.26,
+"sec": "04"
+},
+{
+"word": "las",
+"start": 116.34,
+"end": 116.42,
+"sec": "04"
+},
+{
+"word": "palabras",
+"start": 116.5,
+"end": 116.98,
+"sec": "04"
+},
+{
+"word": "olvidaba",
+"start": 117.22,
+"end": 117.62,
+"sec": "04"
+},
+{
+"word": "lo",
+"start": 117.7,
+"end": 117.78,
+"sec": "04"
+},
+{
+"word": "que",
+"start": 117.82,
+"end": 117.86,
+"sec": "04"
+},
+{
+"word": "acababa",
+"start": 117.94,
+"end": 118.26,
+"sec": "04"
+},
+{
+"word": "de",
+"start": 118.34,
+"end": 118.42,
+"sec": "04"
+},
+{
+"word": "decir",
+"start": 118.5,
+"end": 118.74,
+"sec": "04"
+},
+{
+"word": "y",
+"start": 118.98,
+"end": 119.06,
+"sec": "04"
+},
+{
+"word": "veía",
+"start": 119.14,
+"end": 119.38,
+"sec": "04"
+},
+{
+"word": "cosas",
+"start": 119.46,
+"end": 119.78,
+"sec": "04"
+},
+{
+"word": "que",
+"start": 119.86,
+"end": 119.94,
+"sec": "04"
+},
+{
+"word": "no",
+"start": 120.02,
+"end": 120.18,
+"sec": "04"
+},
+{
+"word": "estaban",
+"start": 120.26,
+"end": 120.58,
+"sec": "04"
+},
+{
+"word": "ahí",
+"start": 120.66,
+"end": 120.9,
+"sec": "04"
+},
+{
+"word": "Y",
+"start": 121.22,
+"end": 121.3,
+"sec": "04"
+},
+{
+"word": "las",
+"start": 121.42,
+"end": 121.54,
+"sec": "04"
+},
+{
+"word": "ratas",
+"start": 121.66,
+"end": 121.94,
+"sec": "04"
+},
+{
+"word": "a",
+"start": 121.98,
+"end": 122.02,
+"sec": "04"
+},
+{
+"word": "las",
+"start": 122.1,
+"end": 122.18,
+"sec": "04"
+},
+{
+"word": "que",
+"start": 122.22,
+"end": 122.26,
+"sec": "04"
+},
+{
+"word": "en",
+"start": 122.3,
+"end": 122.34,
+"sec": "04"
+},
+{
+"word": "el",
+"start": 122.42,
+"end": 122.447,
+"sec": "04"
+},
+{
+"word": "laboratorio",
+"start": 122.473,
+"end": 122.98,
+"sec": "04"
+},
+{
+"word": "les",
+"start": 123.06,
+"end": 123.14,
+"sec": "04"
+},
+{
+"word": "quitaban",
+"start": 123.22,
+"end": 123.54,
+"sec": "04"
+},
+{
+"word": "el",
+"start": 123.58,
+"end": 123.62,
+"sec": "04"
+},
+{
+"word": "sueño",
+"start": 123.7,
+"end": 123.94,
+"sec": "04"
+},
+{
+"word": "por",
+"start": 124.02,
+"end": 124.1,
+"sec": "04"
+},
+{
+"word": "completo",
+"start": 124.18,
+"end": 124.66,
+"sec": "04"
+},
+{
+"word": "morían",
+"start": 124.9,
+"end": 125.3,
+"sec": "04"
+},
+{
+"word": "en",
+"start": 125.34,
+"end": 125.38,
+"sec": "04"
+},
+{
+"word": "unas",
+"start": 125.54,
+"end": 125.7,
+"sec": "04"
+},
+{
+"word": "dos",
+"start": 125.78,
+"end": 126.02,
+"sec": "04"
+},
+{
+"word": "o",
+"start": 126.1,
+"end": 126.18,
+"sec": "04"
+},
+{
+"word": "tres",
+"start": 126.26,
+"end": 126.42,
+"sec": "04"
+},
+{
+"word": "semanas",
+"start": 126.5,
+"end": 126.9,
+"sec": "04"
+},
+{
+"word": "Pero",
+"start": 127.3,
+"end": 127.46,
+"sec": "04"
+},
+{
+"word": "Randy",
+"start": 127.5,
+"end": 127.86,
+"sec": "04"
+},
+{
+"word": "podía",
+"start": 127.94,
+"end": 128.18,
+"sec": "04"
+},
+{
+"word": "acostarse",
+"start": 128.26,
+"end": 128.82,
+"sec": "04"
+},
+{
+"word": "y",
+"start": 128.86,
+"end": 128.9,
+"sec": "04"
+},
+{
+"word": "dormir",
+"start": 128.94,
+"end": 129.22,
+"sec": "04"
+},
+{
+"word": "cuando",
+"start": 129.3,
+"end": 129.54,
+"sec": "04"
+},
+{
+"word": "quisiera",
+"start": 129.62,
+"end": 130.02,
+"sec": "04"
+},
+{
+"word": "Durmió",
+"start": 130.34,
+"end": 130.66,
+"sec": "04"
+},
+{
+"word": "catorce",
+"start": 130.74,
+"end": 131.22,
+"sec": "04"
+},
+{
+"word": "horas",
+"start": 131.3,
+"end": 131.62,
+"sec": "04"
+},
+{
+"word": "y",
+"start": 131.7,
+"end": 131.74,
+"sec": "04"
+},
+{
+"word": "volvió",
+"start": 131.78,
+"end": 132.18,
+"sec": "04"
+},
+{
+"word": "a",
+"start": 132.207,
+"end": 132.233,
+"sec": "04"
+},
+{
+"word": "la",
+"start": 132.26,
+"end": 132.34,
+"sec": "04"
+},
+{
+"word": "normalidad",
+"start": 132.5,
+"end": 132.9,
+"sec": "04"
+},
+{
+"word": "Silvano",
+"start": 133.38,
+"end": 133.94,
+"sec": "04"
+},
+{
+"word": "no",
+"start": 134.1,
+"end": 134.18,
+"sec": "04"
+},
+{
+"word": "tenía",
+"start": 134.26,
+"end": 134.66,
+"sec": "04"
+},
+{
+"word": "ese",
+"start": 134.78,
+"end": 134.9,
+"sec": "04"
+},
+{
+"word": "botón",
+"start": 134.98,
+"end": 135.3,
+"sec": "04"
+},
+{
+"word": "Volvamos",
+"start": 136.02,
+"end": 136.5,
+"sec": "05"
+},
+{
+"word": "contigo",
+"start": 136.62,
+"end": 136.98,
+"sec": "05"
+},
+{
+"word": "Una",
+"start": 137.46,
+"end": 137.62,
+"sec": "05"
+},
+{
+"word": "semana",
+"start": 137.7,
+"end": 138.1,
+"sec": "05"
+},
+{
+"word": "sin",
+"start": 138.18,
+"end": 138.34,
+"sec": "05"
+},
+{
+"word": "dormir",
+"start": 138.42,
+"end": 138.82,
+"sec": "05"
+},
+{
+"word": "de",
+"start": 138.86,
+"end": 138.9,
+"sec": "05"
+},
+{
+"word": "verdad",
+"start": 138.98,
+"end": 139.38,
+"sec": "05"
+},
+{
+"word": "Y",
+"start": 139.86,
+"end": 139.94,
+"sec": "05"
+},
+{
+"word": "aquí",
+"start": 140.06,
+"end": 140.26,
+"sec": "05"
+},
+{
+"word": "empieza",
+"start": 140.38,
+"end": 140.74,
+"sec": "05"
+},
+{
+"word": "lo",
+"start": 140.78,
+"end": 140.82,
+"sec": "05"
+},
+{
+"word": "que",
+"start": 140.9,
+"end": 141.06,
+"sec": "05"
+},
+{
+"word": "no",
+"start": 141.14,
+"end": 141.3,
+"sec": "05"
+},
+{
+"word": "esperas",
+"start": 141.38,
+"end": 141.86,
+"sec": "05"
+},
+{
+"word": "Tu",
+"start": 142.34,
+"end": 142.5,
+"sec": "05"
+},
+{
+"word": "cuerpo",
+"start": 142.58,
+"end": 142.98,
+"sec": "05"
+},
+{
+"word": "suda",
+"start": 143.02,
+"end": 143.3,
+"sec": "05"
+},
+{
+"word": "sin",
+"start": 143.38,
+"end": 143.46,
+"sec": "05"
+},
+{
+"word": "motivo",
+"start": 143.54,
+"end": 143.94,
+"sec": "05"
+},
+{
+"word": "La",
+"start": 144.42,
+"end": 144.5,
+"sec": "05"
+},
+{
+"word": "presión",
+"start": 144.58,
+"end": 144.98,
+"sec": "05"
+},
+{
+"word": "sube",
+"start": 145.06,
+"end": 145.38,
+"sec": "05"
+},
+{
+"word": "y",
+"start": 145.54,
+"end": 145.58,
+"sec": "05"
+},
+{
+"word": "baja",
+"start": 145.62,
+"end": 146.02,
+"sec": "05"
+},
+{
+"word": "Las",
+"start": 146.42,
+"end": 146.58,
+"sec": "05"
+},
+{
+"word": "pupilas",
+"start": 146.66,
+"end": 147.06,
+"sec": "05"
+},
+{
+"word": "se",
+"start": 147.1,
+"end": 147.14,
+"sec": "05"
+},
+{
+"word": "hacen",
+"start": 147.22,
+"end": 147.46,
+"sec": "05"
+},
+{
+"word": "diminutas",
+"start": 147.58,
+"end": 148.18,
+"sec": "05"
+},
+{
+"word": "como",
+"start": 148.42,
+"end": 148.58,
+"sec": "05"
+},
+{
+"word": "puntos",
+"start": 148.66,
+"end": 149.06,
+"sec": "05"
+},
+{
+"word": "El",
+"start": 149.46,
+"end": 149.54,
+"sec": "05"
+},
+{
+"word": "corazón",
+"start": 149.62,
+"end": 150.02,
+"sec": "05"
+},
+{
+"word": "late",
+"start": 150.18,
+"end": 150.34,
+"sec": "05"
+},
+{
+"word": "como",
+"start": 150.42,
+"end": 150.5,
+"sec": "05"
+},
+{
+"word": "si",
+"start": 150.58,
+"end": 150.66,
+"sec": "05"
+},
+{
+"word": "estuvieras",
+"start": 150.74,
+"end": 151.14,
+"sec": "05"
+},
+{
+"word": "corriendo",
+"start": 151.22,
+"end": 151.82,
+"sec": "05"
+},
+{
+"word": "aunque",
+"start": 151.98,
+"end": 152.18,
+"sec": "05"
+},
+{
+"word": "estás",
+"start": 152.26,
+"end": 152.5,
+"sec": "05"
+},
+{
+"word": "acostado",
+"start": 152.58,
+"end": 153.06,
+"sec": "05"
+},
+{
+"word": "quieto",
+"start": 153.38,
+"end": 153.78,
+"sec": "05"
+},
+{
+"word": "Se",
+"start": 154.18,
+"end": 154.34,
+"sec": "05"
+},
+{
+"word": "está",
+"start": 154.42,
+"end": 154.54,
+"sec": "05"
+},
+{
+"word": "rompiendo",
+"start": 154.58,
+"end": 155.06,
+"sec": "05"
+},
+{
+"word": "el",
+"start": 155.1,
+"end": 155.14,
+"sec": "05"
+},
+{
+"word": "sistema",
+"start": 155.18,
+"end": 155.54,
+"sec": "05"
+},
+{
+"word": "que",
+"start": 155.62,
+"end": 155.7,
+"sec": "05"
+},
+{
+"word": "controla",
+"start": 155.78,
+"end": 156.18,
+"sec": "05"
+},
+{
+"word": "todo",
+"start": 156.34,
+"end": 156.58,
+"sec": "05"
+},
+{
+"word": "lo",
+"start": 156.66,
+"end": 156.74,
+"sec": "05"
+},
+{
+"word": "que",
+"start": 156.82,
+"end": 156.9,
+"sec": "05"
+},
+{
+"word": "no",
+"start": 156.98,
+"end": 157.06,
+"sec": "05"
+},
+{
+"word": "piensas",
+"start": 157.14,
+"end": 157.62,
+"sec": "05"
+},
+{
+"word": "Dos",
+"start": 158.04,
+"end": 158.2,
+"sec": "05"
+},
+{
+"word": "semanas",
+"start": 158.28,
+"end": 158.76,
+"sec": "05"
+},
+{
+"word": "Empiezan",
+"start": 159.24,
+"end": 159.72,
+"sec": "05"
+},
+{
+"word": "las",
+"start": 159.8,
+"end": 159.88,
+"sec": "05"
+},
+{
+"word": "visiones",
+"start": 159.96,
+"end": 160.44,
+"sec": "05"
+},
+{
+"word": "pero",
+"start": 160.76,
+"end": 160.92,
+"sec": "05"
+},
+{
+"word": "no",
+"start": 161.0,
+"end": 161.08,
+"sec": "05"
+},
+{
+"word": "como",
+"start": 161.16,
+"end": 161.32,
+"sec": "05"
+},
+{
+"word": "en",
+"start": 161.36,
+"end": 161.4,
+"sec": "05"
+},
+{
+"word": "las",
+"start": 161.48,
+"end": 161.56,
+"sec": "05"
+},
+{
+"word": "películas",
+"start": 161.64,
+"end": 162.12,
+"sec": "05"
+},
+{
+"word": "Los",
+"start": 162.52,
+"end": 162.68,
+"sec": "05"
+},
+{
+"word": "médicos",
+"start": 162.76,
+"end": 163.08,
+"sec": "05"
+},
+{
+"word": "lo",
+"start": 163.16,
+"end": 163.24,
+"sec": "05"
+},
+{
+"word": "llaman",
+"start": 163.28,
+"end": 163.56,
+"sec": "05"
+},
+{
+"word": "estupor",
+"start": 163.72,
+"end": 164.28,
+"sec": "05"
+},
+{
+"word": "onírico",
+"start": 164.44,
+"end": 165.0,
+"sec": "05"
+},
+{
+"word": "La",
+"start": 165.4,
+"end": 165.48,
+"sec": "05"
+},
+{
+"word": "persona",
+"start": 165.56,
+"end": 165.96,
+"sec": "05"
+},
+{
+"word": "vive",
+"start": 166.04,
+"end": 166.2,
+"sec": "05"
+},
+{
+"word": "el",
+"start": 166.28,
+"end": 166.36,
+"sec": "05"
+},
+{
+"word": "sueño",
+"start": 166.44,
+"end": 166.68,
+"sec": "05"
+},
+{
+"word": "despierta",
+"start": 166.76,
+"end": 167.32,
+"sec": "05"
+},
+{
+"word": "mueve",
+"start": 167.8,
+"end": 167.96,
+"sec": "05"
+},
+{
+"word": "las",
+"start": 168.04,
+"end": 168.12,
+"sec": "05"
+},
+{
+"word": "manos",
+"start": 168.2,
+"end": 168.68,
+"sec": "05"
+},
+{
+"word": "habla",
+"start": 169.0,
+"end": 169.4,
+"sec": "05"
+},
+{
+"word": "repite",
+"start": 169.72,
+"end": 170.04,
+"sec": "05"
+},
+{
+"word": "cosas",
+"start": 170.12,
+"end": 170.44,
+"sec": "05"
+},
+{
+"word": "de",
+"start": 170.48,
+"end": 170.52,
+"sec": "05"
+},
+{
+"word": "todos",
+"start": 170.68,
+"end": 170.92,
+"sec": "05"
+},
+{
+"word": "los",
+"start": 171.0,
+"end": 171.08,
+"sec": "05"
+},
+{
+"word": "días",
+"start": 171.16,
+"end": 171.48,
+"sec": "05"
+},
+{
+"word": "con",
+"start": 171.88,
+"end": 171.96,
+"sec": "05"
+},
+{
+"word": "los",
+"start": 172.04,
+"end": 172.12,
+"sec": "05"
+},
+{
+"word": "ojos",
+"start": 172.2,
+"end": 172.52,
+"sec": "05"
+},
+{
+"word": "abiertos",
+"start": 172.6,
+"end": 173.16,
+"sec": "05"
+},
+{
+"word": "Atrapada",
+"start": 173.56,
+"end": 174.12,
+"sec": "05"
+},
+{
+"word": "entre",
+"start": 174.24,
+"end": 174.36,
+"sec": "05"
+},
+{
+"word": "dos",
+"start": 174.44,
+"end": 174.68,
+"sec": "05"
+},
+{
+"word": "mundos",
+"start": 174.76,
+"end": 175.16,
+"sec": "05"
+},
+{
+"word": "que",
+"start": 175.24,
+"end": 175.32,
+"sec": "05"
+},
+{
+"word": "ya",
+"start": 175.4,
+"end": 175.56,
+"sec": "05"
+},
+{
+"word": "no",
+"start": 175.64,
+"end": 175.72,
+"sec": "05"
+},
+{
+"word": "puede",
+"start": 175.8,
+"end": 176.04,
+"sec": "05"
+},
+{
+"word": "separar",
+"start": 176.12,
+"end": 176.6,
+"sec": "05"
+},
+{
+"word": "Un",
+"start": 177.02,
+"end": 177.18,
+"sec": "05"
+},
+{
+"word": "mes",
+"start": 177.26,
+"end": 177.58,
+"sec": "05"
+},
+{
+"word": "El",
+"start": 178.06,
+"end": 178.14,
+"sec": "05"
+},
+{
+"word": "cuerpo",
+"start": 178.22,
+"end": 178.54,
+"sec": "05"
+},
+{
+"word": "empieza",
+"start": 178.62,
+"end": 178.94,
+"sec": "05"
+},
+{
+"word": "a",
+"start": 178.993,
+"end": 179.047,
+"sec": "05"
+},
+{
+"word": "consumirse",
+"start": 179.1,
+"end": 179.74,
+"sec": "05"
+},
+{
+"word": "a",
+"start": 179.78,
+"end": 179.82,
+"sec": "05"
+},
+{
+"word": "sí",
+"start": 179.9,
+"end": 179.98,
+"sec": "05"
+},
+{
+"word": "mismo",
+"start": 180.06,
+"end": 180.38,
+"sec": "05"
+},
+{
+"word": "La",
+"start": 180.78,
+"end": 180.86,
+"sec": "05"
+},
+{
+"word": "persona",
+"start": 180.94,
+"end": 181.34,
+"sec": "05"
+},
+{
+"word": "adelgaza",
+"start": 181.5,
+"end": 181.9,
+"sec": "05"
+},
+{
+"word": "rápido",
+"start": 181.98,
+"end": 182.38,
+"sec": "05"
+},
+{
+"word": "Los",
+"start": 182.7,
+"end": 182.86,
+"sec": "05"
+},
+{
+"word": "músculos",
+"start": 182.94,
+"end": 183.34,
+"sec": "05"
+},
+{
+"word": "se",
+"start": 183.42,
+"end": 183.5,
+"sec": "05"
+},
+{
+"word": "debilitan",
+"start": 183.58,
+"end": 184.14,
+"sec": "05"
+},
+{
+"word": "La",
+"start": 184.46,
+"end": 184.54,
+"sec": "05"
+},
+{
+"word": "memoria",
+"start": 184.62,
+"end": 185.1,
+"sec": "05"
+},
+{
+"word": "falla",
+"start": 185.18,
+"end": 185.58,
+"sec": "05"
+},
+{
+"word": "Aparece",
+"start": 185.9,
+"end": 186.3,
+"sec": "05"
+},
+{
+"word": "una",
+"start": 186.38,
+"end": 186.54,
+"sec": "05"
+},
+{
+"word": "confusión",
+"start": 186.66,
+"end": 187.1,
+"sec": "05"
+},
+{
+"word": "parecida",
+"start": 187.18,
+"end": 187.66,
+"sec": "05"
+},
+{
+"word": "a",
+"start": 187.7,
+"end": 187.74,
+"sec": "05"
+},
+{
+"word": "la",
+"start": 187.78,
+"end": 187.82,
+"sec": "05"
+},
+{
+"word": "demencia",
+"start": 187.9,
+"end": 188.38,
+"sec": "05"
+},
+{
+"word": "ya",
+"start": 188.78,
+"end": 188.86,
+"sec": "05"
+},
+{
+"word": "no",
+"start": 188.94,
+"end": 189.02,
+"sec": "05"
+},
+{
+"word": "sabe",
+"start": 189.06,
+"end": 189.26,
+"sec": "05"
+},
+{
+"word": "dónde",
+"start": 189.34,
+"end": 189.66,
+"sec": "05"
+},
+{
+"word": "está",
+"start": 189.78,
+"end": 189.98,
+"sec": "05"
+},
+{
+"word": "ni",
+"start": 190.22,
+"end": 190.3,
+"sec": "05"
+},
+{
+"word": "qué",
+"start": 190.38,
+"end": 190.54,
+"sec": "05"
+},
+{
+"word": "día",
+"start": 190.62,
+"end": 190.86,
+"sec": "05"
+},
+{
+"word": "es",
+"start": 190.98,
+"end": 191.1,
+"sec": "05"
+},
+{
+"word": "Pero",
+"start": 191.82,
+"end": 191.953,
+"sec": "05b"
+},
+{
+"word": "espera",
+"start": 191.98,
+"end": 192.38,
+"sec": "05b"
+},
+{
+"word": "Para",
+"start": 192.86,
+"end": 193.02,
+"sec": "05b"
+},
+{
+"word": "qué",
+"start": 193.1,
+"end": 193.26,
+"sec": "05b"
+},
+{
+"word": "dormimos",
+"start": 193.3,
+"end": 193.82,
+"sec": "05b"
+},
+{
+"word": "en",
+"start": 193.873,
+"end": 193.9,
+"sec": "05b"
+},
+{
+"word": "realidad",
+"start": 193.98,
+"end": 194.46,
+"sec": "05b"
+},
+{
+"word": "Durante",
+"start": 194.94,
+"end": 195.26,
+"sec": "05b"
+},
+{
+"word": "mucho",
+"start": 195.3,
+"end": 195.5,
+"sec": "05b"
+},
+{
+"word": "tiempo",
+"start": 195.58,
+"end": 195.9,
+"sec": "05b"
+},
+{
+"word": "se",
+"start": 195.98,
+"end": 196.06,
+"sec": "05b"
+},
+{
+"word": "pensó",
+"start": 196.14,
+"end": 196.34,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 196.38,
+"end": 196.46,
+"sec": "05b"
+},
+{
+"word": "dormir",
+"start": 196.54,
+"end": 196.94,
+"sec": "05b"
+},
+{
+"word": "era",
+"start": 197.02,
+"end": 197.18,
+"sec": "05b"
+},
+{
+"word": "solo",
+"start": 197.34,
+"end": 197.58,
+"sec": "05b"
+},
+{
+"word": "descansar",
+"start": 197.7,
+"end": 198.22,
+"sec": "05b"
+},
+{
+"word": "Hoy",
+"start": 198.62,
+"end": 198.86,
+"sec": "05b"
+},
+{
+"word": "sabemos",
+"start": 198.94,
+"end": 199.34,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 199.42,
+"end": 199.5,
+"sec": "05b"
+},
+{
+"word": "es",
+"start": 199.58,
+"end": 199.66,
+"sec": "05b"
+},
+{
+"word": "mucho",
+"start": 199.82,
+"end": 200.14,
+"sec": "05b"
+},
+{
+"word": "más",
+"start": 200.22,
+"end": 200.46,
+"sec": "05b"
+},
+{
+"word": "Mientras",
+"start": 200.94,
+"end": 201.26,
+"sec": "05b"
+},
+{
+"word": "duermes",
+"start": 201.34,
+"end": 201.74,
+"sec": "05b"
+},
+{
+"word": "tu",
+"start": 202.02,
+"end": 202.06,
+"sec": "05b"
+},
+{
+"word": "cerebro",
+"start": 202.14,
+"end": 202.54,
+"sec": "05b"
+},
+{
+"word": "se",
+"start": 202.62,
+"end": 202.7,
+"sec": "05b"
+},
+{
+"word": "limpia",
+"start": 202.82,
+"end": 203.1,
+"sec": "05b"
+},
+{
+"word": "Literalmente",
+"start": 203.5,
+"end": 204.46,
+"sec": "05b"
+},
+{
+"word": "El",
+"start": 204.78,
+"end": 204.94,
+"sec": "05b"
+},
+{
+"word": "líquido",
+"start": 205.02,
+"end": 205.26,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 205.34,
+"end": 205.42,
+"sec": "05b"
+},
+{
+"word": "lo",
+"start": 205.46,
+"end": 205.5,
+"sec": "05b"
+},
+{
+"word": "rodea",
+"start": 205.58,
+"end": 205.9,
+"sec": "05b"
+},
+{
+"word": "fluye",
+"start": 205.98,
+"end": 206.3,
+"sec": "05b"
+},
+{
+"word": "entre",
+"start": 206.38,
+"end": 206.54,
+"sec": "05b"
+},
+{
+"word": "las",
+"start": 206.62,
+"end": 206.7,
+"sec": "05b"
+},
+{
+"word": "neuronas",
+"start": 206.78,
+"end": 207.26,
+"sec": "05b"
+},
+{
+"word": "y",
+"start": 207.42,
+"end": 207.46,
+"sec": "05b"
+},
+{
+"word": "se",
+"start": 207.5,
+"end": 207.58,
+"sec": "05b"
+},
+{
+"word": "lleva",
+"start": 207.66,
+"end": 207.82,
+"sec": "05b"
+},
+{
+"word": "los",
+"start": 207.9,
+"end": 207.98,
+"sec": "05b"
+},
+{
+"word": "desechos",
+"start": 208.02,
+"end": 208.46,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 208.54,
+"end": 208.62,
+"sec": "05b"
+},
+{
+"word": "se",
+"start": 208.66,
+"end": 208.7,
+"sec": "05b"
+},
+{
+"word": "acumulan",
+"start": 208.78,
+"end": 209.26,
+"sec": "05b"
+},
+{
+"word": "durante",
+"start": 209.34,
+"end": 209.58,
+"sec": "05b"
+},
+{
+"word": "el",
+"start": 209.62,
+"end": 209.66,
+"sec": "05b"
+},
+{
+"word": "día",
+"start": 209.74,
+"end": 209.98,
+"sec": "05b"
+},
+{
+"word": "Mientras",
+"start": 210.38,
+"end": 210.7,
+"sec": "05b"
+},
+{
+"word": "duermes",
+"start": 210.78,
+"end": 211.18,
+"sec": "05b"
+},
+{
+"word": "tu",
+"start": 211.38,
+"end": 211.42,
+"sec": "05b"
+},
+{
+"word": "memoria",
+"start": 211.5,
+"end": 211.9,
+"sec": "05b"
+},
+{
+"word": "guarda",
+"start": 211.98,
+"end": 212.3,
+"sec": "05b"
+},
+{
+"word": "lo",
+"start": 212.34,
+"end": 212.38,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 212.46,
+"end": 212.5,
+"sec": "05b"
+},
+{
+"word": "aprendiste",
+"start": 212.54,
+"end": 213.1,
+"sec": "05b"
+},
+{
+"word": "y",
+"start": 213.38,
+"end": 213.42,
+"sec": "05b"
+},
+{
+"word": "tu",
+"start": 213.5,
+"end": 213.58,
+"sec": "05b"
+},
+{
+"word": "cuerpo",
+"start": 213.66,
+"end": 213.98,
+"sec": "05b"
+},
+{
+"word": "repara",
+"start": 214.06,
+"end": 214.38,
+"sec": "05b"
+},
+{
+"word": "los",
+"start": 214.46,
+"end": 214.54,
+"sec": "05b"
+},
+{
+"word": "músculos",
+"start": 214.62,
+"end": 215.1,
+"sec": "05b"
+},
+{
+"word": "y",
+"start": 215.18,
+"end": 215.22,
+"sec": "05b"
+},
+{
+"word": "ajusta",
+"start": 215.26,
+"end": 215.66,
+"sec": "05b"
+},
+{
+"word": "tus",
+"start": 215.74,
+"end": 215.9,
+"sec": "05b"
+},
+{
+"word": "hormonas",
+"start": 215.94,
+"end": 216.46,
+"sec": "05b"
+},
+{
+"word": "Y",
+"start": 216.78,
+"end": 216.86,
+"sec": "05b"
+},
+{
+"word": "no",
+"start": 216.9,
+"end": 216.94,
+"sec": "05b"
+},
+{
+"word": "hace",
+"start": 217.02,
+"end": 217.18,
+"sec": "05b"
+},
+{
+"word": "falta",
+"start": 217.26,
+"end": 217.5,
+"sec": "05b"
+},
+{
+"word": "una",
+"start": 217.58,
+"end": 217.66,
+"sec": "05b"
+},
+{
+"word": "enfermedad",
+"start": 217.74,
+"end": 218.22,
+"sec": "05b"
+},
+{
+"word": "para",
+"start": 218.3,
+"end": 218.38,
+"sec": "05b"
+},
+{
+"word": "notarlo",
+"start": 218.46,
+"end": 218.94,
+"sec": "05b"
+},
+{
+"word": "Después",
+"start": 219.34,
+"end": 219.58,
+"sec": "05b"
+},
+{
+"word": "de",
+"start": 219.66,
+"end": 219.7,
+"sec": "05b"
+},
+{
+"word": "veinticuatro",
+"start": 219.74,
+"end": 220.3,
+"sec": "05b"
+},
+{
+"word": "horas",
+"start": 220.38,
+"end": 220.62,
+"sec": "05b"
+},
+{
+"word": "sin",
+"start": 220.7,
+"end": 220.78,
+"sec": "05b"
+},
+{
+"word": "dormir",
+"start": 220.82,
+"end": 221.18,
+"sec": "05b"
+},
+{
+"word": "tus",
+"start": 221.38,
+"end": 221.5,
+"sec": "05b"
+},
+{
+"word": "reflejos",
+"start": 221.58,
+"end": 221.98,
+"sec": "05b"
+},
+{
+"word": "se",
+"start": 222.06,
+"end": 222.14,
+"sec": "05b"
+},
+{
+"word": "parecen",
+"start": 222.22,
+"end": 222.46,
+"sec": "05b"
+},
+{
+"word": "a",
+"start": 222.54,
+"end": 222.58,
+"sec": "05b"
+},
+{
+"word": "los",
+"start": 222.62,
+"end": 222.7,
+"sec": "05b"
+},
+{
+"word": "de",
+"start": 222.78,
+"end": 222.86,
+"sec": "05b"
+},
+{
+"word": "alguien",
+"start": 222.94,
+"end": 223.18,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 223.26,
+"end": 223.34,
+"sec": "05b"
+},
+{
+"word": "bebió",
+"start": 223.42,
+"end": 223.74,
+"sec": "05b"
+},
+{
+"word": "de",
+"start": 223.78,
+"end": 223.82,
+"sec": "05b"
+},
+{
+"word": "más",
+"start": 223.9,
+"end": 224.14,
+"sec": "05b"
+},
+{
+"word": "Ahora",
+"start": 224.54,
+"end": 224.78,
+"sec": "05b"
+},
+{
+"word": "imagina",
+"start": 224.86,
+"end": 225.26,
+"sec": "05b"
+},
+{
+"word": "un",
+"start": 225.3,
+"end": 225.34,
+"sec": "05b"
+},
+{
+"word": "cerebro",
+"start": 225.42,
+"end": 225.74,
+"sec": "05b"
+},
+{
+"word": "que",
+"start": 225.82,
+"end": 225.98,
+"sec": "05b"
+},
+{
+"word": "nunca",
+"start": 226.06,
+"end": 226.38,
+"sec": "05b"
+},
+{
+"word": "puede",
+"start": 226.54,
+"end": 226.7,
+"sec": "05b"
+},
+{
+"word": "hacer",
+"start": 226.78,
+"end": 227.02,
+"sec": "05b"
+},
+{
+"word": "esa",
+"start": 227.1,
+"end": 227.18,
+"sec": "05b"
+},
+{
+"word": "limpieza",
+"start": 227.26,
+"end": 227.74,
+"sec": "05b"
+},
+{
+"word": "Y",
+"start": 228.5,
+"end": 228.527,
+"sec": "06"
+},
+{
+"word": "qué",
+"start": 228.687,
+"end": 228.767,
+"sec": "06"
+},
+{
+"word": "está",
+"start": 228.847,
+"end": 229.007,
+"sec": "06"
+},
+{
+"word": "pasando",
+"start": 229.087,
+"end": 229.407,
+"sec": "06"
+},
+{
+"word": "mientras",
+"start": 229.487,
+"end": 229.807,
+"sec": "06"
+},
+{
+"word": "tanto",
+"start": 229.887,
+"end": 230.207,
+"sec": "06"
+},
+{
+"word": "dentro",
+"start": 230.367,
+"end": 230.687,
+"sec": "06"
+},
+{
+"word": "de",
+"start": 230.727,
+"end": 230.767,
+"sec": "06"
+},
+{
+"word": "la",
+"start": 230.807,
+"end": 230.847,
+"sec": "06"
+},
+{
+"word": "cabeza",
+"start": 230.927,
+"end": 231.327,
+"sec": "06"
+},
+{
+"word": "En",
+"start": 231.747,
+"end": 231.827,
+"sec": "06"
+},
+{
+"word": "lo",
+"start": 231.907,
+"end": 231.947,
+"sec": "06"
+},
+{
+"word": "más",
+"start": 231.987,
+"end": 232.147,
+"sec": "06"
+},
+{
+"word": "profundo",
+"start": 232.227,
+"end": 232.627,
+"sec": "06"
+},
+{
+"word": "del",
+"start": 232.667,
+"end": 232.707,
+"sec": "06"
+},
+{
+"word": "cerebro",
+"start": 232.787,
+"end": 233.267,
+"sec": "06"
+},
+{
+"word": "hay",
+"start": 233.347,
+"end": 233.427,
+"sec": "06"
+},
+{
+"word": "una",
+"start": 233.507,
+"end": 233.667,
+"sec": "06"
+},
+{
+"word": "zona",
+"start": 233.747,
+"end": 233.987,
+"sec": "06"
+},
+{
+"word": "pequeña",
+"start": 234.067,
+"end": 234.547,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 234.947,
+"end": 235.027,
+"sec": "06"
+},
+{
+"word": "tálamo",
+"start": 235.107,
+"end": 235.507,
+"sec": "06"
+},
+{
+"word": "Es",
+"start": 235.907,
+"end": 236.067,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 236.147,
+"end": 236.187,
+"sec": "06"
+},
+{
+"word": "control",
+"start": 236.227,
+"end": 236.627,
+"sec": "06"
+},
+{
+"word": "central",
+"start": 236.707,
+"end": 237.107,
+"sec": "06"
+},
+{
+"word": "del",
+"start": 237.187,
+"end": 237.267,
+"sec": "06"
+},
+{
+"word": "sueño",
+"start": 237.347,
+"end": 237.747,
+"sec": "06"
+},
+{
+"word": "Cada",
+"start": 238.147,
+"end": 238.307,
+"sec": "06"
+},
+{
+"word": "noche",
+"start": 238.387,
+"end": 238.707,
+"sec": "06"
+},
+{
+"word": "es",
+"start": 238.947,
+"end": 239.027,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 239.067,
+"end": 239.107,
+"sec": "06"
+},
+{
+"word": "que",
+"start": 239.187,
+"end": 239.227,
+"sec": "06"
+},
+{
+"word": "te",
+"start": 239.267,
+"end": 239.347,
+"sec": "06"
+},
+{
+"word": "desconecta",
+"start": 239.427,
+"end": 239.867,
+"sec": "06"
+},
+{
+"word": "del",
+"start": 239.907,
+"end": 239.987,
+"sec": "06"
+},
+{
+"word": "mundo",
+"start": 240.147,
+"end": 240.387,
+"sec": "06"
+},
+{
+"word": "para",
+"start": 240.467,
+"end": 240.627,
+"sec": "06"
+},
+{
+"word": "que",
+"start": 240.667,
+"end": 240.707,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 240.787,
+"end": 240.827,
+"sec": "06"
+},
+{
+"word": "cerebro",
+"start": 240.867,
+"end": 241.267,
+"sec": "06"
+},
+{
+"word": "pueda",
+"start": 241.347,
+"end": 241.587,
+"sec": "06"
+},
+{
+"word": "descansar",
+"start": 241.707,
+"end": 242.227,
+"sec": "06"
+},
+{
+"word": "En",
+"start": 242.647,
+"end": 242.727,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 242.767,
+"end": 242.807,
+"sec": "06"
+},
+{
+"word": "insomnio",
+"start": 242.887,
+"end": 243.287,
+"sec": "06"
+},
+{
+"word": "familiar",
+"start": 243.367,
+"end": 243.767,
+"sec": "06"
+},
+{
+"word": "fatal",
+"start": 243.847,
+"end": 244.247,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 244.567,
+"end": 244.647,
+"sec": "06"
+},
+{
+"word": "tálamo",
+"start": 244.727,
+"end": 245.127,
+"sec": "06"
+},
+{
+"word": "se",
+"start": 245.167,
+"end": 245.207,
+"sec": "06"
+},
+{
+"word": "destruye",
+"start": 245.287,
+"end": 245.847,
+"sec": "06"
+},
+{
+"word": "Célula",
+"start": 246.327,
+"end": 246.807,
+"sec": "06"
+},
+{
+"word": "por",
+"start": 246.967,
+"end": 247.047,
+"sec": "06"
+},
+{
+"word": "célula",
+"start": 247.207,
+"end": 247.607,
+"sec": "06"
+},
+{
+"word": "Y",
+"start": 248.007,
+"end": 248.087,
+"sec": "06"
+},
+{
+"word": "no",
+"start": 248.167,
+"end": 248.247,
+"sec": "06"
+},
+{
+"word": "lo",
+"start": 248.287,
+"end": 248.327,
+"sec": "06"
+},
+{
+"word": "destruye",
+"start": 248.407,
+"end": 248.807,
+"sec": "06"
+},
+{
+"word": "un",
+"start": 248.887,
+"end": 248.967,
+"sec": "06"
+},
+{
+"word": "virus",
+"start": 249.047,
+"end": 249.447,
+"sec": "06"
+},
+{
+"word": "ni",
+"start": 249.647,
+"end": 249.687,
+"sec": "06"
+},
+{
+"word": "una",
+"start": 249.767,
+"end": 249.847,
+"sec": "06"
+},
+{
+"word": "bacteria",
+"start": 249.927,
+"end": 250.407,
+"sec": "06"
+},
+{
+"word": "Lo",
+"start": 250.807,
+"end": 250.887,
+"sec": "06"
+},
+{
+"word": "destruye",
+"start": 250.967,
+"end": 251.447,
+"sec": "06"
+},
+{
+"word": "una",
+"start": 251.527,
+"end": 251.687,
+"sec": "06"
+},
+{
+"word": "proteína",
+"start": 251.767,
+"end": 252.327,
+"sec": "06"
+},
+{
+"word": "Se",
+"start": 252.727,
+"end": 252.887,
+"sec": "06"
+},
+{
+"word": "llama",
+"start": 252.967,
+"end": 253.207,
+"sec": "06"
+},
+{
+"word": "prion",
+"start": 253.447,
+"end": 253.847,
+"sec": "06"
+},
+{
+"word": "Todos",
+"start": 254.267,
+"end": 254.507,
+"sec": "06"
+},
+{
+"word": "tenemos",
+"start": 254.587,
+"end": 254.907,
+"sec": "06"
+},
+{
+"word": "en",
+"start": 254.947,
+"end": 254.987,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 255.027,
+"end": 255.067,
+"sec": "06"
+},
+{
+"word": "cerebro",
+"start": 255.147,
+"end": 255.547,
+"sec": "06"
+},
+{
+"word": "una",
+"start": 255.627,
+"end": 255.707,
+"sec": "06"
+},
+{
+"word": "proteína",
+"start": 255.787,
+"end": 256.187,
+"sec": "06"
+},
+{
+"word": "normal",
+"start": 256.267,
+"end": 256.667,
+"sec": "06"
+},
+{
+"word": "llamada",
+"start": 256.707,
+"end": 257.067,
+"sec": "06"
+},
+{
+"word": "PrP",
+"start": 257.227,
+"end": 257.947,
+"sec": "06"
+},
+{
+"word": "y",
+"start": 258.227,
+"end": 258.267,
+"sec": "06"
+},
+{
+"word": "no",
+"start": 258.347,
+"end": 258.427,
+"sec": "06"
+},
+{
+"word": "le",
+"start": 258.507,
+"end": 258.587,
+"sec": "06"
+},
+{
+"word": "hace",
+"start": 258.64,
+"end": 258.747,
+"sec": "06"
+},
+{
+"word": "daño",
+"start": 258.827,
+"end": 259.067,
+"sec": "06"
+},
+{
+"word": "a",
+"start": 259.107,
+"end": 259.147,
+"sec": "06"
+},
+{
+"word": "nadie",
+"start": 259.227,
+"end": 259.467,
+"sec": "06"
+},
+{
+"word": "Pero",
+"start": 259.867,
+"end": 260.027,
+"sec": "06"
+},
+{
+"word": "en",
+"start": 260.107,
+"end": 260.187,
+"sec": "06"
+},
+{
+"word": "estas",
+"start": 260.267,
+"end": 260.507,
+"sec": "06"
+},
+{
+"word": "personas",
+"start": 260.587,
+"end": 261.067,
+"sec": "06"
+},
+{
+"word": "por",
+"start": 261.307,
+"end": 261.387,
+"sec": "06"
+},
+{
+"word": "un",
+"start": 261.427,
+"end": 261.467,
+"sec": "06"
+},
+{
+"word": "error",
+"start": 261.547,
+"end": 261.787,
+"sec": "06"
+},
+{
+"word": "en",
+"start": 261.827,
+"end": 261.867,
+"sec": "06"
+},
+{
+"word": "un",
+"start": 261.947,
+"end": 262.027,
+"sec": "06"
+},
+{
+"word": "gen",
+"start": 262.187,
+"end": 262.347,
+"sec": "06"
+},
+{
+"word": "la",
+"start": 262.627,
+"end": 262.667,
+"sec": "06"
+},
+{
+"word": "proteína",
+"start": 262.747,
+"end": 263.227,
+"sec": "06"
+},
+{
+"word": "se",
+"start": 263.307,
+"end": 263.387,
+"sec": "06"
+},
+{
+"word": "dobla",
+"start": 263.467,
+"end": 263.787,
+"sec": "06"
+},
+{
+"word": "mal",
+"start": 263.867,
+"end": 264.107,
+"sec": "06"
+},
+{
+"word": "Y",
+"start": 264.507,
+"end": 264.587,
+"sec": "06"
+},
+{
+"word": "lo",
+"start": 264.667,
+"end": 264.747,
+"sec": "06"
+},
+{
+"word": "más",
+"start": 264.827,
+"end": 264.987,
+"sec": "06"
+},
+{
+"word": "terrible",
+"start": 265.067,
+"end": 265.467,
+"sec": "06"
+},
+{
+"word": "esa",
+"start": 265.867,
+"end": 266.027,
+"sec": "06"
+},
+{
+"word": "forma",
+"start": 266.107,
+"end": 266.347,
+"sec": "06"
+},
+{
+"word": "equivocada",
+"start": 266.467,
+"end": 266.987,
+"sec": "06"
+},
+{
+"word": "se",
+"start": 267.067,
+"end": 267.147,
+"sec": "06"
+},
+{
+"word": "contagia",
+"start": 267.227,
+"end": 267.787,
+"sec": "06"
+},
+{
+"word": "Cada",
+"start": 268.187,
+"end": 268.427,
+"sec": "06"
+},
+{
+"word": "proteína",
+"start": 268.507,
+"end": 268.987,
+"sec": "06"
+},
+{
+"word": "mal",
+"start": 269.067,
+"end": 269.227,
+"sec": "06"
+},
+{
+"word": "doblada",
+"start": 269.307,
+"end": 269.707,
+"sec": "06"
+},
+{
+"word": "obliga",
+"start": 269.867,
+"end": 270.267,
+"sec": "06"
+},
+{
+"word": "a",
+"start": 270.294,
+"end": 270.32,
+"sec": "06"
+},
+{
+"word": "las",
+"start": 270.347,
+"end": 270.507,
+"sec": "06"
+},
+{
+"word": "de",
+"start": 270.547,
+"end": 270.587,
+"sec": "06"
+},
+{
+"word": "al",
+"start": 270.627,
+"end": 270.667,
+"sec": "06"
+},
+{
+"word": "lado",
+"start": 270.747,
+"end": 270.987,
+"sec": "06"
+},
+{
+"word": "a",
+"start": 271.027,
+"end": 271.067,
+"sec": "06"
+},
+{
+"word": "doblarse",
+"start": 271.107,
+"end": 271.547,
+"sec": "06"
+},
+{
+"word": "igual",
+"start": 271.627,
+"end": 271.867,
+"sec": "06"
+},
+{
+"word": "Una",
+"start": 272.267,
+"end": 272.427,
+"sec": "06"
+},
+{
+"word": "reacción",
+"start": 272.507,
+"end": 272.907,
+"sec": "06"
+},
+{
+"word": "en",
+"start": 272.947,
+"end": 272.987,
+"sec": "06"
+},
+{
+"word": "cadena",
+"start": 273.067,
+"end": 273.467,
+"sec": "06"
+},
+{
+"word": "que",
+"start": 273.547,
+"end": 273.627,
+"sec": "06"
+},
+{
+"word": "nada",
+"start": 273.787,
+"end": 274.027,
+"sec": "06"
+},
+{
+"word": "detiene",
+"start": 274.147,
+"end": 274.507,
+"sec": "06"
+},
+{
+"word": "Poco",
+"start": 274.927,
+"end": 275.167,
+"sec": "06"
+},
+{
+"word": "a",
+"start": 275.207,
+"end": 275.247,
+"sec": "06"
+},
+{
+"word": "poco",
+"start": 275.327,
+"end": 275.647,
+"sec": "06"
+},
+{
+"word": "el",
+"start": 275.847,
+"end": 275.887,
+"sec": "06"
+},
+{
+"word": "tálamo",
+"start": 275.967,
+"end": 276.287,
+"sec": "06"
+},
+{
+"word": "se",
+"start": 276.367,
+"end": 276.447,
+"sec": "06"
+},
+{
+"word": "convierte",
+"start": 276.527,
+"end": 276.927,
+"sec": "06"
+},
+{
+"word": "en",
+"start": 276.967,
+"end": 277.007,
+"sec": "06"
+},
+{
+"word": "una",
+"start": 277.087,
+"end": 277.167,
+"sec": "06"
+},
+{
+"word": "esponja",
+"start": 277.247,
+"end": 277.807,
+"sec": "06"
+},
+{
+"word": "lleno",
+"start": 278.127,
+"end": 278.367,
+"sec": "06"
+},
+{
+"word": "de",
+"start": 278.447,
+"end": 278.487,
+"sec": "06"
+},
+{
+"word": "agujeros",
+"start": 278.527,
+"end": 279.007,
+"sec": "06"
+},
+{
+"word": "microscópicos",
+"start": 279.167,
+"end": 279.967,
+"sec": "06"
+},
+{
+"word": "Es",
+"start": 280.687,
+"end": 280.847,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 280.927,
+"end": 281.007,
+"sec": "07"
+},
+{
+"word": "misma",
+"start": 281.087,
+"end": 281.247,
+"sec": "07"
+},
+{
+"word": "familia",
+"start": 281.327,
+"end": 281.647,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 281.727,
+"end": 281.767,
+"sec": "07"
+},
+{
+"word": "enfermedades",
+"start": 281.807,
+"end": 282.527,
+"sec": "07"
+},
+{
+"word": "que",
+"start": 282.567,
+"end": 282.607,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 282.687,
+"end": 282.727,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 282.767,
+"end": 282.847,
+"sec": "07"
+},
+{
+"word": "las",
+"start": 282.927,
+"end": 283.007,
+"sec": "07"
+},
+{
+"word": "vacas",
+"start": 283.087,
+"end": 283.327,
+"sec": "07"
+},
+{
+"word": "locas",
+"start": 283.407,
+"end": 283.887,
+"sec": "07"
+},
+{
+"word": "y",
+"start": 283.927,
+"end": 283.967,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 284.007,
+"end": 284.047,
+"sec": "07"
+},
+{
+"word": "enfermedad",
+"start": 284.127,
+"end": 284.607,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 284.647,
+"end": 284.687,
+"sec": "07"
+},
+{
+"word": "Creutzfeldt-Jakob",
+"start": 284.847,
+"end": 285.807,
+"sec": "07"
+},
+{
+"word": "Todas",
+"start": 286.207,
+"end": 286.607,
+"sec": "07"
+},
+{
+"word": "son",
+"start": 286.687,
+"end": 286.847,
+"sec": "07"
+},
+{
+"word": "enfermedades",
+"start": 286.927,
+"end": 287.567,
+"sec": "07"
+},
+{
+"word": "priónicas",
+"start": 287.647,
+"end": 288.287,
+"sec": "07"
+},
+{
+"word": "Pero",
+"start": 288.767,
+"end": 288.927,
+"sec": "07"
+},
+{
+"word": "el",
+"start": 288.967,
+"end": 289.007,
+"sec": "07"
+},
+{
+"word": "insomnio",
+"start": 289.087,
+"end": 289.407,
+"sec": "07"
+},
+{
+"word": "familiar",
+"start": 289.487,
+"end": 289.887,
+"sec": "07"
+},
+{
+"word": "fatal",
+"start": 289.967,
+"end": 290.367,
+"sec": "07"
+},
+{
+"word": "tiene",
+"start": 290.447,
+"end": 290.687,
+"sec": "07"
+},
+{
+"word": "algo",
+"start": 290.767,
+"end": 291.007,
+"sec": "07"
+},
+{
+"word": "especial",
+"start": 291.087,
+"end": 291.567,
+"sec": "07"
+},
+{
+"word": "se",
+"start": 291.987,
+"end": 292.147,
+"sec": "07"
+},
+{
+"word": "hereda",
+"start": 292.227,
+"end": 292.627,
+"sec": "07"
+},
+{
+"word": "Si",
+"start": 293.047,
+"end": 293.127,
+"sec": "07"
+},
+{
+"word": "uno",
+"start": 293.207,
+"end": 293.367,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 293.407,
+"end": 293.447,
+"sec": "07"
+},
+{
+"word": "los",
+"start": 293.527,
+"end": 293.607,
+"sec": "07"
+},
+{
+"word": "padres",
+"start": 293.687,
+"end": 294.007,
+"sec": "07"
+},
+{
+"word": "tiene",
+"start": 294.087,
+"end": 294.247,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 294.287,
+"end": 294.327,
+"sec": "07"
+},
+{
+"word": "mutación",
+"start": 294.407,
+"end": 294.887,
+"sec": "07"
+},
+{
+"word": "el",
+"start": 295.207,
+"end": 295.287,
+"sec": "07"
+},
+{
+"word": "hijo",
+"start": 295.327,
+"end": 295.527,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 295.567,
+"end": 295.607,
+"sec": "07"
+},
+{
+"word": "recibe",
+"start": 295.687,
+"end": 296.007,
+"sec": "07"
+},
+{
+"word": "con",
+"start": 296.087,
+"end": 296.167,
+"sec": "07"
+},
+{
+"word": "una",
+"start": 296.247,
+"end": 296.327,
+"sec": "07"
+},
+{
+"word": "probabilidad",
+"start": 296.407,
+"end": 297.047,
+"sec": "07"
+},
+{
+"word": "del",
+"start": 297.127,
+"end": 297.207,
+"sec": "07"
+},
+{
+"word": "cincuenta",
+"start": 297.287,
+"end": 297.767,
+"sec": "07"
+},
+{
+"word": "por",
+"start": 297.847,
+"end": 297.927,
+"sec": "07"
+},
+{
+"word": "ciento",
+"start": 298.087,
+"end": 298.327,
+"sec": "07"
+},
+{
+"word": "Cincuenta",
+"start": 298.747,
+"end": 299.307,
+"sec": "07"
+},
+{
+"word": "y",
+"start": 299.467,
+"end": 299.547,
+"sec": "07"
+},
+{
+"word": "cincuenta",
+"start": 299.627,
+"end": 300.107,
+"sec": "07"
+},
+{
+"word": "Como",
+"start": 300.587,
+"end": 300.667,
+"sec": "07"
+},
+{
+"word": "lanzar",
+"start": 300.747,
+"end": 301.067,
+"sec": "07"
+},
+{
+"word": "una",
+"start": 301.147,
+"end": 301.227,
+"sec": "07"
+},
+{
+"word": "moneda",
+"start": 301.307,
+"end": 301.627,
+"sec": "07"
+},
+{
+"word": "La",
+"start": 302.047,
+"end": 302.127,
+"sec": "07"
+},
+{
+"word": "historia",
+"start": 302.247,
+"end": 302.447,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 302.527,
+"end": 302.567,
+"sec": "07"
+},
+{
+"word": "la",
+"start": 302.607,
+"end": 302.647,
+"sec": "07"
+},
+{
+"word": "familia",
+"start": 302.687,
+"end": 303.087,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 303.127,
+"end": 303.167,
+"sec": "07"
+},
+{
+"word": "Silvano",
+"start": 303.247,
+"end": 303.727,
+"sec": "07"
+},
+{
+"word": "se",
+"start": 303.807,
+"end": 303.887,
+"sec": "07"
+},
+{
+"word": "rastreó",
+"start": 303.927,
+"end": 304.367,
+"sec": "07"
+},
+{
+"word": "doscientos",
+"start": 304.487,
+"end": 305.007,
+"sec": "07"
+},
+{
+"word": "años",
+"start": 305.087,
+"end": 305.327,
+"sec": "07"
+},
+{
+"word": "atrás",
+"start": 305.407,
+"end": 305.807,
+"sec": "07"
+},
+{
+"word": "El",
+"start": 306.127,
+"end": 306.287,
+"sec": "07"
+},
+{
+"word": "caso",
+"start": 306.367,
+"end": 306.527,
+"sec": "07"
+},
+{
+"word": "más",
+"start": 306.607,
+"end": 306.767,
+"sec": "07"
+},
+{
+"word": "antiguo",
+"start": 306.847,
+"end": 307.247,
+"sec": "07"
+},
+{
+"word": "conocido",
+"start": 307.327,
+"end": 307.807,
+"sec": "07"
+},
+{
+"word": "es",
+"start": 307.887,
+"end": 308.047,
+"sec": "07"
+},
+{
+"word": "un",
+"start": 308.087,
+"end": 308.127,
+"sec": "07"
+},
+{
+"word": "médico",
+"start": 308.207,
+"end": 308.447,
+"sec": "07"
+},
+{
+"word": "de",
+"start": 308.527,
+"end": 308.607,
+"sec": "07"
+},
+{
+"word": "Venecia",
+"start": 308.687,
+"end": 309.167,
+"sec": "07"
+},
+{
+"word": "que",
+"start": 309.247,
+"end": 309.327,
+"sec": "07"
+},
+{
+"word": "murió",
+"start": 309.367,
+"end": 309.647,
+"sec": "07"
+},
+{
+"word": "con",
+"start": 309.727,
+"end": 309.807,
+"sec": "07"
+},
+{
+"word": "los",
+"start": 309.887,
+"end": 309.967,
+"sec": "07"
+},
+{
+"word": "mismos",
+"start": 310.047,
+"end": 310.367,
+"sec": "07"
+},
+{
+"word": "síntomas",
+"start": 310.407,
+"end": 310.927,
+"sec": "07"
+},
+{
+"word": "en",
+"start": 311.007,
+"end": 311.167,
+"sec": "07"
+},
+{
+"word": "mil",
+"start": 311.247,
+"end": 311.327,
+"sec": "07"
+},
+{
+"word": "setecientos",
+"start": 311.407,
+"end": 312.047,
+"sec": "07"
+},
+{
+"word": "sesenta",
+"start": 312.127,
+"end": 312.367,
+"sec": "07"
+},
+{
+"word": "y",
+"start": 312.447,
+"end": 312.527,
+"sec": "07"
+},
+{
+"word": "cinco",
+"start": 312.607,
+"end": 312.767,
+"sec": "07"
+},
+{
+"word": "El",
+"start": 313.487,
+"end": 313.647,
+"sec": "08"
+},
+{
+"word": "que",
+"start": 313.687,
+"end": 313.727,
+"sec": "08"
+},
+{
+"word": "le",
+"start": 313.767,
+"end": 313.807,
+"sec": "08"
+},
+{
+"word": "puso",
+"start": 313.887,
+"end": 314.127,
+"sec": "08"
+},
+{
+"word": "nombre",
+"start": 314.287,
+"end": 314.447,
+"sec": "08"
+},
+{
+"word": "a",
+"start": 314.474,
+"end": 314.5,
+"sec": "08"
+},
+{
+"word": "la",
+"start": 314.527,
+"end": 314.567,
+"sec": "08"
+},
+{
+"word": "enfermedad",
+"start": 314.607,
+"end": 315.167,
+"sec": "08"
+},
+{
+"word": "fue",
+"start": 315.327,
+"end": 315.407,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 315.447,
+"end": 315.487,
+"sec": "08"
+},
+{
+"word": "neurólogo",
+"start": 315.567,
+"end": 316.047,
+"sec": "08"
+},
+{
+"word": "italiano",
+"start": 316.167,
+"end": 316.607,
+"sec": "08"
+},
+{
+"word": "Elio",
+"start": 316.687,
+"end": 317.007,
+"sec": "08"
+},
+{
+"word": "Lugaresi",
+"start": 317.047,
+"end": 317.567,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 317.887,
+"end": 317.967,
+"sec": "08"
+},
+{
+"word": "Bolonia",
+"start": 318.02,
+"end": 318.367,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 318.647,
+"end": 318.767,
+"sec": "08"
+},
+{
+"word": "mil",
+"start": 318.807,
+"end": 318.847,
+"sec": "08"
+},
+{
+"word": "novecientos",
+"start": 318.927,
+"end": 319.487,
+"sec": "08"
+},
+{
+"word": "ochenta",
+"start": 319.567,
+"end": 319.887,
+"sec": "08"
+},
+{
+"word": "y",
+"start": 319.927,
+"end": 319.967,
+"sec": "08"
+},
+{
+"word": "seis",
+"start": 320.047,
+"end": 320.447,
+"sec": "08"
+},
+{
+"word": "Él",
+"start": 320.807,
+"end": 321.007,
+"sec": "08"
+},
+{
+"word": "y",
+"start": 321.047,
+"end": 321.087,
+"sec": "08"
+},
+{
+"word": "su",
+"start": 321.167,
+"end": 321.247,
+"sec": "08"
+},
+{
+"word": "equipo",
+"start": 321.367,
+"end": 321.727,
+"sec": "08"
+},
+{
+"word": "registraron",
+"start": 321.927,
+"end": 322.287,
+"sec": "08"
+},
+{
+"word": "la",
+"start": 322.367,
+"end": 322.447,
+"sec": "08"
+},
+{
+"word": "actividad",
+"start": 322.527,
+"end": 322.927,
+"sec": "08"
+},
+{
+"word": "del",
+"start": 322.967,
+"end": 323.007,
+"sec": "08"
+},
+{
+"word": "cerebro",
+"start": 323.087,
+"end": 323.407,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 323.487,
+"end": 323.527,
+"sec": "08"
+},
+{
+"word": "Silvano",
+"start": 323.567,
+"end": 324.047,
+"sec": "08"
+},
+{
+"word": "y",
+"start": 324.327,
+"end": 324.367,
+"sec": "08"
+},
+{
+"word": "vieron",
+"start": 324.447,
+"end": 324.687,
+"sec": "08"
+},
+{
+"word": "que",
+"start": 324.767,
+"end": 324.807,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 324.847,
+"end": 324.927,
+"sec": "08"
+},
+{
+"word": "los",
+"start": 324.967,
+"end": 325.007,
+"sec": "08"
+},
+{
+"word": "registros",
+"start": 325.087,
+"end": 325.647,
+"sec": "08"
+},
+{
+"word": "no",
+"start": 325.807,
+"end": 325.887,
+"sec": "08"
+},
+{
+"word": "había",
+"start": 325.967,
+"end": 326.287,
+"sec": "08"
+},
+{
+"word": "sueño",
+"start": 326.367,
+"end": 326.687,
+"sec": "08"
+},
+{
+"word": "real",
+"start": 326.767,
+"end": 327.087,
+"sec": "08"
+},
+{
+"word": "Nada",
+"start": 327.567,
+"end": 327.967,
+"sec": "08"
+},
+{
+"word": "Seis",
+"start": 328.387,
+"end": 328.627,
+"sec": "08"
+},
+{
+"word": "años",
+"start": 328.707,
+"end": 328.867,
+"sec": "08"
+},
+{
+"word": "después",
+"start": 328.947,
+"end": 329.347,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 329.587,
+"end": 329.667,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 329.707,
+"end": 329.747,
+"sec": "08"
+},
+{
+"word": "noventa",
+"start": 329.827,
+"end": 330.147,
+"sec": "08"
+},
+{
+"word": "y",
+"start": 330.187,
+"end": 330.227,
+"sec": "08"
+},
+{
+"word": "dos",
+"start": 330.267,
+"end": 330.307,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 330.667,
+"end": 330.707,
+"sec": "08"
+},
+{
+"word": "investigador",
+"start": 330.787,
+"end": 331.347,
+"sec": "08"
+},
+{
+"word": "Pierluigi",
+"start": 331.507,
+"end": 331.987,
+"sec": "08"
+},
+{
+"word": "Gambetti",
+"start": 332.067,
+"end": 332.627,
+"sec": "08"
+},
+{
+"word": "y",
+"start": 332.707,
+"end": 332.747,
+"sec": "08"
+},
+{
+"word": "sus",
+"start": 332.787,
+"end": 332.947,
+"sec": "08"
+},
+{
+"word": "colegas",
+"start": 333.027,
+"end": 333.507,
+"sec": "08"
+},
+{
+"word": "encontraron",
+"start": 333.587,
+"end": 334.147,
+"sec": "08"
+},
+{
+"word": "la",
+"start": 334.187,
+"end": 334.227,
+"sec": "08"
+},
+{
+"word": "causa",
+"start": 334.387,
+"end": 334.627,
+"sec": "08"
+},
+{
+"word": "exacta",
+"start": 334.707,
+"end": 335.187,
+"sec": "08"
+},
+{
+"word": "Un",
+"start": 335.587,
+"end": 335.747,
+"sec": "08"
+},
+{
+"word": "solo",
+"start": 335.907,
+"end": 336.147,
+"sec": "08"
+},
+{
+"word": "cambio",
+"start": 336.227,
+"end": 336.547,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 336.587,
+"end": 336.627,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 336.667,
+"end": 336.707,
+"sec": "08"
+},
+{
+"word": "gen",
+"start": 336.787,
+"end": 337.027,
+"sec": "08"
+},
+{
+"word": "que",
+"start": 337.107,
+"end": 337.187,
+"sec": "08"
+},
+{
+"word": "fabrica",
+"start": 337.387,
+"end": 337.667,
+"sec": "08"
+},
+{
+"word": "esta",
+"start": 337.787,
+"end": 337.907,
+"sec": "08"
+},
+{
+"word": "proteína",
+"start": 337.987,
+"end": 338.547,
+"sec": "08"
+},
+{
+"word": "Una",
+"start": 338.867,
+"end": 339.027,
+"sec": "08"
+},
+{
+"word": "sola",
+"start": 339.187,
+"end": 339.427,
+"sec": "08"
+},
+{
+"word": "letra",
+"start": 339.507,
+"end": 339.747,
+"sec": "08"
+},
+{
+"word": "equivocada",
+"start": 339.827,
+"end": 340.387,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 340.427,
+"end": 340.467,
+"sec": "08"
+},
+{
+"word": "un",
+"start": 340.547,
+"end": 340.627,
+"sec": "08"
+},
+{
+"word": "código",
+"start": 340.707,
+"end": 340.947,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 341.027,
+"end": 341.107,
+"sec": "08"
+},
+{
+"word": "tres",
+"start": 341.187,
+"end": 341.427,
+"sec": "08"
+},
+{
+"word": "mil",
+"start": 341.587,
+"end": 341.667,
+"sec": "08"
+},
+{
+"word": "millones",
+"start": 341.827,
+"end": 342.307,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 342.387,
+"end": 342.427,
+"sec": "08"
+},
+{
+"word": "letras",
+"start": 342.467,
+"end": 342.947,
+"sec": "08"
+},
+{
+"word": "Y",
+"start": 343.267,
+"end": 343.347,
+"sec": "08"
+},
+{
+"word": "ese",
+"start": 343.427,
+"end": 343.587,
+"sec": "08"
+},
+{
+"word": "error",
+"start": 343.667,
+"end": 343.987,
+"sec": "08"
+},
+{
+"word": "puede",
+"start": 344.067,
+"end": 344.227,
+"sec": "08"
+},
+{
+"word": "pasar",
+"start": 344.307,
+"end": 344.627,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 344.667,
+"end": 344.707,
+"sec": "08"
+},
+{
+"word": "silencio",
+"start": 344.787,
+"end": 345.267,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 345.307,
+"end": 345.347,
+"sec": "08"
+},
+{
+"word": "una",
+"start": 345.427,
+"end": 345.587,
+"sec": "08"
+},
+{
+"word": "generación",
+"start": 345.667,
+"end": 346.227,
+"sec": "08"
+},
+{
+"word": "a",
+"start": 346.307,
+"end": 346.387,
+"sec": "08"
+},
+{
+"word": "otra",
+"start": 346.467,
+"end": 346.707,
+"sec": "08"
+},
+{
+"word": "Y",
+"start": 347.187,
+"end": 347.227,
+"sec": "08"
+},
+{
+"word": "luego",
+"start": 347.267,
+"end": 347.587,
+"sec": "08"
+},
+{
+"word": "descubrieron",
+"start": 347.747,
+"end": 348.227,
+"sec": "08"
+},
+{
+"word": "algo",
+"start": 348.307,
+"end": 348.547,
+"sec": "08"
+},
+{
+"word": "todavía",
+"start": 348.627,
+"end": 349.107,
+"sec": "08"
+},
+{
+"word": "más",
+"start": 349.267,
+"end": 349.507,
+"sec": "08"
+},
+{
+"word": "raro",
+"start": 349.587,
+"end": 349.827,
+"sec": "08"
+},
+{
+"word": "Existe",
+"start": 350.227,
+"end": 350.627,
+"sec": "08"
+},
+{
+"word": "una",
+"start": 350.707,
+"end": 350.787,
+"sec": "08"
+},
+{
+"word": "versión",
+"start": 350.867,
+"end": 351.267,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 351.307,
+"end": 351.347,
+"sec": "08"
+},
+{
+"word": "esta",
+"start": 351.427,
+"end": 351.587,
+"sec": "08"
+},
+{
+"word": "enfermedad",
+"start": 351.667,
+"end": 352.147,
+"sec": "08"
+},
+{
+"word": "en",
+"start": 352.187,
+"end": 352.227,
+"sec": "08"
+},
+{
+"word": "personas",
+"start": 352.307,
+"end": 352.787,
+"sec": "08"
+},
+{
+"word": "sin",
+"start": 352.867,
+"end": 353.027,
+"sec": "08"
+},
+{
+"word": "ninguna",
+"start": 353.107,
+"end": 353.507,
+"sec": "08"
+},
+{
+"word": "mutación",
+"start": 353.587,
+"end": 354.147,
+"sec": "08"
+},
+{
+"word": "Se",
+"start": 354.467,
+"end": 354.547,
+"sec": "08"
+},
+{
+"word": "llama",
+"start": 354.627,
+"end": 354.947,
+"sec": "08"
+},
+{
+"word": "esporádica",
+"start": 355.027,
+"end": 355.827,
+"sec": "08"
+},
+{
+"word": "Aparece",
+"start": 356.147,
+"end": 356.627,
+"sec": "08"
+},
+{
+"word": "de",
+"start": 356.667,
+"end": 356.707,
+"sec": "08"
+},
+{
+"word": "la",
+"start": 356.787,
+"end": 356.867,
+"sec": "08"
+},
+{
+"word": "nada",
+"start": 356.907,
+"end": 357.107,
+"sec": "08"
+},
+{
+"word": "probablemente",
+"start": 357.427,
+"end": 357.987,
+"sec": "08"
+},
+{
+"word": "cuando",
+"start": 358.067,
+"end": 358.227,
+"sec": "08"
+},
+{
+"word": "la",
+"start": 358.307,
+"end": 358.387,
+"sec": "08"
+},
+{
+"word": "proteína",
+"start": 358.467,
+"end": 358.867,
+"sec": "08"
+},
+{
+"word": "se",
+"start": 358.947,
+"end": 359.107,
+"sec": "08"
+},
+{
+"word": "dobla",
+"start": 359.187,
+"end": 359.427,
+"sec": "08"
+},
+{
+"word": "mal",
+"start": 359.547,
+"end": 359.667,
+"sec": "08"
+},
+{
+"word": "una",
+"start": 359.987,
+"end": 360.147,
+"sec": "08"
+},
+{
+"word": "vez",
+"start": 360.227,
+"end": 360.467,
+"sec": "08"
+},
+{
+"word": "por",
+"start": 360.707,
+"end": 360.787,
+"sec": "08"
+},
+{
+"word": "pura",
+"start": 360.867,
+"end": 361.107,
+"sec": "08"
+},
+{
+"word": "casualidad",
+"start": 361.187,
+"end": 361.747,
+"sec": "08"
+},
+{
+"word": "Es",
+"start": 362.067,
+"end": 362.227,
+"sec": "08"
+},
+{
+"word": "aún",
+"start": 362.307,
+"end": 362.547,
+"sec": "08"
+},
+{
+"word": "más",
+"start": 362.627,
+"end": 362.867,
+"sec": "08"
+},
+{
+"word": "rara",
+"start": 362.947,
+"end": 363.267,
+"sec": "08"
+},
+{
+"word": "Pero",
+"start": 363.587,
+"end": 363.747,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 363.787,
+"end": 363.827,
+"sec": "08"
+},
+{
+"word": "final",
+"start": 363.907,
+"end": 364.227,
+"sec": "08"
+},
+{
+"word": "es",
+"start": 364.387,
+"end": 364.547,
+"sec": "08"
+},
+{
+"word": "el",
+"start": 364.627,
+"end": 364.707,
+"sec": "08"
+},
+{
+"word": "mismo",
+"start": 364.814,
+"end": 365.027,
+"sec": "08"
+},
+{
+"word": "Mes",
+"start": 365.747,
+"end": 366.067,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 366.227,
+"end": 366.267,
+"sec": "09"
+},
+{
+"word": "medio",
+"start": 366.307,
+"end": 366.706,
+"sec": "09"
+},
+{
+"word": "Para",
+"start": 367.126,
+"end": 367.206,
+"sec": "09"
+},
+{
+"word": "la",
+"start": 367.286,
+"end": 367.326,
+"sec": "09"
+},
+{
+"word": "persona",
+"start": 367.366,
+"end": 367.846,
+"sec": "09"
+},
+{
+"word": "ya",
+"start": 367.926,
+"end": 368.006,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 368.086,
+"end": 368.165,
+"sec": "09"
+},
+{
+"word": "hay",
+"start": 368.205,
+"end": 368.245,
+"sec": "09"
+},
+{
+"word": "diferencia",
+"start": 368.325,
+"end": 368.885,
+"sec": "09"
+},
+{
+"word": "entre",
+"start": 368.965,
+"end": 369.205,
+"sec": "09"
+},
+{
+"word": "estar",
+"start": 369.365,
+"end": 369.525,
+"sec": "09"
+},
+{
+"word": "despierta",
+"start": 369.645,
+"end": 370.164,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 370.244,
+"end": 370.324,
+"sec": "09"
+},
+{
+"word": "soñar",
+"start": 370.404,
+"end": 370.804,
+"sec": "09"
+},
+{
+"word": "Vive",
+"start": 371.284,
+"end": 371.523,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 371.603,
+"end": 371.683,
+"sec": "09"
+},
+{
+"word": "una",
+"start": 371.763,
+"end": 371.843,
+"sec": "09"
+},
+{
+"word": "niebla",
+"start": 371.923,
+"end": 372.323,
+"sec": "09"
+},
+{
+"word": "constante",
+"start": 372.403,
+"end": 372.963,
+"sec": "09"
+},
+{
+"word": "Y",
+"start": 373.383,
+"end": 373.463,
+"sec": "09"
+},
+{
+"word": "aquí",
+"start": 373.543,
+"end": 373.703,
+"sec": "09"
+},
+{
+"word": "viene",
+"start": 373.783,
+"end": 374.023,
+"sec": "09"
+},
+{
+"word": "lo",
+"start": 374.103,
+"end": 374.183,
+"sec": "09"
+},
+{
+"word": "más",
+"start": 374.263,
+"end": 374.423,
+"sec": "09"
+},
+{
+"word": "cruel",
+"start": 374.503,
+"end": 374.822,
+"sec": "09"
+},
+{
+"word": "Parece",
+"start": 375.302,
+"end": 375.622,
+"sec": "09"
+},
+{
+"word": "lógico",
+"start": 375.702,
+"end": 376.102,
+"sec": "09"
+},
+{
+"word": "si",
+"start": 376.501,
+"end": 376.661,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 376.701,
+"end": 376.741,
+"sec": "09"
+},
+{
+"word": "cerebro",
+"start": 376.821,
+"end": 377.141,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 377.221,
+"end": 377.301,
+"sec": "09"
+},
+{
+"word": "duerme",
+"start": 377.381,
+"end": 377.701,
+"sec": "09"
+},
+{
+"word": "solo",
+"start": 377.781,
+"end": 378.021,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 378.3,
+"end": 378.34,
+"sec": "09"
+},
+{
+"word": "le",
+"start": 378.42,
+"end": 378.5,
+"sec": "09"
+},
+{
+"word": "puede",
+"start": 378.58,
+"end": 378.74,
+"sec": "09"
+},
+{
+"word": "dormir",
+"start": 378.82,
+"end": 379.14,
+"sec": "09"
+},
+{
+"word": "a",
+"start": 379.22,
+"end": 379.247,
+"sec": "09"
+},
+{
+"word": "la",
+"start": 379.273,
+"end": 379.3,
+"sec": "09"
+},
+{
+"word": "fuerza",
+"start": 379.38,
+"end": 379.779,
+"sec": "09"
+},
+{
+"word": "Los",
+"start": 380.259,
+"end": 380.419,
+"sec": "09"
+},
+{
+"word": "médicos",
+"start": 380.499,
+"end": 380.819,
+"sec": "09"
+},
+{
+"word": "probaron",
+"start": 380.899,
+"end": 381.219,
+"sec": "09"
+},
+{
+"word": "sedantes",
+"start": 381.339,
+"end": 381.778,
+"sec": "09"
+},
+{
+"word": "fuertes",
+"start": 381.858,
+"end": 382.258,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 382.338,
+"end": 382.378,
+"sec": "09"
+},
+{
+"word": "anestesia",
+"start": 382.418,
+"end": 382.978,
+"sec": "09"
+},
+{
+"word": "La",
+"start": 383.457,
+"end": 383.537,
+"sec": "09"
+},
+{
+"word": "persona",
+"start": 383.617,
+"end": 384.017,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 384.097,
+"end": 384.177,
+"sec": "09"
+},
+{
+"word": "apagaba",
+"start": 384.257,
+"end": 384.737,
+"sec": "09"
+},
+{
+"word": "pero",
+"start": 385.136,
+"end": 385.256,
+"sec": "09"
+},
+{
+"word": "los",
+"start": 385.296,
+"end": 385.376,
+"sec": "09"
+},
+{
+"word": "aparatos",
+"start": 385.456,
+"end": 385.856,
+"sec": "09"
+},
+{
+"word": "mostraban",
+"start": 385.936,
+"end": 386.416,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 386.456,
+"end": 386.495,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 386.575,
+"end": 386.655,
+"sec": "09"
+},
+{
+"word": "sueño",
+"start": 386.735,
+"end": 387.055,
+"sec": "09"
+},
+{
+"word": "real",
+"start": 387.135,
+"end": 387.455,
+"sec": "09"
+},
+{
+"word": "nunca",
+"start": 387.695,
+"end": 388.015,
+"sec": "09"
+},
+{
+"word": "llegaba",
+"start": 388.095,
+"end": 388.494,
+"sec": "09"
+},
+{
+"word": "El",
+"start": 388.974,
+"end": 389.134,
+"sec": "09"
+},
+{
+"word": "problema",
+"start": 389.214,
+"end": 389.614,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 389.694,
+"end": 389.774,
+"sec": "09"
+},
+{
+"word": "era",
+"start": 389.853,
+"end": 389.933,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 390.013,
+"end": 390.053,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 390.093,
+"end": 390.173,
+"sec": "09"
+},
+{
+"word": "paciente",
+"start": 390.253,
+"end": 390.653,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 390.733,
+"end": 390.813,
+"sec": "09"
+},
+{
+"word": "pudiera",
+"start": 390.893,
+"end": 391.213,
+"sec": "09"
+},
+{
+"word": "relajarse",
+"start": 391.293,
+"end": 391.852,
+"sec": "09"
+},
+{
+"word": "Es",
+"start": 392.172,
+"end": 392.332,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 392.372,
+"end": 392.412,
+"sec": "09"
+},
+{
+"word": "la",
+"start": 392.492,
+"end": 392.572,
+"sec": "09"
+},
+{
+"word": "parte",
+"start": 392.652,
+"end": 392.852,
+"sec": "09"
+},
+{
+"word": "del",
+"start": 392.892,
+"end": 392.972,
+"sec": "09"
+},
+{
+"word": "cerebro",
+"start": 393.052,
+"end": 393.371,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 393.451,
+"end": 393.531,
+"sec": "09"
+},
+{
+"word": "fabrica",
+"start": 393.691,
+"end": 393.931,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 393.971,
+"end": 394.011,
+"sec": "09"
+},
+{
+"word": "sueño",
+"start": 394.091,
+"end": 394.491,
+"sec": "09"
+},
+{
+"word": "ya",
+"start": 394.651,
+"end": 394.811,
+"sec": "09"
+},
+{
+"word": "estaba",
+"start": 394.93,
+"end": 395.21,
+"sec": "09"
+},
+{
+"word": "destruida",
+"start": 395.29,
+"end": 395.85,
+"sec": "09"
+},
+{
+"word": "Dos",
+"start": 396.27,
+"end": 396.43,
+"sec": "09"
+},
+{
+"word": "meses",
+"start": 396.59,
+"end": 396.99,
+"sec": "09"
+},
+{
+"word": "La",
+"start": 397.47,
+"end": 397.55,
+"sec": "09"
+},
+{
+"word": "persona",
+"start": 397.63,
+"end": 397.949,
+"sec": "09"
+},
+{
+"word": "casi",
+"start": 398.029,
+"end": 398.269,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 398.429,
+"end": 398.509,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 398.589,
+"end": 398.669,
+"sec": "09"
+},
+{
+"word": "mueve",
+"start": 398.749,
+"end": 399.069,
+"sec": "09"
+},
+{
+"word": "ni",
+"start": 399.149,
+"end": 399.229,
+"sec": "09"
+},
+{
+"word": "responde",
+"start": 399.349,
+"end": 399.788,
+"sec": "09"
+},
+{
+"word": "Pero",
+"start": 400.188,
+"end": 400.348,
+"sec": "09"
+},
+{
+"word": "los",
+"start": 400.428,
+"end": 400.508,
+"sec": "09"
+},
+{
+"word": "ataques",
+"start": 400.628,
+"end": 400.908,
+"sec": "09"
+},
+{
+"word": "de",
+"start": 400.948,
+"end": 400.988,
+"sec": "09"
+},
+{
+"word": "pánico",
+"start": 401.148,
+"end": 401.547,
+"sec": "09"
+},
+{
+"word": "siguen",
+"start": 401.627,
+"end": 402.027,
+"sec": "09"
+},
+{
+"word": "Incluso",
+"start": 402.427,
+"end": 402.867,
+"sec": "09"
+},
+{
+"word": "así",
+"start": 402.906,
+"end": 403.146,
+"sec": "09"
+},
+{
+"word": "de",
+"start": 403.186,
+"end": 403.226,
+"sec": "09"
+},
+{
+"word": "agotada",
+"start": 403.306,
+"end": 403.786,
+"sec": "09"
+},
+{
+"word": "una",
+"start": 404.106,
+"end": 404.266,
+"sec": "09"
+},
+{
+"word": "parte",
+"start": 404.346,
+"end": 404.546,
+"sec": "09"
+},
+{
+"word": "del",
+"start": 404.585,
+"end": 404.665,
+"sec": "09"
+},
+{
+"word": "cerebro",
+"start": 404.745,
+"end": 405.065,
+"sec": "09"
+},
+{
+"word": "sigue",
+"start": 405.145,
+"end": 405.385,
+"sec": "09"
+},
+{
+"word": "dolorosamente",
+"start": 405.465,
+"end": 406.264,
+"sec": "09"
+},
+{
+"word": "consciente",
+"start": 406.344,
+"end": 406.904,
+"sec": "09"
+},
+{
+"word": "Tres",
+"start": 407.324,
+"end": 407.564,
+"sec": "09"
+},
+{
+"word": "meses",
+"start": 407.644,
+"end": 408.043,
+"sec": "09"
+},
+{
+"word": "Silvano",
+"start": 408.463,
+"end": 408.943,
+"sec": "09"
+},
+{
+"word": "ya",
+"start": 409.023,
+"end": 409.103,
+"sec": "09"
+},
+{
+"word": "casi",
+"start": 409.183,
+"end": 409.422,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 409.582,
+"end": 409.662,
+"sec": "09"
+},
+{
+"word": "podía",
+"start": 409.742,
+"end": 410.142,
+"sec": "09"
+},
+{
+"word": "hablar",
+"start": 410.222,
+"end": 410.542,
+"sec": "09"
+},
+{
+"word": "Pasaba",
+"start": 410.862,
+"end": 411.261,
+"sec": "09"
+},
+{
+"word": "casi",
+"start": 411.301,
+"end": 411.501,
+"sec": "09"
+},
+{
+"word": "todo",
+"start": 411.661,
+"end": 411.821,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 411.901,
+"end": 411.981,
+"sec": "09"
+},
+{
+"word": "tiempo",
+"start": 412.061,
+"end": 412.301,
+"sec": "09"
+},
+{
+"word": "entre",
+"start": 412.421,
+"end": 412.541,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 412.58,
+"end": 412.62,
+"sec": "09"
+},
+{
+"word": "sueño",
+"start": 412.7,
+"end": 413.02,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 413.06,
+"end": 413.1,
+"sec": "09"
+},
+{
+"word": "la",
+"start": 413.14,
+"end": 413.18,
+"sec": "09"
+},
+{
+"word": "vigilia",
+"start": 413.26,
+"end": 413.74,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 414.02,
+"end": 414.06,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 414.14,
+"end": 414.22,
+"sec": "09"
+},
+{
+"word": "siempre",
+"start": 414.299,
+"end": 414.619,
+"sec": "09"
+},
+{
+"word": "reconocía",
+"start": 414.699,
+"end": 415.259,
+"sec": "09"
+},
+{
+"word": "a",
+"start": 415.286,
+"end": 415.312,
+"sec": "09"
+},
+{
+"word": "su",
+"start": 415.339,
+"end": 415.419,
+"sec": "09"
+},
+{
+"word": "familia",
+"start": 415.499,
+"end": 415.899,
+"sec": "09"
+},
+{
+"word": "Pero",
+"start": 416.21,
+"end": 416.37,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 416.45,
+"end": 416.49,
+"sec": "09"
+},
+{
+"word": "sus",
+"start": 416.53,
+"end": 416.69,
+"sec": "09"
+},
+{
+"word": "pocos",
+"start": 416.77,
+"end": 417.01,
+"sec": "09"
+},
+{
+"word": "momentos",
+"start": 417.09,
+"end": 417.569,
+"sec": "09"
+},
+{
+"word": "de",
+"start": 417.609,
+"end": 417.649,
+"sec": "09"
+},
+{
+"word": "lucidez",
+"start": 417.729,
+"end": 418.449,
+"sec": "09"
+},
+{
+"word": "entendía",
+"start": 418.529,
+"end": 419.008,
+"sec": "09"
+},
+{
+"word": "perfectamente",
+"start": 419.248,
+"end": 419.888,
+"sec": "09"
+},
+{
+"word": "lo",
+"start": 419.968,
+"end": 420.048,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 420.088,
+"end": 420.128,
+"sec": "09"
+},
+{
+"word": "le",
+"start": 420.168,
+"end": 420.208,
+"sec": "09"
+},
+{
+"word": "estaba",
+"start": 420.288,
+"end": 420.608,
+"sec": "09"
+},
+{
+"word": "pasando",
+"start": 420.687,
+"end": 421.567,
+"sec": "09"
+},
+{
+"word": "Ya",
+"start": 421.647,
+"end": 421.727,
+"sec": "09"
+},
+{
+"word": "lo",
+"start": 421.807,
+"end": 421.847,
+"sec": "09"
+},
+{
+"word": "había",
+"start": 421.887,
+"end": 422.127,
+"sec": "09"
+},
+{
+"word": "visto",
+"start": 422.207,
+"end": 422.526,
+"sec": "09"
+},
+{
+"word": "antes",
+"start": 422.606,
+"end": 423.326,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 423.433,
+"end": 423.486,
+"sec": "09"
+},
+{
+"word": "su",
+"start": 423.566,
+"end": 423.646,
+"sec": "09"
+},
+{
+"word": "padre",
+"start": 423.766,
+"end": 424.285,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 424.365,
+"end": 424.445,
+"sec": "09"
+},
+{
+"word": "sus",
+"start": 424.525,
+"end": 424.685,
+"sec": "09"
+},
+{
+"word": "tías",
+"start": 424.765,
+"end": 425.405,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 425.485,
+"end": 425.565,
+"sec": "09"
+},
+{
+"word": "su",
+"start": 425.645,
+"end": 425.724,
+"sec": "09"
+},
+{
+"word": "abuelo",
+"start": 425.804,
+"end": 427.004,
+"sec": "09"
+},
+{
+"word": "Cuatro",
+"start": 427.111,
+"end": 427.403,
+"sec": "09"
+},
+{
+"word": "meses",
+"start": 427.563,
+"end": 428.363,
+"sec": "09"
+},
+{
+"word": "Al",
+"start": 428.443,
+"end": 428.603,
+"sec": "09"
+},
+{
+"word": "cuerpo",
+"start": 428.643,
+"end": 429.003,
+"sec": "09"
+},
+{
+"word": "ya",
+"start": 429.082,
+"end": 429.162,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 429.242,
+"end": 429.322,
+"sec": "09"
+},
+{
+"word": "le",
+"start": 429.402,
+"end": 429.482,
+"sec": "09"
+},
+{
+"word": "quedan",
+"start": 429.522,
+"end": 429.882,
+"sec": "09"
+},
+{
+"word": "fuerzas",
+"start": 429.922,
+"end": 430.761,
+"sec": "09"
+},
+{
+"word": "Las",
+"start": 430.868,
+"end": 430.921,
+"sec": "09"
+},
+{
+"word": "defensas",
+"start": 431.041,
+"end": 431.401,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 431.441,
+"end": 431.481,
+"sec": "09"
+},
+{
+"word": "debilitan",
+"start": 431.561,
+"end": 432.361,
+"sec": "09"
+},
+{
+"word": "y",
+"start": 432.44,
+"end": 432.52,
+"sec": "09"
+},
+{
+"word": "cualquier",
+"start": 432.56,
+"end": 432.92,
+"sec": "09"
+},
+{
+"word": "infección",
+"start": 433.0,
+"end": 433.48,
+"sec": "09"
+},
+{
+"word": "pequeña",
+"start": 433.56,
+"end": 433.96,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 434.04,
+"end": 434.119,
+"sec": "09"
+},
+{
+"word": "vuelve",
+"start": 434.199,
+"end": 434.519,
+"sec": "09"
+},
+{
+"word": "mortal",
+"start": 434.559,
+"end": 435.399,
+"sec": "09"
+},
+{
+"word": "Casi",
+"start": 435.479,
+"end": 435.719,
+"sec": "09"
+},
+{
+"word": "siempre",
+"start": 435.799,
+"end": 436.118,
+"sec": "09"
+},
+{
+"word": "no",
+"start": 436.198,
+"end": 436.278,
+"sec": "09"
+},
+{
+"word": "es",
+"start": 436.358,
+"end": 436.438,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 436.478,
+"end": 436.518,
+"sec": "09"
+},
+{
+"word": "insomnio",
+"start": 436.598,
+"end": 437.078,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 437.158,
+"end": 437.238,
+"sec": "09"
+},
+{
+"word": "sí",
+"start": 437.318,
+"end": 437.438,
+"sec": "09"
+},
+{
+"word": "lo",
+"start": 437.478,
+"end": 437.557,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 437.637,
+"end": 437.717,
+"sec": "09"
+},
+{
+"word": "mata",
+"start": 437.757,
+"end": 438.277,
+"sec": "09"
+},
+{
+"word": "sino",
+"start": 438.357,
+"end": 438.597,
+"sec": "09"
+},
+{
+"word": "que",
+"start": 438.677,
+"end": 438.757,
+"sec": "09"
+},
+{
+"word": "todo",
+"start": 438.837,
+"end": 438.997,
+"sec": "09"
+},
+{
+"word": "el",
+"start": 439.077,
+"end": 439.157,
+"sec": "09"
+},
+{
+"word": "cuerpo",
+"start": 439.236,
+"end": 439.556,
+"sec": "09"
+},
+{
+"word": "se",
+"start": 439.636,
+"end": 439.716,
+"sec": "09"
+},
+{
+"word": "va",
+"start": 439.796,
+"end": 439.876,
+"sec": "09"
+},
+{
+"word": "rompiendo",
+"start": 439.956,
+"end": 440.516,
+"sec": "09"
+},
+{
+"word": "en",
+"start": 440.596,
+"end": 440.676,
+"sec": "09"
+},
+{
+"word": "cadena",
+"start": 441.035,
+"end": 441.395,
+"sec": "09"
+},
+{
+"word": "Por",
+"start": 442.115,
+"end": 442.168,
+"sec": "10"
+},
+{
+"word": "qué",
+"start": 442.208,
+"end": 442.248,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 442.328,
+"end": 442.408,
+"sec": "10"
+},
+{
+"word": "se",
+"start": 442.488,
+"end": 442.568,
+"sec": "10"
+},
+{
+"word": "puede",
+"start": 442.648,
+"end": 442.888,
+"sec": "10"
+},
+{
+"word": "simplemente",
+"start": 442.968,
+"end": 443.608,
+"sec": "10"
+},
+{
+"word": "curar",
+"start": 443.688,
+"end": 444.008,
+"sec": "10"
+},
+{
+"word": "La",
+"start": 444.428,
+"end": 444.508,
+"sec": "10"
+},
+{
+"word": "respuesta",
+"start": 444.788,
+"end": 445.068,
+"sec": "10"
+},
+{
+"word": "asusta",
+"start": 445.188,
+"end": 445.628,
+"sec": "10"
+},
+{
+"word": "de",
+"start": 445.668,
+"end": 445.708,
+"sec": "10"
+},
+{
+"word": "lo",
+"start": 445.788,
+"end": 445.868,
+"sec": "10"
+},
+{
+"word": "simple",
+"start": 445.948,
+"end": 446.268,
+"sec": "10"
+},
+{
+"word": "que",
+"start": 446.348,
+"end": 446.428,
+"sec": "10"
+},
+{
+"word": "es",
+"start": 446.508,
+"end": 446.668,
+"sec": "10"
+},
+{
+"word": "Los",
+"start": 447.148,
+"end": 447.308,
+"sec": "10"
+},
+{
+"word": "priones",
+"start": 447.388,
+"end": 447.948,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 448.108,
+"end": 448.188,
+"sec": "10"
+},
+{
+"word": "están",
+"start": 448.268,
+"end": 448.588,
+"sec": "10"
+},
+{
+"word": "vivos",
+"start": 448.668,
+"end": 449.068,
+"sec": "10"
+},
+{
+"word": "Los",
+"start": 449.468,
+"end": 449.548,
+"sec": "10"
+},
+{
+"word": "antibióticos",
+"start": 449.628,
+"end": 450.268,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 450.348,
+"end": 450.428,
+"sec": "10"
+},
+{
+"word": "los",
+"start": 450.508,
+"end": 450.668,
+"sec": "10"
+},
+{
+"word": "matan",
+"start": 450.748,
+"end": 451.068,
+"sec": "10"
+},
+{
+"word": "porque",
+"start": 451.388,
+"end": 451.628,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 451.708,
+"end": 451.788,
+"sec": "10"
+},
+{
+"word": "hay",
+"start": 451.868,
+"end": 451.948,
+"sec": "10"
+},
+{
+"word": "nada",
+"start": 452.028,
+"end": 452.268,
+"sec": "10"
+},
+{
+"word": "que",
+"start": 452.348,
+"end": 452.428,
+"sec": "10"
+},
+{
+"word": "matar",
+"start": 452.508,
+"end": 452.828,
+"sec": "10"
+},
+{
+"word": "Tus",
+"start": 453.228,
+"end": 453.388,
+"sec": "10"
+},
+{
+"word": "defensas",
+"start": 453.468,
+"end": 453.948,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 454.028,
+"end": 454.108,
+"sec": "10"
+},
+{
+"word": "los",
+"start": 454.188,
+"end": 454.268,
+"sec": "10"
+},
+{
+"word": "ven",
+"start": 454.348,
+"end": 454.588,
+"sec": "10"
+},
+{
+"word": "porque",
+"start": 454.908,
+"end": 455.148,
+"sec": "10"
+},
+{
+"word": "químicamente",
+"start": 455.228,
+"end": 455.868,
+"sec": "10"
+},
+{
+"word": "son",
+"start": 455.948,
+"end": 456.108,
+"sec": "10"
+},
+{
+"word": "tu",
+"start": 456.188,
+"end": 456.268,
+"sec": "10"
+},
+{
+"word": "propia",
+"start": 456.348,
+"end": 456.668,
+"sec": "10"
+},
+{
+"word": "proteína",
+"start": 456.748,
+"end": 457.308,
+"sec": "10"
+},
+{
+"word": "Y",
+"start": 457.708,
+"end": 457.788,
+"sec": "10"
+},
+{
+"word": "son",
+"start": 457.908,
+"end": 458.028,
+"sec": "10"
+},
+{
+"word": "casi",
+"start": 458.108,
+"end": 458.348,
+"sec": "10"
+},
+{
+"word": "indestructibles",
+"start": 458.428,
+"end": 459.308,
+"sec": "10"
+},
+{
+"word": "resisten",
+"start": 459.748,
+"end": 460.108,
+"sec": "10"
+},
+{
+"word": "el",
+"start": 460.148,
+"end": 460.188,
+"sec": "10"
+},
+{
+"word": "calor",
+"start": 460.268,
+"end": 460.588,
+"sec": "10"
+},
+{
+"word": "y",
+"start": 460.668,
+"end": 460.708,
+"sec": "10"
+},
+{
+"word": "los",
+"start": 460.748,
+"end": 460.908,
+"sec": "10"
+},
+{
+"word": "químicos",
+"start": 460.988,
+"end": 461.388,
+"sec": "10"
+},
+{
+"word": "que",
+"start": 461.428,
+"end": 461.468,
+"sec": "10"
+},
+{
+"word": "acabarían",
+"start": 461.548,
+"end": 462.028,
+"sec": "10"
+},
+{
+"word": "con",
+"start": 462.108,
+"end": 462.188,
+"sec": "10"
+},
+{
+"word": "cualquier",
+"start": 462.268,
+"end": 462.748,
+"sec": "10"
+},
+{
+"word": "virus",
+"start": 462.828,
+"end": 463.148,
+"sec": "10"
+},
+{
+"word": "Ni",
+"start": 463.548,
+"end": 463.628,
+"sec": "10"
+},
+{
+"word": "siquiera",
+"start": 463.708,
+"end": 464.028,
+"sec": "10"
+},
+{
+"word": "la",
+"start": 464.068,
+"end": 464.108,
+"sec": "10"
+},
+{
+"word": "esterilización",
+"start": 464.188,
+"end": 464.828,
+"sec": "10"
+},
+{
+"word": "normal",
+"start": 464.908,
+"end": 465.228,
+"sec": "10"
+},
+{
+"word": "de",
+"start": 465.268,
+"end": 465.308,
+"sec": "10"
+},
+{
+"word": "los",
+"start": 465.388,
+"end": 465.468,
+"sec": "10"
+},
+{
+"word": "instrumentos",
+"start": 465.548,
+"end": 466.028,
+"sec": "10"
+},
+{
+"word": "quirúrgicos",
+"start": 466.108,
+"end": 466.668,
+"sec": "10"
+},
+{
+"word": "puede",
+"start": 466.748,
+"end": 466.988,
+"sec": "10"
+},
+{
+"word": "con",
+"start": 467.068,
+"end": 467.228,
+"sec": "10"
+},
+{
+"word": "ellos",
+"start": 467.308,
+"end": 467.628,
+"sec": "10"
+},
+{
+"word": "siempre",
+"start": 467.708,
+"end": 468.028,
+"sec": "10"
+},
+{
+"word": "En",
+"start": 468.508,
+"end": 468.588,
+"sec": "10"
+},
+{
+"word": "promedio",
+"start": 468.668,
+"end": 469.068,
+"sec": "10"
+},
+{
+"word": "la",
+"start": 469.388,
+"end": 469.428,
+"sec": "10"
+},
+{
+"word": "enfermedad",
+"start": 469.468,
+"end": 470.028,
+"sec": "10"
+},
+{
+"word": "mata",
+"start": 470.068,
+"end": 470.348,
+"sec": "10"
+},
+{
+"word": "en",
+"start": 470.388,
+"end": 470.428,
+"sec": "10"
+},
+{
+"word": "un",
+"start": 470.508,
+"end": 470.588,
+"sec": "10"
+},
+{
+"word": "año",
+"start": 470.668,
+"end": 470.828,
+"sec": "10"
+},
+{
+"word": "y",
+"start": 470.908,
+"end": 470.988,
+"sec": "10"
+},
+{
+"word": "medio",
+"start": 471.108,
+"end": 471.308,
+"sec": "10"
+},
+{
+"word": "A",
+"start": 471.708,
+"end": 471.788,
+"sec": "10"
+},
+{
+"word": "veces",
+"start": 471.868,
+"end": 472.188,
+"sec": "10"
+},
+{
+"word": "en",
+"start": 472.268,
+"end": 472.348,
+"sec": "10"
+},
+{
+"word": "seis",
+"start": 472.428,
+"end": 472.588,
+"sec": "10"
+},
+{
+"word": "meses",
+"start": 472.668,
+"end": 472.988,
+"sec": "10"
+},
+{
+"word": "a",
+"start": 473.388,
+"end": 473.428,
+"sec": "10"
+},
+{
+"word": "veces",
+"start": 473.468,
+"end": 473.868,
+"sec": "10"
+},
+{
+"word": "en",
+"start": 473.948,
+"end": 474.108,
+"sec": "10"
+},
+{
+"word": "varios",
+"start": 474.188,
+"end": 474.508,
+"sec": "10"
+},
+{
+"word": "años",
+"start": 474.588,
+"end": 474.908,
+"sec": "10"
+},
+{
+"word": "Y",
+"start": 475.268,
+"end": 475.308,
+"sec": "10"
+},
+{
+"word": "hoy",
+"start": 475.388,
+"end": 475.548,
+"sec": "10"
+},
+{
+"word": "no",
+"start": 475.788,
+"end": 475.868,
+"sec": "10"
+},
+{
+"word": "existe",
+"start": 475.948,
+"end": 476.268,
+"sec": "10"
+},
+{
+"word": "ningún",
+"start": 476.348,
+"end": 476.668,
+"sec": "10"
+},
+{
+"word": "medicamento",
+"start": 476.748,
+"end": 477.388,
+"sec": "10"
+},
+{
+"word": "que",
+"start": 477.428,
+"end": 477.468,
+"sec": "10"
+},
+{
+"word": "la",
+"start": 477.548,
+"end": 477.628,
+"sec": "10"
+},
+{
+"word": "detenga",
+"start": 477.708,
+"end": 478.108,
+"sec": "10"
+},
+{
+"word": "Pero",
+"start": 478.828,
+"end": 479.068,
+"sec": "11"
+},
+{
+"word": "hay",
+"start": 479.228,
+"end": 479.388,
+"sec": "11"
+},
+{
+"word": "una",
+"start": 479.468,
+"end": 479.548,
+"sec": "11"
+},
+{
+"word": "historia",
+"start": 479.708,
+"end": 480.028,
+"sec": "11"
+},
+{
+"word": "que",
+"start": 480.108,
+"end": 480.188,
+"sec": "11"
+},
+{
+"word": "da",
+"start": 480.268,
+"end": 480.348,
+"sec": "11"
+},
+{
+"word": "esperanza",
+"start": 480.428,
+"end": 480.988,
+"sec": "11"
+},
+{
+"word": "En",
+"start": 481.408,
+"end": 481.488,
+"sec": "11"
+},
+{
+"word": "dos",
+"start": 481.568,
+"end": 481.648,
+"sec": "11"
+},
+{
+"word": "mil",
+"start": 481.728,
+"end": 481.808,
+"sec": "11"
+},
+{
+"word": "diez",
+"start": 481.888,
+"end": 482.248,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 482.528,
+"end": 482.608,
+"sec": "11"
+},
+{
+"word": "madre",
+"start": 482.688,
+"end": 482.928,
+"sec": "11"
+},
+{
+"word": "de",
+"start": 482.968,
+"end": 483.008,
+"sec": "11"
+},
+{
+"word": "una",
+"start": 483.088,
+"end": 483.168,
+"sec": "11"
+},
+{
+"word": "estadounidense",
+"start": 483.248,
+"end": 483.968,
+"sec": "11"
+},
+{
+"word": "llamada",
+"start": 484.048,
+"end": 484.368,
+"sec": "11"
+},
+{
+"word": "Sonia",
+"start": 484.528,
+"end": 484.768,
+"sec": "11"
+},
+{
+"word": "Vallabh",
+"start": 484.848,
+"end": 485.248,
+"sec": "11"
+},
+{
+"word": "murió",
+"start": 485.488,
+"end": 485.808,
+"sec": "11"
+},
+{
+"word": "de",
+"start": 485.888,
+"end": 485.968,
+"sec": "11"
+},
+{
+"word": "esta",
+"start": 486.088,
+"end": 486.208,
+"sec": "11"
+},
+{
+"word": "enfermedad",
+"start": 486.288,
+"end": 486.848,
+"sec": "11"
+},
+{
+"word": "Un",
+"start": 487.248,
+"end": 487.328,
+"sec": "11"
+},
+{
+"word": "año",
+"start": 487.408,
+"end": 487.568,
+"sec": "11"
+},
+{
+"word": "después",
+"start": 487.688,
+"end": 488.048,
+"sec": "11"
+},
+{
+"word": "Sonia",
+"start": 488.368,
+"end": 488.688,
+"sec": "11"
+},
+{
+"word": "se",
+"start": 488.768,
+"end": 488.848,
+"sec": "11"
+},
+{
+"word": "hizo",
+"start": 488.901,
+"end": 489.008,
+"sec": "11"
+},
+{
+"word": "un",
+"start": 489.088,
+"end": 489.128,
+"sec": "11"
+},
+{
+"word": "examen",
+"start": 489.168,
+"end": 489.568,
+"sec": "11"
+},
+{
+"word": "genético",
+"start": 489.648,
+"end": 490.208,
+"sec": "11"
+},
+{
+"word": "Resultado",
+"start": 490.688,
+"end": 491.248,
+"sec": "11"
+},
+{
+"word": "tenía",
+"start": 491.648,
+"end": 492.048,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 492.128,
+"end": 492.208,
+"sec": "11"
+},
+{
+"word": "misma",
+"start": 492.368,
+"end": 492.688,
+"sec": "11"
+},
+{
+"word": "mutación",
+"start": 492.768,
+"end": 493.328,
+"sec": "11"
+},
+{
+"word": "Sonia",
+"start": 493.748,
+"end": 494.148,
+"sec": "11"
+},
+{
+"word": "era",
+"start": 494.228,
+"end": 494.388,
+"sec": "11"
+},
+{
+"word": "abogada",
+"start": 494.468,
+"end": 494.948,
+"sec": "11"
+},
+{
+"word": "Junto",
+"start": 495.348,
+"end": 495.588,
+"sec": "11"
+},
+{
+"word": "con",
+"start": 495.668,
+"end": 495.748,
+"sec": "11"
+},
+{
+"word": "su",
+"start": 495.788,
+"end": 495.828,
+"sec": "11"
+},
+{
+"word": "esposo",
+"start": 495.908,
+"end": 496.308,
+"sec": "11"
+},
+{
+"word": "Eric",
+"start": 496.628,
+"end": 496.788,
+"sec": "11"
+},
+{
+"word": "dejaron",
+"start": 497.108,
+"end": 497.428,
+"sec": "11"
+},
+{
+"word": "sus",
+"start": 497.508,
+"end": 497.588,
+"sec": "11"
+},
+{
+"word": "trabajos",
+"start": 497.668,
+"end": 498.148,
+"sec": "11"
+},
+{
+"word": "estudiaron",
+"start": 498.468,
+"end": 498.948,
+"sec": "11"
+},
+{
+"word": "desde",
+"start": 499.028,
+"end": 499.268,
+"sec": "11"
+},
+{
+"word": "cero",
+"start": 499.348,
+"end": 499.588,
+"sec": "11"
+},
+{
+"word": "y",
+"start": 499.748,
+"end": 499.828,
+"sec": "11"
+},
+{
+"word": "se",
+"start": 499.908,
+"end": 499.988,
+"sec": "11"
+},
+{
+"word": "convirtieron",
+"start": 500.068,
+"end": 500.628,
+"sec": "11"
+},
+{
+"word": "en",
+"start": 500.668,
+"end": 500.708,
+"sec": "11"
+},
+{
+"word": "científicos",
+"start": 500.788,
+"end": 501.508,
+"sec": "11"
+},
+{
+"word": "Hoy",
+"start": 501.908,
+"end": 502.068,
+"sec": "11"
+},
+{
+"word": "desarrollan",
+"start": 502.148,
+"end": 502.628,
+"sec": "11"
+},
+{
+"word": "un",
+"start": 502.668,
+"end": 502.708,
+"sec": "11"
+},
+{
+"word": "medicamento",
+"start": 502.788,
+"end": 503.348,
+"sec": "11"
+},
+{
+"word": "que",
+"start": 503.428,
+"end": 503.508,
+"sec": "11"
+},
+{
+"word": "busca",
+"start": 503.588,
+"end": 503.828,
+"sec": "11"
+},
+{
+"word": "reducir",
+"start": 503.908,
+"end": 504.308,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 504.348,
+"end": 504.388,
+"sec": "11"
+},
+{
+"word": "cantidad",
+"start": 504.468,
+"end": 504.868,
+"sec": "11"
+},
+{
+"word": "de",
+"start": 504.948,
+"end": 505.028,
+"sec": "11"
+},
+{
+"word": "esa",
+"start": 505.148,
+"end": 505.268,
+"sec": "11"
+},
+{
+"word": "proteína",
+"start": 505.348,
+"end": 505.828,
+"sec": "11"
+},
+{
+"word": "en",
+"start": 505.868,
+"end": 505.908,
+"sec": "11"
+},
+{
+"word": "el",
+"start": 505.948,
+"end": 505.988,
+"sec": "11"
+},
+{
+"word": "cerebro",
+"start": 506.068,
+"end": 506.468,
+"sec": "11"
+},
+{
+"word": "antes",
+"start": 506.868,
+"end": 507.028,
+"sec": "11"
+},
+{
+"word": "de",
+"start": 507.108,
+"end": 507.148,
+"sec": "11"
+},
+{
+"word": "que",
+"start": 507.188,
+"end": 507.268,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 507.308,
+"end": 507.348,
+"sec": "11"
+},
+{
+"word": "enfermedad",
+"start": 507.388,
+"end": 507.828,
+"sec": "11"
+},
+{
+"word": "empiece",
+"start": 507.908,
+"end": 508.388,
+"sec": "11"
+},
+{
+"word": "Y",
+"start": 508.788,
+"end": 508.868,
+"sec": "11"
+},
+{
+"word": "en",
+"start": 508.908,
+"end": 508.948,
+"sec": "11"
+},
+{
+"word": "Italia",
+"start": 509.028,
+"end": 509.428,
+"sec": "11"
+},
+{
+"word": "a",
+"start": 509.748,
+"end": 509.828,
+"sec": "11"
+},
+{
+"word": "personas",
+"start": 509.988,
+"end": 510.228,
+"sec": "11"
+},
+{
+"word": "que",
+"start": 510.308,
+"end": 510.388,
+"sec": "11"
+},
+{
+"word": "tienen",
+"start": 510.468,
+"end": 510.628,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 510.668,
+"end": 510.708,
+"sec": "11"
+},
+{
+"word": "mutación",
+"start": 510.788,
+"end": 511.348,
+"sec": "11"
+},
+{
+"word": "les",
+"start": 511.508,
+"end": 511.668,
+"sec": "11"
+},
+{
+"word": "dan",
+"start": 511.748,
+"end": 511.828,
+"sec": "11"
+},
+{
+"word": "desde",
+"start": 511.948,
+"end": 512.148,
+"sec": "11"
+},
+{
+"word": "hace",
+"start": 512.188,
+"end": 512.388,
+"sec": "11"
+},
+{
+"word": "años",
+"start": 512.468,
+"end": 512.708,
+"sec": "11"
+},
+{
+"word": "un",
+"start": 512.788,
+"end": 512.868,
+"sec": "11"
+},
+{
+"word": "antibiótico",
+"start": 512.948,
+"end": 513.588,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 513.908,
+"end": 513.988,
+"sec": "11"
+},
+{
+"word": "doxiciclina",
+"start": 514.068,
+"end": 514.788,
+"sec": "11"
+},
+{
+"word": "para",
+"start": 515.108,
+"end": 515.188,
+"sec": "11"
+},
+{
+"word": "ver",
+"start": 515.268,
+"end": 515.428,
+"sec": "11"
+},
+{
+"word": "si",
+"start": 515.508,
+"end": 515.588,
+"sec": "11"
+},
+{
+"word": "logra",
+"start": 515.668,
+"end": 515.908,
+"sec": "11"
+},
+{
+"word": "retrasar",
+"start": 515.988,
+"end": 516.388,
+"sec": "11"
+},
+{
+"word": "la",
+"start": 516.468,
+"end": 516.548,
+"sec": "11"
+},
+{
+"word": "enfermedad",
+"start": 516.588,
+"end": 517.108,
+"sec": "11"
+},
+{
+"word": "Es",
+"start": 517.828,
+"end": 517.988,
+"sec": "12"
+},
+{
+"word": "una",
+"start": 518.068,
+"end": 518.148,
+"sec": "12"
+},
+{
+"word": "de",
+"start": 518.188,
+"end": 518.228,
+"sec": "12"
+},
+{
+"word": "las",
+"start": 518.308,
+"end": 518.388,
+"sec": "12"
+},
+{
+"word": "enfermedades",
+"start": 518.468,
+"end": 519.108,
+"sec": "12"
+},
+{
+"word": "más",
+"start": 519.268,
+"end": 519.508,
+"sec": "12"
+},
+{
+"word": "raras",
+"start": 519.588,
+"end": 519.908,
+"sec": "12"
+},
+{
+"word": "del",
+"start": 519.988,
+"end": 520.068,
+"sec": "12"
+},
+{
+"word": "planeta",
+"start": 520.148,
+"end": 520.548,
+"sec": "12"
+},
+{
+"word": "Se",
+"start": 521.028,
+"end": 521.188,
+"sec": "12"
+},
+{
+"word": "conocen",
+"start": 521.268,
+"end": 521.588,
+"sec": "12"
+},
+{
+"word": "menos",
+"start": 521.668,
+"end": 521.908,
+"sec": "12"
+},
+{
+"word": "de",
+"start": 521.988,
+"end": 522.068,
+"sec": "12"
+},
+{
+"word": "cien",
+"start": 522.148,
+"end": 522.388,
+"sec": "12"
+},
+{
+"word": "familias",
+"start": 522.468,
+"end": 523.028,
+"sec": "12"
+},
+{
+"word": "con",
+"start": 523.108,
+"end": 523.188,
+"sec": "12"
+},
+{
+"word": "esta",
+"start": 523.308,
+"end": 523.428,
+"sec": "12"
+},
+{
+"word": "mutación",
+"start": 523.508,
+"end": 523.988,
+"sec": "12"
+},
+{
+"word": "Pero",
+"start": 524.388,
+"end": 524.548,
+"sec": "12"
+},
+{
+"word": "para",
+"start": 524.628,
+"end": 524.788,
+"sec": "12"
+},
+{
+"word": "cada",
+"start": 524.868,
+"end": 525.108,
+"sec": "12"
+},
+{
+"word": "una",
+"start": 525.188,
+"end": 525.348,
+"sec": "12"
+},
+{
+"word": "de",
+"start": 525.428,
+"end": 525.508,
+"sec": "12"
+},
+{
+"word": "ellas",
+"start": 525.708,
+"end": 525.908,
+"sec": "12"
+},
+{
+"word": "el",
+"start": 526.228,
+"end": 526.308,
+"sec": "12"
+},
+{
+"word": "sueño",
+"start": 526.388,
+"end": 526.788,
+"sec": "12"
+},
+{
+"word": "lo",
+"start": 527.188,
+"end": 527.268,
+"sec": "12"
+},
+{
+"word": "más",
+"start": 527.308,
+"end": 527.428,
+"sec": "12"
+},
+{
+"word": "normal",
+"start": 527.508,
+"end": 527.828,
+"sec": "12"
+},
+{
+"word": "del",
+"start": 527.908,
+"end": 527.988,
+"sec": "12"
+},
+{
+"word": "mundo",
+"start": 528.068,
+"end": 528.308,
+"sec": "12"
+},
+{
+"word": "para",
+"start": 528.388,
+"end": 528.548,
+"sec": "12"
+},
+{
+"word": "ti",
+"start": 528.628,
+"end": 528.788,
+"sec": "12"
+},
+{
+"word": "y",
+"start": 528.868,
+"end": 528.948,
+"sec": "12"
+},
+{
+"word": "para",
+"start": 529.028,
+"end": 529.108,
+"sec": "12"
+},
+{
+"word": "mí",
+"start": 529.188,
+"end": 529.348,
+"sec": "12"
+},
+{
+"word": "un",
+"start": 529.828,
+"end": 529.988,
+"sec": "12"
+},
+{
+"word": "día",
+"start": 530.108,
+"end": 530.228,
+"sec": "12"
+},
+{
+"word": "simplemente",
+"start": 530.308,
+"end": 530.948,
+"sec": "12"
+},
+{
+"word": "puede",
+"start": 531.028,
+"end": 531.348,
+"sec": "12"
+},
+{
+"word": "desaparecer",
+"start": 531.428,
+"end": 532.068,
+"sec": "12"
+},
+{
+"word": "Así",
+"start": 532.488,
+"end": 532.688,
+"sec": "12"
+},
+{
+"word": "que",
+"start": 532.728,
+"end": 532.808,
+"sec": "12"
+},
+{
+"word": "la",
+"start": 532.888,
+"end": 532.968,
+"sec": "12"
+},
+{
+"word": "próxima",
+"start": 533.008,
+"end": 533.368,
+"sec": "12"
+},
+{
+"word": "vez",
+"start": 533.448,
+"end": 533.608,
+"sec": "12"
+},
+{
+"word": "que",
+"start": 533.648,
+"end": 533.688,
+"sec": "12"
+},
+{
+"word": "estés",
+"start": 533.768,
+"end": 534.008,
+"sec": "12"
+},
+{
+"word": "dando",
+"start": 534.088,
+"end": 534.248,
+"sec": "12"
+},
+{
+"word": "vueltas",
+"start": 534.328,
+"end": 534.648,
+"sec": "12"
+},
+{
+"word": "en",
+"start": 534.728,
+"end": 534.768,
+"sec": "12"
+},
+{
+"word": "la",
+"start": 534.808,
+"end": 534.888,
+"sec": "12"
+},
+{
+"word": "cama",
+"start": 534.968,
+"end": 535.208,
+"sec": "12"
+},
+{
+"word": "a",
+"start": 535.248,
+"end": 535.288,
+"sec": "12"
+},
+{
+"word": "las",
+"start": 535.368,
+"end": 535.448,
+"sec": "12"
+},
+{
+"word": "tres",
+"start": 535.528,
+"end": 535.688,
+"sec": "12"
+},
+{
+"word": "de",
+"start": 535.768,
+"end": 535.808,
+"sec": "12"
+},
+{
+"word": "la",
+"start": 535.848,
+"end": 535.928,
+"sec": "12"
+},
+{
+"word": "mañana",
+"start": 536.008,
+"end": 536.408,
+"sec": "12"
+},
+{
+"word": "mirando",
+"start": 536.648,
+"end": 536.968,
+"sec": "12"
+},
+{
+"word": "el",
+"start": 537.008,
+"end": 537.048,
+"sec": "12"
+},
+{
+"word": "techo",
+"start": 537.128,
+"end": 537.448,
+"sec": "12"
+},
+{
+"word": "recuerda",
+"start": 537.848,
+"end": 538.328,
+"sec": "12"
+},
+{
+"word": "esto",
+"start": 538.408,
+"end": 538.648,
+"sec": "12"
+},
+{
+"word": "en",
+"start": 539.068,
+"end": 539.148,
+"sec": "12"
+},
+{
+"word": "algún",
+"start": 539.268,
+"end": 539.468,
+"sec": "12"
+},
+{
+"word": "lugar",
+"start": 539.508,
+"end": 539.868,
+"sec": "12"
+},
+{
+"word": "hay",
+"start": 540.108,
+"end": 540.268,
+"sec": "12"
+},
+{
+"word": "personas",
+"start": 540.348,
+"end": 540.748,
+"sec": "12"
+},
+{
+"word": "para",
+"start": 540.828,
+"end": 540.908,
+"sec": "12"
+},
+{
+"word": "las",
+"start": 540.988,
+"end": 541.148,
+"sec": "12"
+},
+{
+"word": "que",
+"start": 541.188,
+"end": 541.228,
+"sec": "12"
+},
+{
+"word": "esa",
+"start": 541.348,
+"end": 541.468,
+"sec": "12"
+},
+{
+"word": "noche",
+"start": 541.548,
+"end": 541.868,
+"sec": "12"
+},
+{
+"word": "no",
+"start": 542.188,
+"end": 542.268,
+"sec": "12"
+},
+{
+"word": "termina",
+"start": 542.348,
+"end": 542.748,
+"sec": "12"
+},
+{
+"word": "nunca",
+"start": 542.828,
+"end": 543.228,
+"sec": "12"
+},
+{
+"word": "Y",
+"start": 543.648,
+"end": 543.728,
+"sec": "12"
+},
+{
+"word": "tú",
+"start": 543.808,
+"end": 543.968,
+"sec": "12"
+},
+{
+"word": "podrías",
+"start": 544.448,
+"end": 544.688,
+"sec": "12"
+},
+{
+"word": "vivir",
+"start": 544.768,
+"end": 545.008,
+"sec": "12"
+},
+{
+"word": "sabiendo",
+"start": 545.088,
+"end": 545.488,
+"sec": "12"
+},
+{
+"word": "que",
+"start": 545.568,
+"end": 545.648,
+"sec": "12"
+},
+{
+"word": "un",
+"start": 545.728,
+"end": 545.808,
+"sec": "12"
+},
+{
+"word": "día",
+"start": 545.888,
+"end": 546.128,
+"sec": "12"
+},
+{
+"word": "tu",
+"start": 546.288,
+"end": 546.448,
+"sec": "12"
+},
+{
+"word": "propio",
+"start": 546.528,
+"end": 546.768,
+"sec": "12"
+},
+{
+"word": "cerebro",
+"start": 546.848,
+"end": 547.248,
+"sec": "12"
+},
+{
+"word": "podría",
+"start": 547.328,
+"end": 547.648,
+"sec": "12"
+},
+{
+"word": "quitarte",
+"start": 547.728,
+"end": 548.128,
+"sec": "12"
+},
+{
+"word": "el",
+"start": 548.168,
+"end": 548.208,
+"sec": "12"
+},
+{
+"word": "sueño",
+"start": 548.288,
+"end": 548.608,
+"sec": "12"
+},
+{
+"word": "para",
+"start": 548.688,
+"end": 548.768,
+"sec": "12"
+},
+{
+"word": "siempre",
+"start": 548.848,
+"end": 549.248,
+"sec": "12"
+},
+{
+"word": "Déjamelo",
+"start": 549.648,
+"end": 550.048,
+"sec": "12"
+},
+{
+"word": "en",
+"start": 550.088,
+"end": 550.128,
+"sec": "12"
+},
+{
+"word": "los",
+"start": 550.168,
+"end": 550.208,
+"sec": "12"
+},
+{
+"word": "comentarios",
+"start": 550.288,
+"end": 550.848,
+"sec": "12"
+},
+{
+"word": "Y",
+"start": 551.208,
+"end": 551.248,
+"sec": "12"
+},
+{
+"word": "suscríbete",
+"start": 551.328,
+"end": 551.888,
+"sec": "12"
+},
+{
+"word": "porque",
+"start": 552.208,
+"end": 552.448,
+"sec": "12"
+},
+{
+"word": "la",
+"start": 552.528,
+"end": 552.608,
+"sec": "12"
+},
+{
+"word": "próxima",
+"start": 552.648,
+"end": 553.008,
+"sec": "12"
+},
+{
+"word": "pregunta",
+"start": 553.088,
+"end": 553.488,
+"sec": "12"
+},
+{
+"word": "es",
+"start": 553.568,
+"end": 553.648,
+"sec": "12"
+},
+{
+"word": "todavía",
+"start": 553.728,
+"end": 554.288,
+"sec": "12"
+},
+{
+"word": "peor",
+"start": 554.368,
+"end": 554.608,
+"sec": "12"
+},
+{
+"word": "y",
+"start": 555.028,
+"end": 555.055,
+"sec": "12"
+},
+{
+"word": "si",
+"start": 555.135,
+"end": 555.215,
+"sec": "12"
+},
+{
+"word": "tu",
+"start": 555.295,
+"end": 555.375,
+"sec": "12"
+},
+{
+"word": "cuerpo",
+"start": 555.455,
+"end": 555.775,
+"sec": "12"
+},
+{
+"word": "pudiera",
+"start": 555.828,
+"end": 556.095,
+"sec": "12"
+},
+{
+"word": "matarte",
+"start": 556.175,
+"end": 556.735,
+"sec": "12"
+},
+{
+"word": "mientras",
+"start": 556.775,
+"end": 557.135,
+"sec": "12"
+},
+{
+"word": "duermes",
+"start": 557.215,
+"end": 557.695,
+"sec": "12"
+}
+]

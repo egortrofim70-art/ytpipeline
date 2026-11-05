@@ -1,0 +1,4027 @@
+{
+ "title": "¿Y si nunca más pudieras dormir?",
+ "duration": 560.895,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "line": "Imagina esto",
+   "scene": "eyesOpen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eyesOpen",
+    "openAt": 0.64
+   },
+   "end": 1.16
+  },
+  {
+   "id": "s002",
+   "start": 1.16,
+   "line": "te acuestas a dormir",
+   "scene": "bedWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedWide"
+   },
+   "end": 2.68
+  },
+  {
+   "id": "s003",
+   "start": 2.68,
+   "line": "cierras los ojos",
+   "scene": "pillowClose",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "pillowClose",
+    "closeAt": 0.76
+   },
+   "end": 4.22
+  },
+  {
+   "id": "s004",
+   "start": 4.22,
+   "line": "y no pasa nada",
+   "scene": "pillowClose",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.76,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "pillowClose",
+    "openAt": 0.08,
+    "z": 3.55,
+    "roll": 0.04,
+    "stamp": {
+     "text": "NADA",
+     "at": 0.76,
+     "y": 880,
+     "size": 150
+    }
+   },
+   "end": 5.52
+  },
+  {
+   "id": "s005",
+   "start": 5.52,
+   "line": "Pasa una hora",
+   "scene": "clockInsert",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clockInsert",
+    "hFrom": 23,
+    "hTo": 24,
+    "landAt": 0.8,
+    "badgeAt": 0.8
+   },
+   "end": 6.8
+  },
+  {
+   "id": "s006",
+   "start": 6.8,
+   "line": "Luego otra",
+   "scene": "bedSide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedSide",
+    "turnKeys": [
+     [
+      0,
+      0
+     ],
+     [
+      0.12,
+      0
+     ],
+     [
+      0.8,
+      1
+     ]
+    ],
+    "face": "tired",
+    "badgeAt": 0.6
+   },
+   "end": 8.0
+  },
+  {
+   "id": "s007",
+   "start": 8.0,
+   "line": "Das vueltas en la cama",
+   "scene": "bedSide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedSide",
+    "z": 2.0,
+    "turnKeys": [
+     [
+      0,
+      1
+     ],
+     [
+      0.45,
+      0
+     ],
+     [
+      0.7,
+      0
+     ],
+     [
+      0.88,
+      0.4
+     ],
+     [
+      1.08,
+      0
+     ]
+    ],
+    "roll0": -0.012,
+    "roll1": 0.014
+   },
+   "end": 9.48
+  },
+  {
+   "id": "s008",
+   "start": 9.48,
+   "line": "cuentas ovejas",
+   "scene": "sheep",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sheep"
+   },
+   "end": 10.72
+  },
+  {
+   "id": "s009",
+   "start": 10.72,
+   "line": "miras el techo",
+   "scene": "ceilingWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "ceilingWide"
+   },
+   "end": 11.86
+  },
+  {
+   "id": "s010",
+   "start": 11.86,
+   "line": "Las tres de la mañana",
+   "scene": "clockInsert",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clockInsert",
+    "side": "right",
+    "hFrom": 2.4,
+    "hTo": 3,
+    "landAt": 0.36,
+    "badgeAt": 0.36
+   },
+   "end": 13.38
+  },
+  {
+   "id": "s011",
+   "start": 13.38,
+   "line": "Agarras el celular",
+   "scene": "phoneGrab",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "phoneGrab"
+   },
+   "end": 14.66
+  },
+  {
+   "id": "s012",
+   "start": 14.66,
+   "line": "solo para ver la hora",
+   "scene": "phoneScreen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "phoneScreen"
+   },
+   "end": 16.18
+  },
+  {
+   "id": "s013",
+   "start": 16.18,
+   "line": "Las cinco",
+   "scene": "windowDawn",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "windowDawn",
+    "badgeAt": 0.36
+   },
+   "end": 17.22
+  },
+  {
+   "id": "s014",
+   "start": 17.22,
+   "line": "La alarma suena",
+   "scene": "sitEdge",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sitEdge",
+    "handsAt": 2.04
+   },
+   "end": 21.0
+  },
+  {
+   "id": "s015",
+   "start": 21.0,
+   "line": "Ahora imagina",
+   "scene": "faceLift",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "faceLift"
+   },
+   "end": 21.72
+  },
+  {
+   "id": "s016",
+   "start": 21.72,
+   "line": "que esta noche no termina",
+   "scene": "pullOut",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "pullOut"
+   },
+   "end": 23.82
+  },
+  {
+   "id": "s017",
+   "start": 23.82,
+   "line": "Nunca",
+   "scene": "crashEyes",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    },
+    {
+     "at": 0.04,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "crashEyes",
+    "stamp": {
+     "text": "NUNCA",
+     "at": 0.04,
+     "y": 900,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 24.72
+  },
+  {
+   "id": "s018",
+   "start": 24.72,
+   "line": "El primer día",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "sipAt": 1.4,
+    "badgeAt": 0.36
+   },
+   "end": 26.88
+  },
+  {
+   "id": "s019",
+   "start": 26.88,
+   "line": "Al tercero",
+   "scene": "deskType",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "deskType",
+    "badgeAt": 0.36
+   },
+   "end": 27.8
+  },
+  {
+   "id": "s020",
+   "start": 27.8,
+   "line": "confundes las palabras",
+   "scene": "laptop",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "laptop"
+   },
+   "end": 29.2
+  },
+  {
+   "id": "s021",
+   "start": 29.2,
+   "line": "Al quinto",
+   "scene": "streetWalk",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -25
+   },
+   "params": {
+    "tpl": "streetWalk",
+    "badgeAt": 0.36
+   },
+   "end": 31.84
+  },
+  {
+   "id": "s022",
+   "start": 31.84,
+   "line": "pero no puedes dormir",
+   "scene": "joltFace",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "city",
+    "gain": -25
+   },
+   "params": {
+    "tpl": "joltFace"
+   },
+   "end": 33.6
+  },
+  {
+   "id": "s023",
+   "start": 33.6,
+   "line": "Y después de una semana",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 1.08,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "badgeAt": 1.08
+   },
+   "end": 35.68
+  },
+  {
+   "id": "s024",
+   "start": 35.68,
+   "line": "Suena a película de terror",
+   "scene": "fogBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.32,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "fogBed",
+    "noBadge": true,
+    "punch": [
+     1.32
+    ]
+   },
+   "end": 37.76
+  },
+  {
+   "id": "s025",
+   "start": 37.76,
+   "line": "Pero es un diagnóstico real",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.32,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "noBadge": true,
+    "face": "blank",
+    "monitor": "eegAwake",
+    "night": true,
+    "stamp": {
+     "text": "REAL",
+     "at": 1.32,
+     "y": 860
+    }
+   },
+   "end": 39.76
+  },
+  {
+   "id": "s026",
+   "start": 39.76,
+   "line": "Se llama insomnio familiar fatal",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "INSOMNIO",
+     "FAMILIAR FATAL"
+    ]
+   },
+   "end": 42.48
+  },
+  {
+   "id": "s027",
+   "start": 42.48,
+   "line": "Quien lo tiene",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "noBadge": true,
+    "face": "wreck"
+   },
+   "end": 45.0
+  },
+  {
+   "id": "s028",
+   "start": 45.0,
+   "line": "y en promedio",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "pre": "EN PROMEDIO",
+    "value": "1,5",
+    "label": "AÑOS",
+    "sub": "y la persona muere",
+    "at": 1.32,
+    "bg": "dark",
+    "color": "#ff5a4a"
+   },
+   "end": 47.92
+  },
+  {
+   "id": "s029",
+   "start": 47.92,
+   "line": "Hoy te voy a mostrar",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "intro",
+    "hiAt": 2.68,
+    "callout": false
+   },
+   "end": 51.04
+  },
+  {
+   "id": "s030",
+   "start": 51.04,
+   "line": "cuando el sueño desaparece",
+   "scene": "ceilingWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "ceilingWide",
+    "noBadge": true,
+    "face": "wreck"
+   },
+   "end": 53.52
+  },
+  {
+   "id": "s031",
+   "start": 53.52,
+   "line": "Y por qué los médicos",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "noBadge": true,
+    "doctor": "lugaresi",
+    "face": "blank",
+    "night": true
+   },
+   "end": 57.12
+  },
+  {
+   "id": "s032",
+   "start": 57.12,
+   "line": "En mil novecientos ochenta y cuatro",
+   "scene": "italy",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "city",
+    "gain": -25
+   },
+   "params": {
+    "tpl": "italy",
+    "noBadge": true,
+    "tag": "ITALIA · 1984"
+   },
+   "end": 61.32
+  },
+  {
+   "id": "s033",
+   "start": 61.32,
+   "line": "En los artículos médicos",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "silvano",
+    "bg": "street",
+    "dusk": 1,
+    "face": "tired",
+    "tag": "SILVANO · 53 AÑOS"
+   },
+   "end": 66.08
+  },
+  {
+   "id": "s034",
+   "start": 66.08,
+   "line": "En unas pocas semanas",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "noBadge": true,
+    "who": "silvano",
+    "face": "awake"
+   },
+   "end": 69.04
+  },
+  {
+   "id": "s035",
+   "start": 69.04,
+   "line": "Los médicos dijeron",
+   "scene": "doctor",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "doctor",
+    "noBadge": true,
+    "words": [
+     [
+      "ESTRÉS",
+      1.48
+     ],
+     [
+      "ANSIEDAD",
+      2.24
+     ],
+     [
+      "DEPRESIÓN",
+      3.08
+     ]
+    ]
+   },
+   "end": 72.88
+  },
+  {
+   "id": "s036",
+   "start": 72.88,
+   "line": "Le recetaron pastillas",
+   "scene": "pills",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "pills",
+    "noBadge": true,
+    "xAt": 2.44
+   },
+   "end": 76.12
+  },
+  {
+   "id": "s037",
+   "start": 76.12,
+   "line": "Ningún medicamento",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "noBadge": true,
+    "who": "silvano",
+    "face": "wreck",
+    "clockH": 4
+   },
+   "end": 79.64
+  },
+  {
+   "id": "s038",
+   "start": 79.64,
+   "line": "Pero lo más escalofriante",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.64,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "silvano",
+    "face": "fear",
+    "bg": "bedroom",
+    "punch": [
+     0.64
+    ]
+   },
+   "end": 82.16
+  },
+  {
+   "id": "s039",
+   "start": 82.16,
+   "line": "Silvano sabía lo que venía",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "silvano",
+    "face": "sad",
+    "bg": "bedroom",
+    "side": "left",
+    "lookKeys": [
+     [
+      0,
+      [
+       0.7,
+       -0.2
+      ]
+     ],
+     [
+      0.8,
+      [
+       0,
+       0
+      ]
+     ]
+    ]
+   },
+   "end": 84.24
+  },
+  {
+   "id": "s040",
+   "start": 84.24,
+   "line": "Así había muerto su padre",
+   "scene": "portraits",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "portraits",
+    "noBadge": true,
+    "items": [
+     [
+      "PADRE",
+      1.36
+     ],
+     [
+      "TÍAS",
+      2.92
+     ],
+     [
+      "ABUELO",
+      3.64
+     ]
+    ]
+   },
+   "end": 88.52
+  },
+  {
+   "id": "s041",
+   "start": 88.52,
+   "line": "Primero dejaban de dormir",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "1–2",
+    "label": "AÑOS",
+    "sub": "y ya no estaban",
+    "at": 1.84,
+    "bg": "dark",
+    "color": "#ff5a4a"
+   },
+   "end": 93.2
+  },
+  {
+   "id": "s042",
+   "start": 93.2,
+   "line": "En su familia se hablaba",
+   "scene": "whisper",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "whisper",
+    "noBadge": true,
+    "at": 3.72
+   },
+   "end": 97.84
+  },
+  {
+   "id": "s043",
+   "start": 97.84,
+   "line": "Nadie sabía todavía",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "blueprint",
+    "lines": [
+     "¿UN NOMBRE",
+     "CIENTÍFICO?"
+    ]
+   },
+   "end": 102.36
+  },
+  {
+   "id": "s044",
+   "start": 102.36,
+   "line": "Cuánto puede aguantar",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "bedroom"
+   },
+   "end": 105.1
+  },
+  {
+   "id": "s045",
+   "start": 105.1,
+   "line": "El récord oficial",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "from": 0,
+    "to": 11,
+    "count": 0.9,
+    "label": "DÍAS",
+    "sub": "récord oficial sin dormir",
+    "at": 0.2,
+    "icon": "moon"
+   },
+   "end": 107.58
+  },
+  {
+   "id": "s046",
+   "start": 107.58,
+   "line": "En mil novecientos sesenta y cuatro",
+   "scene": "randy",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "randy",
+    "noBadge": true,
+    "tag": "EE. UU. · 1964"
+   },
+   "end": 112.06
+  },
+  {
+   "id": "s047",
+   "start": 112.06,
+   "line": "aguantó doscientas",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "from": 0,
+    "to": 264,
+    "count": 1.3,
+    "label": "HORAS DESPIERTO",
+    "at": 0.15,
+    "bg": "dark"
+   },
+   "end": 115.18
+  },
+  {
+   "id": "s048",
+   "start": 115.18,
+   "line": "Al final confundía",
+   "scene": "randyFace",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "randyFace",
+    "noBadge": true,
+    "at": 0.25,
+    "scrambled": "¿Qeu djie...?",
+    "hallAt": 99
+   },
+   "end": 118.86
+  },
+  {
+   "id": "s049",
+   "start": 118.86,
+   "line": "y veía cosas",
+   "scene": "randyFace",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "randyFace",
+    "noBadge": true,
+    "at": 99,
+    "hallAt": 0.05
+   },
+   "end": 121.1
+  },
+  {
+   "id": "s050",
+   "start": 121.1,
+   "line": "Y las ratas",
+   "scene": "rats",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "rats",
+    "noBadge": true,
+    "at": 99
+   },
+   "end": 124.78
+  },
+  {
+   "id": "s051",
+   "start": 124.78,
+   "line": "morían en unas",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "2–3",
+    "label": "SEMANAS",
+    "sub": "sin dormir, y morían",
+    "at": 1.0,
+    "bg": "dark",
+    "color": "#ff5a4a"
+   },
+   "end": 127.18
+  },
+  {
+   "id": "s052",
+   "start": 127.18,
+   "line": "Pero Randy podía",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "randy",
+    "face": "smile",
+    "bg": "office"
+   },
+   "end": 130.22
+  },
+  {
+   "id": "s053",
+   "start": 130.22,
+   "line": "Durmió catorce horas",
+   "scene": "randySleep",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "randySleep",
+    "noBadge": true,
+    "at": 0.52
+   },
+   "end": 133.26
+  },
+  {
+   "id": "s054",
+   "start": 133.26,
+   "line": "Silvano no tenía ese botón",
+   "scene": "sleepButton",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sleepButton",
+    "noBadge": true,
+    "presses": [
+     0.25,
+     0.7,
+     1.15
+    ],
+    "xAt": 1.72
+   },
+   "end": 135.9
+  },
+  {
+   "id": "s055",
+   "start": 135.9,
+   "line": "Volvamos contigo",
+   "scene": "bedWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.8,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedWide",
+    "face": "wreck",
+    "clockH": 3,
+    "badgeAt": 1.8
+   },
+   "end": 139.74
+  },
+  {
+   "id": "s056",
+   "start": 139.74,
+   "line": "Y aquí empieza",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "fear",
+    "bg": "bedroom"
+   },
+   "end": 142.22
+  },
+  {
+   "id": "s057",
+   "start": 142.22,
+   "line": "Tu cuerpo suda",
+   "scene": "symptoms",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "symptoms",
+    "mode": "sweat"
+   },
+   "end": 144.3
+  },
+  {
+   "id": "s058",
+   "start": 144.3,
+   "line": "La presión sube",
+   "scene": "symptoms",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "symptoms",
+    "mode": "pressure"
+   },
+   "end": 146.3
+  },
+  {
+   "id": "s059",
+   "start": 146.3,
+   "line": "Las pupilas",
+   "scene": "symptoms",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "symptoms",
+    "mode": "pupils"
+   },
+   "end": 149.34
+  },
+  {
+   "id": "s060",
+   "start": 149.34,
+   "line": "El corazón late",
+   "scene": "symptoms",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "symptoms",
+    "mode": "heart"
+   },
+   "end": 154.06
+  },
+  {
+   "id": "s061",
+   "start": 154.06,
+   "line": "Se está rompiendo",
+   "scene": "nerves",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "nerves",
+    "caption": "SISTEMA NERVIOSO AUTÓNOMO",
+    "breakAt": 0.6
+   },
+   "end": 157.92
+  },
+  {
+   "id": "s062",
+   "start": 157.92,
+   "line": "Dos semanas",
+   "scene": "stupor",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "stupor",
+    "badgeAt": 0.36
+   },
+   "end": 162.4
+  },
+  {
+   "id": "s063",
+   "start": 162.4,
+   "line": "Los médicos lo llaman",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "bg": "room",
+    "lines": [
+     "ESTUPOR",
+     "ONÍRICO"
+    ]
+   },
+   "end": 165.28
+  },
+  {
+   "id": "s064",
+   "start": 165.28,
+   "line": "La persona vive el sueño despierta",
+   "scene": "stupor",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "stupor"
+   },
+   "end": 171.76
+  },
+  {
+   "id": "s065",
+   "start": 171.76,
+   "line": "con los ojos abiertos",
+   "scene": "eyesOpen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eyesOpen",
+    "openAt": 0.05
+   },
+   "end": 173.44
+  },
+  {
+   "id": "s066",
+   "start": 173.44,
+   "line": "Atrapada entre dos mundos",
+   "scene": "fogBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "fogBed"
+   },
+   "end": 176.9
+  },
+  {
+   "id": "s067",
+   "start": 176.9,
+   "line": "Un mes",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.36,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "wreck",
+    "badgeAt": 0.36
+   },
+   "end": 180.66
+  },
+  {
+   "id": "s068",
+   "start": 180.66,
+   "line": "La persona adelgaza",
+   "scene": "scale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scale",
+    "from": 78,
+    "to": 63
+   },
+   "end": 184.34
+  },
+  {
+   "id": "s069",
+   "start": 184.34,
+   "line": "La memoria falla",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "wreck",
+    "bg": "bedroom",
+    "lookKeys": [
+     [
+      0,
+      [
+       0.7,
+       -0.3
+      ]
+     ],
+     [
+      1,
+      [
+       -0.7,
+       -0.3
+      ]
+     ]
+    ]
+   },
+   "end": 185.78
+  },
+  {
+   "id": "s070",
+   "start": 185.78,
+   "line": "Aparece una confusión",
+   "scene": "confusion",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "confusion"
+   },
+   "end": 191.7
+  },
+  {
+   "id": "s071",
+   "start": 191.7,
+   "line": "Pero espera",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "blueprint",
+    "lines": [
+     "¿PARA QUÉ",
+     "DORMIMOS?"
+    ]
+   },
+   "end": 194.82
+  },
+  {
+   "id": "s072",
+   "start": 194.82,
+   "line": "Durante mucho tiempo",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "noBadge": true,
+    "face": {
+     "eyes": "closed",
+     "brows": null,
+     "mouth": "smile"
+    }
+   },
+   "end": 198.5
+  },
+  {
+   "id": "s073",
+   "start": 198.5,
+   "line": "Hoy sabemos",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.72,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "intro",
+    "hiAt": 99,
+    "callout": false,
+    "punch": [
+     1.72
+    ]
+   },
+   "end": 200.82
+  },
+  {
+   "id": "s074",
+   "start": 200.82,
+   "line": "Mientras duermes tu cerebro se limpia",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.68,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "clean",
+    "stamp": {
+     "text": "LITERALMENTE",
+     "at": 2.68,
+     "y": 940,
+     "size": 110
+    }
+   },
+   "end": 204.66
+  },
+  {
+   "id": "s075",
+   "start": 204.66,
+   "line": "El líquido que lo rodea",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "clean",
+    "z0": 1.2,
+    "z1": 1.4
+   },
+   "end": 207.3
+  },
+  {
+   "id": "s076",
+   "start": 207.3,
+   "line": "y se lleva los desechos",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "clean",
+    "z0": 1.5,
+    "z1": 1.7
+   },
+   "end": 210.26
+  },
+  {
+   "id": "s077",
+   "start": 210.26,
+   "line": "Mientras duermes tu memoria",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "MIENTRAS DUERMES",
+    "items": [
+     {
+      "icon": "brain",
+      "label": "MEMORIA",
+      "at": 0.15
+     },
+     {
+      "icon": "heart",
+      "label": "MÚSCULOS",
+      "at": 4.36
+     },
+     {
+      "icon": "flask",
+      "label": "HORMONAS",
+      "at": 5.68
+     }
+    ]
+   },
+   "end": 216.66
+  },
+  {
+   "id": "s078",
+   "start": 216.66,
+   "line": "Y no hace falta",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "bedroom"
+   },
+   "end": 219.22
+  },
+  {
+   "id": "s079",
+   "start": 219.22,
+   "line": "Después de veinticuatro horas",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "24 h",
+    "label": "SIN DORMIR",
+    "at": 0.15,
+    "icon": "moon"
+   },
+   "end": 221.26
+  },
+  {
+   "id": "s080",
+   "start": 221.26,
+   "line": "tus reflejos",
+   "scene": "streetWalk",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "city",
+    "gain": -25
+   },
+   "params": {
+    "tpl": "streetWalk",
+    "noBadge": true,
+    "droop0": 0.0,
+    "droop1": 1.2,
+    "dusk": 1,
+    "face": "day3"
+   },
+   "end": 224.42
+  },
+  {
+   "id": "s081",
+   "start": 224.42,
+   "line": "Ahora imagina un cerebro",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "dirty",
+    "z0": 1.1,
+    "z1": 1.25
+   },
+   "end": 228.38
+  },
+  {
+   "id": "s082",
+   "start": 228.38,
+   "line": "Y qué está pasando",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint",
+    "lookKeys": [
+     [
+      0,
+      [
+       0.5,
+       -0.6
+      ]
+     ],
+     [
+      1.2,
+      [
+       -0.3,
+       -0.7
+      ]
+     ]
+    ]
+   },
+   "end": 231.627
+  },
+  {
+   "id": "s083",
+   "start": 231.627,
+   "line": "En lo más profundo",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "intro",
+    "hiAt": 3.48
+   },
+   "end": 235.787
+  },
+  {
+   "id": "s084",
+   "start": 235.787,
+   "line": "Es el control central",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "thalamus",
+    "z0": 1.1,
+    "z1": 1.25
+   },
+   "end": 238.027
+  },
+  {
+   "id": "s085",
+   "start": 238.027,
+   "line": "Cada noche",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "switch",
+    "offAt": 1.4
+   },
+   "end": 242.527
+  },
+  {
+   "id": "s086",
+   "start": 242.527,
+   "line": "En el insomnio familiar fatal",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.8,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "destroy",
+    "z0": 1.2,
+    "z1": 1.35,
+    "stamp": {
+     "text": "CÉLULA POR CÉLULA",
+     "at": 3.8,
+     "y": 950,
+     "size": 100,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 247.887
+  },
+  {
+   "id": "s087",
+   "start": 247.887,
+   "line": "Y no lo destruye un virus",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "¿QUÉ LO DESTRUYE?",
+    "items": [
+     {
+      "icon": "virus",
+      "label": "VIRUS",
+      "at": 0.1,
+      "cross": 1.76
+     },
+     {
+      "icon": "bacteria",
+      "label": "BACTERIA",
+      "at": 2.04,
+      "cross": 3.08
+     },
+     {
+      "icon": "protein",
+      "label": "PROTEÍNA",
+      "at": 3.88,
+      "hi": 3.88
+     }
+    ]
+   },
+   "end": 252.607
+  },
+  {
+   "id": "s088",
+   "start": 252.607,
+   "line": "Se llama prion",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "prion",
+      "label": "PRION",
+      "at": 0.05,
+      "hi": 0.05
+     }
+    ],
+    "punch": [
+     0.05
+    ]
+   },
+   "end": 254.147
+  },
+  {
+   "id": "s089",
+   "start": 254.147,
+   "line": "Todos tenemos",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "normal"
+   },
+   "end": 259.747
+  },
+  {
+   "id": "s090",
+   "start": 259.747,
+   "line": "Pero en estas personas",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "misfold",
+    "at": 3.72,
+    "caption": "UN ERROR EN UN GEN",
+    "capAt": 1.8
+   },
+   "end": 264.387
+  },
+  {
+   "id": "s091",
+   "start": 264.387,
+   "line": "Y lo más terrible",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "fear",
+    "bg": "blueprint"
+   },
+   "end": 268.067
+  },
+  {
+   "id": "s092",
+   "start": 268.067,
+   "line": "Cada proteína mal doblada",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "spread",
+    "at": 0.3
+   },
+   "end": 272.147
+  },
+  {
+   "id": "s093",
+   "start": 272.147,
+   "line": "Una reacción en cadena",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "spread",
+    "at": -0.8,
+    "caption": "REACCIÓN EN CADENA",
+    "capAt": 0.1,
+    "punch": [
+     0.1
+    ]
+   },
+   "end": 274.807
+  },
+  {
+   "id": "s094",
+   "start": 274.807,
+   "line": "Poco a poco",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "noBadge": true,
+    "mode": "sponge",
+    "z0": 1.2,
+    "z1": 1.4,
+    "calloutText": "ESPONJA"
+   },
+   "end": 280.567
+  },
+  {
+   "id": "s095",
+   "start": 280.567,
+   "line": "Es la misma familia",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "LA MISMA FAMILIA",
+    "items": [
+     {
+      "icon": "cow",
+      "label": "VACAS LOCAS",
+      "at": 2.52
+     },
+     {
+      "icon": "head",
+      "label": "CREUTZFELDT-JAKOB",
+      "at": 4.28
+     }
+    ]
+   },
+   "end": 286.087
+  },
+  {
+   "id": "s096",
+   "start": 286.087,
+   "line": "Todas son enfermedades priónicas",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "spread",
+    "at": -0.5,
+    "caption": "ENFERMEDADES PRIÓNICAS",
+    "capAt": 0.1
+   },
+   "end": 288.647
+  },
+  {
+   "id": "s097",
+   "start": 288.647,
+   "line": "Pero el insomnio familiar fatal",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.58,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "blueprint",
+    "lines": [
+     "SE",
+     "HEREDA"
+    ],
+    "punch": [
+     3.58
+    ]
+   },
+   "end": 292.927
+  },
+  {
+   "id": "s098",
+   "start": 292.927,
+   "line": "Si uno de los padres",
+   "scene": "coin",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "coin",
+    "noBadge": true,
+    "landAt": 4.36
+   },
+   "end": 298.627
+  },
+  {
+   "id": "s099",
+   "start": 298.627,
+   "line": "Cincuenta y cincuenta",
+   "scene": "coin",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "coin",
+    "noBadge": true,
+    "landAt": 2.68
+   },
+   "end": 301.927
+  },
+  {
+   "id": "s100",
+   "start": 301.927,
+   "line": "La historia de la familia",
+   "scene": "tree",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "tree",
+    "noBadge": true,
+    "caption": "200 AÑOS ATRÁS",
+    "capAt": 2.56
+   },
+   "end": 306.007
+  },
+  {
+   "id": "s101",
+   "start": 306.007,
+   "line": "El caso más antiguo",
+   "scene": "venice",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   },
+   "params": {
+    "tpl": "venice",
+    "noBadge": true
+   },
+   "end": 310.887
+  },
+  {
+   "id": "s102",
+   "start": 310.887,
+   "line": "en mil setecientos sesenta y cinco",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "1765",
+    "label": "VENECIA",
+    "at": 0.05,
+    "bg": "dark",
+    "size": 260
+   },
+   "end": 313.367
+  },
+  {
+   "id": "s103",
+   "start": 313.367,
+   "line": "El que le puso nombre",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "lugaresi",
+    "face": "talk",
+    "bg": "office",
+    "tag": "ELIO LUGARESI · NEURÓLOGO"
+   },
+   "end": 317.767
+  },
+  {
+   "id": "s104",
+   "start": 317.767,
+   "line": "en Bolonia",
+   "scene": "presenter",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "presenter",
+    "noBadge": true,
+    "who": "lugaresi",
+    "icon": "brain",
+    "caption": "INSOMNIO FAMILIAR FATAL",
+    "tag": "BOLONIA · 1986",
+    "at": 0.2
+   },
+   "end": 320.687
+  },
+  {
+   "id": "s105",
+   "start": 320.687,
+   "line": "Él y su equipo",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "noBadge": true,
+    "who": "silvano",
+    "electrodes": true,
+    "doctor": "lugaresi",
+    "monitor": "eegAwake",
+    "monitorLabel": "EEG",
+    "night": true
+   },
+   "end": 324.207
+  },
+  {
+   "id": "s106",
+   "start": 324.207,
+   "line": "y vieron que en los registros",
+   "scene": "eeg",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eeg",
+    "noBadge": true,
+    "verdict": "SIN SUEÑO REAL",
+    "verdictAt": 3.36
+   },
+   "end": 328.267
+  },
+  {
+   "id": "s107",
+   "start": 328.267,
+   "line": "Seis años después",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "pre": "SEIS AÑOS DESPUÉS",
+    "value": "1992",
+    "at": 1.56,
+    "bg": "blueprint",
+    "size": 260
+   },
+   "end": 330.547
+  },
+  {
+   "id": "s108",
+   "start": 330.547,
+   "line": "el investigador Pierluigi Gambetti",
+   "scene": "presenter",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "presenter",
+    "noBadge": true,
+    "who": "gambetti",
+    "icon": "dna",
+    "caption": "LA CAUSA EXACTA",
+    "tag": "PIERLUIGI GAMBETTI",
+    "at": 3.84
+   },
+   "end": 335.467
+  },
+  {
+   "id": "s109",
+   "start": 335.467,
+   "line": "Un solo cambio",
+   "scene": "dna",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dna",
+    "noBadge": true,
+    "at": 0.76
+   },
+   "end": 338.747
+  },
+  {
+   "id": "s110",
+   "start": 338.747,
+   "line": "Una sola letra",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "pre": "UN CÓDIGO DE",
+    "value": "3.000.000.000",
+    "size": 170,
+    "label": "LETRAS",
+    "sub": "y una sola está mal",
+    "at": 2.44
+   },
+   "end": 343.147
+  },
+  {
+   "id": "s111",
+   "start": 343.147,
+   "line": "Y ese error puede pasar",
+   "scene": "tree",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "tree",
+    "noBadge": true,
+    "caption": "EN SILENCIO",
+    "capAt": 1.64
+   },
+   "end": 347.067
+  },
+  {
+   "id": "s112",
+   "start": 347.067,
+   "line": "Y luego descubrieron",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "gambetti",
+    "face": "shock",
+    "bg": "blueprint"
+   },
+   "end": 350.107
+  },
+  {
+   "id": "s113",
+   "start": 350.107,
+   "line": "Existe una versión",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "dna",
+      "label": "SIN MUTACIÓN",
+      "at": 0.2,
+      "cross": 3.0
+     }
+    ]
+   },
+   "end": 354.347
+  },
+  {
+   "id": "s114",
+   "start": 354.347,
+   "line": "Se llama esporádica",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "blueprint",
+    "lines": [
+     "INSOMNIO FATAL",
+     "ESPORÁDICO"
+    ]
+   },
+   "end": 356.027
+  },
+  {
+   "id": "s115",
+   "start": 356.027,
+   "line": "Aparece de la nada",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "misfold",
+    "at": 3.16,
+    "caption": "POR PURA CASUALIDAD",
+    "capAt": 5.16
+   },
+   "end": 361.947
+  },
+  {
+   "id": "s116",
+   "start": 361.947,
+   "line": "Es aún más rara",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "noBadge": true,
+    "face": "blank",
+    "night": true,
+    "z": 1.2
+   },
+   "end": 365.627
+  },
+  {
+   "id": "s117",
+   "start": 365.627,
+   "line": "Mes y medio",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.68,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "wreck",
+    "flickers": [
+     [
+      0.6,
+      0.7
+     ]
+    ],
+    "badgeAt": 0.68
+   },
+   "end": 367.006
+  },
+  {
+   "id": "s118",
+   "start": 367.006,
+   "line": "Para la persona",
+   "scene": "fogBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "fogBed"
+   },
+   "end": 373.263
+  },
+  {
+   "id": "s119",
+   "start": 373.263,
+   "line": "Y aquí viene lo más cruel",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.24,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "fear",
+    "bg": "bedroom",
+    "stamp": {
+     "text": "LO MÁS CRUEL",
+     "at": 1.24,
+     "size": 120,
+     "y": 900
+    }
+   },
+   "end": 375.182
+  },
+  {
+   "id": "s120",
+   "start": 375.182,
+   "line": "Parece lógico",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "lugaresi",
+    "face": "think",
+    "bg": "hospital"
+   },
+   "end": 380.139
+  },
+  {
+   "id": "s121",
+   "start": 380.139,
+   "line": "Los médicos probaron",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "mask": true,
+    "monitor": "eegAwake",
+    "monitorLabel": "SUEÑO: 0",
+    "monitorColor": "#ff5a4a",
+    "night": true,
+    "doctor": "lugaresi"
+   },
+   "end": 385.016
+  },
+  {
+   "id": "s122",
+   "start": 385.016,
+   "line": "pero los aparatos mostraban",
+   "scene": "eeg",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eeg",
+    "who": "CON ANESTESIA",
+    "verdict": "EL SUEÑO NUNCA LLEGA",
+    "verdictAt": 2.679
+   },
+   "end": 388.854
+  },
+  {
+   "id": "s123",
+   "start": 388.854,
+   "line": "El problema no era",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "lugaresi",
+    "face": "sad",
+    "bg": "hospital"
+   },
+   "end": 392.052
+  },
+  {
+   "id": "s124",
+   "start": 392.052,
+   "line": "Es que la parte del cerebro",
+   "scene": "brain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "brain",
+    "mode": "sponge",
+    "z0": 1.3,
+    "z1": 1.45,
+    "calloutText": "DESTRUIDA"
+   },
+   "end": 396.15
+  },
+  {
+   "id": "s125",
+   "start": 396.15,
+   "line": "Dos meses",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "face": "blank",
+    "night": true,
+    "badgeAt": 0.44
+   },
+   "end": 400.068
+  },
+  {
+   "id": "s126",
+   "start": 400.068,
+   "line": "Pero los ataques de pánico",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "panic": true,
+    "face": "fear",
+    "night": true,
+    "z": 1.6
+   },
+   "end": 402.307
+  },
+  {
+   "id": "s127",
+   "start": 402.307,
+   "line": "Incluso así de agotada",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "fear",
+    "bg": "hospital"
+   },
+   "end": 407.204
+  },
+  {
+   "id": "s128",
+   "start": 407.204,
+   "line": "Tres meses",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "who": "silvano",
+    "face": "blank",
+    "night": true,
+    "badgeAt": 0.44
+   },
+   "end": 410.742
+  },
+  {
+   "id": "s129",
+   "start": 410.742,
+   "line": "Pasaba casi todo el tiempo",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "who": "silvano",
+    "face": "blank"
+   },
+   "end": 413.9
+  },
+  {
+   "id": "s130",
+   "start": 413.9,
+   "line": "y no siempre reconocía",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "who": "silvano",
+    "face": "blank",
+    "night": true,
+    "visitor": "wife",
+    "question": 0.4
+   },
+   "end": 416.09
+  },
+  {
+   "id": "s131",
+   "start": 416.09,
+   "line": "Pero en sus pocos momentos",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "silvano",
+    "face": "sad",
+    "bg": "hospital"
+   },
+   "end": 421.527
+  },
+  {
+   "id": "s132",
+   "start": 421.527,
+   "line": "Ya lo había visto antes",
+   "scene": "portraits",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "portraits",
+    "items": [
+     [
+      "PADRE",
+      2.239
+     ],
+     [
+      "TÍAS",
+      3.238
+     ],
+     [
+      "ABUELO",
+      4.277
+     ]
+    ]
+   },
+   "end": 426.991
+  },
+  {
+   "id": "s133",
+   "start": 426.991,
+   "line": "Cuatro meses",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.572,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "who": "silvano",
+    "face": "blank",
+    "night": true,
+    "z": 1.5,
+    "badgeAt": 0.572
+   },
+   "end": 430.748
+  },
+  {
+   "id": "s134",
+   "start": 430.748,
+   "line": "Las defensas se debilitan",
+   "scene": "bodyChain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bodyChain",
+    "shield": 0.2,
+    "at": 2.252
+   },
+   "end": 435.359
+  },
+  {
+   "id": "s135",
+   "start": 435.359,
+   "line": "Casi siempre no es el insomnio",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "who": "silvano",
+    "face": "blank",
+    "night": true,
+    "z": 1.4
+   },
+   "end": 438.237
+  },
+  {
+   "id": "s136",
+   "start": 438.237,
+   "line": "sino que todo el cuerpo",
+   "scene": "bodyChain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bodyChain",
+    "at": 0.1,
+    "caption": "TODO SE ROMPE EN CADENA",
+    "capAt": 2.798
+   },
+   "end": 441.995
+  },
+  {
+   "id": "s137",
+   "start": 441.995,
+   "line": "Por qué no se puede",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "bg": "blueprint",
+    "lines": [
+     "¿POR QUÉ NO",
+     "TIENE CURA?"
+    ]
+   },
+   "end": 447.028
+  },
+  {
+   "id": "s138",
+   "start": 447.028,
+   "line": "Los priones no están vivos",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "mode": "spread",
+    "at": 0.2,
+    "caption": "NO ESTÁN VIVOS",
+    "capAt": 0.2
+   },
+   "end": 449.348
+  },
+  {
+   "id": "s139",
+   "start": 449.348,
+   "line": "Los antibióticos no los matan",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "NO HAY NADA QUE MATAR",
+    "items": [
+     {
+      "icon": "pill",
+      "label": "ANTIBIÓTICOS",
+      "at": 0.1,
+      "cross": 2.04
+     }
+    ]
+   },
+   "end": 453.108
+  },
+  {
+   "id": "s140",
+   "start": 453.108,
+   "line": "Tus defensas no los ven",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "INVISIBLES PARA TU CUERPO",
+    "items": [
+     {
+      "icon": "shield",
+      "label": "DEFENSAS",
+      "at": 0.1,
+      "cross": 1.8
+     }
+    ]
+   },
+   "end": 457.588
+  },
+  {
+   "id": "s141",
+   "start": 457.588,
+   "line": "Y son casi indestructibles",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "CASI INDESTRUCTIBLES",
+    "items": [
+     {
+      "icon": "flame",
+      "label": "CALOR",
+      "at": 2.68
+     },
+     {
+      "icon": "flask",
+      "label": "QUÍMICOS",
+      "at": 3.4
+     }
+    ]
+   },
+   "end": 463.428
+  },
+  {
+   "id": "s142",
+   "start": 463.428,
+   "line": "Ni siquiera la esterilización",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "items": [
+     {
+      "icon": "scalpel",
+      "label": "ESTERILIZACIÓN",
+      "at": 0.1
+     }
+    ]
+   },
+   "end": 468.388
+  },
+  {
+   "id": "s143",
+   "start": 468.388,
+   "line": "En promedio",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.72,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "value": "18",
+    "label": "MESES",
+    "sub": "a veces seis meses, a veces años",
+    "at": 2.28,
+    "color": "#ff5a4a",
+    "badgeAt": 2.72
+   },
+   "end": 475.148
+  },
+  {
+   "id": "s144",
+   "start": 475.148,
+   "line": "Y hoy no existe",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "bg": "dark",
+    "lines": [
+     "SIN",
+     "CURA"
+    ],
+    "punch": [
+     1.2
+    ]
+   },
+   "end": 478.708
+  },
+  {
+   "id": "s145",
+   "start": 478.708,
+   "line": "Pero hay una historia",
+   "scene": "windowDawn",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "windowDawn",
+    "noBadge": true,
+    "dawn0": 0.55,
+    "dawn1": 0.95
+   },
+   "end": 481.288
+  },
+  {
+   "id": "s146",
+   "start": 481.288,
+   "line": "En dos mil diez",
+   "scene": "sonia",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sonia",
+    "noBadge": true,
+    "mode": "mother",
+    "tag": "EE. UU. · 2010"
+   },
+   "end": 483.928
+  },
+  {
+   "id": "s147",
+   "start": 483.928,
+   "line": "llamada Sonia Vallabh",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "sonia",
+    "face": "sad",
+    "bg": "office",
+    "tag": "SONIA VALLABH"
+   },
+   "end": 487.128
+  },
+  {
+   "id": "s148",
+   "start": 487.128,
+   "line": "Un año después",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "sonia",
+    "face": "fear",
+    "bg": "office",
+    "side": "left"
+   },
+   "end": 490.568
+  },
+  {
+   "id": "s149",
+   "start": 490.568,
+   "line": "Resultado",
+   "scene": "sonia",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sonia",
+    "noBadge": true,
+    "mode": "test",
+    "stampAt": 1.08
+   },
+   "end": 493.628
+  },
+  {
+   "id": "s150",
+   "start": 493.628,
+   "line": "Sonia era abogada",
+   "scene": "sonia",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sonia",
+    "noBadge": true,
+    "mode": "change",
+    "swapAt": 99
+   },
+   "end": 496.988
+  },
+  {
+   "id": "s151",
+   "start": 496.988,
+   "line": "dejaron sus trabajos",
+   "scene": "sonia",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sonia",
+    "noBadge": true,
+    "mode": "change",
+    "swapAt": 3.08
+   },
+   "end": 501.788
+  },
+  {
+   "id": "s152",
+   "start": 501.788,
+   "line": "Hoy desarrollan",
+   "scene": "sonia",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sonia",
+    "noBadge": true,
+    "mode": "lab",
+    "tag": "HOY"
+   },
+   "end": 506.748
+  },
+  {
+   "id": "s153",
+   "start": 506.748,
+   "line": "antes de que la enfermedad",
+   "scene": "prions",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "prions",
+    "noBadge": true,
+    "mode": "normal",
+    "callout": false,
+    "caption": "ANTES DE QUE EMPIECE",
+    "capAt": 0.1
+   },
+   "end": 508.668
+  },
+  {
+   "id": "s154",
+   "start": 508.668,
+   "line": "Y en Italia",
+   "scene": "italy",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "city",
+    "gain": -25
+   },
+   "params": {
+    "tpl": "italy",
+    "noBadge": true,
+    "tag": "ITALIA · HOY",
+    "face": "calm"
+   },
+   "end": 511.388
+  },
+  {
+   "id": "s155",
+   "start": 511.388,
+   "line": "les dan desde hace años",
+   "scene": "doxy",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "doxy",
+    "noBadge": true
+   },
+   "end": 514.988
+  },
+  {
+   "id": "s156",
+   "start": 514.988,
+   "line": "para ver si logra retrasar",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "room",
+    "lines": [
+     "¿RETRASAR",
+     "LA ENFERMEDAD?"
+    ]
+   },
+   "end": 517.708
+  },
+  {
+   "id": "s157",
+   "start": 517.708,
+   "line": "Es una de las enfermedades",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "bg": "blueprint",
+    "lines": [
+     "UNA DE LAS",
+     "MÁS RARAS"
+    ]
+   },
+   "end": 520.908
+  },
+  {
+   "id": "s158",
+   "start": 520.908,
+   "line": "Se conocen menos",
+   "scene": "globe",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "caption": "MENOS DE 100 FAMILIAS",
+    "capAt": 1.24
+   },
+   "end": 524.268
+  },
+  {
+   "id": "s159",
+   "start": 524.268,
+   "line": "Pero para cada una",
+   "scene": "awakeBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "awakeBed",
+    "noBadge": true,
+    "face": {
+     "eyes": "closed",
+     "brows": null,
+     "mouth": "smile"
+    }
+   },
+   "end": 529.708
+  },
+  {
+   "id": "s160",
+   "start": 529.708,
+   "line": "un día simplemente",
+   "scene": "eyesOpen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "eyesOpen",
+    "noBadge": true,
+    "openAt": 1.72
+   },
+   "end": 532.368
+  },
+  {
+   "id": "s161",
+   "start": 532.368,
+   "line": "Así que la próxima vez",
+   "scene": "bedSide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedSide",
+    "noBadge": true,
+    "turnKeys": [
+     [
+      0,
+      0
+     ],
+     [
+      0.7,
+      1
+     ],
+     [
+      1.5,
+      0
+     ]
+    ],
+    "face": "tired"
+   },
+   "end": 535.128
+  },
+  {
+   "id": "s162",
+   "start": 535.128,
+   "line": "a las tres de la mañana",
+   "scene": "ceilingWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "ceilingWide",
+    "noBadge": true
+   },
+   "end": 537.728
+  },
+  {
+   "id": "s163",
+   "start": 537.728,
+   "line": "recuerda esto",
+   "scene": "pullOut",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "pullOut",
+    "noBadge": true,
+    "dawn0": 0.3,
+    "dawn1": 0,
+    "face": "tired"
+   },
+   "end": 543.528
+  },
+  {
+   "id": "s164",
+   "start": 543.528,
+   "line": "Y tú",
+   "scene": "question",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "question",
+    "noBadge": true
+   },
+   "end": 549.528
+  },
+  {
+   "id": "s165",
+   "start": 549.528,
+   "line": "Déjamelo en los comentarios",
+   "scene": "question",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "question",
+    "noBadge": true,
+    "lines": [
+     "Déjamelo",
+     "en los comentarios"
+    ]
+   },
+   "end": 551.088
+  },
+  {
+   "id": "s166",
+   "start": 551.088,
+   "line": "Y suscríbete",
+   "scene": "endScreen",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "endScreen",
+    "noBadge": true
+   },
+   "end": 560.895
+  }
+ ]
+}

@@ -34,6 +34,29 @@ Three.js пробовали, отвергнут — грубые фигуры, �
   сцен передавать `face:` override (см. `cast.js` → `F`). Стиль `insomnia`
   добавлен в `engine/styles.js` (мягкая виньетка, без кино-полос:
   `config.bars: "none"`).
+- **Полный ролик (10 мин, испанский): `2d-video/projects/insomnia-full/`.**
+  Сценарий `input/script_es.md` (13 разделов: 01…05, 05b, 06…12), озвучка
+  по разделам в `input/sec/NN.mp3+csv`. `python3 -I build_story.py audio`
+  склеивает разделы → `input/voice.mp3` + `timeline/words.json`;
+  `python3 -I build_story.py shots` берёт раскадровку `beats.py`
+  (раздел, фраза-якорь, шаблон, параметры; `'w:слово'` = момент слова) →
+  `story/shots.json` + `config.json` (шаги счётчика, авто-SFX/эмбиенс).
+  Шаблоны кадров: `scenes/shots/_tpl_night.js` (кровать/хук),
+  `_tpl_sci.js` (мозг, прионы, ДНК, ЭЭГ, древо, карточки, иконки),
+  `_tpl_story.js` (Италия, врач, Рэнди, больница, Венеция, Соня, финал);
+  `register.js` регистрирует все кадры + зум-удары `punch`, слова-штампы
+  `stamp`, счётчик. Чтобы править кадр — менять строку в `beats.py`,
+  пересобрать `shots`, проверить `--sheet`.
+- **Испанский голос: Fernando Martínez — Rapid, Persuasive**
+  (`dlGxemPxFMTY7iXagmOj`, ElevenLabs library, латиноамериканский,
+  самый используемый испанский голос). Шаблон «исп» НЕ менялся — голос
+  и настройки идут через `config_override` в каждом заказе:
+  `{"tts_settings": {"voice_id": "dlGxemPxFMTY7iXagmOj", "voice_settings":
+  {"stability": 0.45, "similarity_boost": 0.8, "style": 0.32,
+  "use_speaker_boost": true, "speed": 1.0}}}`. Выбран юзером по
+  слепому сравнению 4 вариантов (`input/voicetest/`). Замер: у Lionel
+  `speed` на eleven_v4 почти не влияет на темп. Лимит Lumean — 7
+  одновременных заказов.
 - Правила юзера к картинке: никаких чёрных полос (letterbox) и чёрного
   низа; счётчик — карточка с жёлтой рамкой `#FFD400` в правом верхнем углу,
   «поп» при смене, грамотные окончания, эскалация единиц (часы → дни);
