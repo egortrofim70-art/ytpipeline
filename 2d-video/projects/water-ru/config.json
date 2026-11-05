@@ -1,0 +1,96 @@
+{
+ "title": "Что если ты перестанешь пить воду?",
+ "language": "ru",
+ "speechLanguage": "ru",
+ "aspect": "16:9",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "insomnia",
+ "voiceover": "input/voice.mp3",
+ "script": "input/script.md",
+ "duration": 654.1,
+ "captions": false,
+ "bars": "none",
+ "fadeIn": 0.2,
+ "fadeOut": 1.0,
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "badge": [
+  [
+   39.36,
+   1,
+   "d"
+  ],
+  [
+   41.52,
+   2,
+   "d"
+  ],
+  [
+   45.84,
+   3,
+   "d"
+  ],
+  [
+   106.4,
+   1,
+   "h"
+  ],
+  [
+   110.98,
+   3,
+   "h"
+  ],
+  [
+   135.8,
+   6,
+   "h"
+  ],
+  [
+   151.8,
+   12,
+   "h"
+  ],
+  [
+   158.32,
+   1,
+   "d"
+  ],
+  [
+   218.8,
+   2,
+   "d"
+  ],
+  [
+   299.54,
+   3,
+   "d"
+  ],
+  [
+   618.7,
+   2,
+   "h"
+  ],
+  [
+   621.42,
+   1,
+   "d"
+  ],
+  [
+   624.62,
+   2,
+   "d"
+  ],
+  [
+   629.26,
+   3,
+   "d"
+  ]
+ ]
+}

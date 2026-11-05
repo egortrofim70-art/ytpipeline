@@ -1,0 +1,4397 @@
+{
+ "title": "Что если ты перестанешь пить воду?",
+ "duration": 654.1,
+ "shots": [
+  {
+   "id": "s001",
+   "start": 0.0,
+   "line": "Девятый день",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "shrine",
+    "stamp": {
+     "text": "ДЕНЬ 9",
+     "at": 0.05,
+     "y": 150,
+     "size": 110,
+     "until": 2.24
+    }
+   },
+   "end": 5.16
+  },
+  {
+   "id": "s002",
+   "start": 5.16,
+   "line": "и ловит летучих мышей",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "shrine",
+    "z": 1.85,
+    "tag": "САХАРА"
+   },
+   "end": 6.92
+  },
+  {
+   "id": "s003",
+   "start": 6.92,
+   "line": "Не чтобы съесть",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.28,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "shrine",
+    "z": 1.5,
+    "stamp": {
+     "text": "КРОВЬ",
+     "at": 2.28,
+     "y": 950,
+     "size": 130,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 9.96
+  },
+  {
+   "id": "s004",
+   "start": 9.96,
+   "line": "Это не кино",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ЭТО НЕ КИНО"
+    ],
+    "bg": "dark"
+   },
+   "end": 13.96
+  },
+  {
+   "id": "s005",
+   "start": 13.96,
+   "line": "В тысяча девятьсот девяносто",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "storm",
+    "tag": "САХАРА · 1994",
+    "caption": "ПЕСЧАНАЯ БУРЯ",
+    "capAt": 5.32
+   },
+   "end": 18.173
+  },
+  {
+   "id": "s006",
+   "start": 18.173,
+   "line": "попал в песчаную бурю",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.627,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "storm",
+    "cx": 1200,
+    "stamp": {
+     "text": "ЗАБЛУДИЛСЯ",
+     "at": 1.627,
+     "y": 950,
+     "size": 110,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 20.76
+  },
+  {
+   "id": "s007",
+   "start": 20.76,
+   "line": "Вода кончилась почти сразу",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "storm",
+    "cx": 1100
+   },
+   "end": 25.56
+  },
+  {
+   "id": "s008",
+   "start": 25.56,
+   "line": "Его нашли кочевники",
+   "scene": "routeMap",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "routeMap",
+    "noBadge": true,
+    "caption": "> 200 КМ ОТ ТРАССЫ",
+    "capAt": 1.88
+   },
+   "end": 29.4
+  },
+  {
+   "id": "s009",
+   "start": 29.4,
+   "line": "Он потерял около",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.04,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "found",
+    "stamp": {
+     "text": "−18 КГ",
+     "at": 1.04,
+     "y": 200,
+     "size": 130,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 32.2
+  },
+  {
+   "id": "s010",
+   "start": 32.2,
+   "line": "А теперь забудь про Сахару",
+   "scene": "kitchenWalk",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenWalk",
+    "noBadge": true,
+    "face": "talk"
+   },
+   "end": 35.8
+  },
+  {
+   "id": "s011",
+   "start": 35.8,
+   "line": "Но с этой секунды",
+   "scene": "tap",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "tap",
+    "noBadge": true,
+    "at": 2.52,
+    "caption": "НИ КАПЛИ",
+    "capAt": 2.52
+   },
+   "end": 38.92
+  },
+  {
+   "id": "s012",
+   "start": 38.92,
+   "line": "Через сутки",
+   "scene": "symptom",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.5,
+    "badgeAt": 0.44
+   },
+   "end": 41.08
+  },
+  {
+   "id": "s013",
+   "start": 41.08,
+   "line": "Через два дня",
+   "scene": "pinch",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "pinch",
+    "at": 0.3,
+    "caption": "КОЖА НЕ РАЗГЛАЖИВАЕТСЯ",
+    "capAt": 2.52,
+    "badgeAt": 0.44
+   },
+   "end": 45.4
+  },
+  {
+   "id": "s014",
+   "start": 45.4,
+   "line": "А на третий день",
+   "scene": "switchOff",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "switchOff",
+    "items": [
+     [
+      "КОЖА",
+      0.6
+     ],
+     [
+      "КИШЕЧНИК",
+      1.0
+     ],
+     [
+      "ПОЧКИ",
+      1.4
+     ],
+     [
+      "ПОТ",
+      1.8
+     ]
+    ],
+    "caption": "ТЕЛО ОТКЛЮЧАЕТ ЛИШНЕЕ",
+    "badgeAt": 0.44
+   },
+   "end": 49.64
+  },
+  {
+   "id": "s015",
+   "start": 49.64,
+   "line": "Давай проверим",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ЧТО ЕСЛИ ТЫ",
+     "ПЕРЕСТАНЕШЬ ПИТЬ ВОДУ?"
+    ],
+    "bg": "room"
+   },
+   "end": 52.36
+  },
+  {
+   "id": "s016",
+   "start": 52.36,
+   "line": "Правила простые",
+   "scene": "iconRow",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "НЕЛЬЗЯ",
+    "items": [
+     {
+      "icon": "water",
+      "label": "ВОДА",
+      "at": 1.64,
+      "cross": 1.64
+     },
+     {
+      "icon": "tea",
+      "label": "ЧАЙ",
+      "at": 2.44,
+      "cross": 2.44
+     },
+     {
+      "icon": "orange",
+      "label": "СОК",
+      "at": 3.24,
+      "cross": 3.24
+     }
+    ]
+   },
+   "end": 56.24
+  },
+  {
+   "id": "s017",
+   "start": 56.24,
+   "line": "Ни супа",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "plate",
+      "label": "СУП",
+      "at": 0.05,
+      "cross": 0.3
+     },
+     {
+      "icon": "apple",
+      "label": "АРБУЗ",
+      "at": 1.04,
+      "cross": 1.04
+     },
+     {
+      "icon": "cube",
+      "label": "ЛЁД",
+      "at": 2.56,
+      "cross": 2.56
+     }
+    ]
+   },
+   "end": 59.4
+  },
+  {
+   "id": "s018",
+   "start": 59.4,
+   "line": "Ты сидишь в обычной комнате",
+   "scene": "bedWide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedWide",
+    "noBadge": true,
+    "clockH": 10,
+    "dawn": 0.9,
+    "face": "talk"
+   },
+   "end": 64.2
+  },
+  {
+   "id": "s019",
+   "start": 64.2,
+   "line": "Последний стакан воды",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "noBadge": true,
+    "sipAt": 1.44,
+    "face": "talk"
+   },
+   "end": 66.92
+  },
+  {
+   "id": "s020",
+   "start": 66.92,
+   "line": "Время пошло",
+   "scene": "stopwatch",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "stopwatch",
+    "noBadge": true,
+    "startAt": 0.52,
+    "caption": "ВРЕМЯ ПОШЛО",
+    "bg": "kitchen"
+   },
+   "end": 68.36
+  },
+  {
+   "id": "s021",
+   "start": 68.36,
+   "line": "Сначала узнаем",
+   "scene": "face",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint"
+   },
+   "end": 71.0
+  },
+  {
+   "id": "s022",
+   "start": 71.0,
+   "line": "Примерно шестьдесят процентов",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "level": 0.6,
+    "at": 0.2,
+    "caption": "≈ 60% — ВОДА",
+    "capAt": 0.68
+   },
+   "end": 74.52
+  },
+  {
+   "id": "s023",
+   "start": 74.52,
+   "line": "Если ты весишь",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "from": 0.6,
+    "level": 0.6,
+    "buckets": 4.2,
+    "caption": "≈ 40 ЛИТРОВ",
+    "capAt": 2.92
+   },
+   "end": 78.6
+  },
+  {
+   "id": "s024",
+   "start": 78.6,
+   "line": "Четыре полных ведра",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "from": 0.6,
+    "level": 0.6,
+    "buckets": 0.05
+   },
+   "end": 80.44
+  },
+  {
+   "id": "s025",
+   "start": 80.44,
+   "line": "Твоя кровь",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "from": 0.6,
+    "level": 0.6,
+    "callouts": [
+     [
+      "КРОВЬ ≈ 90%",
+      150,
+      0.44
+     ],
+     [
+      "МОЗГ ≈ 75%",
+      208,
+      3.32
+     ]
+    ]
+   },
+   "end": 86.04
+  },
+  {
+   "id": "s026",
+   "start": 86.04,
+   "line": "И эта вода всё время уходит",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "ВОДА УХОДИТ ВСЕГДА",
+    "items": [
+     {
+      "icon": "lungs",
+      "label": "ДЫХАНИЕ",
+      "at": 0.2,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "droplet",
+      "label": "КОЖА",
+      "at": 0.6,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "kidney",
+      "label": "ПОЧКИ",
+      "at": 1.0,
+      "color": "#6ab8ff"
+     }
+    ]
+   },
+   "end": 90.04
+  },
+  {
+   "id": "s027",
+   "start": 90.04,
+   "line": "Ты выдыхаешь пар",
+   "scene": "coldBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "coldBed",
+    "noBadge": true
+   },
+   "end": 93.64
+  },
+  {
+   "id": "s028",
+   "start": 93.64,
+   "line": "Почки делают мочу",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "noBadge": true,
+    "outAt": 0.3
+   },
+   "end": 95.16
+  },
+  {
+   "id": "s029",
+   "start": 95.16,
+   "line": "За день так уходит",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "≈ 2,5 Л",
+    "label": "В ДЕНЬ",
+    "pre": "УХОДИТ",
+    "at": 1.56,
+    "icon": "water",
+    "iconColor": "#6ab8ff",
+    "color": "#6ab8ff"
+   },
+   "end": 98.12
+  },
+  {
+   "id": "s030",
+   "start": 98.12,
+   "line": "Даже ночью",
+   "scene": "dreamFood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "dreamFood",
+    "noBadge": true,
+    "food": "water"
+   },
+   "end": 99.96
+  },
+  {
+   "id": "s031",
+   "start": 99.96,
+   "line": "То есть каждая минута",
+   "scene": "stopwatch",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "stopwatch",
+    "noBadge": true,
+    "startAt": -2,
+    "caption": "КАЖДАЯ МИНУТА — МИНУС",
+    "bg": "blueprint"
+   },
+   "end": 102.92
+  },
+  {
+   "id": "s032",
+   "start": 102.92,
+   "line": "Вопрос только",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "office"
+   },
+   "end": 106.28
+  },
+  {
+   "id": "s033",
+   "start": 106.28,
+   "line": "Первый час",
+   "scene": "clockInsert",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "clockInsert",
+    "hFrom": 10,
+    "hTo": 11,
+    "landAt": 0.52,
+    "dawn": 0.9,
+    "badgeAt": 0.12
+   },
+   "end": 109.08
+  },
+  {
+   "id": "s034",
+   "start": 109.08,
+   "line": "Ты даже не думаешь",
+   "scene": "deskType",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "deskType",
+    "face": "day1"
+   },
+   "end": 110.86
+  },
+  {
+   "id": "s035",
+   "start": 110.86,
+   "line": "Третий час",
+   "scene": "symptom",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "calm",
+    "word": "ЖАЖДА",
+    "badgeAt": 0.12
+   },
+   "end": 113.74
+  },
+  {
+   "id": "s036",
+   "start": 113.74,
+   "line": "Это мозг уже заметил",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "at": 0.3,
+    "kAt": 99,
+    "text2": "",
+    "text3": ""
+   },
+   "end": 118.06
+  },
+  {
+   "id": "s037",
+   "start": 118.06,
+   "line": "Где-то в глубине мозга",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "at": 1.6,
+    "kAt": 99,
+    "text2": "",
+    "text3": "",
+    "text1": "ГИПОТАЛАМУС"
+   },
+   "end": 121.82
+  },
+  {
+   "id": "s038",
+   "start": 121.82,
+   "line": "Он посылает сигнал",
+   "scene": "foodThink",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "foodThink",
+    "foods": [
+     "water",
+     "water"
+    ],
+    "gap": 0.3
+   },
+   "end": 124.38
+  },
+  {
+   "id": "s039",
+   "start": 124.38,
+   "line": "И одновременно выпускает",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "at": 0,
+    "kAt": 4.12
+   },
+   "end": 127.34
+  },
+  {
+   "id": "s040",
+   "start": 127.34,
+   "line": "Этот гормон говорит почкам",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "outAt": 99
+   },
+   "end": 130.06
+  },
+  {
+   "id": "s041",
+   "start": 130.06,
+   "line": "Почки начинают возвращать",
+   "scene": "urineScale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "urineScale",
+    "from": 0.15,
+    "to": 0.5,
+    "caption": "МОЧА ТЕМНЕЕТ",
+    "capAt": 3.88
+   },
+   "end": 135.68
+  },
+  {
+   "id": "s042",
+   "start": 135.68,
+   "line": "Шестой час",
+   "scene": "foodThink",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "foodThink",
+    "foods": [
+     "water",
+     "water",
+     "water"
+    ],
+    "gap": 0.4,
+    "badgeAt": 0.12
+   },
+   "end": 139.92
+  },
+  {
+   "id": "s043",
+   "start": 139.92,
+   "line": "Учёные проверяли",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "slow",
+    "bg": "office",
+    "text": "ВНИМАНИЕ ↓"
+   },
+   "end": 145.04
+  },
+  {
+   "id": "s044",
+   "start": 145.04,
+   "line": "ему труднее сосредоточиться",
+   "scene": "deskType",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "deskType",
+    "face": "day3"
+   },
+   "end": 148.96
+  },
+  {
+   "id": "s045",
+   "start": 148.96,
+   "line": "Для тебя это примерно",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "value": "2%",
+    "label": "≈ 1,5 ЛИТРА",
+    "pre": "ПОРОГ",
+    "at": 0.1,
+    "color": "#6ab8ff"
+   },
+   "end": 151.68
+  },
+  {
+   "id": "s046",
+   "start": 151.68,
+   "line": "Двенадцать часов",
+   "scene": "symptom",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.45,
+    "badgeAt": 0.12
+   },
+   "end": 154.66
+  },
+  {
+   "id": "s047",
+   "start": 154.66,
+   "line": "Язык как будто чужой",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "slow",
+    "bg": "room",
+    "text": "СУХО…"
+   },
+   "end": 158.2
+  },
+  {
+   "id": "s048",
+   "start": 158.2,
+   "line": "Сутки без воды",
+   "scene": "mirror",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "day3",
+    "badgeAt": 0.12
+   },
+   "end": 161.56
+  },
+  {
+   "id": "s049",
+   "start": 161.56,
+   "line": "Кровь стала гуще",
+   "scene": "thickBlood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thickBlood",
+    "bpm": 105,
+    "caption": "КРОВЬ ГУЩЕ — СЕРДЦЕ ЧАЩЕ",
+    "capAt": 4.36
+   },
+   "end": 166.52
+  },
+  {
+   "id": "s050",
+   "start": 166.52,
+   "line": "Ты устаёшь от любого движения",
+   "scene": "standUp",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "standUp",
+    "at": 2.36
+   },
+   "end": 171.0
+  },
+  {
+   "id": "s051",
+   "start": 171.0,
+   "line": "На снимках мозга",
+   "scene": "swell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "swell",
+    "at": 99,
+    "caption": "МОЗГ ТЕРЯЕТ ОБЪЁМ",
+    "capAt": 4.76
+   },
+   "end": 176.28
+  },
+  {
+   "id": "s052",
+   "start": 176.28,
+   "line": "Он буквально ссыхается",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.84,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.5,
+    "stamp": {
+     "text": "ССЫХАЕТСЯ",
+     "at": 0.84,
+     "y": 950,
+     "size": 110,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 179.72
+  },
+  {
+   "id": "s053",
+   "start": 179.72,
+   "line": "Ты злой",
+   "scene": "angry",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "angry",
+    "word": "ВОДЫ!",
+    "wordAt": 2.92
+   },
+   "end": 183.56
+  },
+  {
+   "id": "s054",
+   "start": 183.56,
+   "line": "Давай посмотрим",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "outAt": 99
+   },
+   "end": 187.72
+  },
+  {
+   "id": "s055",
+   "start": 187.72,
+   "line": "Каждый день через них",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 7.56,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "outAt": 99,
+    "stamp": {
+     "text": "ЦЕЛАЯ ВАННА",
+     "at": 7.56,
+     "y": 950,
+     "size": 100,
+     "color": "#6ab8ff"
+    }
+   },
+   "end": 194.6
+  },
+  {
+   "id": "s056",
+   "start": 194.6,
+   "line": "Целая ванна",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "steps": [
+     [
+      0,
+      "180",
+      "ЛИТРОВ"
+     ]
+    ],
+    "size": 220,
+    "color": "#3a7ad8"
+   },
+   "end": 195.96
+  },
+  {
+   "id": "s057",
+   "start": 195.96,
+   "line": "Почти всё это они возвращают",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "outAt": 4.28
+   },
+   "end": 201.08
+  },
+  {
+   "id": "s058",
+   "start": 201.08,
+   "line": "Сейчас почки выжимают",
+   "scene": "urineScale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "urineScale",
+    "from": 0.5,
+    "to": 0.9,
+    "caption": "КАК КРЕПКИЙ ЧАЙ",
+    "capAt": 5.8
+   },
+   "end": 207.32
+  },
+  {
+   "id": "s059",
+   "start": 207.32,
+   "line": "Её почти нет",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "fear",
+    "bg": "office"
+   },
+   "end": 208.52
+  },
+  {
+   "id": "s060",
+   "start": 208.52,
+   "line": "Но у почек есть предел",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "items": [
+     {
+      "icon": "kidney",
+      "label": "НУЖНА ВОДА",
+      "at": 0.05,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "virus",
+      "label": "МУСОР КОПИТСЯ",
+      "at": 4.52,
+      "color": "#ff5a4a"
+     }
+    ]
+   },
+   "end": 213.56
+  },
+  {
+   "id": "s061",
+   "start": 213.56,
+   "line": "Когда воды не остаётся",
+   "scene": "thickBlood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thickBlood",
+    "bpm": 95,
+    "caption": "МУСОР КОПИТСЯ",
+    "capAt": 2.56
+   },
+   "end": 216.76
+  },
+  {
+   "id": "s062",
+   "start": 216.76,
+   "line": "И это уже яд",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "lines": [
+     "ЭТО УЖЕ ЯД"
+    ],
+    "bg": "red"
+   },
+   "end": 218.68
+  },
+  {
+   "id": "s063",
+   "start": 218.68,
+   "line": "Два дня без воды",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.12,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "day5",
+    "badgeAt": 0.12
+   },
+   "end": 220.44
+  },
+  {
+   "id": "s064",
+   "start": 220.44,
+   "line": "Ущипни кожу",
+   "scene": "pinch",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "pinch",
+    "mode": "healthy",
+    "at": 0.3,
+    "caption": "ОБЫЧНО — СРАЗУ",
+    "capAt": 2.52
+   },
+   "end": 224.28
+  },
+  {
+   "id": "s065",
+   "start": 224.28,
+   "line": "А сейчас складка стоит",
+   "scene": "pinch",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "pinch",
+    "at": 0.05,
+    "caption": "СТОИТ, КАК ТЕСТО",
+    "capAt": 1.96
+   },
+   "end": 227.0
+  },
+  {
+   "id": "s066",
+   "start": 227.0,
+   "line": "Глаза западают",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "dizzy",
+    "at": 9,
+    "side": 0.5
+   },
+   "end": 231.4
+  },
+  {
+   "id": "s067",
+   "start": 231.4,
+   "line": "И вот это по-настоящему",
+   "scene": "overheat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "overheat",
+    "caption": "БЕЗ ПОТА ТЕЛО ПЕРЕГРЕВАЕТСЯ",
+    "capAt": 6.24,
+    "to": 39.5
+   },
+   "end": 236.68
+  },
+  {
+   "id": "s068",
+   "start": 236.68,
+   "line": "Без него тело перегревается",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "headache",
+    "side": 0.5,
+    "bg": "room"
+   },
+   "end": 239.88
+  },
+  {
+   "id": "s069",
+   "start": 239.88,
+   "line": "Кровь густая",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "dizzy",
+    "at": 0.6
+   },
+   "end": 242.2
+  },
+  {
+   "id": "s070",
+   "start": 242.2,
+   "line": "Ты путаешь слова",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "slow",
+    "bg": "office",
+    "text": "ГДЕ Я?"
+   },
+   "end": 245.24
+  },
+  {
+   "id": "s071",
+   "start": 245.24,
+   "line": "Тело переходит в аварийный",
+   "scene": "switchOff",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "switchOff",
+    "caption": "АВАРИЙНЫЙ РЕЖИМ",
+    "items": [
+     [
+      "КОЖА",
+      3.08
+     ],
+     [
+      "КИШЕЧНИК",
+      3.48
+     ],
+     [
+      "МОЗГ",
+      99
+     ],
+     [
+      "СЕРДЦЕ",
+      99
+     ]
+    ]
+   },
+   "end": 249.24
+  },
+  {
+   "id": "s072",
+   "start": 249.24,
+   "line": "к самому главному",
+   "scene": "bodyChain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bodyChain",
+    "at": 9,
+    "caption": "КРОВЬ — К МОЗГУ И СЕРДЦУ",
+    "capAt": 0.2
+   },
+   "end": 252.52
+  },
+  {
+   "id": "s073",
+   "start": 252.52,
+   "line": "Есть человек",
+   "scene": "title",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "АРИЗОНА",
+     "1905"
+    ],
+    "bg": "dark"
+   },
+   "end": 258.3
+  },
+  {
+   "id": "s074",
+   "start": 258.3,
+   "line": "Аризона",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "walk",
+    "tag": "АРИЗОНА · 1905"
+   },
+   "end": 261.58
+  },
+  {
+   "id": "s075",
+   "start": 261.58,
+   "line": "Золотоискатель Пабло",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "walk",
+    "cx": 1100,
+    "tag": "ПАБЛО ВАЛЕНСИЯ"
+   },
+   "end": 265.9
+  },
+  {
+   "id": "s076",
+   "start": 265.9,
+   "line": "С собой у него",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "water",
+      "label": "ОЧЕНЬ МАЛО ВОДЫ",
+      "at": 0.05,
+      "color": "#6ab8ff"
+     }
+    ]
+   },
+   "end": 268.38
+  },
+  {
+   "id": "s077",
+   "start": 268.38,
+   "line": "Он бродил почти неделю",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "from": 1,
+    "to": 7,
+    "at": 0.1,
+    "until": 1.96,
+    "sub": "ДЕНЬ",
+    "color": "#c87a2a",
+    "bg": "paper",
+    "caption": "6–8 ДНЕЙ",
+    "capAt": 4.08
+   },
+   "end": 273.98
+  },
+  {
+   "id": "s078",
+   "start": 273.98,
+   "line": "Его нашёл учёный",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "camp",
+    "tag": "УИЛЬЯМ МАКГИ",
+    "helpAt": 2.84
+   },
+   "end": 278.14
+  },
+  {
+   "id": "s079",
+   "start": 278.14,
+   "line": "По описанию Макги",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "walk",
+    "cx": 1500,
+    "tag": "ПО ОПИСАНИЮ МАКГИ"
+   },
+   "end": 281.18
+  },
+  {
+   "id": "s080",
+   "start": 281.18,
+   "line": "Кожа потемнела",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "walk",
+    "cx": 1300
+   },
+   "end": 287.02
+  },
+  {
+   "id": "s081",
+   "start": 287.02,
+   "line": "Сначала он не мог",
+   "scene": "sonora",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sonora",
+    "noBadge": true,
+    "mode": "camp",
+    "cx": 1060,
+    "helpAt": 0.1
+   },
+   "end": 289.5
+  },
+  {
+   "id": "s082",
+   "start": 289.5,
+   "line": "Но он выжил",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.44,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "noBadge": true,
+    "head": "МЕДИЦИНСКИЙ ЖУРНАЛ · 1906",
+    "title": "Жажда в пустыне как болезнь",
+    "hiAt": 99,
+    "stamp": {
+     "text": "ВЫЖИЛ",
+     "at": 0.44,
+     "y": 950,
+     "color": "#5fe39a"
+    }
+   },
+   "end": 296.14
+  },
+  {
+   "id": "s083",
+   "start": 296.14,
+   "line": "Её до сих пор цитируют",
+   "scene": "scientist",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "scientist",
+    "noBadge": true,
+    "who": "doc",
+    "lines": [
+     [
+      0.84,
+      "ЦИТИРУЮТ ДО СИХ ПОР"
+     ]
+    ]
+   },
+   "end": 298.14
+  },
+  {
+   "id": "s084",
+   "start": 298.14,
+   "line": "Вернёмся к тебе",
+   "scene": "mirror",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "mirror",
+    "face": "wreck",
+    "badgeAt": 1.4
+   },
+   "end": 300.46
+  },
+  {
+   "id": "s085",
+   "start": 300.46,
+   "line": "Ты наверняка слышал правило",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "text": [
+     "«БЕЗ ВОДЫ —",
+     "3 ДНЯ»"
+    ],
+    "verdict": "ГРУБО",
+    "verdictColor": "#ffd400",
+    "verdictAt": 5.4
+   },
+   "end": 306.86
+  },
+  {
+   "id": "s086",
+   "start": 306.86,
+   "line": "В жару",
+   "scene": "survive",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "survive",
+    "mode": "day",
+    "caption": "В ЖАРУ — МЕНЬШЕ СУТОК",
+    "capAt": 4.12
+   },
+   "end": 311.58
+  },
+  {
+   "id": "s087",
+   "start": 311.58,
+   "line": "А в прохладе",
+   "scene": "bedSide",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.48,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bedSide",
+    "face": "wreck",
+    "stamp": {
+     "text": "В ПРОХЛАДЕ — ОКОЛО НЕДЕЛИ",
+     "at": 3.48,
+     "y": 950,
+     "size": 80
+    }
+   },
+   "end": 315.82
+  },
+  {
+   "id": "s088",
+   "start": 315.82,
+   "line": "Но к третьему дню",
+   "scene": "bodyChain",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bodyChain",
+    "at": 0.3,
+    "caption": "ДАВЛЕНИЕ ПАДАЕТ · ПОЧКИ ОТКАЗЫВАЮТ",
+    "capAt": 6.2
+   },
+   "end": 318.7
+  },
+  {
+   "id": "s089",
+   "start": 318.7,
+   "line": "Крови становится слишком мало",
+   "scene": "thickBlood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thickBlood",
+    "bpm": 130
+   },
+   "end": 323.26
+  },
+  {
+   "id": "s090",
+   "start": 323.26,
+   "line": "Мозг путается",
+   "scene": "symptom",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "symptom",
+    "mode": "dizzy",
+    "at": 0.1,
+    "side": 0.5,
+    "bg": "room"
+   },
+   "end": 326.06
+  },
+  {
+   "id": "s091",
+   "start": 326.06,
+   "line": "Это называется",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "lines": [
+     "ГИПОВОЛЕМИЧЕСКИЙ",
+     "ШОК"
+    ],
+    "bg": "red"
+   },
+   "end": 331.18
+  },
+  {
+   "id": "s092",
+   "start": 331.18,
+   "line": "И если в этот момент",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.96,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "doctor": "lugaresi",
+    "face": "tired",
+    "stamp": {
+     "text": "ЕЩЁ МОЖНО СПАСТИ",
+     "at": 3.96,
+     "y": 950,
+     "size": 100,
+     "color": "#5fe39a"
+    }
+   },
+   "end": 337.34
+  },
+  {
+   "id": "s093",
+   "start": 337.34,
+   "line": "Кстати",
+   "scene": "myth",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "text": [
+     "ЭКОНОМЬ ПОТ,",
+     "А НЕ ВОДУ"
+    ],
+    "verdict": "ПРАВДА",
+    "verdictColor": "#5fe39a",
+    "verdictAt": 6.38
+   },
+   "end": 342.16
+  },
+  {
+   "id": "s094",
+   "start": 342.16,
+   "line": "Звучит дико",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "shock",
+    "bg": "street"
+   },
+   "end": 344.24
+  },
+  {
+   "id": "s095",
+   "start": 344.24,
+   "line": "Люди которые потерялись",
+   "scene": "sahara",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "sahara",
+    "noBadge": true,
+    "mode": "storm",
+    "cx": 1000,
+    "caption": "ПОГИБАЛИ С ВОДОЙ ВО ФЛЯГЕ",
+    "capAt": 3.36
+   },
+   "end": 348.16
+  },
+  {
+   "id": "s096",
+   "start": 348.16,
+   "line": "Они растягивали её",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "water",
+      "label": "«НА ПОТОМ»",
+      "at": 0.05,
+      "color": "#6ab8ff",
+      "cross": 2.96
+     }
+    ]
+   },
+   "end": 351.68
+  },
+  {
+   "id": "s097",
+   "start": 351.68,
+   "line": "А на самом деле вода",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "from": 0.45,
+    "level": 0.6,
+    "at": 0.2,
+    "caption": "ВОДЕ ЛУЧШЕ ВНУТРИ ТЕБЯ",
+    "capAt": 0.3
+   },
+   "end": 355.76
+  },
+  {
+   "id": "s098",
+   "start": 355.76,
+   "line": "Её надо пить",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "noBadge": true,
+    "sipAt": 1.16,
+    "face": "smile"
+   },
+   "end": 359.04
+  },
+  {
+   "id": "s099",
+   "start": 359.04,
+   "line": "Днём сидеть в тени",
+   "scene": "survive",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "survive",
+    "noBadge": true,
+    "mode": "day",
+    "caption": "ДНЁМ — В ТЕНИ",
+    "capAt": 0.1
+   },
+   "end": 361.36
+  },
+  {
+   "id": "s100",
+   "start": 361.36,
+   "line": "Идти только ночью",
+   "scene": "survive",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "survive",
+    "noBadge": true,
+    "mode": "night",
+    "caption": "ИДТИ — НОЧЬЮ",
+    "capAt": 0.1
+   },
+   "end": 364.16
+  },
+  {
+   "id": "s101",
+   "start": 364.16,
+   "line": "Закрыть кожу от солнца",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "shield",
+      "label": "ЗАКРЫТЬ КОЖУ",
+      "at": 0.05
+     },
+     {
+      "icon": "lungs",
+      "label": "ДЫШАТЬ НОСОМ",
+      "at": 3.0,
+      "color": "#6ab8ff"
+     }
+    ]
+   },
+   "end": 368.16
+  },
+  {
+   "id": "s102",
+   "start": 368.16,
+   "line": "Именно так в жару",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "1",
+      "ДЕНЬ"
+     ],
+     [
+      3.72,
+      "3+",
+      "ДНЯ"
+     ]
+    ],
+    "color": "#c87a2a"
+   },
+   "end": 373.36
+  },
+  {
+   "id": "s103",
+   "start": 373.36,
+   "line": "Хорошо",
+   "scene": "raft",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "raft",
+    "noBadge": true
+   },
+   "end": 377.04
+  },
+  {
+   "id": "s104",
+   "start": 377.04,
+   "line": "Вокруг же сплошная вода",
+   "scene": "raft",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.68,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "raft",
+    "noBadge": true,
+    "stamp": {
+     "text": "ВОДА ВЕЗДЕ",
+     "at": 0.68,
+     "y": 200,
+     "size": 100,
+     "color": "#6ab8ff"
+    }
+   },
+   "end": 378.8
+  },
+  {
+   "id": "s105",
+   "start": 378.8,
+   "line": "Нельзя",
+   "scene": "raft",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "raft",
+    "noBadge": true,
+    "at": 0.05,
+    "caption": "МОРСКАЯ ≈ 3,5% СОЛИ",
+    "capAt": 2.44
+   },
+   "end": 383.68
+  },
+  {
+   "id": "s106",
+   "start": 383.68,
+   "line": "А почки не умеют",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.32,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "noBadge": true,
+    "outAt": 99,
+    "stamp": {
+     "text": "НЕ УМЕЮТ",
+     "at": 2.32,
+     "y": 960,
+     "size": 100,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 386.56
+  },
+  {
+   "id": "s107",
+   "start": 386.56,
+   "line": "Чтобы вывести соль",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "vs": "<",
+    "items": [
+     {
+      "icon": "water",
+      "value": "1 СТАКАН",
+      "label": "МОРСКОЙ ВОДЫ",
+      "at": 0.1,
+      "color": "#6ab8ff",
+      "size": 80
+     },
+     {
+      "icon": "kidney",
+      "value": "> 1 СТАКАНА",
+      "label": "НУЖНО ПОЧКАМ",
+      "at": 3.68,
+      "color": "#ff5a4a",
+      "size": 80
+     }
+    ]
+   },
+   "end": 392.24
+  },
+  {
+   "id": "s108",
+   "start": 392.24,
+   "line": "Ты пьёшь",
+   "scene": "raft",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.28,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "raft",
+    "noBadge": true,
+    "stamp": {
+     "text": "ЕЩЁ БЫСТРЕЕ",
+     "at": 2.28,
+     "y": 940,
+     "size": 110,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 395.12
+  },
+  {
+   "id": "s109",
+   "start": 395.12,
+   "line": "Поэтому моряки",
+   "scene": "shipSea",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "shipSea",
+    "noBadge": true,
+    "sepia": 0.3,
+    "caption": "ЖАЖДА ПОСРЕДИ МОРЯ",
+    "capAt": 4.04
+   },
+   "end": 399.76
+  },
+  {
+   "id": "s110",
+   "start": 399.76,
+   "line": "А моча",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "text": [
+     "А МОЧУ",
+     "МОЖНО?"
+    ],
+    "verdict": "ПЛОХАЯ ИДЕЯ",
+    "verdictAt": 11.16
+   },
+   "end": 404.0
+  },
+  {
+   "id": "s111",
+   "start": 404.0,
+   "line": "Пара глотков в первый",
+   "scene": "urineScale",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "urineScale",
+    "noBadge": true,
+    "from": 0.2,
+    "to": 0.95,
+    "caption": "ЧЕМ ДАЛЬШЕ — ТЕМ ХУЖЕ",
+    "capAt": 3.36
+   },
+   "end": 411.92
+  },
+  {
+   "id": "s112",
+   "start": 411.92,
+   "line": "Кстати некоторые животные",
+   "scene": "camel",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "camel",
+    "noBadge": true
+   },
+   "end": 416.56
+  },
+  {
+   "id": "s113",
+   "start": 416.56,
+   "line": "Верблюд",
+   "scene": "camel",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.56,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "camel",
+    "noBadge": true,
+    "humpLabel": "ГОРБ = ЖИР",
+    "humpAt": 4.36,
+    "stamp": {
+     "text": "НЕ ВОДА",
+     "at": 3.56,
+     "y": 950,
+     "size": 110,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 421.44
+  },
+  {
+   "id": "s114",
+   "start": 421.44,
+   "line": "Его секрет в другом",
+   "scene": "overheat",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "overheat",
+    "noBadge": true,
+    "to": 40.5,
+    "caption": "ТЕРЯЕТ ВОДУ — И НЕ ПЕРЕГРЕВАЕТСЯ",
+    "capAt": 3.96
+   },
+   "end": 426.16
+  },
+  {
+   "id": "s115",
+   "start": 426.16,
+   "line": "А потом выпить сразу",
+   "scene": "camel",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "camel",
+    "noBadge": true,
+    "counter": 113,
+    "at": 0.1,
+    "caption": "≈ 113 Л ЗА 13 МИНУТ",
+    "capAt": 6.64
+   },
+   "end": 433.92
+  },
+  {
+   "id": "s116",
+   "start": 433.92,
+   "line": "А кенгуровая крыса",
+   "scene": "hidden",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.4,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hidden",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "rat",
+      "label": "КЕНГУРОВАЯ КРЫСА",
+      "at": 0.05,
+      "cubes": 0,
+      "s": 2.2
+     }
+    ],
+    "stamp": {
+     "text": "НИКОГДА НЕ ПЬЁТ",
+     "at": 3.4,
+     "y": 960,
+     "size": 100,
+     "color": "#ffd400"
+    }
+   },
+   "end": 438.24
+  },
+  {
+   "id": "s117",
+   "start": 438.24,
+   "line": "Всю воду она получает",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "bread",
+      "label": "СУХИЕ СЕМЕНА",
+      "at": 0.05
+     },
+     {
+      "icon": "droplet",
+      "label": "ВОДА ИЗ ЕДЫ",
+      "at": 0.44,
+      "color": "#6ab8ff"
+     }
+    ]
+   },
+   "end": 441.6
+  },
+  {
+   "id": "s118",
+   "start": 441.6,
+   "line": "Её тело само делает воду",
+   "scene": "cellBio",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "cellBio",
+    "noBadge": true,
+    "mode": "eat",
+    "at": 0.1,
+    "caption": "ВОДА ИЗ ЕДЫ",
+    "capAt": 0.2
+   },
+   "end": 444.72
+  },
+  {
+   "id": "s119",
+   "start": 444.72,
+   "line": "Человек так не умеет",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "sad",
+    "bg": "street"
+   },
+   "end": 448.48
+  },
+  {
+   "id": "s120",
+   "start": 448.48,
+   "line": "Наверняка тебе говорили",
+   "scene": "myth",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "noBadge": true,
+    "text": [
+     "«8 СТАКАНОВ",
+     "В ДЕНЬ»"
+    ],
+    "verdict": "?",
+    "verdictColor": "#ffd400",
+    "verdictAt": 5.08
+   },
+   "end": 454.32
+  },
+  {
+   "id": "s121",
+   "start": 454.32,
+   "line": "Откуда эта цифра",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.28,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint",
+    "stamp": {
+     "text": "НИКТО НЕ ЗНАЕТ",
+     "at": 2.28,
+     "y": 950,
+     "size": 100
+    }
+   },
+   "end": 457.2
+  },
+  {
+   "id": "s122",
+   "start": 457.2,
+   "line": "Часто вспоминают",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "1945",
+      "США"
+     ],
+     [
+      5.0,
+      "2,5 Л",
+      "В ДЕНЬ"
+     ]
+    ],
+    "size": 200,
+    "color": "#3a5a8a"
+   },
+   "end": 463.92
+  },
+  {
+   "id": "s123",
+   "start": 463.92,
+   "line": "Но там же было сказано",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "plate",
+      "pct": 0.2,
+      "value": "≈ 20%",
+      "label": "ВОДЫ — ИЗ ЕДЫ",
+      "at": 0.2,
+      "color": "#ffd400"
+     }
+    ]
+   },
+   "end": 468.32
+  },
+  {
+   "id": "s124",
+   "start": 468.32,
+   "line": "Эту часть все забыли",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "shock",
+    "bg": "blueprint"
+   },
+   "end": 469.92
+  },
+  {
+   "id": "s125",
+   "start": 469.92,
+   "line": "На самом деле",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "caption": "ТОЖЕ СЧИТАЕТСЯ",
+    "items": [
+     {
+      "icon": "apple",
+      "label": "ЕДА",
+      "at": 0.1
+     },
+     {
+      "icon": "tea",
+      "label": "ЧАЙ",
+      "at": 4.04
+     },
+     {
+      "icon": "coffee",
+      "label": "КОФЕ",
+      "at": 4.44
+     }
+    ]
+   },
+   "end": 475.92
+  },
+  {
+   "id": "s126",
+   "start": 475.92,
+   "line": "Здоровому человеку",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "noBadge": true,
+    "sipAt": 4.6,
+    "face": "smile"
+   },
+   "end": 481.28
+  },
+  {
+   "id": "s127",
+   "start": 481.28,
+   "line": "Жажда неплохой датчик",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "noBadge": true,
+    "at": 0.1,
+    "kAt": 99,
+    "text2": "",
+    "text3": "",
+    "text1": "ХОРОШИЙ ДАТЧИК"
+   },
+   "end": 483.04
+  },
+  {
+   "id": "s128",
+   "start": 483.04,
+   "line": "Но в жару",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "thermo",
+      "label": "ЖАРА",
+      "at": 0.05,
+      "color": "#ff5a4a"
+     },
+     {
+      "icon": "muscle",
+      "label": "СПОРТ",
+      "at": 1.0,
+      "color": "#ffd400"
+     },
+     {
+      "icon": "people",
+      "label": "СТАРОСТЬ",
+      "at": 1.72
+     }
+    ]
+   },
+   "end": 487.12
+  },
+  {
+   "id": "s129",
+   "start": 487.12,
+   "line": "Но есть люди",
+   "scene": "face",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "office"
+   },
+   "end": 490.56
+  },
+  {
+   "id": "s130",
+   "start": 490.56,
+   "line": "Маленькие дети",
+   "scene": "waterBody",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterBody",
+    "noBadge": true,
+    "level": 0.75,
+    "at": 0.3,
+    "caption": "У МЛАДЕНЦА ≈ 75% ВОДЫ",
+    "capAt": 4.76
+   },
+   "end": 496.24
+  },
+  {
+   "id": "s131",
+   "start": 496.24,
+   "line": "И теряет он её быстрее",
+   "scene": "thickBlood",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thickBlood",
+    "noBadge": true,
+    "bpm": 140,
+    "caption": "ТЕРЯЕТ БЫСТРЕЕ",
+    "capAt": 0.2
+   },
+   "end": 500.0
+  },
+  {
+   "id": "s132",
+   "start": 500.0,
+   "line": "Поэтому при жаре",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "ЧАСЫ",
+      "НЕ ДНИ"
+     ]
+    ],
+    "size": 130,
+    "color": "#ff5a4a",
+    "caption": "ДЕТИ ОБЕЗВОЖИВАЮТСЯ БЫСТРО"
+   },
+   "end": 505.22
+  },
+  {
+   "id": "s133",
+   "start": 505.22,
+   "line": "И пожилые",
+   "scene": "elderly",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "elderly",
+    "noBadge": true,
+    "at": 99,
+    "caption": "ЖАЖДА СЛАБЕЕТ С ВОЗРАСТОМ",
+    "capAt": 2.76
+   },
+   "end": 508.66
+  },
+  {
+   "id": "s134",
+   "start": 508.66,
+   "line": "Человек может быть обезвожен",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "noBadge": true,
+    "at": 0.2,
+    "kAt": 99,
+    "text1": "ДАТЧИК СЛАБЕЕТ",
+    "text2": "",
+    "text3": ""
+   },
+   "end": 511.46
+  },
+  {
+   "id": "s135",
+   "start": 511.46,
+   "line": "Поэтому в сильную жару",
+   "scene": "hospitalBed",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "hospitalBed",
+    "noBadge": true,
+    "face": "tired",
+    "who": "hero"
+   },
+   "end": 515.46
+  },
+  {
+   "id": "s136",
+   "start": 515.46,
+   "line": "Так что если у тебя",
+   "scene": "elderly",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "elderly",
+    "noBadge": true,
+    "at": 3.88
+   },
+   "end": 520.98
+  },
+  {
+   "id": "s137",
+   "start": 520.98,
+   "line": "А теперь поворот",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ВОДЫ МОЖЕТ БЫТЬ",
+     "СЛИШКОМ МНОГО"
+    ],
+    "bg": "red"
+   },
+   "end": 524.82
+  },
+  {
+   "id": "s138",
+   "start": 524.82,
+   "line": "Калифорния",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "2007",
+      "КАЛИФОРНИЯ"
+     ]
+    ],
+    "size": 200,
+    "color": "#c07aff"
+   },
+   "end": 527.3
+  },
+  {
+   "id": "s139",
+   "start": 527.3,
+   "line": "Радиостанция проводит конкурс",
+   "scene": "contest",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "contest",
+    "noBadge": true,
+    "caption": "КТО ВЫПЬЕТ БОЛЬШЕ",
+    "capAt": 2.52
+   },
+   "end": 533.98
+  },
+  {
+   "id": "s140",
+   "start": 533.98,
+   "line": "Двадцативосьмилетняя",
+   "scene": "contest",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "contest",
+    "noBadge": true,
+    "caption": "≈ 7 ЛИТРОВ ЗА 3 ЧАСА",
+    "capAt": 3.04
+   },
+   "end": 538.82
+  },
+  {
+   "id": "s141",
+   "start": 538.82,
+   "line": "Она заняла второе место",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "2",
+    "label": "МЕСТО",
+    "pre": "ДЖЕННИФЕР",
+    "at": 0.68
+   },
+   "end": 540.58
+  },
+  {
+   "id": "s142",
+   "start": 540.58,
+   "line": "А через несколько часов",
+   "scene": "candles",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "candles",
+    "noBadge": true,
+    "n": 12,
+    "caption": "ДЖЕННИФЕР СТРЕЙНДЖ · 28 ЛЕТ",
+    "capAt": 0.3
+   },
+   "end": 543.86
+  },
+  {
+   "id": "s143",
+   "start": 543.86,
+   "line": "Это называется водная",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ВОДНАЯ",
+     "ИНТОКСИКАЦИЯ"
+    ],
+    "bg": "dark"
+   },
+   "end": 546.66
+  },
+  {
+   "id": "s144",
+   "start": 546.66,
+   "line": "Когда воды слишком много",
+   "scene": "swell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "swell",
+    "noBadge": true,
+    "at": 4.92,
+    "caption": "КЛЕТКИ РАЗБУХАЮТ",
+    "capAt": 6.12
+   },
+   "end": 550.66
+  },
+  {
+   "id": "s145",
+   "start": 550.66,
+   "line": "Вода уходит в клетки",
+   "scene": "swell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "swell",
+    "noBadge": true,
+    "at": 0,
+    "caption": "КЛЕТКИ РАЗБУХАЮТ",
+    "capAt": 2.12
+   },
+   "end": 553.78
+  },
+  {
+   "id": "s146",
+   "start": 553.78,
+   "line": "Опаснее всего",
+   "scene": "swell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "swell",
+    "noBadge": true,
+    "at": -2,
+    "caption": "МОЗГУ НЕКУДА РАСШИРЯТЬСЯ",
+    "capAt": 2.32
+   },
+   "end": 558.1
+  },
+  {
+   "id": "s147",
+   "start": 558.1,
+   "line": "Почки здорового человека",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 5.24,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "noBadge": true,
+    "inText": "≈ 1 Л / ЧАС",
+    "inSub": "МОЖНО ВЫВЕСТИ",
+    "outAt": 99,
+    "stamp": {
+     "text": "БОЛЬШЕ — РИСК",
+     "at": 5.24,
+     "y": 960,
+     "size": 100,
+     "color": "#ff5a4a"
+    }
+   },
+   "end": 564.26
+  },
+  {
+   "id": "s148",
+   "start": 564.26,
+   "line": "А помнишь Андреаса",
+   "scene": "cell",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "cell",
+    "noBadge": true,
+    "mode": "wait",
+    "tag": "АВСТРИЯ · 1979"
+   },
+   "end": 568.42
+  },
+  {
+   "id": "s149",
+   "start": 568.42,
+   "line": "Его рекорд",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "from": 1,
+    "to": 18,
+    "at": 0.1,
+    "until": 1.8,
+    "sub": "ДЕНЬ",
+    "color": "#2a7a3a",
+    "caption": "БЕЗ ЕДЫ И ВОДЫ?",
+    "capAt": 2.68
+   },
+   "end": 571.7
+  },
+  {
+   "id": "s150",
+   "start": 571.7,
+   "line": "Но как это вообще возможно",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.04,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "noBadge": true,
+    "who": "hero",
+    "face": "think",
+    "bg": "blueprint",
+    "stamp": {
+     "text": "КАК?",
+     "at": 1.04,
+     "y": 990,
+     "size": 120
+    }
+   },
+   "end": 574.9
+  },
+  {
+   "id": "s151",
+   "start": 574.9,
+   "line": "Ответ в его же рассказе",
+   "scene": "cell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "cell",
+    "noBadge": true,
+    "mode": "lick",
+    "cx": 820,
+    "z0": 1.5,
+    "z1": 1.62,
+    "tally0": 12,
+    "caption": "ВЛАГА СО СТЕН",
+    "capAt": 2.84
+   },
+   "end": 580.78
+  },
+  {
+   "id": "s152",
+   "start": 580.78,
+   "line": "То есть немного воды",
+   "scene": "cell",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "cell",
+    "noBadge": true,
+    "mode": "lick",
+    "cx": 900,
+    "z0": 1.8,
+    "z1": 1.95,
+    "tally0": 15
+   },
+   "end": 583.38
+  },
+  {
+   "id": "s153",
+   "start": 583.38,
+   "line": "Каждая капля конденсата",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "droplet",
+      "label": "КАЖДАЯ КАПЛЯ = ВРЕМЯ",
+      "at": 0.05,
+      "color": "#6ab8ff",
+      "hi": 0.3
+     }
+    ]
+   },
+   "end": 587.18
+  },
+  {
+   "id": "s154",
+   "start": 587.18,
+   "line": "Иногда между жизнью",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "НЕСКОЛЬКО ГЛОТКОВ",
+     "В ДЕНЬ"
+    ],
+    "bg": "dark"
+   },
+   "end": 592.18
+  },
+  {
+   "id": "s155",
+   "start": 592.18,
+   "line": "И последнее",
+   "scene": "globe",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "noBadge": true,
+    "dots": 150,
+    "caption": "ВОЗ · ЮНИСЕФ · 2025",
+    "capAt": 0.2
+   },
+   "end": 592.98
+  },
+  {
+   "id": "s156",
+   "start": 592.98,
+   "line": "По данным ВОЗ",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "noBadge": true,
+    "value": "2,1 МЛРД",
+    "label": "БЕЗ БЕЗОПАСНОЙ ПИТЬЕВОЙ ВОДЫ",
+    "at": 2.76,
+    "color": "#ff8a7a",
+    "size": 190
+   },
+   "end": 600.34
+  },
+  {
+   "id": "s157",
+   "start": 600.34,
+   "line": "Каждый четвёртый",
+   "scene": "people12",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "people12",
+    "noBadge": true,
+    "hiAt": 0.2,
+    "caption": "КАЖДЫЙ ЧЕТВЁРТЫЙ"
+   },
+   "end": 602.26
+  },
+  {
+   "id": "s158",
+   "start": 602.26,
+   "line": "А больше ста миллионов",
+   "scene": "waterWalk",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterWalk",
+    "noBadge": true,
+    "caption": "> 100 МЛН ПЬЮТ БЕЗ ОЧИСТКИ",
+    "capAt": 0.92
+   },
+   "end": 607.58
+  },
+  {
+   "id": "s159",
+   "start": 607.58,
+   "line": "Для нас вода",
+   "scene": "tap",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "tap",
+    "noBadge": true,
+    "at": 99
+   },
+   "end": 609.98
+  },
+  {
+   "id": "s160",
+   "start": 609.98,
+   "line": "Для них несколько",
+   "scene": "waterWalk",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "waterWalk",
+    "noBadge": true,
+    "caption": "КИЛОМЕТРЫ ПЕШКОМ",
+    "capAt": 1.36
+   },
+   "end": 615.06
+  },
+  {
+   "id": "s161",
+   "start": 615.06,
+   "line": "Итак",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "ЧТО ЕСЛИ ТЫ",
+     "ПЕРЕСТАНЕШЬ ПИТЬ ВОДУ?"
+    ],
+    "bg": "room"
+   },
+   "end": 618.18
+  },
+  {
+   "id": "s162",
+   "start": 618.18,
+   "line": "Через пару часов",
+   "scene": "thirstSignal",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.52,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thirstSignal",
+    "at": 0.2,
+    "kAt": 99,
+    "text2": "",
+    "text3": "",
+    "badgeAt": 0.52
+   },
+   "end": 620.98
+  },
+  {
+   "id": "s163",
+   "start": 620.98,
+   "line": "Через сутки заболит",
+   "scene": "thickBlood",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "thickBlood",
+    "bpm": 100,
+    "badgeAt": 0.44
+   },
+   "end": 624.18
+  },
+  {
+   "id": "s164",
+   "start": 624.18,
+   "line": "Через два дня кожа",
+   "scene": "pinch",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.44,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "pinch",
+    "at": 0.1,
+    "badgeAt": 0.44
+   },
+   "end": 628.98
+  },
+  {
+   "id": "s165",
+   "start": 628.98,
+   "line": "На третий день почки",
+   "scene": "kidneyFlow",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.28,
+     "name": "pop",
+     "gain": -10
+    },
+    {
+     "at": 1.76,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "kidneyFlow",
+    "outAt": 99,
+    "stamp": {
+     "text": "ПОЧКИ СДАЮТСЯ",
+     "at": 1.76,
+     "y": 960,
+     "size": 100,
+     "color": "#ff5a4a"
+    },
+    "badgeAt": 0.28
+   },
+   "end": 631.54
+  },
+  {
+   "id": "s166",
+   "start": 631.54,
+   "line": "Ты можешь прожить без еды",
+   "scene": "compare",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "compare",
+    "noBadge": true,
+    "vs": "VS",
+    "items": [
+     {
+      "icon": "plate",
+      "value": "> 1 МЕС",
+      "label": "БЕЗ ЕДЫ",
+      "at": 0.2,
+      "color": "#ffd400",
+      "size": 90
+     },
+     {
+      "icon": "water",
+      "value": "≈ 3 ДНЯ",
+      "label": "БЕЗ ВОДЫ",
+      "at": 3.0,
+      "color": "#6ab8ff",
+      "size": 90
+     }
+    ]
+   },
+   "end": 636.34
+  },
+  {
+   "id": "s167",
+   "start": 636.34,
+   "line": "Так что прямо сейчас",
+   "scene": "kitchenSip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.92,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "kitchenSip",
+    "noBadge": true,
+    "sipAt": 3.96,
+    "face": "smile",
+    "stamp": {
+     "text": "НАЛЕЙ СТАКАН ВОДЫ",
+     "at": 2.92,
+     "y": 980,
+     "size": 90,
+     "color": "#6ab8ff"
+    }
+   },
+   "end": 640.9
+  },
+  {
+   "id": "s168",
+   "start": 640.9,
+   "line": "А сколько воды ты пьёшь",
+   "scene": "comment",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "comment",
+    "noBadge": true,
+    "text": "Сколько воды ты пьёшь за день?",
+    "typeDur": 1.3
+   },
+   "end": 643.94
+  },
+  {
+   "id": "s169",
+   "start": 643.94,
+   "line": "И подпишись",
+   "scene": "endCard",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "endCard",
+    "noBadge": true,
+    "next": [
+     "ЧТО ЕСЛИ ТЫ",
+     "ПЕРЕСТАНЕШЬ",
+     "СПАТЬ?"
+    ]
+   },
+   "end": 654.1
+  }
+ ]
+}
