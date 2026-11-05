@@ -1,10 +1,11 @@
-// sets/badge.js — the escalating "sin dormir" counter. Driven by GLOBAL time so it stays continuous across cuts.
+// sets/badge.js — the escalating "без еды" counter. Driven by GLOBAL time so it stays continuous across cuts.
 // Steps come from config.json → badge: [[globalT, value, unit], ...], written by build_story.py from the spoken words.
 import { E, rr, text, measure, glow, alpha, ease, prog, clamp, lerp, FONTS } from '/engine/core.js';
 
 const YEL = '#ffd400';
-const UNITS = { h: ['HORA', 'HORAS'], d: ['DÍA', 'DÍAS'], w: ['SEMANA', 'SEMANAS'], m: ['MES', 'MESES'] };
-const unitWord = (v, u) => (v === 1 ? UNITS[u][0] : UNITS[u][1]);
+const UNITS = { h: ['ЧАС', 'ЧАСА', 'ЧАСОВ'], d: ['ДЕНЬ', 'ДНЯ', 'ДНЕЙ'], w: ['НЕДЕЛЯ', 'НЕДЕЛИ', 'НЕДЕЛЬ'], m: ['МЕСЯЦ', 'МЕСЯЦА', 'МЕСЯЦЕВ'], y: ['ГОД', 'ГОДА', 'ЛЕТ'] };
+const plural = (n) => { const a = n % 10, b = n % 100; return a === 1 && b !== 11 ? 0 : a >= 2 && a <= 4 && (b < 12 || b > 14) ? 1 : 2; };
+const unitWord = (v, u) => UNITS[u][plural(v)];
 
 export function sleepBadge(g, gt, info = {}) {
   const steps = E.cfg.badge || [];
@@ -22,7 +23,7 @@ export function sleepBadge(g, gt, info = {}) {
   glow(g, cx, cy, w * 0.75, YEL, 0.10 + 0.22 * flash);
   rr(g, x, y, w, h, 16); g.fillStyle = 'rgba(10,10,24,0.93)'; g.fill();
   g.lineWidth = 3; g.strokeStyle = unitSwitch && flash > 0.5 ? '#ff6f61' : YEL; rr(g, x, y, w, h, 16); g.stroke();
-  text(g, 'SIN DORMIR', x + 26, y + 30, { size: 22, font: FONTS.ui, weight: 900, color: alpha('#ffffff', 0.72), align: 'left', spacing: 3 });
+  text(g, 'БЕЗ ЕДЫ', x + 26, y + 30, { size: 22, font: FONTS.ui, weight: 900, color: alpha('#ffffff', 0.72), align: 'left', spacing: 3 });
   text(g, num, x + 24, y + 80, { size: ns, font: FONTS.ui, weight: 900, color: flash > 0.5 ? '#ffffff' : YEL, align: 'left', glow: 14 + 16 * flash, glowColor: alpha(YEL, 0.7) });
   text(g, uw, x + 24 + measure(g, num, ns, FONTS.ui, 900) + 14, y + 84, { size: 34, font: FONTS.ui, weight: 900, color: '#ffffff', align: 'left', spacing: 1 });
   g.restore();

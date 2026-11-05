@@ -181,7 +181,7 @@ export const STORY = {
     const z = lerp(1, 1.06, K(info, t)); g.save(); g.translate(E.W / 2, E.H / 2); g.scale(z, z); g.translate(-E.W / 2, -E.H / 2);
     rr(g, E.W / 2 - 360, E.H * 0.42, 720, 500, 60); g.fillStyle = '#f4f6fa'; g.fill(); rr(g, E.W / 2 - 160, E.H * 0.46, 320, 130, 16); g.fillStyle = '#1a2230'; g.fill();
     const kg = lerp(info.from ?? 78, info.to ?? 64, ease.out(prog(t, 0.2, info.dur - 0.2)));
-    text(g, kg.toFixed(1) + ' kg', E.W / 2, E.H * 0.46 + 66, { size: 74, font: FONTS.ui, weight: 900, color: '#6fffb0', glow: 16, glowColor: 'rgba(111,255,176,.6)' });
+    text(g, kg.toFixed(1).replace('.', ',') + ' кг', E.W / 2, E.H * 0.46 + 66, { size: 74, font: FONTS.ui, weight: 900, color: '#6fffb0', glow: 16, glowColor: 'rgba(111,255,176,.6)' });
     for (const fx of [-250, 250]) { rr(g, E.W / 2 + fx - 70, E.H * 0.66, 140, 220, 50); g.fillStyle = '#0a0c16'; g.fill(); seg(g, [[E.W / 2 + fx, E.H * 0.66], [E.W / 2 + fx * 0.8, -50]], 34, '#0a0c16'); }
     g.restore();
   },

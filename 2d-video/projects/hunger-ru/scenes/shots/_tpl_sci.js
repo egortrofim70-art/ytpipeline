@@ -6,6 +6,7 @@ import { bigFace, POSES } from '/engine/rig2d.js';
 import { bedroom } from '../sets/bedroom.js';
 import { HERO, F } from '../cast.js';
 import { camAt } from './_tpl_night.js';
+import { extraIcon } from './_icons.js';
 
 const ui = () => S().ui;
 const BP = () => ui().blueprint, GOLD = () => ui().gold, RED = '#ff5a4a';
@@ -14,6 +15,7 @@ const pop = (t, at, d = 0.35) => ease.outBack(prog(t, at, at + d));
 function zoom(g, z, cx = E.W / 2, cy = E.H / 2) { g.translate(cx, cy); g.scale(z, z); g.translate(-cx, -cy); }
 function bg(g, t, kind, info) {
   if (kind === 'room') { blurLayer(g, 16, (g) => bedroom(g, t, camAt(1000, 560, 1.4), { dawn: 0 })); veil(g, '#05060f', 0.62); return; }
+  if (kind === 'red') { g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#14040a', '#2a0812', '#0a0206']); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); glow(g, E.W / 2, E.H / 2, 900, RED, 0.18); return; }
   if (kind === 'dark') { g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#07081a', '#10142e', '#07081a']); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); glow(g, E.W / 2, E.H / 2, 900, '#3a4aa0', 0.25); return; }
   UI.blueprint(g, { grid: 60, a: 0.08 }); glow(g, E.W / 2, E.H / 2, 1000, BP(), 0.06);
 }
@@ -23,6 +25,7 @@ const label = (g, s, x, y, o = {}) => text(g, s, x, y, { size: o.size || 34, fon
 export function icon(g, name, x, y, s = 1, c = BP(), t = 0) {
   g.save(); g.translate(x, y); g.scale(s, s); g.lineCap = 'round'; g.lineJoin = 'round';
   const st = (w = 6) => { g.strokeStyle = c; g.lineWidth = w; };
+  if (extraIcon(g, name, c, t)) { g.restore(); return; }
   switch (name) {
     case 'virus': st(); g.beginPath(); g.arc(0, 0, 44, 0, 7); g.stroke(); for (let i = 0; i < 10; i++) { const a = (i * Math.PI) / 5 + t * 0.4; seg(g, [[Math.cos(a) * 44, Math.sin(a) * 44], [Math.cos(a) * 66, Math.sin(a) * 66]], 6, c); circle(g, Math.cos(a) * 70, Math.sin(a) * 70, 8, c); } break;
     case 'bacteria': st(); rr(g, -70, -30, 140, 60, 30); g.stroke(); for (const k of [-1, 1]) { g.beginPath(); g.moveTo(k * 70, 0); for (let q = 0; q < 4; q++) g.lineTo(k * (78 + q * 12), (q % 2 ? 12 : -12) * Math.cos(t * 6 + q)); g.stroke(); } break;
@@ -103,7 +106,7 @@ export const SCI = {
     if (info.pre) { g.save(); zoom(g, z); { const pa = ease.outBack(prog(t, 0, 0.35)), ready = t > (info.at ?? 0.1); g.save(); g.translate(E.W / 2, ready ? E.H * 0.53 - (info.size || 230) * 0.78 : E.H * 0.5); const ps = ready ? 1 : 1.5 * pa; g.scale(ps, ps); label(g, info.pre, 0, 0, { size: 52, color: ready ? ui().cream : GOLD(), glow: ready ? 0 : 18, glowColor: alpha(GOLD(), 0.5), spacing: 5 }); g.restore(); } g.restore(); }
     g.save(); zoom(g, z); g.globalAlpha *= clamp(a * 1.5);
     if (info.icon) icon(g, info.icon, E.W / 2, E.H * 0.26, 1.3 * a, info.iconColor || GOLD(), t);
-    let v = info.value; if (info.from != null) { const p = ease.out(prog(t, at, at + (info.count || 1.2))); const n = lerp(info.from, info.to, p); v = (info.decimals ? n.toFixed(info.decimals) : Math.round(n).toLocaleString('es-ES')) + (info.suffix || ''); }
+    let v = info.value; if (info.from != null) { const p = ease.out(prog(t, at, at + (info.count || 1.2))); const n = lerp(info.from, info.to, p); v = (info.decimals ? n.toFixed(info.decimals) : Math.round(n).toLocaleString('ru-RU')) + (info.suffix || ''); }
     const col = info.color || GOLD(), size = info.size || 230;
     g.save(); g.translate(E.W / 2, E.H * 0.53); g.scale(a, a);
     text(g, String(v), 0, 0, { size, font: FONTS.ui, weight: 900, color: col, glow: 40, glowColor: alpha(col, 0.6) }); g.restore();
@@ -239,8 +242,8 @@ export const SCI = {
     bigFace(g, cx + sx, cy + sy, rr2, { outfit: HERO, face: fc, look: [0, 0], rimColor: '#b8c8ff', rimSide: 1 });
     if (mode === 'sweat') { const rd = rng(7); for (let i = 0; i < 9; i++) { const x = cx - r * 0.7 + rd() * r * 1.4, y0 = cy - r * 0.8 + rd() * r * 0.6, y = y0 + ((t * 90 + i * 40) % 160); g.fillStyle = alpha('#bfe4ff', 0.85); g.beginPath(); g.moveTo(x, y - 16); g.quadraticCurveTo(x + 11, y + 4, x, y + 10); g.quadraticCurveTo(x - 11, y + 4, x, y - 16); g.fill(); } }
     if (mode === 'pressure') { const v = 0.5 + 0.45 * Math.sin(t * 4.5) * Math.sin(t * 1.7 + 1); const gx = E.W * 0.75, gy = E.H * 0.55; g.strokeStyle = alpha(BP(), 0.6); g.lineWidth = 16; g.beginPath(); g.arc(gx, gy, 200, Math.PI, Math.PI * 2); g.stroke();
-      g.strokeStyle = RED; g.beginPath(); g.arc(gx, gy, 200, Math.PI * 1.75, Math.PI * 2); g.stroke(); seg(g, [[gx, gy], [gx + Math.cos(Math.PI * (1 + v)) * 180, gy + Math.sin(Math.PI * (1 + v)) * 180]], 10, '#ffffff'); circle(g, gx, gy, 18, '#ffffff'); label(g, 'PRESIÓN', gx, gy + 70, { size: 40 }); }
+      g.strokeStyle = RED; g.beginPath(); g.arc(gx, gy, 200, Math.PI * 1.75, Math.PI * 2); g.stroke(); seg(g, [[gx, gy], [gx + Math.cos(Math.PI * (1 + v)) * 180, gy + Math.sin(Math.PI * (1 + v)) * 180]], 10, '#ffffff'); circle(g, gx, gy, 18, '#ffffff'); label(g, 'ДАВЛЕНИЕ', gx, gy + 70, { size: 40 }); }
     if (mode === 'heart') { const x0 = E.W * 0.6, w = E.W * 0.36, y = E.H * 0.5; g.strokeStyle = RED; g.lineWidth = 5; g.beginPath(); for (let i = 0; i <= 80; i++) { const ph = (i / 80) * 6 + t * 4, c = ph % 1; const v = c > 0.4 && c < 0.45 ? -1 : c > 0.45 && c < 0.5 ? 0.7 : 0; g.lineTo(x0 + (i / 80) * w, y + v * 130); } g.stroke();
-      icon(g, 'heart', E.W * 0.78, E.H * 0.24, 0.9 + beat * 0.25, RED); label(g, `${Math.round(lerp(120, 150, K(info, t)))} LPM`, E.W * 0.78, E.H * 0.76, { size: 50, color: '#ff9a8a' }); }
+      icon(g, 'heart', E.W * 0.78, E.H * 0.24, 0.9 + beat * 0.25, RED); label(g, `${Math.round(lerp(120, 150, K(info, t)))} УД/МИН`, E.W * 0.78, E.H * 0.76, { size: 50, color: '#ff9a8a' }); }
   },
 };

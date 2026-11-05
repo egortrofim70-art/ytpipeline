@@ -135,6 +135,10 @@ def build_shots():
 AMB = {t: {'name': 'roomtone', 'gain': -26} for t in ['eyesOpen', 'bedWide', 'pillowClose', 'clockInsert', 'bedSide', 'sheep', 'ceilingWide', 'phoneGrab', 'phoneScreen', 'sitEdge', 'pullOut', 'faceLift', 'awakeBed', 'fogBed', 'stupor', 'confusion', 'face', 'doctor', 'pills', 'randy', 'randyFace', 'randySleep', 'sonia', 'question', 'portraits', 'whisper', 'kitchenSip', 'scale']}
 AMB.update({t: {'name': 'hum', 'gain': -26} for t in ['hospitalBed', 'mirror', 'crashEyes', 'brain', 'prions', 'dna', 'eeg', 'tree', 'coin', 'globe', 'bodyChain', 'nerves', 'symptoms', 'iconRow', 'bigNumber', 'title', 'presenter', 'doxy', 'rats', 'sleepButton', 'laptop', 'deskType', 'endScreen']})
 AMB.update({t: {'name': 'city', 'gain': -25} for t in ['streetWalk', 'joltFace', 'italy']})
+AMB.update({t: {'name': 'roomtone', 'gain': -26} for t in ['kitchenWalk', 'fridge', 'fridgePOV', 'growl', 'angry', 'coldBed', 'standUp', 'foodThink', 'dreamFood', 'phoneFood', 'obsess', 'eatTable', 'scientist', 'gandhi', 'diary', 'cell', 'cutaway', 'angus', 'comment', 'split']})
+AMB.update({t: {'name': 'hum', 'gain': -27} for t in ['tanks', 'bodyTanks', 'fuelSwitch', 'bodyBurn', 'chart', 'compare', 'calendarFlip', 'stopwatch', 'symptom', 'cellBio', 'medal', 'volunteers', 'halfPlate', 'ecg', 'headHunger', 'switchOff', 'ration', 'candles', 'myth', 'balance', 'twoCases', 'recordBook', 'vitamins', 'lind', 'plateDanger', 'ionsDrain', 'people12', 'endCard']})
+AMB.update({t: {'name': 'wind', 'gain': -26} for t in ['cave', 'leningradStreet', 'penguin', 'bearDen', 'shipSea', 'liberation']})
+AMB.update({t: {'name': 'city', 'gain': -26} for t in ['stadium', 'march', 'arrest', 'stairs']})
 AMB.update({'windowDawn': {'name': 'wind', 'gain': -27}, 'venice': {'name': 'wind', 'gain': -28}})
 
 
