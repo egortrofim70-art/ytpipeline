@@ -262,6 +262,14 @@ function drawProp(g, prop, p, ink) {
     case 'phone': rr(g, h[0] - 2, h[1] - 22, 14, 24, 3); g.fillStyle = ink; g.fill(); g.fillStyle = t.glow || '#9fd8ff'; g.fillRect(h[0], h[1] - 20, 10, 18); break;
     case 'ball': soccerBall(g, h[0] + 10, h[1] - 6, 14, t.rot || 0); break;
     case 'paper': g.fillStyle = '#f2e6c8'; g.fillRect(h[0] - 4, h[1] - 30, 30, 36); g.strokeStyle = '#b8a888'; g.lineWidth = 1.5; for (let i = 0; i < 4; i++) { g.beginPath(); g.moveTo(h[0], h[1] - 22 + i * 7); g.lineTo(h[0] + 20, h[1] - 22 + i * 7); g.stroke(); } break;
+    case 'cigarette': { const a = t.angle ?? -0.35, L = 26, tx = h[0] + 4 + Math.cos(a) * L, ty = h[1] - 6 + Math.sin(a) * L;
+      seg(g, [[h[0] + 2, h[1] - 6], [h[0] + 4 + Math.cos(a) * 7, h[1] - 6 + Math.sin(a) * 7]], 4.2, '#d89a5a'); seg(g, [[h[0] + 4 + Math.cos(a) * 7, h[1] - 6 + Math.sin(a) * 7], [tx, ty]], 4.2, '#f4f2ec');
+      if (t.lit !== false) { circle(g, tx, ty, 2.6, '#ff6a2a'); g.save(); g.globalCompositeOperation = 'lighter'; circle(g, tx, ty, 5, 'rgba(255,120,40,.35)'); g.restore();
+        const tt = t.t || 0; g.strokeStyle = 'rgba(220,226,240,.35)'; g.lineWidth = 2; g.beginPath(); for (let i = 0; i <= 12; i++) { const u = i / 12; g.lineTo(tx + Math.sin(u * 6 + tt * 3) * 4 * u, ty - u * 40); } g.stroke(); }
+      break; }
+    case 'vape': rr(g, h[0] - 3, h[1] - 30, 12, 32, 4); g.fillStyle = t.color || '#7a5ad8'; g.fill(); rr(g, h[0] - 1, h[1] - 36, 8, 8, 3); g.fillStyle = '#1a1a22'; g.fill(); circle(g, h[0] + 3, h[1] - 12, 1.8, '#9fffe0'); break;
+    case 'can': rr(g, h[0] - 4, h[1] - 26, 15, 28, 4); g.fillStyle = t.color || '#d8262a'; g.fill(); g.fillStyle = '#c8ccd4'; g.fillRect(h[0] - 3, h[1] - 28, 13, 3); seg(g, [[h[0] - 3, h[1] - 12], [h[0] + 10, h[1] - 15]], 1.6, '#ffffff'); break;
+    case 'bottle': rr(g, h[0] - 4, h[1] - 32, 15, 34, 5); g.fillStyle = 'rgba(160,210,255,.75)'; g.fill(); rr(g, h[0] - 1, h[1] - 38, 9, 7, 2); g.fillStyle = '#2a6ad8'; g.fill(); break;
     case 'cup': g.fillStyle = '#f2efe8'; g.fillRect(h[0] - 2, h[1] - 18, 14, 18); seg(g, [[h[0] + 12, h[1] - 14], [h[0] + 17, h[1] - 9], [h[0] + 12, h[1] - 4]], 2.5, '#f2efe8'); break;
     case 'paddle': circle(g, h[0] + 12, h[1] - 6, 11, t.color || '#b2382a'); break;
     case 'pointer': seg(g, [h, [h[0] + 70, h[1] - 50]], 2.5, '#d8d0c0'); break;

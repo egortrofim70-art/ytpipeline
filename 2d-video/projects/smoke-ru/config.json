@@ -1,0 +1,25 @@
+{
+ "title": "Что если ты бросишь курить?",
+ "language": "ru",
+ "speechLanguage": "ru",
+ "aspect": "16:9",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "insomnia",
+ "voiceover": "input/voice.mp3",
+ "script": "input/script.md",
+ "duration": 654.1,
+ "captions": false,
+ "bars": "none",
+ "fadeIn": 0.2,
+ "fadeOut": 1.0,
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "badge": []
+}
