@@ -1,2 +1,20 @@
-{ "title": "thumbnails 2", "language": "ru", "speechLanguage": "ru", "aspect": "16:9", "resolution": "1080p", "fps": 24, "style": "insomnia",
-  "duration": 6, "captions": false, "bars": "none", "fadeIn": 0, "fadeOut": 0, "music": { "enabled": false }, "sfx": { "enabled": false } }
+{
+ "title": "thumbnails 2",
+ "language": "ru",
+ "speechLanguage": "ru",
+ "aspect": "16:9",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "insomnia",
+ "duration": 4,
+ "captions": false,
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": false
+ }
+}
