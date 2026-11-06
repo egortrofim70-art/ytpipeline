@@ -14,7 +14,7 @@ const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; 
 async function loadFonts() {
   const F = [['Fredoka', '600', 'fredoka', 'normal'], ['Fredoka', '700', 'fredoka', 'normal'],
     ...['600', '700', '800', '900'].map(w => ['Nunito', w, 'nunito', 'normal']),
-    ['Playfair Display', '900', 'playfair-display', 'italic'], ['Anton', '400', 'anton', 'normal']];
+    ['Playfair Display', '900', 'playfair-display', 'italic'], ['Anton', '400', 'anton', 'normal'], ['Oswald', '700', 'oswald', 'normal']];
   for (const [fam, weight, pkg, style] of F) {
     for (const subset of (fam === 'Fredoka' ? ['latin'] : fam === 'Anton' ? ['latin', 'latin-ext'] : ['latin', 'cyrillic'])) {
       const file = `${pkg}/files/${pkg}-${subset}-${weight}-${style}.woff2`;
