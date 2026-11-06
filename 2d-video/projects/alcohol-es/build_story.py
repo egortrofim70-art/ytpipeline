@@ -11,7 +11,7 @@ import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SEC = os.path.join(HERE, 'input', 'sec')
-ORDER = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '13b', '14', '15']
+ORDER = ['01', '02', '03', '04', '05', '06', '06b', '07', '08', '09', '10', '11', '12', '13', '13b', '14', '15']
 SR = 44100
 MAX_GAP, KEEP_GAP, SECTION_GAP, XF = 0.5, 0.42, 0.6, 0.012
 

@@ -1,6 +1,6 @@
 # ¿Y si dejaras el alcohol? — guion (~12–13 min, español latino, voz Fernando)
 
-Gancho nuevo: HISTORIA EN FRÍO (Anthony Hopkins, 1975) → el experimento eres tú. Contador «SIN ALCOHOL»: horas → días → semanas → mes → año.
+Gancho: escena en 2.ª persona (domingo con resaca) → «imagina que fue la última vez» → Hopkins como prueba (1 frase) → 3 promesas + giro. Público: Sudamérica (asado, fernet, aguardiente, gaseosa). Contador «SIN ALCOHOL»: horas → días → semanas → mes → año.
 Cerramos los huecos de la competencia (5 videos analizados): estudios con nombre y año, un héroe y una línea de tiempo, respuesta a «¿y si solo bebo los fines de semana?»,
 datos de Latinoamérica, el giro de la «copa de vino», y el aviso de seguridad completo.
 Fuentes verificadas: Mehta et al., BMJ Open 2018 (94 personas, 1 mes: HOMA −25,9 %, sistólica −6,6 %, peso −1,5 %, VEGF −41,8 %, EGF −73,9 %; observacional);
@@ -9,26 +9,23 @@ de materia gris en 2 semanas, pacientes con dependencia); Daviet et al., Nat Com
 Roerecke et al., Lancet Public Health 2017 (36 ensayos; bajar a la mitad desde 6+ bebidas/día: sistólica −5,5 mmHg; ≤2 bebidas/día sin efecto claro);
 Zhao et al., JAMA Netw Open 2023 (107 estudios, 4,8 millones; sesgo del exbebedor; sin protección del consumo bajo); OMS, Lancet Public Health, ene 2023 («no hay nivel seguro»;
 al menos 7 tipos de cáncer); OPS/Addiction 2021 (≈85.000 muertes/año atribuibles solo al alcohol en las Américas; 64,9 % menores de 60; México 18,4 %);
-MedlinePlus (cerveza 355 ml ≈ 153 kcal); Univ. of Sussex, Dry January 2018 (6 meses después: días con alcohol 4,3 → 3,3 por semana);
-abstinencia grave: convulsiones 6–48 h, delirium 48–72 h (guías clínicas); Hopkins dejó de beber el 29 dic 1975 (Today, ¡Hola!); Julión Álvarez: hígado graso, dejó el alcohol (Univision);
-disulfiram: Jacobsen y Hald, Dinamarca, década de 1940.
+MedlinePlus (cerveza 355 ml ≈ 153 kcal); OMS 2019: Argentina ≈ 8 L, Perú ≈ 7,5 L de alcohol puro por adulto/año; Univ. of Sussex, Dry January 2018 (6 meses después: días con alcohol 4,3 → 3,3 por semana);
+abstinencia grave: convulsiones 6–48 h, delirium 48–72 h (guías clínicas); Hopkins dejó de beber el 29 dic 1975 (Today, ¡Hola!); Brad Pitt: AA tras el divorcio, cita «me quité el privilegio de beber» (NYT 2019), 7 años sobrio, volvió a beber poco (Esquire 2026);
+Roberts et al., Addiction 2022 (KCL: 21 ensayos de remedios para la resaca, evidencia de muy baja calidad, nada replicado; paracetamol/aspirina sin ensayos con placebo); disulfiram: Jacobsen y Hald, Dinamarca, década de 1940.
 
 ## 01. Gancho
-Diciembre de mil novecientos setenta y cinco. Un actor británico se despierta en un hotel de Arizona.
-No sabe cómo llegó ahí. No recuerda el viaje. No recuerda nada.
-Ese hombre se llama Anthony Hopkins. Y esa mañana tomó una decisión: no volvió a beber nunca más.
-Años después ganó un Óscar. Y hoy dice que el alcohol lo estaba llevando directo al desastre.
-Ahora la pregunta es para ti. ¿Qué le pasaría a tu cuerpo si hoy, ahora mismo, dejaras el alcohol?
-La primera noche vas a dormir peor de lo que crees. En dos semanas, tu cerebro empieza a cambiar en un escáner. Y en un mes, un estudio de Londres encontró algo en la sangre que nadie esperaba.
-Y al final te voy a contar por qué la famosa «copa de vino que es buena para el corazón» probablemente nunca fue verdad.
-El reloj empieza ya.
+Domingo, diez de la mañana. Abres los ojos. La boca seca, la cabeza a punto de explotar, y una sola pregunta: ¿qué hice anoche?
+Ahora imagina que esa fue la última vez. Que desde hoy, cero alcohol.
+Eso hizo Anthony Hopkins, el actor de Hannibal Lecter. En mil novecientos setenta y cinco se despertó en un hotel sin saber cómo había llegado. Y no volvió a tomar nunca más.
+¿Qué le pasaría a tu cuerpo?
+La primera noche vas a dormir peor de lo que crees. En dos semanas, tu cerebro cambia en un escáner. En un mes, tu sangre ya no es la misma.
+Y al final, el error detrás de la famosa copa de vino «buena para el corazón».
+Empezamos.
 
 ## 02. Antes de empezar
-Antes de empezar, algo importante. Si bebes todos los días y mucho, dejarlo de golpe puede ser peligroso.
-En los primeros dos o tres días pueden aparecer convulsiones o delirio. Eso es una emergencia. Si es tu caso, hazlo con un médico. No es debilidad. Es seguridad.
-Lo que vas a ver ahora es para quien puede hacer una pausa tranquilo.
-Las reglas: cero alcohol. Ni cerveza, ni vino, ni tequila, ni «una nada más» en la carne asada.
-Tu vida sigue igual: trabajo, amigos, fiestas, fines de semana. Solo que tu vaso ahora tiene otra cosa.
+Una cosa antes: si tomas mucho todos los días, no lo dejes de golpe sin un médico. Puede ser peligroso.
+Para todos los demás, las reglas: cero alcohol. Ni cerveza, ni vino, ni fernet, ni aguardiente, ni «una nada más» en el asado.
+Tu vida sigue igual. Solo cambia lo que hay en tu vaso.
 
 ## 03. Qué hace el alcohol en ti
 Primero, ¿qué hace el alcohol cuando entra en tu cuerpo?
@@ -61,6 +58,14 @@ El domingo te despiertas sin resaca. Sin dolor de cabeza. Sin esa sensación de 
 En Inglaterra, la Universidad de Sussex preguntó a miles de personas que hicieron un mes sin alcohol. Más de la mitad dijo que dormía mejor. Y que tenía más energía.
 Y hay algo más: el dinero. La cerveza del viernes, la botella del sábado, el taxi de regreso. Por primera vez en mucho tiempo, ese dinero se queda en tu bolsillo.
 
+## 06b. La resaca
+¿Y qué es exactamente la resaca?
+No es solo deshidratación. Es una mezcla: poca agua, el acetaldehído que tu hígado no alcanzó a limpiar, un sueño roto y una pequeña inflamación en todo el cuerpo.
+Por eso no existe una cura mágica. En dos mil veintidós, investigadores del King's College de Londres revisaron veintiún ensayos con remedios para la resaca: jugos, extractos, cápsulas. Ninguno tenía pruebas sólidas. Y ningún resultado se había repetido en otro estudio.
+¿Y el ibuprofeno o el paracetamol que todos toman? Nunca se probaron bien contra la resaca en un ensayo con placebo.
+Los mismos investigadores lo resumieron así: la forma más segura de no tener resaca es no tomar, o tomar con moderación.
+Y esta semana, tú ya lo estás comprobando.
+
 ## 07. Dos semanas
 Dos semanas.
 Ahora mira dentro de tu cabeza.
@@ -69,16 +74,16 @@ En solo dos semanas, parte de la materia gris que se había perdido empezó a vo
 Ojo: eran personas que bebían muchísimo. Pero muestra algo importante: el cerebro no se queda dañado para siempre. Cuando le das una pausa, se repara.
 Y el hígado también. El hígado graso por alcohol, cuando la grasa se acumula en sus células, puede empezar a revertirse en pocas semanas sin beber.
 
-## 08. Julión Álvarez
-Eso le pasó a alguien muy conocido en México.
-El cantante Julión Álvarez se hizo unos estudios y el médico le dio la noticia: hígado graso.
-Él decidió dejar el alcohol. Y en el primer mes ya se notaba: bajó de peso y contó que hasta cantaba mejor en el escenario.
-Dijo que quería estar más tiempo con su hija. Y algo honesto: no prometió que nunca más en la vida iba a tomar. Prometió cuidarse.
-A veces el cambio no empieza con «para siempre». Empieza con «este mes».
+## 08. Brad Pitt
+Y no hace falta tocar fondo para notarlo.
+Brad Pitt contó que, después de su divorcio, se dio cuenta de que tomaba demasiado. Entró a Alcohólicos Anónimos y dejó el alcohol.
+Dijo una frase muy honesta: «Llevé las cosas al límite, así que me quité el privilegio de beber».
+Estuvo siete años sin tomar. Y hace poco contó otra cosa: volvió a tomar, pero muy poco, con control.
+No es una historia perfecta. Es una historia real. A veces el cambio no empieza con «para siempre». Empieza con «este mes».
 
 ## 09. Un mes
 Volvamos a ti. Un mes sin alcohol.
-Y ahora, el estudio de Londres que te prometí.
+Y ahora, lo que pasa en tu sangre.
 En dos mil dieciocho, médicos del Royal Free Hospital siguieron a noventa y cuatro personas que dejaron el alcohol un mes. No tenían dependencia, pero bebían bastante: en promedio, unas dieciocho bebidas por semana.
 Al final del mes, les sacaron sangre. La resistencia a la insulina, la antesala de la diabetes, bajó casi un veintiséis por ciento.
 La presión arterial bajó. El peso, también.
@@ -94,7 +99,7 @@ Hagamos cuentas. Una lata de cerveza tiene unas ciento cincuenta calorías. Seis
 En un mes, son casi cuatro mil calorías que ni siquiera sentiste.
 Y el cuerpo no promedia. Para el hígado, seis cervezas en una noche no es lo mismo que una cerveza diaria durante seis días. Es un golpe concentrado.
 Según la Organización Panamericana de la Salud, en las Américas mueren unas ochenta y cinco mil personas al año por causas que solo existen por el alcohol. La mayoría tenía menos de sesenta años. Y casi dos de cada tres murieron por enfermedades del hígado.
-Solo México pone casi una de cada cinco de esas muertes.
+Y en Sudamérica se toma mucho. En Argentina, cada adulto toma en promedio unos ocho litros de alcohol puro al año. Eso es más o menos como cuatrocientas cincuenta latas de cerveza. En Perú, casi lo mismo.
 
 ## 11. El cerebro, a largo plazo
 ¿Y qué pasa con el cerebro si bebes poco, pero siempre?
@@ -122,7 +127,7 @@ Ahora haz tu propia cuenta. Si cada semana gastabas lo que cuesta una caja de ce
 
 ## 13b. Qué ayuda de verdad
 Bueno, ¿y cómo se aguanta un mes así?
-Primero, prepara el viernes antes de que llegue. Ten algo en la mano: agua mineral con limón, un refresco sin azúcar, una cerveza sin alcohol. En una fiesta, nadie se fija qué hay en tu vaso. Se fijan si tienes vaso.
+Primero, prepara el viernes antes de que llegue. Ten algo en la mano: agua mineral con limón, una gaseosa sin azúcar, una cerveza sin alcohol. En una fiesta, nadie se fija qué hay en tu vaso. Se fijan si tienes vaso.
 Segundo, di la verdad corta: «Estoy haciendo un mes sin alcohol». Un reto suena mejor que una excusa.
 Tercero, cambia el momento, no solo la bebida. Si siempre tomabas cocinando, viendo el fútbol o al salir del trabajo, ese momento va a pedir su trago. Mueve la rutina: cocina temprano, ve el partido en otro lugar, sal a caminar.
 Y si te equivocas un día, no tires todo el mes. En el estudio de Sussex, hasta los que no aguantaron los treinta días terminaron bebiendo menos que antes.

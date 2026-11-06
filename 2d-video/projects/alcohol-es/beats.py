@@ -13,32 +13,26 @@ def st(text, at, **k): return {'text': text, 'at': at, **k}
 
 BEATS = [
   # ---------------- 01. GANCHO: historia en frío ----------------
-  ('01', 'Diciembre de mil novecientos', 'hotelWake', {**NB, 'tag': 'ARIZONA · 1975'}),
-  ('01', 'No sabe cómo llegó', 'hotelWake', {**NB, 'tag': 'ARIZONA · 1975', 'stamp': st('NO RECUERDA NADA', 'w:nada', y=950, size=100, color=RED)}),
-  ('01', 'Ese hombre se llama', 'title', {**NB, 'in': FLASH, 'lines': ['ANTHONY', 'HOPKINS'], 'bg': 'dark'}),
-  ('01', 'Y esa mañana tomó', 'calendarFlip', {**NB, 'steps': [[0, '29', 'DIC 1975'], ['w:nunca', '0', 'TRAGOS DESDE ENTONCES']], 'size': 200, 'color': '#2a7a3a'}),
-  ('01', 'Años después ganó', 'title', {**NB, 'lines': ['ÓSCAR', '1992'], 'bg': 'dark'}),
-  ('01', 'Y hoy dice que', 'hotelWake', {**NB, 'tag': 'ANTHONY HOPKINS', 'stamp': st('«DIRECTO AL DESASTRE»', 'w:desastre', y=950, size=90, color=RED)}),
-  ('01', 'Ahora la pregunta es para ti', 'smoker', {**NB, **BEER, 'in': WHIP, 'place': 'kitchen', 'face': 'think'}),
-  ('01', 'Qué le pasaría a tu cuerpo', 'smoker', {**NB, **BEER, 'place': 'street', 'party': True, 'face': 'think', 'z0': 1.8, 'z1': 1.95}),
-  ('01', 'La primera noche', 'face', {'in': WHIP, 'who': 'hero', 'face': 'tired', 'dawn': 0, 'badge': [12, 'h', 'primera']}),
-  ('01', 'En dos semanas', 'mriCompare', {'in': WHIP, 'at': 0.3, 'badge': [2, 'w', 'dos']}),
-  ('01', 'Y en un mes', 'iconRow', {'in': WHIP, 'items': [{'icon': 'blood', 'label': 'ALGO EN LA SANGRE', 'at': 0.2, 'color': RED, 'hi': 'w:sangre'}], 'caption': 'LONDRES', 'capAt': 'w:londres', 'badge': [1, 'm', 'mes']}),
-  ('01', 'Y al final te voy', 'myth', {**NB, 'in': WHIP, 'text': ['«UNA COPA DE VINO', 'ES BUENA PARA EL CORAZÓN»'], 'verdict': '¿?', 'verdictColor': GOLD, 'verdictAt': 'w:verdad'}),
-  ('01', 'copa de vino que', 'smoker', {**NB, 'puff': False, 'prop': 'wine', 'place': 'kitchen', 'face': 'smile', 'caption': '¿NUNCA FUE VERDAD?', 'capAt': 'w:verdad'}),
-  ('01', 'El reloj empieza ya', 'stopwatch', {**NB, 'in': FLASH, 'startAt': 'w:ya', 'caption': 'SIN ALCOHOL', 'bg': 'kitchen'}),
+  ('01', 'Domingo diez de la mañana', 'face', {**NB, 'who': 'hero', 'face': 'wreck', 'dawn': 1}),
+  ('01', 'La boca seca', 'sitEdge', {**NB, 'face': 'wreck'}),
+  ('01', 'y una sola pregunta', 'face', {**NB, 'who': 'hero', 'face': 'shock', 'dawn': 1, 'stamp': st('¿QUÉ HICE ANOCHE?', 'w:anoche', y=950, size=100, color=RED)}),
+  ('01', 'Ahora imagina que esa', 'iconRow', {**NB, 'in': WHIP, 'items': [{'icon': 'beer', 'label': 'LA ÚLTIMA VEZ', 'at': 0.1, 'cross': 'w:cero', 'color': AMBER}], 'caption': 'CERO ALCOHOL', 'capAt': 'w:cero'}),
+  ('01', 'Eso hizo Anthony Hopkins', 'title', {**NB, 'in': FLASH, 'lines': ['ANTHONY HOPKINS', '«HANNIBAL LECTER»'], 'bg': 'dark'}),
+  ('01', 'En mil novecientos setenta', 'hotelWake', {**NB, 'tag': 'ARIZONA · 1975'}),
+  ('01', 'Y no volvió a tomar', 'calendarFlip', {**NB, 'steps': [[0, '1975', 'ÚLTIMO TRAGO'], ['w:nunca', '0', 'TRAGOS DESDE ENTONCES']], 'size': 200, 'color': '#2a7a3a'}),
+  ('01', 'Qué le pasaría a tu cuerpo', 'smoker', {**NB, **BEER, 'in': WHIP, 'place': 'street', 'party': True, 'face': 'think', 'z0': 1.8, 'z1': 1.95}),
+  ('01', 'La primera noche vas', 'face', {'in': WHIP, 'who': 'hero', 'face': 'tired', 'dawn': 0, 'badge': [12, 'h', 'primera']}),
+  ('01', 'En dos semanas', 'mriCompare', {'noFocus': True, 'in': WHIP, 'at': 0.3, 'badge': [2, 'w', 'dos']}),
+  ('01', 'En un mes tu sangre', 'iconRow', {'in': WHIP, 'items': [{'icon': 'blood', 'label': 'TU SANGRE CAMBIA', 'at': 0.2, 'color': RED, 'hi': 'w:sangre'}], 'badge': [1, 'm', 'mes']}),
+  ('01', 'Y al final el error', 'myth', {**NB, 'in': WHIP, 'text': ['«UNA COPA DE VINO', 'ES BUENA PARA EL CORAZÓN»'], 'verdict': '¿ERROR?', 'verdictColor': RED, 'verdictAt': 'w:corazón'}),
+  ('01', 'Empezamos', 'stopwatch', {**NB, 'in': FLASH, 'startAt': 'w:empezamos', 'caption': 'SIN ALCOHOL', 'bg': 'kitchen'}),
 
   # ---------------- 02. ANTES DE EMPEZAR ----------------
-  ('02', 'Antes de empezar', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'think', 'bg': 'office', 'stamp': st('IMPORTANTE', 0.2, y=950, size=110, color=RED)}),
-  ('02', 'Si bebes todos los días', 'face', {**NB, 'who': 'hero', 'face': 'fear', 'bg': 'street', 'stamp': st('DE GOLPE = PELIGROSO', 'w:peligroso', y=950, size=100, color=RED)}),
-  ('02', 'En los primeros dos', 'iconRow', {**NB, 'caption': 'SI BEBES MUCHO A DIARIO', 'items': [{'icon': 'brain', 'label': 'CONVULSIONES', 'at': 'w:convulsiones', 'color': RED}, {'icon': 'brain', 'label': 'DELIRIO', 'at': 'w:delirio', 'color': RED}]}),
-  ('02', 'Eso es una emergencia', 'hospitalBed', {**NB, 'face': 'tired', 'who': 'hero', 'stamp': st('CON UN MÉDICO', 'w:médico', y=950, size=110, color=GREEN)}),
-  ('02', 'No es debilidad', 'title', {**NB, 'lines': ['NO ES DEBILIDAD.', 'ES SEGURIDAD'], 'bg': 'dark'}),
-  ('02', 'Lo que vas a ver', 'streetWalk', {**NB, 'face': 'calm'}),
-  ('02', 'Las reglas cero alcohol', 'iconRow', {**NB, 'caption': 'CERO ALCOHOL', 'items': [{'icon': 'beer', 'label': 'CERVEZA', 'at': 'w:cerveza', 'cross': 'w:cerveza', 'color': AMBER}, {'icon': 'wineGlass', 'label': 'VINO', 'at': 'w:vino', 'cross': 'w:vino', 'color': '#c8405a'}, {'icon': 'shot', 'label': 'TEQUILA', 'at': 'w:tequila', 'cross': 'w:tequila', 'color': GOLD}]}),
-  ('02', 'ni una nada más', 'offer', {**NB, 'prop': 'beer', 'noAt': 'w:asada', 'word': '¡UNA NADA MÁS!', 'wordAt': 0.2}),
-  ('02', 'Tu vida sigue igual', 'iconRow', {**NB, 'items': [{'icon': 'calendar', 'label': 'TRABAJO', 'at': 'w:trabajo'}, {'icon': 'people', 'label': 'AMIGOS', 'at': 'w:amigos'}, {'icon': 'medal', 'label': 'FIESTAS', 'at': 'w:fiestas'}]}),
-  ('02', 'Solo que tu vaso', 'kitchenSip', {**NB, 'sipAt': 'w:vaso', 'face': 'smile'}),
+  ('02', 'Una cosa antes', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'fear', 'bg': 'street', 'stamp': st('CON UN MÉDICO', 'w:médico', y=950, size=110, color=GREEN)}),
+  ('02', 'Puede ser peligroso', 'hospitalBed', {**NB, 'face': 'tired', 'who': 'hero'}),
+  ('02', 'Para todos los demás', 'iconRow', {**NB, 'caption': 'CERO ALCOHOL', 'items': [{'icon': 'beer', 'label': 'CERVEZA', 'at': 'w:cerveza', 'cross': 'w:cerveza'}, {'icon': 'wineGlass', 'label': 'VINO', 'at': 'w:vino', 'cross': 'w:vino'}, {'icon': 'shot', 'label': 'FERNET', 'at': 'w:fernet', 'cross': 'w:fernet'}, {'icon': 'shot', 'label': 'AGUARDIENTE', 'at': 'w:aguardiente', 'cross': 'w:aguardiente'}]}),
+  ('02', 'ni una nada más', 'offer', {**NB, 'prop': 'beer', 'noAt': 'w:asado', 'word': '¡UNA NADA MÁS!', 'wordAt': 0.1}),
+  ('02', 'Tu vida sigue igual', 'kitchenSip', {**NB, 'sipAt': 'w:vaso', 'face': 'smile'}),
 
   # ---------------- 03. QUÉ HACE EL ALCOHOL ----------------
   ('03', 'Primero qué hace', 'smoker', {**NB, **BEER, 'in': DIP, 'place': 'street', 'party': True}),
@@ -76,10 +70,10 @@ BEATS = [
   ('05', 'Te hidratas mejor', 'mirror', {'face': 'smile', 'stamp': st('PIEL MENOS APAGADA', 'w:piel', y=950, size=90, color=GREEN)}),
   ('05', 'Y llega el primer viernes', 'calendarFlip', {'in': WHIP, 'steps': [[0, 'VIERNES', 'PRIMERO SIN ALCOHOL']], 'size': 96, 'color': '#c8405a'}),
   ('05', 'Ahí el problema no es', 'offer', {'prop': 'beer', 'noAt': 99, 'word': '¿QUÉ, YA NO TOMAS?', 'wordAt': 'w:tomas'}),
-  ('05', 'Estás enfermo', 'chatGroup', {'msgs': [[0.05, '¿Estás enfermo? 😂'.replace(' 😂', ''), 'Beto'], ['w:hace', 'Una no hace daño', 'Caro'], ['w:comentarios', 'Ya ni sales, bro', 'Memo']]}),
+  ('05', 'Estás enfermo', 'chatGroup', {'msgs': [[0.05, '¿Estás enfermo? 😂'.replace(' 😂', ''), 'Nico'], ['w:hace', 'Una no hace daño', 'Caro'], ['w:comentarios', 'Ya ni sales, bro', 'Santi']]}),
   ('05', 'En los comentarios de videos', 'comment', {'text': 'Lo peor es la presión de los amigos', 'typeDur': 1.6}),
   ('05', 'No la abstinencia', 'title', {'lines': ['NO ES EL CUERPO.', 'ES LA PRESIÓN'], 'bg': 'dark'}),
-  ('05', 'Tu cuerpo te está dando', 'chatGroup', {'msgs': [[0, '¿Estás enfermo?', 'Beto'], [0, 'Una no hace daño', 'Caro'], ['w:whatsapp', 'Estoy haciendo un reto 💪'.replace(' 💪', ''), 'me']]}),
+  ('05', 'Tu cuerpo te está dando', 'chatGroup', {'msgs': [[0, '¿Estás enfermo?', 'Nico'], [0, 'Una no hace daño', 'Caro'], ['w:whatsapp', 'Estoy haciendo un reto 💪'.replace(' 💪', ''), 'me']]}),
 
   # ---------------- 06. UNA SEMANA ----------------
   ('06', 'Una semana', 'face', {'in': DIP, 'who': 'hero', 'face': 'smile', 'dawn': 1, 'badge': [1, 'w', 'semana']}),
@@ -89,6 +83,19 @@ BEATS = [
   ('06', 'Y hay algo más', 'stackIcons', {'kind': 'can', 'to': 12, 'label': 'LATAS QUE NO COMPRASTE'}),
   ('06', 'La cerveza del viernes', 'iconRow', {'items': [{'icon': 'beer', 'label': 'VIERNES', 'at': 0.05, 'color': AMBER, 'cross': 0.4}, {'icon': 'wineGlass', 'label': 'SÁBADO', 'at': 'w:botella', 'color': '#c8405a', 'cross': 'w:botella'}, {'icon': 'calendar', 'label': 'TAXI', 'at': 'w:taxi', 'cross': 'w:taxi'}]}),
   ('06', 'Por primera vez en mucho', 'streetWalk', {'face': 'smile', 'stamp': st('SE QUEDA EN TU BOLSILLO', 'w:bolsillo', y=950, size=90, color=GREEN)}),
+
+  # ---------------- 06b. LA RESACA ----------------
+  ('06b', 'Y qué es exactamente', 'face', {'in': DIP, 'who': 'hero', 'face': 'wreck', 'dawn': 1, 'stamp': st('¿QUÉ ES LA RESACA?', 0.3, y=950, size=100, color=GOLD)}),
+  ('06b', 'Es una mezcla', 'iconRow', {'caption': 'UNA MEZCLA', 'items': [{'icon': 'droplet', 'label': 'POCA AGUA', 'at': 'w:agua', 'color': BLUE}, {'icon': 'flask', 'label': 'ACETALDEHÍDO', 'at': 'w:acetaldehído', 'color': RED}, ]}),
+  ('06b', 'un sueño roto y una', 'iconRow', {'caption': 'UNA MEZCLA', 'items': [{'icon': 'moon', 'label': 'SUEÑO ROTO', 'at': 0.05, 'color': '#9fb8ff'}, {'icon': 'flame', 'label': 'INFLAMACIÓN', 'at': 'w:inflamación', 'color': GOLD}]}),
+  ('06b', 'Por eso no existe', 'title', {'lines': ['NO EXISTE', 'UNA CURA MÁGICA'], 'bg': 'red'}),
+  ('06b', 'En dos mil veintidós investigadores', 'journal', {'head': 'ADDICTION · 2022', 'title': 'Remedios para la resaca', 'hiAt': 99, 'stamp': st('21 ENSAYOS', 'w:veintiún', y=950, size=110, color=GOLD)}),
+  ('06b', 'jugos extractos cápsulas', 'iconRow', {'items': [{'icon': 'orange', 'label': 'JUGOS', 'at': 0.05, 'cross': 'w:sólidas'}, {'icon': 'flask', 'label': 'EXTRACTOS', 'at': 'w:extractos', 'cross': 'w:sólidas'}, {'icon': 'pill', 'label': 'CÁPSULAS', 'at': 'w:cápsulas', 'cross': 'w:sólidas'}]}),
+  ('06b', 'Y ningún resultado', 'myth', {'text': ['¿ALGÚN REMEDIO', 'COMPROBADO?'], 'verdict': 'NINGUNO', 'verdictAt': 'w:repetido'}),
+  ('06b', 'Y el ibuprofeno', 'iconRow', {'caption': 'SIN ENSAYOS CON PLACEBO', 'capAt': 'w:placebo', 'items': [{'icon': 'pill', 'label': 'IBUPROFENO', 'at': 'w:ibuprofeno', 'color': BLUE}, {'icon': 'pill', 'label': 'PARACETAMOL', 'at': 'w:paracetamol', 'color': BLUE}]}),
+  ('06b', 'Los mismos investigadores', 'face', {'who': 'hero', 'face': 'think', 'bg': 'office'}),
+  ('06b', 'la forma más segura', 'title', {'lines': ['LA MEJOR CURA:', 'NO TOMAR'], 'bg': 'dark'}),
+  ('06b', 'Y esta semana tú', 'face', {'who': 'hero', 'face': 'smile', 'dawn': 1}),
 
   # ---------------- 07. DOS SEMANAS ----------------
   ('07', 'Dos semanas', 'brain', {'noFocus': True, 'in': DIP, 'z0': 1.0, 'z1': 1.15, 'badge': [2, 'w', 'dos']}),
@@ -102,14 +109,15 @@ BEATS = [
   ('07', 'Y el hígado también', 'liverFat', {'from': 0.85, 'to': 0.35}),
   ('07', 'puede empezar a revertirse', 'liverFat', {'from': 0.5, 'to': 0.15, 'at': 0.1, 'caption': 'SE PUEDE REVERTIR', 'capAt': 0.2}),
 
-  # ---------------- 08. JULIÓN ÁLVAREZ ----------------
-  ('08', 'Eso le pasó a alguien', 'stage', {**NB, 'in': DIP, 'tag': 'MÉXICO'}),
-  ('08', 'El cantante Julión Álvarez', 'stage', {**NB, 'tag': 'JULIÓN ÁLVAREZ'}),
-  ('08', 'hizo unos estudios', 'labReport', {**NB, 'head': 'DIAGNÓSTICO', 'rows': [['HÍGADO', 'GRASO', 'w:graso', RED]]}),
-  ('08', 'Él decidió dejar', 'iconRow', {**NB, 'items': [{'icon': 'beer', 'label': 'DEJÓ EL ALCOHOL', 'at': 0.2, 'cross': 'w:alcohol'}, {'icon': 'calendar', 'label': 'PRIMER MES', 'at': 'w:mes', 'color': GOLD}, {'icon': 'scaleW', 'label': 'BAJÓ DE PESO', 'at': 'w:peso', 'color': GREEN}]}),
-  ('08', 'y contó que hasta cantaba', 'stage', {**NB, 'caption': 'CANTA MEJOR', 'capAt': 'w:cantaba'}),
-  ('08', 'Dijo que quería estar', 'face', {**NB, 'who': 'hero', 'face': 'smile', 'bg': 'street', 'stamp': st('MÁS TIEMPO CON SU HIJA', 'w:hija', y=950, size=90)}),
-  ('08', 'Y algo honesto', 'myth', {**NB, 'text': ['«NUNCA MÁS»?'], 'verdict': 'NO PROMETIÓ', 'verdictColor': GOLD, 'verdictAt': 'w:prometió'}),
+  # ---------------- 08. BRAD PITT ----------------
+  ('08', 'Y no hace falta tocar', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'think', 'bg': 'street'}),
+  ('08', 'Brad Pitt contó que', 'title', {**NB, 'in': FLASH, 'lines': ['BRAD PITT'], 'bg': 'dark'}),
+  ('08', 'se dio cuenta de que', 'smoker', {**NB, **BEER, 'place': 'kitchen', 'prop': 'wine', 'outfit': {'top': 'tshirt', 'color': '#5a6a7a'}, 'face': 'tired', 'period': 1.8}),
+  ('08', 'Entró a Alcohólicos Anónimos', 'iconRow', {**NB, 'items': [{'icon': 'people', 'label': 'ALCOHÓLICOS ANÓNIMOS', 'at': 'w:alcohólicos', 'color': BLUE}, {'icon': 'beer', 'label': 'DEJÓ EL ALCOHOL', 'at': 'w:dejó', 'cross': 'w:alcohol'}]}),
+  ('08', 'Dijo una frase muy honesta', 'tv', {**NB, 'tag': 'BRAD PITT · 2019', 'sub': '«ME QUITÉ EL PRIVILEGIO DE BEBER»', 'subAt': 'w:privilegio'}),
+  ('08', 'Estuvo siete años', 'calendarFlip', {**NB, 'steps': [[0, '7', 'AÑOS SIN TOMAR']], 'size': 220, 'color': '#2a7a3a'}),
+  ('08', 'Y hace poco contó', 'iconRow', {**NB, 'items': [{'icon': 'beer', 'label': 'VOLVIÓ: POCO Y CON CONTROL', 'at': 'w:volvió', 'color': GOLD, 'hi': 'w:control'}]}),
+  ('08', 'No es una historia perfecta', 'face', {**NB, 'who': 'hero', 'face': 'calm', 'bg': 'street', 'stamp': st('ES REAL', 'w:real', y=950, size=120, color=GOLD)}),
   ('08', 'A veces el cambio', 'title', {**NB, 'lines': ['NO «PARA SIEMPRE».', '«ESTE MES»'], 'bg': 'dark'}),
 
   # ---------------- 09. UN MES ----------------
@@ -143,7 +151,10 @@ BEATS = [
   ('10', 'en las Américas mueren', 'bigNumber', {'value': '≈ 85.000', 'label': 'MUERTES AL AÑO SOLO POR ALCOHOL', 'pre': 'LAS AMÉRICAS', 'at': 'w:ochenta', 'color': '#ff8a7a', 'size': 190}),
   ('10', 'La mayoría tenía menos', 'iconRow', {'items': [{'icon': 'people', 'label': 'MENORES DE 60', 'at': 0.1, 'color': GOLD}]}),
   ('10', 'Y casi dos de cada tres', 'liverFat', {'from': 0.9, 'to': 0.9, 'text': '2 DE 3: EL HÍGADO', 'caption': 'ENFERMEDADES DEL HÍGADO', 'capAt': 'w:hígado'}),
-  ('10', 'Solo México pone', 'people12', {'hiAt': 'w:cinco', 'caption': 'MÉXICO: CASI 1 DE CADA 5'}),
+  ('10', 'Y en Sudamérica se toma', 'globe', {'dots': 90, 'caption': 'SUDAMÉRICA', 'capAt': 'w:sudamérica'}),
+  ('10', 'En Argentina cada adulto', 'bigNumber', {'value': '≈ 8 L', 'label': 'DE ALCOHOL PURO POR ADULTO AL AÑO', 'pre': 'ARGENTINA', 'at': 'w:ocho', 'color': GOLD}),
+  ('10', 'Eso es más o menos como', 'stackIcons', {'kind': 'can', 'to': 450, 'label': 'LATAS DE CERVEZA AL AÑO'}),
+  ('10', 'En Perú casi lo mismo', 'bigNumber', {'value': '≈ 7,5 L', 'label': 'DE ALCOHOL PURO POR ADULTO AL AÑO', 'pre': 'PERÚ', 'at': 0.2, 'color': GOLD}),
 
   # ---------------- 11. EL CEREBRO A LARGO PLAZO ----------------
   ('11', 'Y qué pasa con el cerebro', 'brain', {'noFocus': True, 'in': DIP, 'z0': 1.0, 'z1': 1.1}),
@@ -188,7 +199,7 @@ BEATS = [
   # ---------------- 13b. QUÉ AYUDA DE VERDAD ----------------
   ('13b', 'Bueno y cómo se aguanta', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'think', 'bg': 'office'}),
   ('13b', 'Primero prepara el viernes', 'calendarFlip', {**NB, 'steps': [[0, 'VIERNES', 'PREPÁRALO ANTES']], 'size': 96, 'color': '#c8405a'}),
-  ('13b', 'Ten algo en la mano', 'iconRow', {**NB, 'caption': '1 · PREPARA EL VIERNES', 'items': [{'icon': 'water', 'label': 'AGUA MINERAL', 'at': 'w:mineral', 'color': BLUE}, {'icon': 'soda', 'label': 'SIN AZÚCAR', 'at': 'w:refresco', 'color': GREEN}, {'icon': 'beer', 'label': 'CERVEZA 0,0', 'at': 'w:cerveza', 'color': AMBER}]}),
+  ('13b', 'Ten algo en la mano', 'iconRow', {**NB, 'caption': '1 · PREPARA EL VIERNES', 'items': [{'icon': 'water', 'label': 'AGUA MINERAL', 'at': 'w:mineral', 'color': BLUE}, {'icon': 'soda', 'label': 'SIN AZÚCAR', 'at': 'w:gaseosa', 'color': GREEN}, {'icon': 'beer', 'label': 'CERVEZA 0,0', 'at': 'w:cerveza', 'color': AMBER}]}),
   ('13b', 'En una fiesta nadie', 'smoker', {**NB, 'puff': False, 'prop': 'bottle', 'place': 'office', 'party': True, 'face': 'smile', 'stamp': st('NADIE MIRA TU VASO', 'w:fija', y=950, size=90)}),
   ('13b', 'Segundo di la verdad', 'offer', {**NB, 'prop': 'beer', 'noAt': 0.4, 'word': '«ESTOY EN UN RETO»', 'wordAt': 'w:mes'}),
   ('13b', 'Un reto suena mejor', 'title', {**NB, 'lines': ['UN RETO SUENA MEJOR', 'QUE UNA EXCUSA'], 'bg': 'dark'}),

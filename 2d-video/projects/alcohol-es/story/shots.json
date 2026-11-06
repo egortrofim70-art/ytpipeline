@@ -1,64 +1,125 @@
 {
  "title": "¿Y si dejaras el alcohol?",
- "duration": 735.228,
+ "duration": 770.967,
  "shots": [
   {
    "id": "s001",
    "start": 0.0,
-   "line": "Diciembre de mil novecientos",
-   "scene": "hotelWake",
+   "line": "Domingo diez de la mañana",
+   "scene": "face",
    "in": {
     "type": "cut"
    },
    "sfx": [],
    "amb": {
     "name": "roomtone",
-    "gain": -27
+    "gain": -26
    },
    "params": {
-    "tpl": "hotelWake",
+    "tpl": "face",
     "noBadge": true,
-    "tag": "ARIZONA · 1975"
+    "who": "hero",
+    "face": "wreck",
+    "dawn": 1
    },
-   "end": 5.8
+   "end": 3.4
   },
   {
    "id": "s002",
-   "start": 5.8,
-   "line": "No sabe cómo llegó",
-   "scene": "hotelWake",
+   "start": 3.4,
+   "line": "La boca seca",
+   "scene": "sitEdge",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "sitEdge",
+    "noBadge": true,
+    "face": "wreck"
+   },
+   "end": 6.76
+  },
+  {
+   "id": "s003",
+   "start": 6.76,
+   "line": "y una sola pregunta",
+   "scene": "face",
    "in": {
     "type": "cut"
    },
    "sfx": [
     {
-     "at": 4.4,
+     "at": 2.22,
      "name": "hit",
      "gain": -9
     }
    ],
    "amb": {
     "name": "roomtone",
-    "gain": -27
+    "gain": -26
    },
    "params": {
-    "tpl": "hotelWake",
+    "tpl": "face",
     "noBadge": true,
-    "tag": "ARIZONA · 1975",
+    "who": "hero",
+    "face": "shock",
+    "dawn": 1,
     "stamp": {
-     "text": "NO RECUERDA NADA",
-     "at": 4.4,
+     "text": "¿QUÉ HICE ANOCHE?",
+     "at": 2.22,
      "y": 950,
      "size": 100,
      "color": "#ff5a4a"
     }
    },
-   "end": 10.82
+   "end": 9.6
   },
   {
-   "id": "s003",
-   "start": 10.82,
-   "line": "Ese hombre se llama",
+   "id": "s004",
+   "start": 9.6,
+   "line": "Ahora imagina que esa",
+   "scene": "iconRow",
+   "in": {
+    "type": "whip",
+    "dur": 0.28
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "noBadge": true,
+    "items": [
+     {
+      "icon": "beer",
+      "label": "LA ÚLTIMA VEZ",
+      "at": 0.1,
+      "cross": 3.72,
+      "color": "#e8a23a"
+     }
+    ],
+    "caption": "CERO ALCOHOL",
+    "capAt": 3.72
+   },
+   "end": 14.34
+  },
+  {
+   "id": "s005",
+   "start": 14.34,
+   "line": "Eso hizo Anthony Hopkins",
    "scene": "title",
    "in": {
     "type": "flash",
@@ -79,17 +140,37 @@
     "tpl": "title",
     "noBadge": true,
     "lines": [
-     "ANTHONY",
-     "HOPKINS"
+     "ANTHONY HOPKINS",
+     "«HANNIBAL LECTER»"
     ],
     "bg": "dark"
    },
-   "end": 13.38
+   "end": 17.78
   },
   {
-   "id": "s004",
-   "start": 13.38,
-   "line": "Y esa mañana tomó",
+   "id": "s006",
+   "start": 17.78,
+   "line": "En mil novecientos setenta",
+   "scene": "hotelWake",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "hotelWake",
+    "noBadge": true,
+    "tag": "ARIZONA · 1975"
+   },
+   "end": 22.82
+  },
+  {
+   "id": "s007",
+   "start": 22.82,
+   "line": "Y no volvió a tomar",
    "scene": "calendarFlip",
    "in": {
     "type": "cut"
@@ -105,11 +186,11 @@
     "steps": [
      [
       0,
-      "29",
-      "DIC 1975"
+      "1975",
+      "ÚLTIMO TRAGO"
      ],
      [
-      3.74,
+      1.4,
       "0",
       "TRAGOS DESDE ENTONCES"
      ]
@@ -117,69 +198,12 @@
     "size": 200,
     "color": "#2a7a3a"
    },
-   "end": 18.2
+   "end": 25.16
   },
   {
-   "id": "s005",
-   "start": 18.2,
-   "line": "Años después ganó",
-   "scene": "title",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "hum",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "title",
-    "noBadge": true,
-    "lines": [
-     "ÓSCAR",
-     "1992"
-    ],
-    "bg": "dark"
-   },
-   "end": 20.28
-  },
-  {
-   "id": "s006",
-   "start": 20.28,
-   "line": "Y hoy dice que",
-   "scene": "hotelWake",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 3.28,
-     "name": "hit",
-     "gain": -9
-    }
-   ],
-   "amb": {
-    "name": "roomtone",
-    "gain": -27
-   },
-   "params": {
-    "tpl": "hotelWake",
-    "noBadge": true,
-    "tag": "ANTHONY HOPKINS",
-    "stamp": {
-     "text": "«DIRECTO AL DESASTRE»",
-     "at": 3.28,
-     "y": 950,
-     "size": 90,
-     "color": "#ff5a4a"
-    }
-   },
-   "end": 24.36
-  },
-  {
-   "id": "s007",
-   "start": 24.36,
-   "line": "Ahora la pregunta es para ti",
+   "id": "s008",
+   "start": 25.16,
+   "line": "Qué le pasaría a tu cuerpo",
    "scene": "smoker",
    "in": {
     "type": "whip",
@@ -201,41 +225,18 @@
     "noBadge": true,
     "puff": false,
     "prop": "beer",
-    "place": "kitchen",
-    "face": "think"
-   },
-   "end": 26.3
-  },
-  {
-   "id": "s008",
-   "start": 26.3,
-   "line": "Qué le pasaría a tu cuerpo",
-   "scene": "smoker",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "roomtone",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "smoker",
-    "noBadge": true,
-    "puff": false,
-    "prop": "beer",
     "place": "street",
     "party": true,
     "face": "think",
     "z0": 1.8,
     "z1": 1.95
    },
-   "end": 30.6
+   "end": 26.9
   },
   {
    "id": "s009",
-   "start": 30.6,
-   "line": "La primera noche",
+   "start": 26.9,
+   "line": "La primera noche vas",
    "scene": "face",
    "in": {
     "type": "whip",
@@ -264,11 +265,11 @@
     "dawn": 0,
     "badgeAt": 0.28
    },
-   "end": 33.72
+   "end": 29.86
   },
   {
    "id": "s010",
-   "start": 33.72,
+   "start": 29.86,
    "line": "En dos semanas",
    "scene": "mriCompare",
    "in": {
@@ -282,7 +283,7 @@
      "gain": -12
     },
     {
-     "at": 0.36,
+     "at": 0.28,
      "name": "pop",
      "gain": -10
     }
@@ -293,15 +294,16 @@
    },
    "params": {
     "tpl": "mriCompare",
+    "noFocus": true,
     "at": 0.3,
-    "badgeAt": 0.36
+    "badgeAt": 0.28
    },
-   "end": 37.16
+   "end": 32.9
   },
   {
    "id": "s011",
-   "start": 37.16,
-   "line": "Y en un mes",
+   "start": 32.9,
+   "line": "En un mes tu sangre",
    "scene": "iconRow",
    "in": {
     "type": "whip",
@@ -314,7 +316,7 @@
      "gain": -12
     },
     {
-     "at": 0.52,
+     "at": 0.44,
      "name": "pop",
      "gain": -10
     }
@@ -328,22 +330,20 @@
     "items": [
      {
       "icon": "blood",
-      "label": "ALGO EN LA SANGRE",
+      "label": "TU SANGRE CAMBIA",
       "at": 0.2,
       "color": "#ff5a4a",
-      "hi": 3.16
+      "hi": 1.08
      }
     ],
-    "caption": "LONDRES",
-    "capAt": 1.72,
-    "badgeAt": 0.52
+    "badgeAt": 0.44
    },
-   "end": 42.06
+   "end": 35.82
   },
   {
    "id": "s012",
-   "start": 42.06,
-   "line": "Y al final te voy",
+   "start": 35.82,
+   "line": "Y al final el error",
    "scene": "myth",
    "in": {
     "type": "whip",
@@ -367,41 +367,16 @@
      "«UNA COPA DE VINO",
      "ES BUENA PARA EL CORAZÓN»"
     ],
-    "verdict": "¿?",
-    "verdictColor": "#ffd400",
-    "verdictAt": 6.72
+    "verdict": "¿ERROR?",
+    "verdictColor": "#ff5a4a",
+    "verdictAt": 4.0
    },
-   "end": 44.78
+   "end": 40.66
   },
   {
    "id": "s013",
-   "start": 44.78,
-   "line": "copa de vino que",
-   "scene": "smoker",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "roomtone",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "smoker",
-    "noBadge": true,
-    "puff": false,
-    "prop": "wine",
-    "place": "kitchen",
-    "face": "smile",
-    "caption": "¿NUNCA FUE VERDAD?",
-    "capAt": 4.0
-   },
-   "end": 49.54
-  },
-  {
-   "id": "s014",
-   "start": 49.54,
-   "line": "El reloj empieza ya",
+   "start": 40.66,
+   "line": "Empezamos",
    "scene": "stopwatch",
    "in": {
     "type": "flash",
@@ -421,16 +396,16 @@
    "params": {
     "tpl": "stopwatch",
     "noBadge": true,
-    "startAt": 1.32,
+    "startAt": 0.12,
     "caption": "SIN ALCOHOL",
     "bg": "kitchen"
    },
-   "end": 51.62
+   "end": 42.02
   },
   {
-   "id": "s015",
-   "start": 51.62,
-   "line": "Antes de empezar",
+   "id": "s014",
+   "start": 42.02,
+   "line": "Una cosa antes",
    "scene": "face",
    "in": {
     "type": "dip",
@@ -438,42 +413,7 @@
    },
    "sfx": [
     {
-     "at": 0.2,
-     "name": "hit",
-     "gain": -9
-    }
-   ],
-   "amb": {
-    "name": "roomtone",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "face",
-    "noBadge": true,
-    "who": "hero",
-    "face": "think",
-    "bg": "office",
-    "stamp": {
-     "text": "IMPORTANTE",
-     "at": 0.2,
-     "y": 950,
-     "size": 110,
-     "color": "#ff5a4a"
-    }
-   },
-   "end": 54.02
-  },
-  {
-   "id": "s016",
-   "start": 54.02,
-   "line": "Si bebes todos los días",
-   "scene": "face",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [
-    {
-     "at": 3.88,
+     "at": 4.92,
      "name": "hit",
      "gain": -9
     }
@@ -489,64 +429,24 @@
     "face": "fear",
     "bg": "street",
     "stamp": {
-     "text": "DE GOLPE = PELIGROSO",
-     "at": 3.88,
+     "text": "CON UN MÉDICO",
+     "at": 4.92,
      "y": 950,
-     "size": 100,
-     "color": "#ff5a4a"
+     "size": 110,
+     "color": "#5fe39a"
     }
    },
-   "end": 58.7
+   "end": 47.58
   },
   {
-   "id": "s017",
-   "start": 58.7,
-   "line": "En los primeros dos",
-   "scene": "iconRow",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "hum",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "iconRow",
-    "noBadge": true,
-    "caption": "SI BEBES MUCHO A DIARIO",
-    "items": [
-     {
-      "icon": "brain",
-      "label": "CONVULSIONES",
-      "at": 2.6,
-      "color": "#ff5a4a"
-     },
-     {
-      "icon": "brain",
-      "label": "DELIRIO",
-      "at": 3.44,
-      "color": "#ff5a4a"
-     }
-    ]
-   },
-   "end": 62.78
-  },
-  {
-   "id": "s018",
-   "start": 62.78,
-   "line": "Eso es una emergencia",
+   "id": "s015",
+   "start": 47.58,
+   "line": "Puede ser peligroso",
    "scene": "hospitalBed",
    "in": {
     "type": "cut"
    },
-   "sfx": [
-    {
-     "at": 3.44,
-     "name": "hit",
-     "gain": -9
-    }
-   ],
+   "sfx": [],
    "amb": {
     "name": "hum",
     "gain": -26
@@ -555,65 +455,14 @@
     "tpl": "hospitalBed",
     "noBadge": true,
     "face": "tired",
-    "who": "hero",
-    "stamp": {
-     "text": "CON UN MÉDICO",
-     "at": 3.44,
-     "y": 950,
-     "size": 110,
-     "color": "#5fe39a"
-    }
+    "who": "hero"
    },
-   "end": 66.9
+   "end": 49.0
   },
   {
-   "id": "s019",
-   "start": 66.9,
-   "line": "No es debilidad",
-   "scene": "title",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "hum",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "title",
-    "noBadge": true,
-    "lines": [
-     "NO ES DEBILIDAD.",
-     "ES SEGURIDAD"
-    ],
-    "bg": "dark"
-   },
-   "end": 69.34
-  },
-  {
-   "id": "s020",
-   "start": 69.34,
-   "line": "Lo que vas a ver",
-   "scene": "streetWalk",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "city",
-    "gain": -25
-   },
-   "params": {
-    "tpl": "streetWalk",
-    "noBadge": true,
-    "face": "calm"
-   },
-   "end": 73.0
-  },
-  {
-   "id": "s021",
-   "start": 73.0,
-   "line": "Las reglas cero alcohol",
+   "id": "s016",
+   "start": 49.0,
+   "line": "Para todos los demás",
    "scene": "iconRow",
    "in": {
     "type": "cut"
@@ -631,31 +480,34 @@
      {
       "icon": "beer",
       "label": "CERVEZA",
-      "at": 2.4,
-      "cross": 2.4,
-      "color": "#e8a23a"
+      "at": 4.04,
+      "cross": 4.04
      },
      {
       "icon": "wineGlass",
       "label": "VINO",
-      "at": 3.36,
-      "cross": 3.36,
-      "color": "#c8405a"
+      "at": 5.0,
+      "cross": 5.0
      },
      {
       "icon": "shot",
-      "label": "TEQUILA",
-      "at": 4.08,
-      "cross": 4.08,
-      "color": "#ffd400"
+      "label": "FERNET",
+      "at": 5.72,
+      "cross": 5.72
+     },
+     {
+      "icon": "shot",
+      "label": "AGUARDIENTE",
+      "at": 6.52,
+      "cross": 6.52
      }
     ]
    },
-   "end": 77.68
+   "end": 56.36
   },
   {
-   "id": "s022",
-   "start": 77.68,
+   "id": "s017",
+   "start": 56.36,
    "line": "ni una nada más",
    "scene": "offer",
    "in": {
@@ -670,52 +522,16 @@
     "tpl": "offer",
     "noBadge": true,
     "prop": "beer",
-    "noAt": 1.8,
+    "noAt": 1.56,
     "word": "¡UNA NADA MÁS!",
-    "wordAt": 0.2
+    "wordAt": 0.1
    },
-   "end": 80.04
+   "end": 58.56
   },
   {
-   "id": "s023",
-   "start": 80.04,
+   "id": "s018",
+   "start": 58.56,
    "line": "Tu vida sigue igual",
-   "scene": "iconRow",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "hum",
-    "gain": -26
-   },
-   "params": {
-    "tpl": "iconRow",
-    "noBadge": true,
-    "items": [
-     {
-      "icon": "calendar",
-      "label": "TRABAJO",
-      "at": 1.48
-     },
-     {
-      "icon": "people",
-      "label": "AMIGOS",
-      "at": 2.28
-     },
-     {
-      "icon": "medal",
-      "label": "FIESTAS",
-      "at": 2.96
-     }
-    ]
-   },
-   "end": 84.76
-  },
-  {
-   "id": "s024",
-   "start": 84.76,
-   "line": "Solo que tu vaso",
    "scene": "kitchenSip",
    "in": {
     "type": "cut"
@@ -728,14 +544,14 @@
    "params": {
     "tpl": "kitchenSip",
     "noBadge": true,
-    "sipAt": 0.68,
+    "sipAt": 2.88,
     "face": "smile"
    },
-   "end": 87.6
+   "end": 62.44
   },
   {
-   "id": "s025",
-   "start": 87.6,
+   "id": "s019",
+   "start": 62.44,
    "line": "Primero qué hace",
    "scene": "smoker",
    "in": {
@@ -755,11 +571,11 @@
     "place": "street",
     "party": true
    },
-   "end": 90.82
+   "end": 65.66
   },
   {
-   "id": "s026",
-   "start": 90.82,
+   "id": "s020",
+   "start": 65.66,
    "line": "En minutos llega",
    "scene": "bodyChain",
    "in": {
@@ -777,11 +593,11 @@
     "caption": "SANGRE → CEREBRO",
     "capAt": 2.6
    },
-   "end": 94.1
+   "end": 68.94
   },
   {
-   "id": "s027",
-   "start": 94.1,
+   "id": "s021",
+   "start": 68.94,
    "line": "Ahí frena las neuronas",
    "scene": "nerves",
    "in": {
@@ -799,11 +615,11 @@
     "caption": "FRENA LAS NEURONAS",
     "capAt": 0.52
    },
-   "end": 95.86
+   "end": 70.7
   },
   {
-   "id": "s028",
-   "start": 95.86,
+   "id": "s022",
+   "start": 70.7,
    "line": "Por eso te relajas",
    "scene": "smoker",
    "in": {
@@ -825,11 +641,11 @@
     "z0": 1.7,
     "z1": 1.85
    },
-   "end": 99.78
+   "end": 74.62
   },
   {
-   "id": "s029",
-   "start": 99.78,
+   "id": "s023",
+   "start": 74.62,
    "line": "Al mismo tiempo",
    "scene": "dopamine",
    "in": {
@@ -848,11 +664,11 @@
     "caption": "DOPAMINA",
     "capAt": 2.04
    },
-   "end": 104.26
+   "end": 79.1
   },
   {
-   "id": "s030",
-   "start": 104.26,
+   "id": "s024",
+   "start": 79.1,
    "line": "Por eso la segunda",
    "scene": "smoker",
    "in": {
@@ -873,11 +689,11 @@
     "period": 1.8,
     "face": "smile"
    },
-   "end": 106.82
+   "end": 81.66
   },
   {
-   "id": "s031",
-   "start": 106.82,
+   "id": "s025",
+   "start": 81.66,
    "line": "Pero el trabajo sucio",
    "scene": "liverQueue",
    "in": {
@@ -894,11 +710,11 @@
     "caption": "EL HÍGADO",
     "capAt": 2.0
    },
-   "end": 112.26
+   "end": 87.1
   },
   {
-   "id": "s032",
-   "start": 112.26,
+   "id": "s026",
+   "start": 87.1,
    "line": "y lo hace despacio",
    "scene": "liverQueue",
    "in": {
@@ -914,11 +730,11 @@
     "noBadge": true,
     "period": 1.6
    },
-   "end": 115.7
+   "end": 90.54
   },
   {
-   "id": "s033",
-   "start": 115.7,
+   "id": "s027",
+   "start": 90.54,
    "line": "Si bebes más rápido",
    "scene": "liverQueue",
    "in": {
@@ -934,11 +750,11 @@
     "noBadge": true,
     "fast": true
    },
-   "end": 118.98
+   "end": 93.82
   },
   {
-   "id": "s034",
-   "start": 118.98,
+   "id": "s028",
+   "start": 93.82,
    "line": "Y en ese proceso",
    "scene": "liverQueue",
    "in": {
@@ -956,11 +772,11 @@
     "caption": "ACETALDEHÍDO",
     "capAt": 4.04
    },
-   "end": 124.1
+   "end": 98.94
   },
   {
-   "id": "s035",
-   "start": 124.1,
+   "id": "s029",
+   "start": 98.94,
    "line": "Es tóxica",
    "scene": "title",
    "in": {
@@ -979,11 +795,11 @@
     ],
     "bg": "red"
    },
-   "end": 125.22
+   "end": 100.06
   },
   {
-   "id": "s036",
-   "start": 125.22,
+   "id": "s030",
+   "start": 100.06,
    "line": "Es la que te pone",
    "scene": "face",
    "in": {
@@ -1014,11 +830,11 @@
      "color": "#ff5a4a"
     }
    },
-   "end": 127.1
+   "end": 101.94
   },
   {
-   "id": "s037",
-   "start": 127.1,
+   "id": "s031",
+   "start": 101.94,
    "line": "Y la Organización Mundial",
    "scene": "iconRow",
    "in": {
@@ -1042,11 +858,11 @@
      }
     ]
    },
-   "end": 130.74
+   "end": 105.58
   },
   {
-   "id": "s038",
-   "start": 130.74,
+   "id": "s032",
+   "start": 105.58,
    "line": "Acuérdate de ese nombre",
    "scene": "title",
    "in": {
@@ -1066,11 +882,11 @@
     ],
     "bg": "dark"
    },
-   "end": 135.62
+   "end": 110.46
   },
   {
-   "id": "s039",
-   "start": 135.62,
+   "id": "s033",
+   "start": 110.46,
    "line": "Primera noche sin alcohol",
    "scene": "bedWide",
    "in": {
@@ -1094,11 +910,11 @@
     "face": "tired",
     "badgeAt": 0.6
    },
-   "end": 137.56
+   "end": 112.4
   },
   {
-   "id": "s040",
-   "start": 137.56,
+   "id": "s034",
+   "start": 112.4,
    "line": "Mucha gente dice",
    "scene": "smoker",
    "in": {
@@ -1118,11 +934,11 @@
     "caption": "«CON UNA COPITA DUERMO MEJOR»",
     "capAt": 1.72
    },
-   "end": 140.78
+   "end": 115.62
   },
   {
-   "id": "s041",
-   "start": 140.78,
+   "id": "s035",
+   "start": 115.62,
    "line": "Y en parte es cierto",
    "scene": "bedSide",
    "in": {
@@ -1137,11 +953,11 @@
     "tpl": "bedSide",
     "face": "tired"
    },
-   "end": 144.86
+   "end": 119.7
   },
   {
-   "id": "s042",
-   "start": 144.86,
+   "id": "s036",
+   "start": 119.7,
    "line": "Pero los científicos revisaron",
    "scene": "journal",
    "in": {
@@ -1171,11 +987,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 149.5
+   "end": 124.34
   },
   {
-   "id": "s043",
-   "start": 149.5,
+   "id": "s037",
+   "start": 124.34,
    "line": "La primera mitad de la noche",
    "scene": "chart",
    "in": {
@@ -1260,11 +1076,11 @@
      }
     ]
    },
-   "end": 155.5
+   "end": 130.34
   },
   {
-   "id": "s044",
-   "start": 155.5,
+   "id": "s038",
+   "start": 130.34,
    "line": "Te despiertas das vueltas",
    "scene": "eyesOpen",
    "in": {
@@ -1279,11 +1095,11 @@
     "tpl": "eyesOpen",
     "face": "tired"
    },
-   "end": 160.94
+   "end": 135.78
   },
   {
-   "id": "s045",
-   "start": 160.94,
+   "id": "s039",
+   "start": 135.78,
    "line": "Por eso después de una fiesta",
    "scene": "clockInsert",
    "in": {
@@ -1314,11 +1130,11 @@
      "color": "#ff5a4a"
     }
    },
-   "end": 166.16
+   "end": 141.0
   },
   {
-   "id": "s046",
-   "start": 166.16,
+   "id": "s040",
+   "start": 141.0,
    "line": "Esta noche sin alcohol",
    "scene": "sitEdge",
    "in": {
@@ -1333,11 +1149,11 @@
     "tpl": "sitEdge",
     "face": "tired"
    },
-   "end": 170.4
+   "end": 145.24
   },
   {
-   "id": "s047",
-   "start": 170.4,
+   "id": "s041",
+   "start": 145.24,
    "line": "Si bebías a diario",
    "scene": "eyesOpen",
    "in": {
@@ -1352,11 +1168,11 @@
     "tpl": "eyesOpen",
     "face": "tired"
    },
-   "end": 174.0
+   "end": 148.84
   },
   {
-   "id": "s048",
-   "start": 174.0,
+   "id": "s042",
+   "start": 148.84,
    "line": "Pero el sueño que viene",
    "scene": "bedWide",
    "in": {
@@ -1372,11 +1188,11 @@
     "clockH": 2,
     "face": "calm"
    },
-   "end": 177.08
+   "end": 151.92
   },
   {
-   "id": "s049",
-   "start": 177.08,
+   "id": "s043",
+   "start": 151.92,
    "line": "Dos días",
    "scene": "kitchenSip",
    "in": {
@@ -1400,11 +1216,11 @@
     "face": "calm",
     "badgeAt": 0.12
    },
-   "end": 180.84
+   "end": 155.68
   },
   {
-   "id": "s050",
-   "start": 180.84,
+   "id": "s044",
+   "start": 155.68,
    "line": "El alcohol bloquea una hormona",
    "scene": "kidneyADH",
    "in": {
@@ -1419,11 +1235,11 @@
     "tpl": "kidneyADH",
     "mode": "alcohol"
    },
-   "end": 184.84
+   "end": 159.68
   },
   {
-   "id": "s051",
-   "start": 184.84,
+   "id": "s045",
+   "start": 159.68,
    "line": "Por eso con alcohol",
    "scene": "kidneyADH",
    "in": {
@@ -1439,11 +1255,11 @@
     "mode": "alcohol",
     "outText": "AL BAÑO A CADA RATO"
    },
-   "end": 188.6
+   "end": 163.44
   },
   {
-   "id": "s052",
-   "start": 188.6,
+   "id": "s046",
+   "start": 163.44,
    "line": "Sin alcohol esa hormona",
    "scene": "kidneyADH",
    "in": {
@@ -1458,11 +1274,11 @@
     "tpl": "kidneyADH",
     "mode": "clear"
    },
-   "end": 191.4
+   "end": 166.24
   },
   {
-   "id": "s053",
-   "start": 191.4,
+   "id": "s047",
+   "start": 166.24,
    "line": "Te hidratas mejor",
    "scene": "mirror",
    "in": {
@@ -1490,11 +1306,11 @@
      "color": "#5fe39a"
     }
    },
-   "end": 196.68
+   "end": 171.52
   },
   {
-   "id": "s054",
-   "start": 196.68,
+   "id": "s048",
+   "start": 171.52,
    "line": "Y llega el primer viernes",
    "scene": "calendarFlip",
    "in": {
@@ -1524,11 +1340,11 @@
     "size": 96,
     "color": "#c8405a"
    },
-   "end": 198.6
+   "end": 173.44
   },
   {
-   "id": "s055",
-   "start": 198.6,
+   "id": "s049",
+   "start": 173.44,
    "line": "Ahí el problema no es",
    "scene": "offer",
    "in": {
@@ -1546,11 +1362,11 @@
     "word": "¿QUÉ, YA NO TOMAS?",
     "wordAt": 4.06
    },
-   "end": 203.42
+   "end": 178.26
   },
   {
-   "id": "s056",
-   "start": 203.42,
+   "id": "s050",
+   "start": 178.26,
    "line": "Estás enfermo",
    "scene": "chatGroup",
    "in": {
@@ -1567,7 +1383,7 @@
      [
       0.05,
       "¿Estás enfermo?",
-      "Beto"
+      "Nico"
      ],
      [
       1.5,
@@ -1577,15 +1393,15 @@
      [
       2.72,
       "Ya ni sales, bro",
-      "Memo"
+      "Santi"
      ]
     ]
    },
-   "end": 205.74
+   "end": 180.58
   },
   {
-   "id": "s057",
-   "start": 205.74,
+   "id": "s051",
+   "start": 180.58,
    "line": "En los comentarios de videos",
    "scene": "comment",
    "in": {
@@ -1601,11 +1417,11 @@
     "text": "Lo peor es la presión de los amigos",
     "typeDur": 1.6
    },
-   "end": 209.86
+   "end": 184.7
   },
   {
-   "id": "s058",
-   "start": 209.86,
+   "id": "s052",
+   "start": 184.7,
    "line": "No la abstinencia",
    "scene": "title",
    "in": {
@@ -1624,11 +1440,11 @@
     ],
     "bg": "dark"
    },
-   "end": 212.82
+   "end": 187.66
   },
   {
-   "id": "s059",
-   "start": 212.82,
+   "id": "s053",
+   "start": 187.66,
    "line": "Tu cuerpo te está dando",
    "scene": "chatGroup",
    "in": {
@@ -1645,7 +1461,7 @@
      [
       0,
       "¿Estás enfermo?",
-      "Beto"
+      "Nico"
      ],
      [
       0,
@@ -1659,11 +1475,11 @@
      ]
     ]
    },
-   "end": 217.78
+   "end": 192.62
   },
   {
-   "id": "s060",
-   "start": 217.78,
+   "id": "s054",
+   "start": 192.62,
    "line": "Una semana",
    "scene": "face",
    "in": {
@@ -1688,11 +1504,11 @@
     "dawn": 1,
     "badgeAt": 0.44
    },
-   "end": 221.54
+   "end": 196.38
   },
   {
-   "id": "s061",
-   "start": 221.54,
+   "id": "s055",
+   "start": 196.38,
    "line": "Sin dolor de cabeza",
    "scene": "iconRow",
    "in": {
@@ -1720,11 +1536,11 @@
      }
     ]
    },
-   "end": 225.96
+   "end": 200.8
   },
   {
-   "id": "s062",
-   "start": 225.96,
+   "id": "s056",
+   "start": 200.8,
    "line": "En Inglaterra la Universidad",
    "scene": "scientist",
    "in": {
@@ -1747,11 +1563,11 @@
      ]
     ]
    },
-   "end": 231.4
+   "end": 206.24
   },
   {
-   "id": "s063",
-   "start": 231.4,
+   "id": "s057",
+   "start": 206.24,
    "line": "Más de la mitad dijo",
    "scene": "iconRow",
    "in": {
@@ -1779,11 +1595,11 @@
      }
     ]
    },
-   "end": 235.64
+   "end": 210.48
   },
   {
-   "id": "s064",
-   "start": 235.64,
+   "id": "s058",
+   "start": 210.48,
    "line": "Y hay algo más",
    "scene": "stackIcons",
    "in": {
@@ -1800,11 +1616,11 @@
     "to": 12,
     "label": "LATAS QUE NO COMPRASTE"
    },
-   "end": 237.88
+   "end": 212.72
   },
   {
-   "id": "s065",
-   "start": 237.88,
+   "id": "s059",
+   "start": 212.72,
    "line": "La cerveza del viernes",
    "scene": "iconRow",
    "in": {
@@ -1840,11 +1656,11 @@
      }
     ]
    },
-   "end": 242.24
+   "end": 217.08
   },
   {
-   "id": "s066",
-   "start": 242.24,
+   "id": "s060",
+   "start": 217.08,
    "line": "Por primera vez en mucho",
    "scene": "streetWalk",
    "in": {
@@ -1872,11 +1688,330 @@
      "color": "#5fe39a"
     }
    },
-   "end": 246.56
+   "end": 221.44
+  },
+  {
+   "id": "s061",
+   "start": 221.44,
+   "line": "Y qué es exactamente",
+   "scene": "face",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "wreck",
+    "dawn": 1,
+    "stamp": {
+     "text": "¿QUÉ ES LA RESACA?",
+     "at": 0.3,
+     "y": 950,
+     "size": 100,
+     "color": "#ffd400"
+    }
+   },
+   "end": 225.387
+  },
+  {
+   "id": "s062",
+   "start": 225.387,
+   "line": "Es una mezcla",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "UNA MEZCLA",
+    "items": [
+     {
+      "icon": "droplet",
+      "label": "POCA AGUA",
+      "at": 1.8,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "flask",
+      "label": "ACETALDEHÍDO",
+      "at": 2.36,
+      "color": "#ff5a4a"
+     }
+    ]
+   },
+   "end": 230.427
+  },
+  {
+   "id": "s063",
+   "start": 230.427,
+   "line": "un sueño roto y una",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "UNA MEZCLA",
+    "items": [
+     {
+      "icon": "moon",
+      "label": "SUEÑO ROTO",
+      "at": 0.05,
+      "color": "#9fb8ff"
+     },
+     {
+      "icon": "flame",
+      "label": "INFLAMACIÓN",
+      "at": 1.88,
+      "color": "#ffd400"
+     }
+    ]
+   },
+   "end": 234.107
+  },
+  {
+   "id": "s064",
+   "start": 234.107,
+   "line": "Por eso no existe",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "lines": [
+     "NO EXISTE",
+     "UNA CURA MÁGICA"
+    ],
+    "bg": "red"
+   },
+   "end": 236.607
+  },
+  {
+   "id": "s065",
+   "start": 236.607,
+   "line": "En dos mil veintidós investigadores",
+   "scene": "journal",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.04,
+     "name": "hit",
+     "gain": -9
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "journal",
+    "head": "ADDICTION · 2022",
+    "title": "Remedios para la resaca",
+    "hiAt": 99,
+    "stamp": {
+     "text": "21 ENSAYOS",
+     "at": 4.04,
+     "y": 950,
+     "size": 110,
+     "color": "#ffd400"
+    }
+   },
+   "end": 243.327
+  },
+  {
+   "id": "s066",
+   "start": 243.327,
+   "line": "jugos extractos cápsulas",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "items": [
+     {
+      "icon": "orange",
+      "label": "JUGOS",
+      "at": 0.05,
+      "cross": 3.88
+     },
+     {
+      "icon": "flask",
+      "label": "EXTRACTOS",
+      "at": 0.68,
+      "cross": 3.88
+     },
+     {
+      "icon": "pill",
+      "label": "CÁPSULAS",
+      "at": 1.64,
+      "cross": 3.88
+     }
+    ]
+   },
+   "end": 247.887
   },
   {
    "id": "s067",
-   "start": 246.56,
+   "start": 247.887,
+   "line": "Y ningún resultado",
+   "scene": "myth",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "myth",
+    "text": [
+     "¿ALGÚN REMEDIO",
+     "COMPROBADO?"
+    ],
+    "verdict": "NINGUNO",
+    "verdictAt": 1.56
+   },
+   "end": 251.107
+  },
+  {
+   "id": "s068",
+   "start": 251.107,
+   "line": "Y el ibuprofeno",
+   "scene": "iconRow",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "iconRow",
+    "caption": "SIN ENSAYOS CON PLACEBO",
+    "capAt": 6.16,
+    "items": [
+     {
+      "icon": "pill",
+      "label": "IBUPROFENO",
+      "at": 0.32,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "pill",
+      "label": "PARACETAMOL",
+      "at": 1.28,
+      "color": "#6ab8ff"
+     }
+    ]
+   },
+   "end": 257.947
+  },
+  {
+   "id": "s069",
+   "start": 257.947,
+   "line": "Los mismos investigadores",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "think",
+    "bg": "office"
+   },
+   "end": 260.587
+  },
+  {
+   "id": "s070",
+   "start": 260.587,
+   "line": "la forma más segura",
+   "scene": "title",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "lines": [
+     "LA MEJOR CURA:",
+     "NO TOMAR"
+    ],
+    "bg": "dark"
+   },
+   "end": 265.827
+  },
+  {
+   "id": "s071",
+   "start": 265.827,
+   "line": "Y esta semana tú",
+   "scene": "face",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "face",
+    "who": "hero",
+    "face": "smile",
+    "dawn": 1
+   },
+   "end": 269.067
+  },
+  {
+   "id": "s072",
+   "start": 269.067,
    "line": "Dos semanas",
    "scene": "brain",
    "in": {
@@ -1901,11 +2036,11 @@
     "z1": 1.15,
     "badgeAt": 0.12
    },
-   "end": 250.12
+   "end": 272.627
   },
   {
-   "id": "s068",
-   "start": 250.12,
+   "id": "s073",
+   "start": 272.627,
    "line": "En Alemania científicos",
    "scene": "scientist",
    "in": {
@@ -1932,11 +2067,11 @@
      ]
     ]
    },
-   "end": 256.44
+   "end": 278.947
   },
   {
-   "id": "s069",
-   "start": 256.44,
+   "id": "s074",
+   "start": 278.947,
    "line": "Una el primer día",
    "scene": "mriCompare",
    "in": {
@@ -1951,11 +2086,11 @@
     "tpl": "mriCompare",
     "at": 3.64
    },
-   "end": 260.84
+   "end": 283.347
   },
   {
-   "id": "s070",
-   "start": 260.84,
+   "id": "s075",
+   "start": 283.347,
    "line": "En solo dos semanas",
    "scene": "mriCompare",
    "in": {
@@ -1972,11 +2107,11 @@
     "caption": "LA MATERIA GRIS VUELVE",
     "capAt": 4.52
    },
-   "end": 266.04
+   "end": 288.547
   },
   {
-   "id": "s071",
-   "start": 266.04,
+   "id": "s076",
+   "start": 288.547,
    "line": "El cerebro se estaba recuperando",
    "scene": "brain",
    "in": {
@@ -2006,11 +2141,11 @@
      "color": "#5fe39a"
     }
    },
-   "end": 270.2
+   "end": 292.707
   },
   {
-   "id": "s072",
-   "start": 270.2,
+   "id": "s077",
+   "start": 292.707,
    "line": "Ojo eran personas",
    "scene": "face",
    "in": {
@@ -2040,11 +2175,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 273.32
+   "end": 295.827
   },
   {
-   "id": "s073",
-   "start": 273.32,
+   "id": "s078",
+   "start": 295.827,
    "line": "Pero muestra algo importante",
    "scene": "title",
    "in": {
@@ -2063,11 +2198,11 @@
     ],
     "bg": "dark"
    },
-   "end": 277.8
+   "end": 300.307
   },
   {
-   "id": "s074",
-   "start": 277.8,
+   "id": "s079",
+   "start": 300.307,
    "line": "Cuando le das una pausa",
    "scene": "brain",
    "in": {
@@ -2097,11 +2232,11 @@
      "color": "#5fe39a"
     }
    },
-   "end": 280.36
+   "end": 302.867
   },
   {
-   "id": "s075",
-   "start": 280.36,
+   "id": "s080",
+   "start": 302.867,
    "line": "Y el hígado también",
    "scene": "liverFat",
    "in": {
@@ -2117,11 +2252,11 @@
     "from": 0.85,
     "to": 0.35
    },
-   "end": 285.68
+   "end": 308.187
   },
   {
-   "id": "s076",
-   "start": 285.68,
+   "id": "s081",
+   "start": 308.187,
    "line": "puede empezar a revertirse",
    "scene": "liverFat",
    "in": {
@@ -2140,13 +2275,13 @@
     "caption": "SE PUEDE REVERTIR",
     "capAt": 0.2
    },
-   "end": 289.24
+   "end": 311.747
   },
   {
-   "id": "s077",
-   "start": 289.24,
-   "line": "Eso le pasó a alguien",
-   "scene": "stage",
+   "id": "s082",
+   "start": 311.747,
+   "line": "Y no hace falta tocar",
+   "scene": "face",
    "in": {
     "type": "dip",
     "dur": 0.3
@@ -2154,67 +2289,162 @@
    "sfx": [],
    "amb": {
     "name": "roomtone",
-    "gain": -27
+    "gain": -26
    },
    "params": {
-    "tpl": "stage",
+    "tpl": "face",
     "noBadge": true,
-    "tag": "MÉXICO"
+    "who": "hero",
+    "face": "think",
+    "bg": "street"
    },
-   "end": 292.2
+   "end": 314.467
   },
   {
-   "id": "s078",
-   "start": 292.2,
-   "line": "El cantante Julión Álvarez",
-   "scene": "stage",
+   "id": "s083",
+   "start": 314.467,
+   "line": "Brad Pitt contó que",
+   "scene": "title",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "impact",
+     "gain": -7
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "title",
+    "noBadge": true,
+    "lines": [
+     "BRAD PITT"
+    ],
+    "bg": "dark"
+   },
+   "end": 317.267
+  },
+  {
+   "id": "s084",
+   "start": 317.267,
+   "line": "se dio cuenta de que",
+   "scene": "smoker",
    "in": {
     "type": "cut"
    },
    "sfx": [],
    "amb": {
     "name": "roomtone",
-    "gain": -27
+    "gain": -26
    },
    "params": {
-    "tpl": "stage",
+    "tpl": "smoker",
     "noBadge": true,
-    "tag": "JULIÓN ÁLVAREZ"
+    "puff": false,
+    "prop": "wine",
+    "place": "kitchen",
+    "outfit": {
+     "top": "tshirt",
+     "color": "#5a6a7a"
+    },
+    "face": "tired",
+    "period": 1.8
    },
-   "end": 293.96
+   "end": 319.507
   },
   {
-   "id": "s079",
-   "start": 293.96,
-   "line": "hizo unos estudios",
-   "scene": "labReport",
+   "id": "s085",
+   "start": 319.507,
+   "line": "Entró a Alcohólicos Anónimos",
+   "scene": "iconRow",
    "in": {
     "type": "cut"
    },
    "sfx": [],
    "amb": {
-    "name": "roomtone",
-    "gain": -27
+    "name": "hum",
+    "gain": -26
    },
    "params": {
-    "tpl": "labReport",
+    "tpl": "iconRow",
     "noBadge": true,
-    "head": "DIAGNÓSTICO",
-    "rows": [
-     [
-      "HÍGADO",
-      "GRASO",
-      3.72,
-      "#ff5a4a"
-     ]
+    "items": [
+     {
+      "icon": "people",
+      "label": "ALCOHÓLICOS ANÓNIMOS",
+      "at": 0.6,
+      "color": "#6ab8ff"
+     },
+     {
+      "icon": "beer",
+      "label": "DEJÓ EL ALCOHOL",
+      "at": 1.88,
+      "cross": 2.36
+     }
     ]
    },
-   "end": 298.36
+   "end": 322.547
   },
   {
-   "id": "s080",
-   "start": 298.36,
-   "line": "Él decidió dejar",
+   "id": "s086",
+   "start": 322.547,
+   "line": "Dijo una frase muy honesta",
+   "scene": "tv",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "tv",
+    "noBadge": true,
+    "tag": "BRAD PITT · 2019",
+    "sub": "«ME QUITÉ EL PRIVILEGIO DE BEBER»",
+    "subAt": 4.9
+   },
+   "end": 328.627
+  },
+  {
+   "id": "s087",
+   "start": 328.627,
+   "line": "Estuvo siete años",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -27
+   },
+   "params": {
+    "tpl": "calendarFlip",
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "7",
+      "AÑOS SIN TOMAR"
+     ]
+    ],
+    "size": 220,
+    "color": "#2a7a3a"
+   },
+   "end": 330.747
+  },
+  {
+   "id": "s088",
+   "start": 330.747,
+   "line": "Y hace poco contó",
    "scene": "iconRow",
    "in": {
     "type": "cut"
@@ -2230,58 +2460,26 @@
     "items": [
      {
       "icon": "beer",
-      "label": "DEJÓ EL ALCOHOL",
-      "at": 0.2,
-      "cross": 1.48
-     },
-     {
-      "icon": "calendar",
-      "label": "PRIMER MES",
-      "at": 3.0,
-      "color": "#ffd400"
-     },
-     {
-      "icon": "scaleW",
-      "label": "BAJÓ DE PESO",
-      "at": 4.92,
-      "color": "#5fe39a"
+      "label": "VOLVIÓ: POCO Y CON CONTROL",
+      "at": 2.14,
+      "color": "#ffd400",
+      "hi": 4.62
      }
     ]
    },
-   "end": 303.56
+   "end": 336.127
   },
   {
-   "id": "s081",
-   "start": 303.56,
-   "line": "y contó que hasta cantaba",
-   "scene": "stage",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "roomtone",
-    "gain": -27
-   },
-   "params": {
-    "tpl": "stage",
-    "noBadge": true,
-    "caption": "CANTA MEJOR",
-    "capAt": 0.92
-   },
-   "end": 306.28
-  },
-  {
-   "id": "s082",
-   "start": 306.28,
-   "line": "Dijo que quería estar",
+   "id": "s089",
+   "start": 336.127,
+   "line": "No es una historia perfecta",
    "scene": "face",
    "in": {
     "type": "cut"
    },
    "sfx": [
     {
-     "at": 2.12,
+     "at": 2.84,
      "name": "hit",
      "gain": -9
     }
@@ -2294,45 +2492,21 @@
     "tpl": "face",
     "noBadge": true,
     "who": "hero",
-    "face": "smile",
+    "face": "calm",
     "bg": "street",
     "stamp": {
-     "text": "MÁS TIEMPO CON SU HIJA",
-     "at": 2.12,
+     "text": "ES REAL",
+     "at": 2.84,
      "y": 950,
-     "size": 90
+     "size": 120,
+     "color": "#ffd400"
     }
    },
-   "end": 308.96
+   "end": 339.647
   },
   {
-   "id": "s083",
-   "start": 308.96,
-   "line": "Y algo honesto",
-   "scene": "myth",
-   "in": {
-    "type": "cut"
-   },
-   "sfx": [],
-   "amb": {
-    "name": "hum",
-    "gain": -27
-   },
-   "params": {
-    "tpl": "myth",
-    "noBadge": true,
-    "text": [
-     "«NUNCA MÁS»?"
-    ],
-    "verdict": "NO PROMETIÓ",
-    "verdictColor": "#ffd400",
-    "verdictAt": 1.52
-   },
-   "end": 314.88
-  },
-  {
-   "id": "s084",
-   "start": 314.88,
+   "id": "s090",
+   "start": 339.647,
    "line": "A veces el cambio",
    "scene": "title",
    "in": {
@@ -2352,11 +2526,11 @@
     ],
     "bg": "dark"
    },
-   "end": 320.28
+   "end": 345.067
   },
   {
-   "id": "s085",
-   "start": 320.28,
+   "id": "s091",
+   "start": 345.067,
    "line": "Volvamos a ti",
    "scene": "mirror",
    "in": {
@@ -2379,11 +2553,11 @@
     "face": "calm",
     "badgeAt": 1.639
    },
-   "end": 325.757
+   "end": 350.604
   },
   {
-   "id": "s086",
-   "start": 325.757,
+   "id": "s092",
+   "start": 350.604,
    "line": "En dos mil dieciocho",
    "scene": "journal",
    "in": {
@@ -2413,11 +2587,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 329.595
+   "end": 354.442
   },
   {
-   "id": "s087",
-   "start": 329.595,
+   "id": "s093",
+   "start": 354.442,
    "line": "y cuatro personas que dejaron",
    "scene": "calendarFlip",
    "in": {
@@ -2440,11 +2614,11 @@
     "size": 220,
     "color": "#2a7a3a"
    },
-   "end": 332.553
+   "end": 357.4
   },
   {
-   "id": "s088",
-   "start": 332.553,
+   "id": "s094",
+   "start": 357.4,
    "line": "No tenían dependencia",
    "scene": "stackIcons",
    "in": {
@@ -2461,11 +2635,11 @@
     "to": 18,
     "label": "BEBIDAS POR SEMANA"
    },
-   "end": 338.409
+   "end": 363.177
   },
   {
-   "id": "s089",
-   "start": 338.409,
+   "id": "s095",
+   "start": 363.177,
    "line": "Al final del mes",
    "scene": "iconRow",
    "in": {
@@ -2488,11 +2662,11 @@
      }
     ]
    },
-   "end": 340.807
+   "end": 365.576
   },
   {
-   "id": "s090",
-   "start": 340.807,
+   "id": "s096",
+   "start": 365.576,
    "line": "La resistencia a la insulina",
    "scene": "labReport",
    "in": {
@@ -2511,15 +2685,15 @@
      [
       "RESISTENCIA A LA INSULINA",
       "−26 %",
-      4.158
+      4.117
      ]
     ]
    },
-   "end": 346.644
+   "end": 371.332
   },
   {
-   "id": "s091",
-   "start": 346.644,
+   "id": "s097",
+   "start": 371.332,
    "line": "La presión arterial bajó",
    "scene": "labReport",
    "in": {
@@ -2548,15 +2722,15 @@
      [
       "PESO",
       "−1,5 %",
-      2.358
+      2.199
      ]
     ]
    },
-   "end": 350.321
+   "end": 374.85
   },
   {
-   "id": "s092",
-   "start": 350.321,
+   "id": "s098",
+   "start": 374.85,
    "line": "Y lo más sorprendente",
    "scene": "iconRow",
    "in": {
@@ -2575,15 +2749,15 @@
       "label": "AYUDAN A CRECER A LOS TUMORES",
       "at": 0.3,
       "color": "#ff5a4a",
-      "hi": 6.996
+      "hi": 7.076
      }
     ]
    },
-   "end": 357.796
+   "end": 382.525
   },
   {
-   "id": "s093",
-   "start": 357.796,
+   "id": "s099",
+   "start": 382.525,
    "line": "bajaron muchísimo Una cayó",
    "scene": "labReport",
    "in": {
@@ -2602,20 +2776,20 @@
      [
       "VEGF",
       "−42 %",
-      2.999
+      2.759
      ],
      [
       "EGF",
       "−74 %",
-      5.037
+      4.757
      ]
     ]
    },
-   "end": 363.979
+   "end": 388.437
   },
   {
-   "id": "s094",
-   "start": 363.979,
+   "id": "s100",
+   "start": 388.437,
    "line": "En las personas que siguieron",
    "scene": "compare",
    "in": {
@@ -2648,11 +2822,11 @@
      }
     ]
    },
-   "end": 367.817
+   "end": 392.055
   },
   {
-   "id": "s095",
-   "start": 367.817,
+   "id": "s101",
+   "start": 392.055,
    "line": "Ojo no fue un experimento",
    "scene": "myth",
    "in": {
@@ -2671,13 +2845,13 @@
     ],
     "verdict": "NO",
     "verdictColor": "#ffd400",
-    "verdictAt": 3.318
+    "verdictAt": 3.398
    },
-   "end": 373.146
+   "end": 397.465
   },
   {
-   "id": "s096",
-   "start": 373.146,
+   "id": "s102",
+   "start": 397.465,
    "line": "Pero en solo treinta días",
    "scene": "title",
    "in": {
@@ -2696,11 +2870,11 @@
     ],
     "bg": "dark"
    },
-   "end": 376.611
+   "end": 400.77
   },
   {
-   "id": "s097",
-   "start": 376.611,
+   "id": "s103",
+   "start": 400.77,
    "line": "Y otro dato",
    "scene": "scientist",
    "in": {
@@ -2718,16 +2892,16 @@
     "tag": "UNIVERSIDAD DE SUSSEX",
     "lines": [
      [
-      2.758,
+      2.838,
       "6 MESES DESPUÉS"
      ]
     ]
    },
-   "end": 381.608
+   "end": 405.847
   },
   {
-   "id": "s098",
-   "start": 381.608,
+   "id": "s104",
+   "start": 405.847,
    "line": "gente bebía en promedio",
    "scene": "calendarFlip",
    "in": {
@@ -2747,7 +2921,7 @@
       "DÍAS CON ALCOHOL / SEMANA"
      ],
      [
-      1.999,
+      1.918,
       "3,3",
       "SEIS MESES DESPUÉS"
      ]
@@ -2755,11 +2929,11 @@
     "size": 200,
     "color": "#2a7a3a"
    },
-   "end": 385.405
+   "end": 409.564
   },
   {
-   "id": "s099",
-   "start": 385.405,
+   "id": "s105",
+   "start": 409.564,
    "line": "El mes les cambió",
    "scene": "streetWalk",
    "in": {
@@ -2774,11 +2948,11 @@
     "tpl": "streetWalk",
     "face": "smile"
    },
-   "end": 388.484
+   "end": 412.723
   },
   {
-   "id": "s100",
-   "start": 388.484,
+   "id": "s106",
+   "start": 412.723,
    "line": "Pero seguro estás pensando",
    "scene": "face",
    "in": {
@@ -2787,7 +2961,7 @@
    },
    "sfx": [
     {
-     "at": 3.56,
+     "at": 3.718,
      "name": "hit",
      "gain": -9
     }
@@ -2803,16 +2977,16 @@
     "bg": "office",
     "stamp": {
      "text": "«SOLO LOS FINES DE SEMANA»",
-     "at": 3.56,
+     "at": 3.718,
      "y": 950,
      "size": 80
     }
    },
-   "end": 392.664
+   "end": 417.06
   },
   {
-   "id": "s101",
-   "start": 392.664,
+   "id": "s107",
+   "start": 417.06,
    "line": "Esa es la pregunta",
    "scene": "comment",
    "in": {
@@ -2828,11 +3002,11 @@
     "text": "¿Y si solo tomo los fines de semana?",
     "typeDur": 1.4
    },
-   "end": 397.604
+   "end": 422.317
   },
   {
-   "id": "s102",
-   "start": 397.604,
+   "id": "s108",
+   "start": 422.317,
    "line": "más común de beber",
    "scene": "smoker",
    "in": {
@@ -2851,11 +3025,11 @@
     "party": true,
     "period": 1.6
    },
-   "end": 402.004
+   "end": 426.655
   },
   {
-   "id": "s103",
-   "start": 402.004,
+   "id": "s109",
+   "start": 426.655,
    "line": "Hagamos cuentas",
    "scene": "bigNumber",
    "in": {
@@ -2871,15 +3045,15 @@
     "value": "≈ 150",
     "label": "CALORÍAS",
     "pre": "1 LATA DE CERVEZA",
-    "at": 2.96,
+    "at": 2.878,
     "icon": "beer",
     "color": "#ffd400"
    },
-   "end": 406.724
+   "end": 431.212
   },
   {
-   "id": "s104",
-   "start": 406.724,
+   "id": "s110",
+   "start": 431.212,
    "line": "Seis latas el sábado",
    "scene": "weekendCans",
    "in": {
@@ -2895,11 +3069,11 @@
     "at": 0.1,
     "kcal": 918
    },
-   "end": 409.364
+   "end": 434.09
   },
   {
-   "id": "s105",
-   "start": 409.364,
+   "id": "s111",
+   "start": 434.09,
    "line": "Es como una comida completa",
    "scene": "eatTable",
    "in": {
@@ -2917,11 +3091,11 @@
     "word": false,
     "sepia": false
    },
-   "end": 412.964
+   "end": 437.928
   },
   {
-   "id": "s106",
-   "start": 412.964,
+   "id": "s112",
+   "start": 437.928,
    "line": "En un mes son",
    "scene": "bigNumber",
    "in": {
@@ -2937,14 +3111,14 @@
     "value": "≈ 4.000",
     "label": "CALORÍAS AL MES",
     "pre": "SOLO LOS SÁBADOS",
-    "at": 1.4,
+    "at": 1.479,
     "color": "#ffd400"
    },
-   "end": 417.204
+   "end": 442.245
   },
   {
-   "id": "s107",
-   "start": 417.204,
+   "id": "s113",
+   "start": 442.245,
    "line": "Y el cuerpo no promedia",
    "scene": "compare",
    "in": {
@@ -2971,17 +3145,17 @@
       "icon": "beer",
       "value": "1 × 6 DÍAS",
       "label": "REPARTIDO",
-      "at": 5.64,
+      "at": 5.877,
       "color": "#e8a23a",
       "size": 70
      }
     ]
    },
-   "end": 424.484
+   "end": 449.841
   },
   {
-   "id": "s108",
-   "start": 424.484,
+   "id": "s114",
+   "start": 449.841,
    "line": "Es un golpe concentrado",
    "scene": "liverQueue",
    "in": {
@@ -2998,11 +3172,11 @@
     "caption": "UN GOLPE CONCENTRADO",
     "capAt": 0.2
    },
-   "end": 426.344
+   "end": 451.9
   },
   {
-   "id": "s109",
-   "start": 426.344,
+   "id": "s115",
+   "start": 451.9,
    "line": "Según la Organización Panamericana",
    "scene": "globe",
    "in": {
@@ -3019,11 +3193,11 @@
     "caption": "OPS · LAS AMÉRICAS",
     "capAt": 0.3
    },
-   "end": 428.784
+   "end": 454.538
   },
   {
-   "id": "s110",
-   "start": 428.784,
+   "id": "s116",
+   "start": 454.538,
    "line": "en las Américas mueren",
    "scene": "bigNumber",
    "in": {
@@ -3039,15 +3213,15 @@
     "value": "≈ 85.000",
     "label": "MUERTES AL AÑO SOLO POR ALCOHOL",
     "pre": "LAS AMÉRICAS",
-    "at": 1.44,
+    "at": 1.559,
     "color": "#ff8a7a",
     "size": 190
    },
-   "end": 434.744
+   "end": 460.815
   },
   {
-   "id": "s111",
-   "start": 434.744,
+   "id": "s117",
+   "start": 460.815,
    "line": "La mayoría tenía menos",
    "scene": "iconRow",
    "in": {
@@ -3069,11 +3243,11 @@
      }
     ]
    },
-   "end": 437.504
+   "end": 463.653
   },
   {
-   "id": "s112",
-   "start": 437.504,
+   "id": "s118",
+   "start": 463.653,
    "line": "Y casi dos de cada tres",
    "scene": "liverFat",
    "in": {
@@ -3090,33 +3264,101 @@
     "to": 0.9,
     "text": "2 DE 3: EL HÍGADO",
     "caption": "ENFERMEDADES DEL HÍGADO",
-    "capAt": 3.08
+    "capAt": 3.078
    },
-   "end": 441.224
+   "end": 467.351
   },
   {
-   "id": "s113",
-   "start": 441.224,
-   "line": "Solo México pone",
-   "scene": "people12",
+   "id": "s119",
+   "start": 467.351,
+   "line": "Y en Sudamérica se toma",
+   "scene": "globe",
    "in": {
     "type": "cut"
    },
    "sfx": [],
    "amb": {
     "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "globe",
+    "dots": 90,
+    "caption": "SUDAMÉRICA",
+    "capAt": 0.319
+   },
+   "end": 469.629
+  },
+  {
+   "id": "s120",
+   "start": 469.629,
+   "line": "En Argentina cada adulto",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "value": "≈ 8 L",
+    "label": "DE ALCOHOL PURO POR ADULTO AL AÑO",
+    "pre": "ARGENTINA",
+    "at": 2.918,
+    "color": "#ffd400"
+   },
+   "end": 474.706
+  },
+  {
+   "id": "s121",
+   "start": 474.706,
+   "line": "Eso es más o menos como",
+   "scene": "stackIcons",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "roomtone",
     "gain": -27
    },
    "params": {
-    "tpl": "people12",
-    "hiAt": 2.2,
-    "caption": "MÉXICO: CASI 1 DE CADA 5"
+    "tpl": "stackIcons",
+    "kind": "can",
+    "to": 450,
+    "label": "LATAS DE CERVEZA AL AÑO"
    },
-   "end": 445.344
+   "end": 478.904
   },
   {
-   "id": "s114",
-   "start": 445.344,
+   "id": "s122",
+   "start": 478.904,
+   "line": "En Perú casi lo mismo",
+   "scene": "bigNumber",
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "params": {
+    "tpl": "bigNumber",
+    "value": "≈ 7,5 L",
+    "label": "DE ALCOHOL PURO POR ADULTO AL AÑO",
+    "pre": "PERÚ",
+    "at": 0.2,
+    "color": "#ffd400"
+   },
+   "end": 481.103
+  },
+  {
+   "id": "s123",
+   "start": 481.103,
    "line": "Y qué pasa con el cerebro",
    "scene": "brain",
    "in": {
@@ -3134,11 +3376,11 @@
     "z0": 1.0,
     "z1": 1.1
    },
-   "end": 448.751
+   "end": 484.51
   },
   {
-   "id": "s115",
-   "start": 448.751,
+   "id": "s124",
+   "start": 484.51,
    "line": "En Inglaterra hay una base",
    "scene": "scientist",
    "in": {
@@ -3161,11 +3403,11 @@
      ]
     ]
    },
-   "end": 453.711
+   "end": 489.47
   },
   {
-   "id": "s116",
-   "start": 453.711,
+   "id": "s125",
+   "start": 489.47,
    "line": "Ahí analizaron los cerebros",
    "scene": "brain",
    "in": {
@@ -3195,11 +3437,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 457.391
+   "end": 493.15
   },
   {
-   "id": "s117",
-   "start": 457.391,
+   "id": "s126",
+   "start": 493.15,
    "line": "Y encontraron algo incómodo",
    "scene": "face",
    "in": {
@@ -3216,11 +3458,11 @@
     "face": "shock",
     "bg": "blueprint"
    },
-   "end": 459.391
+   "end": 495.15
   },
   {
-   "id": "s118",
-   "start": 459.391,
+   "id": "s127",
+   "start": 495.15,
    "line": "Incluso a dosis bajas",
    "scene": "compare",
    "in": {
@@ -3253,11 +3495,11 @@
      }
     ]
    },
-   "end": 464.191
+   "end": 499.95
   },
   {
-   "id": "s119",
-   "start": 464.191,
+   "id": "s128",
+   "start": 499.95,
    "line": "Pasar de una a dos",
    "scene": "iconRow",
    "in": {
@@ -3287,11 +3529,11 @@
     "caption": "AL DÍA",
     "capAt": 2.36
    },
-   "end": 469.631
+   "end": 505.39
   },
   {
-   "id": "s120",
-   "start": 469.631,
+   "id": "s129",
+   "start": 505.39,
    "line": "se parecía a envejecer",
    "scene": "bigNumber",
    "in": {
@@ -3311,11 +3553,11 @@
     "icon": "brain",
     "color": "#ff5a4a"
    },
-   "end": 472.911
+   "end": 508.67
   },
   {
-   "id": "s121",
-   "start": 472.911,
+   "id": "s130",
+   "start": 508.67,
    "line": "No prueba que el alcohol",
    "scene": "myth",
    "in": {
@@ -3336,11 +3578,11 @@
     "verdictColor": "#ffd400",
     "verdictAt": 2.04
    },
-   "end": 475.524
+   "end": 511.283
   },
   {
-   "id": "s122",
-   "start": 475.524,
+   "id": "s131",
+   "start": 511.283,
    "line": "Pero el patrón era claro",
    "scene": "title",
    "in": {
@@ -3359,11 +3601,11 @@
     ],
     "bg": "red"
    },
-   "end": 479.351
+   "end": 515.11
   },
   {
-   "id": "s123",
-   "start": 479.351,
+   "id": "s132",
+   "start": 515.11,
    "line": "Te acuerdas del acetaldehído",
    "scene": "liverQueue",
    "in": {
@@ -3380,11 +3622,11 @@
     "noBadge": true,
     "mode": "acet"
    },
-   "end": 483.751
+   "end": 519.51
   },
   {
-   "id": "s124",
-   "start": 483.751,
+   "id": "s133",
+   "start": 519.51,
    "line": "En los años cuarenta",
    "scene": "title",
    "in": {
@@ -3404,11 +3646,11 @@
     ],
     "bg": "dark"
    },
-   "end": 485.911
+   "end": 521.67
   },
   {
-   "id": "s125",
-   "start": 485.911,
+   "id": "s134",
+   "start": 521.67,
    "line": "dos científicos Erik Jacobsen",
    "scene": "scientist",
    "in": {
@@ -3432,11 +3674,11 @@
      ]
     ]
    },
-   "end": 491.951
+   "end": 527.71
   },
   {
-   "id": "s126",
-   "start": 491.951,
+   "id": "s135",
+   "start": 527.71,
    "line": "Y para ver si era seguro",
    "scene": "iconRow",
    "in": {
@@ -3460,11 +3702,11 @@
      }
     ]
    },
-   "end": 495.371
+   "end": 531.13
   },
   {
-   "id": "s127",
-   "start": 495.371,
+   "id": "s136",
+   "start": 531.13,
    "line": "Un día fueron a una fiesta",
    "scene": "labParty",
    "in": {
@@ -3481,11 +3723,11 @@
     "at": 5.24,
     "tag": "DINAMARCA · AÑOS 40"
    },
-   "end": 500.011
+   "end": 535.77
   },
   {
-   "id": "s128",
-   "start": 500.011,
+   "id": "s137",
+   "start": 535.77,
    "line": "pusieron rojos con náuseas",
    "scene": "labParty",
    "in": {
@@ -3501,11 +3743,11 @@
     "noBadge": true,
     "at": -1
    },
-   "end": 503.611
+   "end": 539.37
   },
   {
-   "id": "s129",
-   "start": 503.611,
+   "id": "s138",
+   "start": 539.37,
    "line": "El medicamento bloqueaba",
    "scene": "liverQueue",
    "in": {
@@ -3524,11 +3766,11 @@
     "caption": "EL VENENO SE QUEDA",
     "capAt": 4.2
    },
-   "end": 507.531
+   "end": 543.29
   },
   {
-   "id": "s130",
-   "start": 507.531,
+   "id": "s139",
+   "start": 543.29,
    "line": "El veneno se quedaba",
    "scene": "labParty",
    "in": {
@@ -3557,11 +3799,11 @@
      "color": "#ff5a4a"
     }
    },
-   "end": 512.571
+   "end": 548.33
   },
   {
-   "id": "s131",
-   "start": 512.571,
+   "id": "s140",
+   "start": 548.33,
    "line": "Así por accidente",
    "scene": "title",
    "in": {
@@ -3581,11 +3823,11 @@
     ],
     "bg": "dark"
    },
-   "end": 517.371
+   "end": 553.13
   },
   {
-   "id": "s132",
-   "start": 517.371,
+   "id": "s141",
+   "start": 553.13,
    "line": "Se sigue usando hoy",
    "scene": "iconRow",
    "in": {
@@ -3611,11 +3853,11 @@
     "caption": "SE USA HASTA HOY",
     "capAt": 0.2
    },
-   "end": 520.111
+   "end": 555.87
   },
   {
-   "id": "s133",
-   "start": 520.111,
+   "id": "s142",
+   "start": 555.87,
    "line": "Lo que sentían esos científicos",
    "scene": "face",
    "in": {
@@ -3633,11 +3875,11 @@
     "face": "think",
     "bg": "street"
    },
-   "end": 526.591
+   "end": 562.35
   },
   {
-   "id": "s134",
-   "start": 526.591,
+   "id": "s143",
+   "start": 562.35,
    "line": "Solo que normalmente",
    "scene": "liverQueue",
    "in": {
@@ -3654,11 +3896,11 @@
     "mode": "acet",
     "rate": "EN SILENCIO"
    },
-   "end": 530.191
+   "end": 565.95
   },
   {
-   "id": "s135",
-   "start": 530.191,
+   "id": "s144",
+   "start": 565.95,
    "line": "Volvamos a ti",
    "scene": "streetWalk",
    "in": {
@@ -3681,11 +3923,11 @@
     "face": "calm",
     "badgeAt": 1.34
    },
-   "end": 532.551
+   "end": 568.31
   },
   {
-   "id": "s136",
-   "start": 532.551,
+   "id": "s145",
+   "start": 568.31,
    "line": "Seis",
    "scene": "streetWalk",
    "in": {
@@ -3707,11 +3949,11 @@
     "face": "smile",
     "badgeAt": 0.12
    },
-   "end": 533.431
+   "end": 569.19
   },
   {
-   "id": "s137",
-   "start": 533.431,
+   "id": "s146",
+   "start": 569.19,
    "line": "Un año sin alcohol",
    "scene": "mirror",
    "in": {
@@ -3733,11 +3975,11 @@
     "face": "smile",
     "badgeAt": 0.36
    },
-   "end": 534.971
+   "end": 570.73
   },
   {
-   "id": "s138",
-   "start": 534.971,
+   "id": "s147",
+   "start": 570.73,
    "line": "Aquí te tengo que ser",
    "scene": "face",
    "in": {
@@ -3767,11 +4009,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 542.251
+   "end": 578.01
   },
   {
-   "id": "s139",
-   "start": 542.251,
+   "id": "s148",
+   "start": 578.01,
    "line": "Lo que sí sabemos es la",
    "scene": "title",
    "in": {
@@ -3790,11 +4032,11 @@
     ],
     "bg": "dark"
    },
-   "end": 544.571
+   "end": 580.33
   },
   {
-   "id": "s140",
-   "start": 544.571,
+   "id": "s149",
+   "start": 580.33,
    "line": "Y algo con números",
    "scene": "journal",
    "in": {
@@ -3811,11 +4053,11 @@
     "title": "36 ensayos: alcohol y presión",
     "hiAt": 99
    },
-   "end": 549.771
+   "end": 585.53
   },
   {
-   "id": "s141",
-   "start": 549.771,
+   "id": "s150",
+   "start": 585.53,
    "line": "quienes bebían más de seis",
    "scene": "compare",
    "in": {
@@ -3848,11 +4090,11 @@
      }
     ]
    },
-   "end": 555.691
+   "end": 591.45
   },
   {
-   "id": "s142",
-   "start": 555.691,
+   "id": "s151",
+   "start": 591.45,
    "line": "Para quien bebía poco",
    "scene": "myth",
    "in": {
@@ -3872,11 +4114,11 @@
     "verdictColor": "#ffd400",
     "verdictAt": 3.24
    },
-   "end": 559.471
+   "end": 595.23
   },
   {
-   "id": "s143",
-   "start": 559.471,
+   "id": "s152",
+   "start": 595.23,
    "line": "Menos presión para quien",
    "scene": "iconRow",
    "in": {
@@ -3910,11 +4152,11 @@
      }
     ]
    },
-   "end": 566.351
+   "end": 602.11
   },
   {
-   "id": "s144",
-   "start": 566.351,
+   "id": "s153",
+   "start": 602.11,
    "line": "Y un riesgo de cáncer",
    "scene": "chart",
    "in": {
@@ -3953,11 +4195,11 @@
     "endLabel": "DEJA DE SUBIR",
     "endAt": 2.0
    },
-   "end": 568.991
+   "end": 604.75
   },
   {
-   "id": "s145",
-   "start": 568.991,
+   "id": "s154",
+   "start": 604.75,
    "line": "La Organización Mundial de la Salud dice",
    "scene": "bigNumber",
    "in": {
@@ -3977,11 +4219,11 @@
     "icon": "virus",
     "color": "#ff5a4a"
    },
-   "end": 576.591
+   "end": 612.35
   },
   {
-   "id": "s146",
-   "start": 576.591,
+   "id": "s155",
+   "start": 612.35,
    "line": "Ahora haz tu propia cuenta",
    "scene": "stackIcons",
    "in": {
@@ -3998,11 +4240,11 @@
     "to": 52,
     "label": "CAJAS DE CERVEZA AL AÑO"
    },
-   "end": 584.311
+   "end": 620.07
   },
   {
-   "id": "s147",
-   "start": 584.311,
+   "id": "s156",
+   "start": 620.07,
    "line": "Qué harías con ese dinero",
    "scene": "face",
    "in": {
@@ -4032,11 +4274,11 @@
      "color": "#ffd400"
     }
    },
-   "end": 586.271
+   "end": 622.03
   },
   {
-   "id": "s148",
-   "start": 586.271,
+   "id": "s157",
+   "start": 622.03,
    "line": "Bueno y cómo se aguanta",
    "scene": "face",
    "in": {
@@ -4055,11 +4297,11 @@
     "face": "think",
     "bg": "office"
    },
-   "end": 589.091
+   "end": 624.85
   },
   {
-   "id": "s149",
-   "start": 589.091,
+   "id": "s158",
+   "start": 624.85,
    "line": "Primero prepara el viernes",
    "scene": "calendarFlip",
    "in": {
@@ -4083,11 +4325,11 @@
     "size": 96,
     "color": "#c8405a"
    },
-   "end": 591.891
+   "end": 627.73
   },
   {
-   "id": "s150",
-   "start": 591.891,
+   "id": "s159",
+   "start": 627.73,
    "line": "Ten algo en la mano",
    "scene": "iconRow",
    "in": {
@@ -4106,28 +4348,28 @@
      {
       "icon": "water",
       "label": "AGUA MINERAL",
-      "at": 1.56,
+      "at": 1.64,
       "color": "#6ab8ff"
      },
      {
       "icon": "soda",
       "label": "SIN AZÚCAR",
-      "at": 2.84,
+      "at": 3.08,
       "color": "#5fe39a"
      },
      {
       "icon": "beer",
       "label": "CERVEZA 0,0",
-      "at": 4.36,
+      "at": 4.68,
       "color": "#e8a23a"
      }
     ]
    },
-   "end": 597.411
+   "end": 633.57
   },
   {
-   "id": "s151",
-   "start": 597.411,
+   "id": "s160",
+   "start": 633.57,
    "line": "En una fiesta nadie",
    "scene": "smoker",
    "in": {
@@ -4159,11 +4401,11 @@
      "size": 90
     }
    },
-   "end": 602.631
+   "end": 638.55
   },
   {
-   "id": "s152",
-   "start": 602.631,
+   "id": "s161",
+   "start": 638.55,
    "line": "Segundo di la verdad",
    "scene": "offer",
    "in": {
@@ -4180,13 +4422,13 @@
     "prop": "beer",
     "noAt": 0.4,
     "word": "«ESTOY EN UN RETO»",
-    "wordAt": 3.1
+    "wordAt": 3.22
    },
-   "end": 606.891
+   "end": 642.81
   },
   {
-   "id": "s153",
-   "start": 606.891,
+   "id": "s162",
+   "start": 642.81,
    "line": "Un reto suena mejor",
    "scene": "title",
    "in": {
@@ -4206,11 +4448,11 @@
     ],
     "bg": "dark"
    },
-   "end": 609.231
+   "end": 645.15
   },
   {
-   "id": "s154",
-   "start": 609.231,
+   "id": "s163",
+   "start": 645.15,
    "line": "Tercero cambia el momento",
    "scene": "title",
    "in": {
@@ -4230,11 +4472,11 @@
     ],
     "bg": "dark"
    },
-   "end": 612.671
+   "end": 648.47
   },
   {
-   "id": "s155",
-   "start": 612.671,
+   "id": "s164",
+   "start": 648.47,
    "line": "Si siempre tomabas cocinando",
    "scene": "iconRow",
    "in": {
@@ -4253,25 +4495,25 @@
      {
       "icon": "plate",
       "label": "COCINAR",
-      "at": 1.08
+      "at": 1.04
      },
      {
       "icon": "medal",
       "label": "FÚTBOL",
-      "at": 2.2
+      "at": 2.213
      },
      {
       "icon": "calendar",
       "label": "SALIR DEL TRABAJO",
-      "at": 3.4
+      "at": 3.32
      }
     ]
    },
-   "end": 618.791
+   "end": 654.59
   },
   {
-   "id": "s156",
-   "start": 618.791,
+   "id": "s165",
+   "start": 654.59,
    "line": "Mueve la rutina",
    "scene": "streetWalk",
    "in": {
@@ -4279,7 +4521,7 @@
    },
    "sfx": [
     {
-     "at": 4.24,
+     "at": 4.36,
      "name": "hit",
      "gain": -9
     }
@@ -4294,17 +4536,17 @@
     "face": "smile",
     "stamp": {
      "text": "SAL A CAMINAR",
-     "at": 4.24,
+     "at": 4.36,
      "y": 950,
      "size": 110,
      "color": "#5fe39a"
     }
    },
-   "end": 623.791
+   "end": 659.57
   },
   {
-   "id": "s157",
-   "start": 623.791,
+   "id": "s166",
+   "start": 659.57,
    "line": "Y si te equivocas",
    "scene": "myth",
    "in": {
@@ -4324,13 +4566,13 @@
     ],
     "verdict": "NO",
     "verdictColor": "#5fe39a",
-    "verdictAt": 1.88
+    "verdictAt": 1.84
    },
-   "end": 626.911
+   "end": 662.73
   },
   {
-   "id": "s158",
-   "start": 626.911,
+   "id": "s167",
+   "start": 662.73,
    "line": "En el estudio de Sussex",
    "scene": "scientist",
    "in": {
@@ -4349,16 +4591,16 @@
     "tag": "UNIVERSIDAD DE SUSSEX",
     "lines": [
      [
-      4.84,
+      4.8,
       "IGUAL BEBIERON MENOS"
      ]
     ]
    },
-   "end": 633.151
+   "end": 668.89
   },
   {
-   "id": "s159",
-   "start": 633.151,
+   "id": "s168",
+   "start": 668.89,
    "line": "Y ahora lo que te prometí",
    "scene": "title",
    "in": {
@@ -4385,11 +4627,11 @@
     ],
     "bg": "red"
    },
-   "end": 635.729
+   "end": 671.468
   },
   {
-   "id": "s160",
-   "start": 635.729,
+   "id": "s169",
+   "start": 671.468,
    "line": "Durante décadas",
    "scene": "smoker",
    "in": {
@@ -4410,11 +4652,11 @@
     "caption": "«BUENA PARA EL CORAZÓN»",
     "capAt": 4.756
    },
-   "end": 641.164
+   "end": 676.903
   },
   {
-   "id": "s161",
-   "start": 641.164,
+   "id": "s170",
+   "start": 676.903,
    "line": "Hasta salían estudios",
    "scene": "chart",
    "in": {
@@ -4470,11 +4712,11 @@
      }
     ]
    },
-   "end": 646.679
+   "end": 682.418
   },
   {
-   "id": "s162",
-   "start": 646.679,
+   "id": "s171",
+   "start": 682.418,
    "line": "En dos mil veintitrés unos",
    "scene": "journal",
    "in": {
@@ -4492,11 +4734,11 @@
     "title": "107 estudios · 4,8 millones",
     "hiAt": 99
    },
-   "end": 653.953
+   "end": 689.692
   },
   {
-   "id": "s163",
-   "start": 653.953,
+   "id": "s172",
+   "start": 689.692,
    "line": "Y encontraron el error",
    "scene": "title",
    "in": {
@@ -4515,11 +4757,11 @@
     ],
     "bg": "red"
    },
-   "end": 655.652
+   "end": 691.391
   },
   {
-   "id": "s164",
-   "start": 655.652,
+   "id": "s173",
+   "start": 691.391,
    "line": "En el grupo de los que",
    "scene": "groups",
    "in": {
@@ -4535,11 +4777,11 @@
     "noBadge": true,
     "markAt": 3.876
    },
-   "end": 660.708
+   "end": 696.447
   },
   {
-   "id": "s165",
-   "start": 660.708,
+   "id": "s174",
+   "start": 696.447,
    "line": "Y por qué alguien deja",
    "scene": "groups",
    "in": {
@@ -4557,11 +4799,11 @@
     "caption": "PORQUE SE ENFERMÓ",
     "capAt": 3.517
    },
-   "end": 664.905
+   "end": 700.644
   },
   {
-   "id": "s166",
-   "start": 664.905,
+   "id": "s175",
+   "start": 700.644,
    "line": "Entonces el grupo de no",
    "scene": "groups",
    "in": {
@@ -4579,11 +4821,11 @@
     "caption": "PARECÍAN MÁS ENFERMOS",
     "capAt": 3.397
    },
-   "end": 671.609
+   "end": 707.348
   },
   {
-   "id": "s167",
-   "start": 671.609,
+   "id": "s176",
+   "start": 707.348,
    "line": "Cuando corrigieron ese error",
    "scene": "groups",
    "in": {
@@ -4602,11 +4844,11 @@
     "caption": "LA PROTECCIÓN DESAPARECIÓ",
     "capAt": 2.678
    },
-   "end": 677.844
+   "end": 713.583
   },
   {
-   "id": "s168",
-   "start": 677.844,
+   "id": "s177",
+   "start": 713.583,
    "line": "No era que el vino",
    "scene": "title",
    "in": {
@@ -4626,11 +4868,11 @@
     ],
     "bg": "dark"
    },
-   "end": 682.932
+   "end": 718.671
   },
   {
-   "id": "s169",
-   "start": 682.932,
+   "id": "s178",
+   "start": 718.671,
    "line": "Y en dos mil veintitrés la",
    "scene": "journal",
    "in": {
@@ -4648,11 +4890,11 @@
     "title": "No existe un nivel seguro",
     "hiAt": 99
    },
-   "end": 687.436
+   "end": 723.175
   },
   {
-   "id": "s170",
-   "start": 687.436,
+   "id": "s179",
+   "start": 723.175,
    "line": "no existe una cantidad",
    "scene": "title",
    "in": {
@@ -4672,11 +4914,11 @@
     ],
     "bg": "red"
    },
-   "end": 691.272
+   "end": 727.011
   },
   {
-   "id": "s171",
-   "start": 691.272,
+   "id": "s180",
+   "start": 727.011,
    "line": "Un trago de vez en cuando",
    "scene": "myth",
    "in": {
@@ -4698,11 +4940,11 @@
     "verdictColor": "#ffd400",
     "verdictAt": 3.877
    },
-   "end": 696.588
+   "end": 732.327
   },
   {
-   "id": "s172",
-   "start": 696.588,
+   "id": "s181",
+   "start": 732.327,
    "line": "Entonces qué pasaría",
    "scene": "title",
    "in": {
@@ -4729,11 +4971,11 @@
     ],
     "bg": "room"
    },
-   "end": 699.568
+   "end": 735.307
   },
   {
-   "id": "s173",
-   "start": 699.568,
+   "id": "s182",
+   "start": 735.307,
    "line": "La primera noche duermes",
    "scene": "bedWide",
    "in": {
@@ -4762,11 +5004,11 @@
     "face": "calm",
     "badgeAt": 0.6
    },
-   "end": 701.888
+   "end": 737.627
   },
   {
-   "id": "s174",
-   "start": 701.888,
+   "id": "s183",
+   "start": 737.627,
    "line": "En dos días te hidratas",
    "scene": "kidneyADH",
    "in": {
@@ -4794,11 +5036,11 @@
     "mode": "clear",
     "badgeAt": 0.36
    },
-   "end": 704.128
+   "end": 739.867
   },
   {
-   "id": "s175",
-   "start": 704.128,
+   "id": "s184",
+   "start": 739.867,
    "line": "En una semana el domingo",
    "scene": "face",
    "in": {
@@ -4828,11 +5070,11 @@
     "dawn": 1,
     "badgeAt": 0.44
    },
-   "end": 706.768
+   "end": 742.507
   },
   {
-   "id": "s176",
-   "start": 706.768,
+   "id": "s185",
+   "start": 742.507,
    "line": "En dos semanas el cerebro",
    "scene": "mriCompare",
    "in": {
@@ -4860,11 +5102,11 @@
     "at": 0.1,
     "badgeAt": 0.36
    },
-   "end": 710.368
+   "end": 746.107
   },
   {
-   "id": "s177",
-   "start": 710.368,
+   "id": "s186",
+   "start": 746.107,
    "line": "Y en un mes tu sangre",
    "scene": "labReport",
    "in": {
@@ -4904,11 +5146,11 @@
     ],
     "badgeAt": 0.52
    },
-   "end": 713.408
+   "end": 749.147
   },
   {
-   "id": "s178",
-   "start": 713.408,
+   "id": "s187",
+   "start": 749.147,
    "line": "Lo más difícil no es",
    "scene": "offer",
    "in": {
@@ -4927,11 +5169,11 @@
     "word": "¡UNA NADA MÁS!",
     "wordAt": 3.56
    },
-   "end": 719.168
+   "end": 754.907
   },
   {
-   "id": "s179",
-   "start": 719.168,
+   "id": "s188",
+   "start": 754.907,
    "line": "Y si bebes mucho todos",
    "scene": "hospitalBed",
    "in": {
@@ -4961,11 +5203,11 @@
      "color": "#5fe39a"
     }
    },
-   "end": 723.908
+   "end": 759.647
   },
   {
-   "id": "s180",
-   "start": 723.908,
+   "id": "s189",
+   "start": 759.647,
    "line": "Y tú Cuántos días llevas",
    "scene": "comment",
    "in": {
@@ -4983,11 +5225,11 @@
     "text": "¿Cuántos días llevas sin tomar?",
     "typeDur": 1.3
    },
-   "end": 728.055
+   "end": 763.794
   },
   {
-   "id": "s181",
-   "start": 728.055,
+   "id": "s190",
+   "start": 763.794,
    "line": "Y suscríbete",
    "scene": "endCard",
    "in": {
@@ -5009,7 +5251,7 @@
     ],
     "prop": "bottle"
    },
-   "end": 735.228
+   "end": 770.967
   }
  ]
 }
