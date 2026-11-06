@@ -77,7 +77,7 @@ BEATS = [
   ('05', 'Y llega el primer viernes', 'calendarFlip', {'in': WHIP, 'steps': [[0, 'VIERNES', 'PRIMERO SIN ALCOHOL']], 'size': 96, 'color': '#c8405a'}),
   ('05', 'Ahí el problema no es', 'offer', {'prop': 'beer', 'noAt': 99, 'word': '¿QUÉ, YA NO TOMAS?', 'wordAt': 'w:tomas'}),
   ('05', 'Estás enfermo', 'chatGroup', {'msgs': [[0.05, '¿Estás enfermo? 😂'.replace(' 😂', ''), 'Beto'], ['w:hace', 'Una no hace daño', 'Caro'], ['w:comentarios', 'Ya ni sales, bro', 'Memo']]}),
-  ('05', 'En los comentarios de videos', 'comment', {'text': 'Lo peor no es dejarlo, es la presión de los amigos', 'typeDur': 1.6}),
+  ('05', 'En los comentarios de videos', 'comment', {'text': 'Lo peor es la presión de los amigos', 'typeDur': 1.6}),
   ('05', 'No la abstinencia', 'title', {'lines': ['NO ES EL CUERPO.', 'ES LA PRESIÓN'], 'bg': 'dark'}),
   ('05', 'Tu cuerpo te está dando', 'chatGroup', {'msgs': [[0, '¿Estás enfermo?', 'Beto'], [0, 'Una no hace daño', 'Caro'], ['w:whatsapp', 'Estoy haciendo un reto 💪'.replace(' 💪', ''), 'me']]}),
 
