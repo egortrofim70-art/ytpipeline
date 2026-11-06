@@ -99,6 +99,13 @@ export function extraIcon(g, name, c, t = 0) {
     case 'syringeFree': return false;
     case 'rat': g.fillStyle = c; g.beginPath(); g.ellipse(0, 10, 56, 32, 0, 0, Math.PI * 2); g.fill(); g.beginPath(); g.moveTo(40, -6); g.quadraticCurveTo(90, 6, 76, 22); g.quadraticCurveTo(50, 30, 40, 26); g.fill(); circle(g, 40, -16, 14, c); circle(g, 68, 8, 4, '#0b1324');
       g.strokeStyle = c; g.lineWidth = 5; g.beginPath(); g.moveTo(-54, 14); g.quadraticCurveTo(-100, 10, -90, -30); g.stroke(); return true;
+    case 'cigarette': g.save(); g.rotate(-0.4); rr(g, -70, -9, 140, 18, 6); g.fillStyle = '#f4f2ec'; g.fill(); rr(g, -70, -9, 40, 18, 6); g.fillStyle = '#d89a5a'; g.fill(); circle(g, 72, 0, 9, '#ff6a2a'); g.restore();
+      g.strokeStyle = 'rgba(220,226,240,.5)'; g.lineWidth = 4; g.beginPath(); for (let k = 0; k <= 12; k++) { const u = k / 12; g.lineTo(62 + Math.sin(u * 6 + t * 3) * 8 * u, -28 - u * 60); } g.stroke(); return true;
+    case 'pack': rr(g, -50, -66, 100, 132, 8); g.fillStyle = '#f4f2ec'; g.fill(); rr(g, -50, -66, 100, 40, 8); g.fillStyle = '#c8302a'; g.fill(); for (let k = 0; k < 4; k++) { rr(g, -40 + k * 22, -86, 16, 26, 3); g.fillStyle = k % 2 ? '#d89a5a' : '#f4f2ec'; g.fill(); } return true;
+    case 'ashtray': g.fillStyle = '#5a6270'; g.beginPath(); g.ellipse(0, 20, 76, 30, 0, 0, Math.PI * 2); g.fill(); g.fillStyle = '#3a4050'; g.beginPath(); g.ellipse(0, 14, 56, 18, 0, 0, Math.PI * 2); g.fill(); seg(g, [[-30, 10], [20, 0]], 9, '#e8e4dc'); seg(g, [[-30, 10], [-18, 8]], 9, '#d89a5a'); return true;
+    case 'vape': rr(g, -22, -70, 44, 130, 12); g.fillStyle = '#7a5ad8'; g.fill(); rr(g, -14, -88, 28, 24, 8); g.fillStyle = '#1a1a22'; g.fill(); circle(g, 0, 10, 7, '#9fffe0'); return true;
+    case 'patch': rr(g, -60, -40, 120, 80, 18); g.fillStyle = '#e8d0b8'; g.fill(); rr(g, -34, -22, 68, 44, 10); g.fillStyle = '#d8b898'; g.fill(); text(g, 'NIC', 0, 2, { size: 26, font: FONTS.ui, weight: 900, color: '#8a5a3a' }); return true;
+    case 'co': circle(g, -26, 0, 30, '#6a6a74'); circle(g, 26, 0, 30, '#ff5a4a'); text(g, 'C', -26, 2, { size: 30, font: FONTS.ui, weight: 900, color: '#fff' }); text(g, 'O', 26, 2, { size: 30, font: FONTS.ui, weight: 900, color: '#fff' }); return true;
     case 'virusShield': return false;
     case 'people': for (const [x, s] of [[-30, 1], [30, 0.9]]) { circle(g, x, -30 * s, 24 * s, c); g.fillStyle = c; g.beginPath(); g.ellipse(x, 40, 36 * s, 34 * s, 0, Math.PI, Math.PI * 2); g.fill(); } return true;
     case 'girl': circle(g, 0, -30, 28, c); circle(g, -20, -58, 16, c); g.fillStyle = c; g.beginPath(); g.moveTo(-40, 66); g.lineTo(0, 6); g.lineTo(40, 66); g.closePath(); g.fill(); return true;

@@ -1,6 +1,6 @@
 {
  "title": "thumbnails v3",
- "duration": 8,
+ "duration": 10,
  "shots": [
   {
    "id": "v_ins",
@@ -64,6 +64,22 @@
    "end": 8,
    "line": "",
    "scene": "b_wat",
+   "vignette": true
+  },
+  {
+   "id": "v_smk",
+   "start": 8,
+   "end": 9,
+   "line": "",
+   "scene": "v_smk",
+   "vignette": true
+  },
+  {
+   "id": "b_smk",
+   "start": 9,
+   "end": 10,
+   "line": "",
+   "scene": "b_smk",
    "vignette": true
   }
  ]

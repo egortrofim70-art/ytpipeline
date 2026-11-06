@@ -155,3 +155,35 @@ registerShot('b_wat', { draw(g) {
   headline(g, [['7 ЛИТРОВ', YEL, 180], ['ЗА 3 ЧАСА', WHITE, 120]], 1400, 70);
   vign(g, 0.55); calmCorner(g);
 } });
+
+// ---------- smoke A — strained craving face, a big lit cigarette crossed out, sticker ДЕНЬ 3, "БРОСИЛ / КУРИТЬ"
+function bigCig(g, cx, cy, s, rot = -0.35) {
+  g.save(); g.translate(cx, cy); g.rotate(rot); g.scale(s, s);
+  rr(g, -150, -20, 300, 40, 12); g.fillStyle = '#f4f2ec'; g.fill(); rr(g, -150, -20, 90, 40, 12); g.fillStyle = '#d89a5a'; g.fill();
+  g.lineWidth = 5; g.strokeStyle = INK; rr(g, -150, -20, 300, 40, 12); g.stroke();
+  rr(g, 138, -20, 22, 40, 8); g.fillStyle = '#ff5a1a'; g.fill(); glow(g, 152, 0, 90, '#ff6a2a', 0.9);
+  g.strokeStyle = 'rgba(230,236,248,.75)'; g.lineWidth = 9; g.lineCap = 'round'; g.beginPath(); for (let k = 0; k <= 16; k++) { const u = k / 16; g.lineTo(160 + Math.sin(u * 7) * 26 * u, -30 - u * 190); } g.stroke();
+  g.restore();
+}
+registerShot('v_smk', { draw(g) {
+  blurLayer(g, 18, (g) => kitchen(g, 0, camAt(1200, 560, 1.4))); veil(g, '#0a0402', 0.72);
+  glow(g, 500, FY0, 760, '#ff8a3a', 0.22);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'worried', mouth: 'wavy', eyeSize: 1.3, pupil: 0.24 }, look: [0.85, 0.05], rimColor: '#ffb07a', rimSide: 1 });
+  veins(g, 500, FY0, 380, 1.3);
+  const cx = 1400, cy = 830; glow(g, cx, cy, 400, '#ff6a2a', 0.35);
+  bigCig(g, cx - 40, cy + 10, 1.6, 0.32); slash(g, cx, cy, 310, -0.85);
+  badge(g, cx, 545, 'ДЕНЬ 3', RED, 90);
+  headline(g, [['БРОСИЛ', WHITE, 150], ['КУРИТЬ', YEL, 200]], 1400, 80);
+  vign(g, 0.55); calmCorner(g);
+} });
+// ---------- smoke B — the twist: shocked face, ONE lit cigarette in a red danger ring, "1 ЗАТЯЖКА / И ВСЁ ЗАНОВО"
+registerShot('b_smk', { draw(g) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#14040a', '#26060e', '#0a0206']); g.fillRect(0, 0, E.W, E.H);
+  glow(g, 500, FY0, 760, '#ff5a4a', 0.2);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'raised', mouth: 'oBig', eyeSize: 1.35, pupil: 0.26 }, look: [0.85, 0.1], rimColor: '#ffb0a0', rimSide: 1 });
+  const cx = 1400, cy = 820; glow(g, cx, cy, 420, RED, 0.4);
+  g.lineWidth = 34; g.strokeStyle = INK; g.beginPath(); g.arc(cx, cy, 250, 0, Math.PI * 2); g.stroke(); g.lineWidth = 22; g.strokeStyle = RED; g.stroke();
+  bigCig(g, cx - 30, cy + 30, 1.45, -0.3);
+  headline(g, [['1 ЗАТЯЖКА', YEL, 180], ['И ВСЁ ЗАНОВО', WHITE, 120]], 1400, 80);
+  vign(g, 0.55); calmCorner(g);
+} });
