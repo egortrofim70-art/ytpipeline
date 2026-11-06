@@ -70,7 +70,7 @@ function brain(g, t, info, cx, cy, s) {
     g.restore();
   }
   // thalamus
-  const tx = 30, ty = 20, th = mode === 'intro' ? pop(t, info.hiAt ?? 0.6) : mode === 'clean' || mode === 'dirty' ? 0 : 1, pulse = 0.5 + 0.5 * Math.sin(t * 5);
+  const tx = 30, ty = 20, th = info.noFocus ? 0 : mode === 'intro' ? pop(t, info.hiAt ?? 0.6) : mode === 'clean' || mode === 'dirty' ? 0 : 1, pulse = 0.5 + 0.5 * Math.sin(t * 5);
   if (th > 0) {
     glow(g, tx, ty, 150 * th, mode === 'destroy' || mode === 'sponge' ? RED : gold, (0.35 + 0.2 * pulse) * th);
     g.fillStyle = alpha(mode === 'destroy' || mode === 'sponge' ? '#ff8a6a' : gold, 0.85 * th); g.beginPath(); g.ellipse(tx, ty, 62 * th, 40 * th, 0.15, 0, 7); g.fill();

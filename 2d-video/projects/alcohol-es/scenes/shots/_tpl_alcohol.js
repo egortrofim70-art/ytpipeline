@@ -61,8 +61,8 @@ export const ALCOHOL = {
     glow(g, lx, ly, 420, mode === 'block' ? RED : '#ff8a6a', mode === 'block' ? 0.25 + 0.1 * Math.sin(t * 6) : 0.14);
     g.save(); g.translate(lx, ly); g.scale(3.2, 3.2); icon(g, 'liver', 0, 0, 1, '#c8584a', t); g.restore();
     seg(g, [[120, ly + 150], [lx - 230, ly + 150]], 6, alpha(BP(), 0.6));
-    const n = 7; for (let i = 0; i < n; i++) { const u = ((t * speed / per) + i) / n % 1, x = lerp(150, lx - 230, ease.inOut(clamp(u * 1.2))), sh = u > 0.83 ? 1 - (u - 0.83) / 0.17 : 1; beerCan(g, x, ly + 95, 0.9 * sh); }
-    if (info.fast) { for (let i = 0; i < 5; i++) { const k = pop(t, 0.6 + i * 0.45, 0.3); if (k > 0) beerCan(g, 330 + i * 70, ly - 120 - (i % 2) * 40, 0.7 * k, alpha(AMBER, 0.85)); } label(g, info.waitText || 'ESPERANDO EN LA SANGRE', 470, ly - 230, { size: 34, color: RED, a: fin(t, 0.8) }); }
+    const n = 5; for (let i = 0; i < n; i++) { const u = ((t * speed / per) + i) / n % 1, x = lerp(150, lx - 260, ease.inOut(clamp(u * 1.2))), sh = u > 0.83 ? 1 - (u - 0.83) / 0.17 : 1; beerCan(g, x, ly + 75, 1.5 * sh); }
+    if (info.fast) { for (let i = 0; i < 5; i++) { const k = pop(t, 0.6 + i * 0.45, 0.3); if (k > 0) beerCan(g, 260 + i * 110, ly - 150 - (i % 2) * 50, 1.2 * k, alpha(AMBER, 0.85)); } label(g, info.waitText || 'ESPERANDO EN LA SANGRE', 480, ly - 290, { size: 34, color: RED, a: fin(t, 0.8) }); }
     if (mode !== 'queue') { const out = mode === 'block'; for (let i = 0; i < 6; i++) { const u = ((t * 0.5) + i / 6) % 1, x = out ? lx + 120 + Math.sin(i * 2.1 + t) * 160 : lerp(lx + 200, E.W - 80, u), y = out ? ly - 120 + Math.cos(i * 1.7 + t * 0.8) * 160 : ly - 40 + Math.sin(u * 6 + i) * 60; molecule(g, x, y, 1.1, RED, out ? 0.9 : 1 - u); }
       label(g, info.molText || 'ACETALDEHÍDO', lx + 300, ly + 260, { size: 44, color: RED, a: fin(t, 0.3) });
       if (out) { const k = pop(t, info.blockAt ?? 0.6, 0.3); if (k > 0) { g.save(); g.translate(lx + 250, ly + 30); g.scale(k, k); seg(g, [[-60, -60], [60, 60]], 22, RED); seg(g, [[60, -60], [-60, 60]], 22, RED); g.restore(); } } }
@@ -86,15 +86,15 @@ export const ALCOHOL = {
   // a group chat on a big phone: msgs [[at, text, who]] — who 'me' is on the right (green); others show their name
   chatGroup(g, t, info) {
     blurLayer(g, 16, (g) => kitchen(g, t, camAt(1100, 560, 1.4))); veil(g, '#05060c', 0.62);
-    const cx = E.W / 2, w = 760, h = 980, x = cx - w / 2, y = (E.H - h) / 2 + 30, a = pop(t, 0, 0.35); g.save(); zoom(g, 0.9 + 0.1 * a, cx, E.H / 2);
+    const cx = E.W / 2, w = 900, h = 980, x = cx - w / 2, y = (E.H - h) / 2 + 30, a = pop(t, 0, 0.35); g.save(); zoom(g, 0.9 + 0.1 * a, cx, E.H / 2);
     rr(g, x - 18, y - 18, w + 36, h + 36, 60); g.fillStyle = '#0a0a10'; g.fill(); rr(g, x, y, w, h, 46); g.fillStyle = '#e9e2d6'; g.fill();
     g.save(); rr(g, x, y, w, 130, 46); g.clip(); g.fillStyle = '#1f6e5a'; g.fillRect(x, y, w, 130); g.restore();
-    label(g, info.group || 'LOS DEL VIERNES', cx, y + 82, { size: 40, color: '#ffffff', spacing: 1 });
-    let yy = y + 180; for (const [at, s, who] of info.msgs || []) { const k = pop(t, at, 0.3); if (k <= 0) continue; const me = who === 'me', fs = 34, tw = Math.min(measure(g, s, fs, FONTS.ui, 700) + 60, w - 120), bx = me ? x + w - 40 - tw : x + 40, bh = me ? 80 : 112;
+    label(g, info.group || 'LOS DEL VIERNES', cx, y + 82, { size: 48, color: '#ffffff', spacing: 1 });
+    let yy = y + 180; for (const [at, s, who] of info.msgs || []) { const k = pop(t, at, 0.3); if (k <= 0) continue; const me = who === 'me', fs = 48, tw = Math.min(measure(g, s, fs, FONTS.ui, 700) + 70, w - 80), bx = me ? x + w - 30 - tw : x + 30, bh = me ? 100 : 140;
       g.save(); g.translate(me ? bx + tw : bx, yy); g.scale(k, k); g.translate(-(me ? bx + tw : bx), -yy);
       rr(g, bx, yy, tw, bh, 24); g.fillStyle = me ? '#d2f5c4' : '#ffffff'; g.fill();
-      if (!me) text(g, who, bx + 30, yy + 30, { size: 24, font: FONTS.ui, weight: 900, color: '#c85a2a', align: 'left' });
-      text(g, s, bx + 30, yy + (me ? 42 : 76), { size: fs, font: FONTS.ui, weight: 700, color: '#1a1a22', align: 'left' }); g.restore(); yy += bh + 26; }
+      if (!me) text(g, who, bx + 34, yy + 36, { size: 32, font: FONTS.ui, weight: 900, color: '#c85a2a', align: 'left' });
+      text(g, s, bx + 34, yy + (me ? 52 : 96), { size: fs, font: FONTS.ui, weight: 700, color: '#1a1a22', align: 'left' }); g.restore(); yy += bh + 26; }
     g.restore(); caption(g, t, info, 70);
   },
   // two MRI-style brains: DÍA 1 vs DÍA 14 — grey matter dots fill in on the right one
@@ -121,7 +121,7 @@ export const ALCOHOL = {
   // a concert: spotlights, bouncing crowd, a singer with a mic (rig prop), swaying. Optional tag/caption.
   stage(g, t, info) {
     g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0a0614', '#1a0c2a', '#0a0610']); g.fillRect(0, 0, E.W, E.H);
-    const cam = camLerp(camAt(960, 600, 1.0), camAt(960, 580, 1.08), K(info, t));
+    const cam = camLerp(camAt(960, 640, info.z0 ?? 1.55), camAt(960, 620, info.z1 ?? 1.7), K(info, t));
     layer(g, cam, 1, (g) => {
       for (const [x, c] of [[560, '#ff6ad8'], [960, '#ffd86a'], [1360, '#6ad8ff']]) { const sw = Math.sin(t * 0.8 + x) * 120; g.save(); g.globalAlpha *= 0.18; g.fillStyle = c; g.beginPath(); g.moveTo(x, -40); g.lineTo(x + sw - 260, GY + 40); g.lineTo(x + sw + 260, GY + 40); g.fill(); g.restore(); }
       g.fillStyle = '#20142e'; g.fillRect(0, GY, E.W, 300); glow(g, 960, GY - 200, 500, '#ffd86a', 0.2);
@@ -134,15 +134,15 @@ export const ALCOHOL = {
   // a lab report card: rows [[label, value, at, color]] appear one by one with a ↓ arrow; head line on top
   labReport(g, t, info) {
     g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0c1018', '#141c2a', '#080a10']); g.fillRect(0, 0, E.W, E.H); glow(g, E.W / 2, E.H / 2, 800, '#9fd8ff', 0.1);
-    const rows = info.rows || [], w = 1180, h = 200 + rows.length * 120, x = (E.W - w) / 2, y = (E.H - h) / 2 + 20, a = pop(t, 0, 0.4);
+    const rows = info.rows || [], w = 1440, h = 230 + rows.length * 150, x = (E.W - w) / 2, y = (E.H - h) / 2 + 20, a = pop(t, 0, 0.4);
     g.save(); zoom(g, lerp(0.96, 1.02, K(info, t))); g.globalAlpha *= clamp(a * 1.5);
     rr(g, x, y, w, h, 18); g.fillStyle = '#f4f1ea'; g.fill(); g.fillStyle = '#c8302a'; g.fillRect(x, y, w, 14);
-    text(g, info.head || 'RESULTADOS', x + 60, y + 80, { size: 44, font: FONTS.ui, weight: 900, color: '#1a1a22', align: 'left', spacing: 2 });
-    if (info.sub) text(g, info.sub, x + w - 60, y + 80, { size: 28, font: FONTS.ui, weight: 700, color: '#6a6a7a', align: 'right' });
-    seg(g, [[x + 60, y + 120], [x + w - 60, y + 120]], 3, '#c8c4ba');
-    rows.forEach(([lab, val, at, col], i) => { const k = fin(t, at ?? 0.5 + i * 0.6, 0.35); if (k <= 0) return; const yy = y + 190 + i * 120;
-      g.save(); g.globalAlpha *= k; text(g, lab, x + 60, yy, { size: 40, font: FONTS.ui, weight: 800, color: '#2a2a34', align: 'left' });
-      text(g, val, x + w - 60, yy, { size: 62, font: FONTS.ui, weight: 900, color: col || '#1f9a5a', align: 'right' }); g.restore(); });
+    text(g, info.head || 'RESULTADOS', x + 70, y + 86, { size: 58, font: FONTS.ui, weight: 900, color: '#1a1a22', align: 'left', spacing: 2 });
+    if (info.sub) text(g, info.sub, x + 70, y + 136, { size: 32, font: FONTS.ui, weight: 700, color: '#6a6a7a', align: 'left' });
+    seg(g, [[x + 70, y + 170], [x + w - 70, y + 170]], 3, '#c8c4ba');
+    rows.forEach(([lab, val, at, col], i) => { const k = fin(t, at ?? 0.5 + i * 0.6, 0.35); if (k <= 0) return; const yy = y + 250 + i * 150;
+      g.save(); g.globalAlpha *= k; text(g, lab, x + 70, yy, { size: 50, font: FONTS.ui, weight: 800, color: '#2a2a34', align: 'left' });
+      text(g, val, x + w - 70, yy, { size: 84, font: FONTS.ui, weight: 900, color: col || '#1f9a5a', align: 'right' }); g.restore(); });
     g.restore(); placeTag(g, t, info.tag); caption(g, t, info, 70);
   },
   // the week strip L M X J V S D: weekdays stay empty, Saturday fills with cans; kcal counter climbs to `kcal`
@@ -152,7 +152,7 @@ export const ALCOHOL = {
     days.forEach((d, i) => { const x = x0 + i * (bw + gap), sat = i === 5; rr(g, x, y0, bw, 460, 20); g.fillStyle = alpha(sat ? AMBER : '#ffffff', sat ? 0.16 : 0.06); g.fill(); g.lineWidth = 4; g.strokeStyle = sat ? AMBER : alpha(BP(), 0.5); g.stroke();
       text(g, d, x + bw / 2, y0 + 56, { size: 50, font: FONTS.ui, weight: 900, color: sat ? AMBER : CREAM() });
       if (!sat && i < 5) label(g, '0', x + bw / 2, y0 + 260, { size: 70, color: alpha(CREAM(), 0.4), a: fin(t, 0.1 + i * 0.08) }); });
-    for (let i = 0; i < n; i++) { const k = pop(t, at + i * 0.3, 0.3); if (k > 0) beerCan(g, x0 + 5 * (bw + gap) + 62 + (i % 2) * 96, y0 + 170 + Math.floor(i / 2) * 110, 0.85 * k); }
+    for (let i = 0; i < n; i++) { const k = pop(t, at + i * 0.3, 0.3); if (k > 0) beerCan(g, x0 + 5 * (bw + gap) + 58 + (i % 2) * 104, y0 + 160 + Math.floor(i / 2) * 120, 1.05 * k); }
     const kc = Math.round(lerp(0, info.kcal ?? 918, ease.out(prog(t, at, at + n * 0.3 + 0.3))));
     text(g, `≈ ${kc} KCAL`, E.W / 2, 160, { size: 96, font: FONTS.ui, weight: 900, color: GOLD(), glow: 20, glowColor: alpha(GOLD(), 0.5) });
     label(g, info.sub || 'SOLO EL SÁBADO', E.W / 2, 860, { size: 42 }); caption(g, t, info, 70);
@@ -160,9 +160,9 @@ export const ALCOHOL = {
   // icons piling up with a counter: kind 'can' | 'case'; label after the number
   stackIcons(g, t, info) {
     bp(g);
-    const to = info.to || 52, n = Math.round(lerp(0, to, ease.out(prog(t, 0.2, info.dur * 0.8)))), cols = 13, sc = 0.55, dx = 104, dy = 120, kind = info.kind || 'case';
-    for (let i = 0; i < Math.min(n, cols * 5); i++) { const c = i % cols, r = Math.floor(i / cols), x = E.W / 2 + (c - (cols - 1) / 2) * dx, y = E.H * 0.86 - r * dy;
-      if (kind === 'can') beerCan(g, x, y, sc); else { g.save(); g.translate(x, y); rr(g, -44, -40, 88, 70, 6); g.fillStyle = '#b87a3a'; g.fill(); g.fillStyle = '#e8c88a'; g.fillRect(-44, -18, 88, 14); for (let k = 0; k < 4; k++) circle(g, -30 + k * 20, -48, 8, AMBER); g.restore(); } }
+    const to = info.to || 52, n = Math.round(lerp(0, to, ease.out(prog(t, 0.2, info.dur * 0.8)))), few = to <= 20, cols = few ? Math.min(to, 10) : 13, sc = few ? 1.15 : 0.7, dx = few ? 150 : 110, dy = few ? 200 : 120, kind = info.kind || 'case';
+    for (let i = 0; i < Math.min(n, cols * 5); i++) { const c = i % cols, r = Math.floor(i / cols), x = E.W / 2 + (c - (cols - 1) / 2) * dx, y = (few ? E.H * 0.82 : E.H * 0.86) - r * dy;
+      if (kind === 'can') beerCan(g, x, y, sc); else { g.save(); g.translate(x, y); g.scale(sc / 0.7, sc / 0.7); rr(g, -44, -40, 88, 70, 6); g.fillStyle = '#b87a3a'; g.fill(); g.fillStyle = '#e8c88a'; g.fillRect(-44, -18, 88, 14); for (let k = 0; k < 4; k++) circle(g, -30 + k * 20, -48, 8, AMBER); g.restore(); } }
     text(g, `${n}`, E.W / 2, 150, { size: 140, font: FONTS.ui, weight: 900, color: GOLD(), stroke: 16, strokeColor: '#05060c', glow: 24, glowColor: alpha(GOLD(), 0.5) });
     label(g, info.label || 'CAJAS DE CERVEZA', E.W / 2, 250, { size: 48 }); caption(g, t, info, 330);
   },
@@ -187,10 +187,10 @@ export const ALCOHOL = {
     for (const [bx, lab, col] of boxes) { rr(g, bx - 270, 250, 540, 560, 24); g.fillStyle = alpha('#ffffff', 0.05); g.fill(); g.lineWidth = 4; g.strokeStyle = alpha(col, 0.6); g.stroke(); text(g, lab, bx, 300, { size: 46, font: FONTS.ui, weight: 900, color: col }); }
     if (k > 0) { rr(g, 1420, 250, 440, 560, 24); g.fillStyle = alpha(RED, 0.08 * k); g.fill(); g.lineWidth = 4; g.strokeStyle = alpha(RED, 0.6 * k); g.stroke(); text(g, info.third || 'DEJARON POR', 1640, 300, { size: 36, font: FONTS.ui, weight: 900, color: RED, alpha: k }); text(g, info.third2 || 'ENFERMEDAD', 1640, 345, { size: 36, font: FONTS.ui, weight: 900, color: RED, alpha: k }); }
     const sick = [1, 4, 8, 10];
-    for (let i = 0; i < 12; i++) { const c = i % 4, r = Math.floor(i / 4), hx = 300 + (c - 1.5) * 115, hy = 480 + r * 130, isS = sick.includes(i), j = sick.indexOf(i);
-      const tx = 1560 + (j % 2) * 150, ty = 480 + Math.floor(j / 2) * 170, x = isS ? lerp(hx, tx, k) : hx, y = isS ? lerp(hy, ty, k) - Math.sin(k * Math.PI) * 60 : hy;
-      stick(g, x, y, 1.2, isS && t > (info.markAt ?? 0.4) ? '#d88a8a' : '#c8ccd8', { cross: isS && t > (info.markAt ?? 0.4) }); }
-    for (let i = 0; i < 12; i++) { const c = i % 4, r = Math.floor(i / 4); stick(g, 1000 + (c - 1.5) * 115, 480 + r * 130, 1.2, AMBER); }
+    for (let i = 0; i < 12; i++) { const c = i % 4, r = Math.floor(i / 4), hx = 300 + (c - 1.5) * 115, hy = 500 + r * 140, isS = sick.includes(i), j = sick.indexOf(i);
+      const tx = 1560 + (j % 2) * 150, ty = 560 + Math.floor(j / 2) * 170, x = isS ? lerp(hx, tx, k) : hx, y = isS ? lerp(hy, ty, k) - Math.sin(k * Math.PI) * 60 : hy;
+      stick(g, x, y, 1.75, isS && t > (info.markAt ?? 0.4) ? '#d88a8a' : '#c8ccd8', { cross: isS && t > (info.markAt ?? 0.4) }); }
+    for (let i = 0; i < 12; i++) { const c = i % 4, r = Math.floor(i / 4); stick(g, 1000 + (c - 1.5) * 115, 500 + r * 140, 1.75, AMBER); }
     caption(g, t, info, 120);
   },
 };
