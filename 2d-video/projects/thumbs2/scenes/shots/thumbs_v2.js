@@ -187,3 +187,33 @@ registerShot('b_smk', { draw(g) {
   headline(g, [['1 ЗАТЯЖКА', YEL, 180], ['И ВСЁ ЗАНОВО', WHITE, 120]], 1400, 80);
   vign(g, 0.55); calmCorner(g);
 } });
+
+// ---------- alcohol (ES) A — worried face, a big beer can crossed out, sticker 30 DÍAS, "30 DÍAS / SIN ALCOHOL"
+function bigBeer(g, cx, cy, s, rot = 0.12) {
+  g.save(); g.translate(cx, cy); g.rotate(rot); g.scale(s, s);
+  rr(g, -80, -150, 160, 300, 30); g.fillStyle = '#e8a23a'; g.fill(); g.lineWidth = 10; g.strokeStyle = INK; g.stroke();
+  rr(g, -70, -170, 140, 30, 10); g.fillStyle = '#c8ccd4'; g.fill(); g.stroke();
+  rr(g, -80, -50, 160, 90, 6); g.fillStyle = '#fdf6e4'; g.fill(); g.stroke();
+  text(g, 'CERVEZA', 0, -4, { size: 40, font: HF, weight: 700, color: '#b8701a' });
+  g.fillStyle = alpha('#ffffff', 0.35); g.fillRect(-56, -130, 18, 260); g.restore();
+}
+registerShot('a_alc', { draw(g) {
+  blurLayer(g, 18, (g) => kitchen(g, 0, camAt(1200, 560, 1.4))); veil(g, '#0a0602', 0.72);
+  glow(g, 500, FY0, 760, '#ffb04a', 0.22);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'raised', mouth: 'oBig', eyeSize: 1.3, pupil: 0.26 }, look: [0.85, 0.05], rimColor: '#ffc07a', rimSide: 1 });
+  const cx = 1400, cy = 820; glow(g, cx, cy, 420, '#ffb04a', 0.4);
+  bigBeer(g, cx, cy + 20, 1.45, 0.15); slash(g, cx, cy + 10, 340, -0.75);
+  headline(g, [['30 DÍAS', YEL, 200], ['SIN ALCOHOL', WHITE, 130]], 1400, 70);
+  vign(g, 0.55); calmCorner(g);
+} });
+// ---------- alcohol (ES) B — the twist: shocked face, a red wine glass in a red ring, "LA COPA DE VINO / TE MINTIÓ"
+registerShot('b_alc', { draw(g) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#14040a', '#26060e', '#0a0206']); g.fillRect(0, 0, E.W, E.H);
+  glow(g, 500, FY0, 760, '#ff5a7a', 0.2);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'worried', mouth: 'wavy', eyeSize: 1.35, pupil: 0.24 }, look: [0.85, 0.1], rimColor: '#ffb0c0', rimSide: 1 });
+  const cx = 1400, cy = 830; glow(g, cx, cy, 420, RED, 0.38);
+  g.lineWidth = 34; g.strokeStyle = INK; g.beginPath(); g.arc(cx, cy, 250, 0, Math.PI * 2); g.stroke(); g.lineWidth = 22; g.strokeStyle = RED; g.stroke();
+  g.save(); g.translate(cx, cy + 10); g.scale(2.3, 2.3); icon(g, 'wineGlass', 0, 0, 1, '#ffffff', 0); g.restore();
+  headline(g, [['LA COPA DE VINO', WHITE, 112]], 1400, 72); headline(g, [['TE MINTIÓ', YEL, 190]], 1400, 240);
+  vign(g, 0.55); calmCorner(g);
+} });
