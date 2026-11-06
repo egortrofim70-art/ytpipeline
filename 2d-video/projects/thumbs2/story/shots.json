@@ -1,6 +1,6 @@
 {
- "title": "thumbnails v2",
- "duration": 4,
+ "title": "thumbnails v3",
+ "duration": 8,
  "shots": [
   {
    "id": "v_ins",
@@ -32,6 +32,38 @@
    "end": 4,
    "line": "",
    "scene": "v_wat",
+   "vignette": true
+  },
+  {
+   "id": "b_ins",
+   "start": 4,
+   "end": 5,
+   "line": "",
+   "scene": "b_ins",
+   "vignette": true
+  },
+  {
+   "id": "b_hun",
+   "start": 5,
+   "end": 6,
+   "line": "",
+   "scene": "b_hun",
+   "vignette": true
+  },
+  {
+   "id": "b_sug",
+   "start": 6,
+   "end": 7,
+   "line": "",
+   "scene": "b_sug",
+   "vignette": true
+  },
+  {
+   "id": "b_wat",
+   "start": 7,
+   "end": 8,
+   "line": "",
+   "scene": "b_wat",
    "vignette": true
   }
  ]

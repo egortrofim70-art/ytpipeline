@@ -62,13 +62,14 @@ registerShot('v_ins', { draw(g) {
 // ---------- 2. Что если ты перестанешь есть? — shocked face, an empty glowing plate, "НЕ ЕЛ / 382 ДНЯ"
 registerShot('v_hun', { draw(g) {
   blurLayer(g, 18, (g) => kitchen(g, 0, camAt(1300, 560, 1.4))); veil(g, '#06030a', 0.72);
-  glow(g, FX0, FY0, 760, '#ff8a3a', 0.22);
-  bigFace(g, FX0, FY0, R, { outfit: HERO, face: { eyes: 'ball', brows: 'raised', mouth: 'oBig', eyeSize: 1.3, pupil: 0.28, bags: 0.6 }, look: [0.8, 0.1], rimColor: '#ffc08a', rimSide: 1 });
-  const px = 1380, py = 760; glow(g, px, py, 420, '#ffe2a8', 0.45);
+  glow(g, 500, FY0, 760, '#ff8a3a', 0.22);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'raised', mouth: 'oBig', eyeSize: 1.3, pupil: 0.28, bags: 0.6 }, look: [0.8, 0.1], rimColor: '#ffc08a', rimSide: 1 });
+  const px = 1420, py = 760; glow(g, px, py, 420, '#ffe2a8', 0.45);
   g.fillStyle = 'rgba(0,0,0,.45)'; g.beginPath(); g.ellipse(px + 14, py + 26, 290, 110, 0, 0, Math.PI * 2); g.fill();
   g.fillStyle = '#f2f4f8'; g.beginPath(); g.ellipse(px, py, 290, 110, 0, 0, Math.PI * 2); g.fill(); g.strokeStyle = '#c8ccd6'; g.lineWidth = 8; g.beginPath(); g.ellipse(px, py - 4, 190, 70, 0, 0, Math.PI * 2); g.stroke();
-  for (const [x, w] of [[px - 340, 1], [px + 340, -1]]) { seg(g, [[x, py - 150], [x, py + 130]], 20, '#c8ccd6'); if (w > 0) for (const d of [-16, 0, 16]) seg(g, [[x + d, py - 210], [x + d, py - 140]], 9, '#c8ccd6'); else { g.fillStyle = '#c8ccd6'; g.beginPath(); g.ellipse(x, py - 180, 22, 60, 0, 0, Math.PI * 2); g.fill(); } }
-  headline(g, [['НЕ ЕЛ', WHITE, 170], ['382 ДНЯ', YEL, 220]], 1400, 50);
+  for (const [x, w] of [[px - 330, 1], [px + 330, -1]]) { seg(g, [[x, py - 150], [x, py + 130]], 20, '#c8ccd6'); if (w > 0) for (const d of [-16, 0, 16]) seg(g, [[x + d, py - 210], [x + d, py - 140]], 9, '#c8ccd6'); else { g.fillStyle = '#c8ccd6'; g.beginPath(); g.ellipse(x, py - 180, 22, 60, 0, 0, Math.PI * 2); g.fill(); } }
+  g.save(); g.translate(px, py - 20); g.rotate(-0.55); rr(g, -380, -30, 760, 60, 30); g.fillStyle = INK; g.fill(); rr(g, -370, -21, 740, 42, 21); g.fillStyle = RED; g.fill(); g.restore();
+  headline(g, [['НЕ ЕЛ', WHITE, 170], ['382 ДНЯ', YEL, 220]], 1420, 50);
   vign(g, 0.6); calmCorner(g);
 } });
 
@@ -91,10 +92,60 @@ registerShot('v_wat', { draw(g) {
   glow(g, FX0, FY0, 760, '#ff6a2a', 0.25);
   bigFace(g, FX0, FY0, R, { outfit: HERO, face: { eyes: 'ball', brows: 'worried', mouth: 'oBig', eyeSize: 1.25, pupil: 0.22, lid: 0.3, bags: 1 }, look: [0.9, -0.1], rimColor: '#ffb07a', rimSide: 1 });
   dryFace(g, FX0, FY0, R);
-  const gx = 1380, gy = 760; glow(g, gx, gy, 460, BLUE, 0.6);
+  const gx = 1380, gy = 790; glow(g, gx, gy, 460, BLUE, 0.6);
   g.save(); g.translate(gx, gy); g.scale(3.0, 3.0); icon(g, 'water', 0, 0, 1, BLUE, 0); g.restore();
   for (const [x, y, s] of [[gx - 120, gy - 120, 0.22], [gx + 110, gy - 60, 0.18], [gx - 60, gy + 60, 0.16]]) { g.save(); g.translate(x, y); g.scale(s, s); icon(g, 'droplet', 0, 0, 1, '#e8f6ff', 0); g.restore(); }
-  badge(g, gx, 420, '3 ДНЯ', RED, 110);
-  headline(g, [['НИ КАПЛИ', YEL, 210]], 1380, 60);
+  headline(g, [['18 ДНЕЙ', YEL, 220], ['БЕЗ ВОДЫ', WHITE, 140]], 1380, 30);
+  vign(g, 0.55); calmCorner(g);
+} });
+
+// ======================= B-variants (new concepts) =======================
+function phone(g, cx, cy, s, str, col = '#9fd8ff') {
+  g.save(); g.translate(cx, cy); g.scale(s, s); glow(g, 0, 0, 260, col, 0.5);
+  rr(g, -110, -200, 220, 400, 30); g.fillStyle = '#0c0e14'; g.fill(); rr(g, -96, -184, 192, 368, 20); g.fillStyle = '#16304a'; g.fill();
+  text(g, str, 0, -30, { size: 84, font: HF, weight: 700, color: '#ffffff', glow: 20, glowColor: alpha(col, 0.9) }); g.restore();
+}
+// insomnia B — "180 DÍAS / SIN DORMIR": wrecked face, phone glowing 3:00
+registerShot('b_ins', { draw(g) {
+  blurLayer(g, 18, (g) => bedroom(g, 0, camAt(1000, 560, 1.4), { dawn: 0 })); veil(g, '#03040c', 0.75);
+  glow(g, 520, FY0, 760, '#6a8aff', 0.25);
+  bigFace(g, 520, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'worried', mouth: 'wavy', eyeSize: 1.3, pupil: 0.15, lid: 0.25, bags: 1 }, look: [0.7, 0], rimColor: '#9fd8ff', rimSide: 1 });
+  veins(g, 520, FY0, 380, 1.3);
+  phone(g, 1400, 740, 1.3, '3:00', '#bfe8ff');
+  headline(g, [['180 DÍAS', YEL, 210], ['SIN DORMIR', WHITE, 140]], 1400, 30);
+  vign(g, 0.6); calmCorner(g);
+} });
+// hunger B — "ЕГО ЗАБЫЛИ / В КАМЕРЕ": face behind glowing cell bars, red sticker 18 ДНЕЙ
+registerShot('b_hun', { draw(g) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0a0c0a', '#161a16', '#060806']); g.fillRect(0, 0, E.W, E.H);
+  glow(g, 560, FY0, 700, '#9ab0c8', 0.22);
+  bigFace(g, 560, FY0, 360, { outfit: { ...HERO, color: '#5a7a9a', head: 'curly', headColor: '#2a1e16' }, face: { eyes: 'ball', brows: 'worried', mouth: 'oBig', eyeSize: 1.25, pupil: 0.25, bags: 1 }, look: [0.6, -0.2], rimColor: '#cfe0ff', rimSide: 1 });
+  for (let i = 0; i < 6; i++) { const x = 230 + i * 130; seg(g, [[x, 120], [x, 1080]], 34, INK); seg(g, [[x, 120], [x, 1080]], 22, '#5a6066'); seg(g, [[x - 6, 120], [x - 6, 1080]], 5, alpha('#cfe0ff', 0.6)); }
+  seg(g, [[190, 330], [960, 330]], 30, '#4a5056');
+  badge(g, 1400, 560, '18 ДНЕЙ', RED, 120);
+  headline(g, [['ЕГО ЗАБЫЛИ', WHITE, 140], ['В КАМЕРЕ', YEL, 190]], 1400, 40);
+  vign(g, 0.6); calmCorner(g);
+} });
+// sugar B — "TU CEREBRO / SIN AZÚCAR": shocked face, a glowing pink brain with lightning, sticker DÍA 3
+registerShot('b_sug', { draw(g) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0c0418', '#1a0826', '#07030e']); g.fillRect(0, 0, E.W, E.H);
+  glow(g, 500, FY0, 760, '#ff4fa0', 0.22);
+  bigFace(g, 500, FY0, 380, { outfit: HERO, face: { eyes: 'ball', brows: 'raised', mouth: 'oBig', eyeSize: 1.3, pupil: 0.28 }, look: [0.8, 0], rimColor: '#ff9ad0', rimSide: 1 });
+  glow(g, 1400, 760, 420, '#ff4fa0', 0.55); g.save(); g.translate(1400, 760); g.scale(3.2, 3.2); icon(g, 'brain', 0, 0, 1, '#ff8ac8', 0); g.restore();
+  for (const [x, y, sx] of [[1130, 640, -1], [1670, 640, 1]]) { g.save(); g.translate(x, y); g.scale(sx * 2.2, 2.2); poly(g, [[0, -60], [30, -10], [6, -6], [26, 54], [-12, 0], [10, -2]], YEL); g.restore(); }
+  badge(g, 1400, 1000, 'DÍA 3', RED, 90, -0.04);
+  headline(g, [['TU CEREBRO', WHITE, 150], ['SIN AZÚCAR', YEL, 180]], 1400, 30);
+  vign(g, 0.55); calmCorner(g);
+} });
+// water B — "ПИЛ КРОВЬ / ЧТОБЫ ВЫЖИТЬ": desperate dry face, a glowing red drop, sticker 9 ДНЕЙ
+registerShot('b_wat', { draw(g) {
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#14060a', '#2a0c10', '#0a0306']); g.fillRect(0, 0, E.W, E.H);
+  g.save(); g.globalCompositeOperation = 'soft-light'; g.fillStyle = 'rgba(255,120,40,.35)'; g.fillRect(0, 0, E.W, E.H); g.restore();
+  glow(g, 500, FY0, 760, '#ff6a2a', 0.25);
+  bigFace(g, 500, FY0, 380, { outfit: { top: 'tshirt', color: '#e85a3a', head: 'none' }, face: { eyes: 'ball', brows: 'worried', mouth: 'oBig', eyeSize: 1.25, pupil: 0.22, lid: 0.3, bags: 1 }, look: [0.9, -0.1], rimColor: '#ffb07a', rimSide: 1 });
+  dryFace(g, 500, FY0, 380);
+  glow(g, 1400, 740, 420, RED, 0.6); g.save(); g.translate(1400, 740); g.scale(3.0, 3.0); icon(g, 'blood', 0, 0, 1, RED, 0); g.restore();
+  badge(g, 1400, 1010, '9 ДНЕЙ', '#c81a1a', 90, -0.04);
+  headline(g, [['ПИЛ КРОВЬ', WHITE, 160], ['ЧТОБЫ ВЫЖИТЬ', YEL, 130]], 1380, 30);
   vign(g, 0.55); calmCorner(g);
 } });
