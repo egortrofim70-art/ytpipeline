@@ -142,6 +142,8 @@ AMB.update({t: {'name': 'city', 'gain': -26} for t in ['stadium', 'march', 'arre
 AMB.update({t: {'name': 'roomtone', 'gain': -26} for t in ['trashSoda', 'reachSweet', 'kids', 'taste', 'party']})
 AMB.update({t: {'name': 'hum', 'gain': -27} for t in ['hidden', 'cubes', 'dopamine', 'ratChoice', 'liver', 'tooth', 'journal', 'sodaTax', 'octagons']})
 AMB.update({'caneField': {'name': 'wind', 'gain': -27}})
+AMB.update({t: {'name': 'roomtone', 'gain': -26} for t in ['countdown', 'stubOut', 'offer', 'tv', 'smoker']})
+AMB.update({t: {'name': 'hum', 'gain': -27} for t in ['receptors', 'coBlood', 'warmHands', 'adSkip', 'cilia', 'packs']})
 AMB.update({'windowDawn': {'name': 'wind', 'gain': -27}, 'venice': {'name': 'wind', 'gain': -28}})
 
 

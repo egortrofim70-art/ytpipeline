@@ -58,12 +58,13 @@ export const SMOKE = {
     const pose = breathe(posesAt(ph * per, [[0, HOLD], [per * 0.25, DRAG], [per * 0.5, HOLD]], 0.25), t, 0.6);
     const x = 1000, y = place === 'street' ? GY - 80 : GY;
     layer(g, cam, 1, (g) => {
-      drawFigure(g, { x, y, s: HS, facing: 1, outfit: HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6 }, pose, face: fc(info.face || { eyes: 'ball', brows: null, mouth: drag ? 'o' : 'smallFlat', lid: 0.35 }), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      drawFigure(g, { x, y, s: HS, facing: 1, outfit: info.outfit || HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6 }, pose, face: fc(info.face || { eyes: 'ball', brows: null, mouth: drag ? 'o' : 'smallFlat', lid: 0.35 }), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
       if (exhale > 0) puff(g, x + 46 * HS, y - 200 * HS, exhale, 1.2, info.prop === 'vape' ? 0.7 : 0.5);
     });
-    if (info.counter) { const n = Math.round(lerp(info.counter[0], info.counter[1], prog(t, 0.2, info.dur - 0.2))); text(g, `${n}`, E.W * 0.8, E.H * 0.24, { size: 120, font: FONTS.ui, weight: 900, color: GOLD(), glow: 24, glowColor: alpha(GOLD(), 0.5) }); label(g, info.counterLabel || 'ЗАТЯЖЕК', E.W * 0.8, E.H * 0.33, { size: 40 }); }
+    if (info.counter) { const n = Math.round(lerp(info.counter[0], info.counter[1], prog(t, 0.2, info.dur - 0.2))), cx = E.W * 0.2, cy = E.H * 0.3; rr(g, cx - 200, cy - 110, 400, 210, 28); g.fillStyle = 'rgba(6,8,16,.72)'; g.fill();
+      text(g, `${n}`, cx, cy - 20, { size: 120, font: FONTS.ui, weight: 900, color: GOLD(), glow: 24, glowColor: alpha(GOLD(), 0.5) }); label(g, info.counterLabel || 'ЗАТЯЖЕК', cx, cy + 62, { size: 36 }); }
     placeTag(g, t, info.tag);
-    if (info.caption) glowLabel(g, info.caption, E.W / 2, 110, fin(t, info.capAt ?? 0.3), 58);
+    if (info.caption) { const a = fin(t, info.capAt ?? 0.3), w = measure(g, info.caption, 58, FONTS.ui, 900) + 90; rr(g, E.W / 2 - w / 2, 62, w, 96, 48); g.fillStyle = `rgba(6,8,16,${0.7 * a})`; g.fill(); glowLabel(g, info.caption, E.W / 2, 110, a, 58); }
   },
   // receptors as little doors on a nerve membrane: mode smoker (many, filled) | empty (many, red, rattling) | normal (fewer)
   receptors(g, t, info) {
@@ -127,10 +128,11 @@ export const SMOKE = {
   // packs piling up into a tower; counter climbs to `to` (e.g. 365); optional caption
   packs(g, t, info) {
     bp(g);
-    const to = info.to || 365, n = Math.round(lerp(0, to, ease.out(prog(t, 0.2, info.dur * 0.8)))), cols = 14, shown = Math.min(n, cols * 7);
-    for (let i = 0; i < shown; i++) { const c = i % cols, r = Math.floor(i / cols), x = E.W / 2 + (c - (cols - 1) / 2) * 84, y = E.H * 0.86 - r * 96; g.save(); g.translate(x, y); g.scale(0.62, 0.62); icon(g, 'pack', 0, 0, 1, GOLD(), t); g.restore(); }
+    const to = info.to || 365, n = Math.round(lerp(0, to, ease.out(prog(t, 0.2, info.dur * 0.8)))), few = to <= 20, cols = few ? to : 14, shown = Math.min(n, cols * 7), sc = few ? 1.7 : 0.62, dx = few ? 230 : 84, dy = 96;
+    for (let i = 0; i < shown; i++) { const c = i % cols, r = Math.floor(i / cols), x = E.W / 2 + (c - (cols - 1) / 2) * dx, y = few ? E.H * 0.62 : E.H * 0.86 - r * dy, k = 1; g.save(); g.translate(x, y); g.scale(sc * k, sc * k); icon(g, 'pack', 0, 0, 1, GOLD(), t); g.restore(); }
     text(g, `${n}`, E.W / 2, 140, { size: 140, font: FONTS.ui, weight: 900, color: GOLD(), stroke: 16, strokeColor: '#05060c', glow: 24, glowColor: alpha(GOLD(), 0.5) });
-    label(g, info.label || 'ПАЧЕК', E.W / 2, 240, { size: 48 });
+    const m10 = n % 10, m100 = n % 100, w = m10 === 1 && m100 !== 11 ? 'ПАЧКА' : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? 'ПАЧКИ' : 'ПАЧЕК';
+    label(g, `${w} ${info.label || ''}`.trim(), E.W / 2, 240, { size: 48 });
   },
   // a retro TV: a bald man in a suit speaks to camera; subtitle line appears on cue
   tv(g, t, info) {
@@ -138,9 +140,9 @@ export const SMOKE = {
     const cx = E.W / 2, cy = E.H * 0.5, w = 1100, h = 760, z = lerp(1, 1.07, K(info, t)); g.save(); zoom(g, z, cx, cy);
     rr(g, cx - w / 2 - 60, cy - h / 2 - 50, w + 120, h + 100, 40); g.fillStyle = '#5a3a22'; g.fill(); rr(g, cx - w / 2, cy - h / 2, w, h, 60); g.fillStyle = '#0c1014'; g.fill();
     g.save(); rr(g, cx - w / 2, cy - h / 2, w, h, 60); g.clip(); g.fillStyle = linGrad(g, 0, cy - h / 2, 0, cy + h / 2, ['#3a4a5a', '#1a2430']); g.fillRect(cx - w / 2, cy - h / 2, w, h);
-    bigFace(g, cx, cy + 120, 260, { outfit: { top: 'suit', color: '#2a2a34', head: 'none' }, face: { eyes: 'ball', brows: 'worried', mouth: Math.sin(t * 9) > 0 ? 'o' : 'flat', lid: 0.3 }, look: [0, 0], rimColor: '#cfe0ff', rimSide: 1 });
+    bigFace(g, cx, cy + 40, 230, { outfit: { top: 'suit', color: '#2a2a34', head: 'none' }, face: { eyes: 'ball', brows: 'worried', mouth: Math.sin(t * 9) > 0 ? 'o' : 'flat', lid: 0.3 }, look: [0, 0], rimColor: '#cfe0ff', rimSide: 1 });
     g.fillStyle = 'rgba(255,255,255,.05)'; for (let y = cy - h / 2; y < cy + h / 2; y += 6) g.fillRect(cx - w / 2, y, w, 2);
-    if (info.sub) { const a = fin(t, info.subAt ?? 0.5); rr(g, cx - 420, cy + h / 2 - 140, 840, 90, 10); g.fillStyle = alpha('#000000', 0.7 * a); g.fill(); label(g, info.sub, cx, cy + h / 2 - 95, { size: 52, color: '#ffffff', a }); }
+    if (info.sub) { const a = fin(t, info.subAt ?? 0.5); rr(g, cx - 420, cy + h / 2 - 120, 840, 90, 10); g.fillStyle = alpha('#000000', 0.7 * a); g.fill(); label(g, info.sub, cx, cy + h / 2 - 75, { size: 52, color: '#ffffff', a }); }
     g.restore(); g.restore(); placeTag(g, t, info.tag);
   },
   // a party: a friend holds out a cigarette (in-hand prop), the hero hesitates and raises a hand: no

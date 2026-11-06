@@ -752,8 +752,8 @@ export const HUNGER = {
   },
   endCard(g, t, info) {          // subscribe + next episode teaser: the hero with an empty glass
     g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#0a0c1e', '#141a3a', '#0c1a2a']); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); glow(g, E.W * 0.3, E.H * 0.7, 700, '#3a8aff', 0.25);
-    drawFigure(g, { x: E.W * 0.3, y: E.H * 0.92, s: 2.1, facing: 1, outfit: HERO, prop: 'cup', pose: breathe({ ...POSES.holdFront, eF: [24, -150], hF: [36, -176] }, t, 0.7), face: { eyes: 'ball', brows: 'worried', mouth: 'flat', eyeSize: 1.15 }, look: [0.6, -0.3], rim: { color: '#9fd8ff', dir: [1, -0.4] } });
-    const d = ((t * 0.8) % 1); g.save(); g.globalAlpha = 1 - d; icon(g, 'droplet', E.W * 0.3 + 140, E.H * 0.2 + d * 140, 0.7, '#6ab8ff', t); g.restore();
+    drawFigure(g, { x: E.W * 0.3, y: E.H * 0.92, s: 2.1, facing: 1, outfit: HERO, prop: info.prop || 'cup', pose: breathe({ ...POSES.holdFront, eF: [24, -150], hF: [36, -176] }, t, 0.7), face: { eyes: 'ball', brows: 'worried', mouth: 'flat', eyeSize: 1.15 }, look: [0.6, -0.3], rim: { color: '#9fd8ff', dir: [1, -0.4] } });
+    const d = ((t * 0.8) % 1); g.save(); g.globalAlpha = info.icon === false ? 0 : 1 - d; icon(g, info.icon || 'droplet', E.W * 0.3 + 140, E.H * 0.2 + d * 140, 0.7, '#6ab8ff', t); g.restore();
     label(g, L('ДАЛЬШЕ', 'LO QUE VIENE'), E.W * 0.68, E.H * 0.24, { size: 44, color: alpha(CREAM(), 0.7), a: fin(t, 0.2), spacing: 8 });
     (info.next || L(['ЧТО ЕСЛИ ТЫ', 'ПЕРЕСТАНЕШЬ', 'ПИТЬ ВОДУ?'], ['¿Y SI', 'DEJARAS DE', 'BEBER AGUA?'])).forEach((ln, i) => text(g, ln, E.W * 0.68, E.H * 0.36 + i * 110, { size: 96, font: FONTS.title, weight: 700, color: i === 2 ? '#6ab8ff' : '#ffffff', alpha: fin(t, 0.4 + i * 0.25), glow: 26, glowColor: 'rgba(90,160,255,.6)' }));
     const sp = ease.outBack(prog(t, 1.2, 1.6)); g.save(); g.translate(E.W * 0.68, E.H * 0.8); g.scale(sp, sp); rr(g, -220, -50, 440, 100, 50); g.fillStyle = '#e0302a'; g.fill(); text(g, L('ПОДПИСАТЬСЯ', 'SUSCRIBIRSE'), 0, 2, { size: 46, font: FONTS.ui, weight: 900, color: '#ffffff' }); g.restore();
