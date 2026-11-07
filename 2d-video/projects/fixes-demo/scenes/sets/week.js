@@ -90,14 +90,14 @@ export function street(g, t, cam, o = {}) {
   layer(g, cam, 0.4, (g) => FX.skyline(g, { x: -E.W * 2, y: GY - 150, w: E.W * 6, minH: 160, maxH: 420, color: '#8a90a8', windowColor: alpha('#fff', 0.15), lit: 0.2, seed: 13 }));
   layer(g, cam, 0.75, (g) => {
     const cols = ['#a88a7a', '#8a7a9a', '#b89a78', '#7a8a9a', '#9a7a7a'];
-    for (let i = -4; i < 14; i++) FX.facade(g, { x: i * 420, y: GY - 80, w: 400, h: 520 + ((i * 97) % 3) * 70, color: cols[((i % 5) + 5) % 5], win: dusk ? '#ffcf8a' : '#d8e0f0', dark: '#4a4a5a', cols: 4, rows: 4, lit: dusk ? 0.55 : 0.35, seed: 20 + i, door: i % 2 === 0 });
+    for (let i = -4; i < 14; i++) FX.facade(g, { x: i * 520, y: GY - 80, w: 500, h: 980 + ((i * 97) % 3) * 140, color: cols[((i % 5) + 5) % 5], win: dusk ? '#ffcf8a' : '#d8e0f0', dark: '#4a4a5a', cols: 4, rows: 7, lit: dusk ? 0.55 : 0.35, seed: 20 + i, door: i % 2 === 0 });
   });
   layer(g, cam, 1, (g) => {
     g.fillStyle = '#9a96a4'; g.fillRect(-E.W * 2, GY - 80, E.W * 6, 80);                                       // sidewalk
     g.strokeStyle = alpha('#000', 0.12); g.lineWidth = 2; for (let x = -E.W * 2; x < E.W * 4; x += 150) { g.beginPath(); g.moveTo(x, GY - 80); g.lineTo(x, GY); g.stroke(); }
     g.fillStyle = '#5a5a68'; g.fillRect(-E.W * 2, GY, E.W * 6, E.H * 3);                                       // road
     g.fillStyle = '#c8c4b0'; for (let x = -E.W * 2; x < E.W * 4; x += 260) g.fillRect(x, GY + 120, 130, 12);
-    for (let i = -3; i < 10; i++) { FX.lampPost(g, i * 700 + 200, GY - 80, 380, { on: !!dusk, color: '#2a2a34' }); FX.tree(g, i * 700 + 520, GY - 80, 1.4, '#4a6a4a'); }
+    for (let i = -3; i < 10; i++) { FX.lampPost(g, i * 900 + 200, GY - 80, 760, { on: !!dusk, color: '#2a2a34' }); FX.tree(g, i * 900 + 620, GY - 80, 2.8, '#4a6a4a'); }
   });
   return { M, rim: '#ffffff', rimDir: [-0.6, -0.8] };
 }

@@ -24,7 +24,7 @@ function bp(g) { UI.blueprint(g, { grid: 60, a: 0.08 }); glow(g, E.W / 2, E.H / 
 // smoke puff drifting up from x,y (u = 0..1 life)
 function puff(g, x, y, u, s = 1, a = 0.45) { if (u <= 0 || u >= 1) return; for (let i = 0; i < 4; i++) circle(g, x + Math.sin(u * 5 + i) * 30 * s + i * 14 * s, y - u * 160 * s - i * 10 * s, (20 + u * 60 + i * 6) * s, alpha('#dfe4ee', a * (1 - u) * (0.7 + i * 0.1))); }
 // the hand-to-mouth smoking pose (facing +1): hand at the lips
-const DRAG = { ...POSES.stand, eF: [30, -160], hF: [22, -200], eB: [-7, -136], hB: [-9, -100] };
+const DRAG = { ...POSES.stand, head: [-2, -208], eF: [40, -176], hF: [34, -213], eB: [-7, -136], hB: [-9, -100] };
 const HOLD = { ...POSES.stand, eF: [24, -140], hF: [40, -136], eB: [-7, -136], hB: [-9, -100] };
 
 export const SMOKE = {
@@ -59,7 +59,7 @@ export const SMOKE = {
     const pose = breathe(posesAt(ph * per, [[0, HOLD], [per * 0.25, DRAG], [per * 0.5, HOLD]], 0.25), t, 0.6);
     const x = 1000, y = place === 'street' ? GY - 80 : GY;
     layer(g, cam, 1, (g) => {
-      drawFigure(g, { x, y, s: HS, facing: 1, outfit: info.outfit || HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6, color: info.propColor }, pose, face: fc(info.face || { eyes: 'ball', brows: null, mouth: drag ? 'o' : 'smallFlat', lid: 0.35 }), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      drawFigure(g, { x, y, s: HS, facing: 1, outfit: info.outfit || HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6, color: info.propColor }, pose, face: fc(info.face || { eyes: 'ball', brows: null, mouth: drag ? 'o' : 'smallFlat', lid: 0.35 }), look: drag ? [0.35, -0.85] : [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
       if (exhale > 0 && info.puff !== false) puff(g, x + 46 * HS, y - 200 * HS, exhale, 1.2, info.prop === 'vape' ? 0.7 : 0.5);
     });
     if (info.counter) { const n = Math.round(lerp(info.counter[0], info.counter[1], prog(t, 0.2, info.dur - 0.2))), cx = E.W * 0.2, cy = E.H * 0.3; rr(g, cx - 200, cy - 110, 400, 210, 28); g.fillStyle = 'rgba(6,8,16,.72)'; g.fill();

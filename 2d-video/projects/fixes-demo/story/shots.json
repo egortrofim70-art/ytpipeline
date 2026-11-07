@@ -1,12 +1,12 @@
 {
- "title": "Demo 2",
- "duration": 37.0,
+ "title": "Demo 3",
+ "duration": 33.4,
  "shots": [
   {
    "id": "d01",
    "start": 0,
-   "end": 4.4,
-   "line": "Бар: пьёт, бутылка наклоняется",
+   "end": 5.2,
+   "line": "Бар: глоток крупно",
    "scene": "barCounter",
    "in": {
     "type": "dip",
@@ -19,23 +19,22 @@
     "cans": [
      [
       0,
-      1
-     ],
-     [
-      1.2,
-      3
+      2
      ]
     ],
     "face": "smile",
-    "period": 2.2,
+    "period": 2.6,
+    "z0": 1.7,
+    "z1": 1.85,
+    "cx": 940,
     "tpl": "barCounter"
    }
   },
   {
    "id": "d02",
-   "start": 4.4,
-   "end": 8.8,
-   "line": "Кухня: крупно глоток",
+   "start": 5.2,
+   "end": 10.4,
+   "line": "Кухня: глоток пива",
    "scene": "smoker",
    "in": {
     "type": "dip",
@@ -49,17 +48,81 @@
     "prop": "beer",
     "place": "kitchen",
     "face": "smile",
-    "z0": 1.9,
-    "z1": 2.05,
-    "period": 2.2,
+    "z0": 2.1,
+    "z1": 2.25,
+    "period": 2.6,
     "tpl": "smoker"
    }
   },
   {
    "id": "d03",
-   "start": 8.8,
-   "end": 12.8,
-   "line": "Парк: идёт с бутылкой воды",
+   "start": 10.4,
+   "end": 14.8,
+   "line": "Кухня: бокал вина",
+   "scene": "smoker",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "puff": false,
+    "prop": "wine",
+    "place": "kitchen",
+    "face": "smile",
+    "z0": 2.1,
+    "z1": 2.25,
+    "period": 2.8,
+    "tpl": "smoker"
+   }
+  },
+  {
+   "id": "d04",
+   "start": 14.8,
+   "end": 19.4,
+   "line": "Улица: масштаб фонарей и домов",
+   "scene": "smoker",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "puff": false,
+    "prop": "beer",
+    "place": "street",
+    "face": "smile",
+    "period": 2.6,
+    "tpl": "smoker"
+   }
+  },
+  {
+   "id": "d05",
+   "start": 19.4,
+   "end": 23.8,
+   "line": "Прогулка по городу",
+   "scene": "streetWalk",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "face": "smile",
+    "tpl": "streetWalk"
+   }
+  },
+  {
+   "id": "d06",
+   "start": 23.8,
+   "end": 28.2,
+   "line": "Парк: несёт бутылку",
    "scene": "parkWalk",
    "in": {
     "type": "dip",
@@ -73,45 +136,10 @@
    }
   },
   {
-   "id": "d04",
-   "start": 12.8,
-   "end": 16.4,
-   "line": "Диван: держит бутылку",
-   "scene": "sofaTV",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "prop": "bottle",
-    "tpl": "sofaTV"
-   }
-  },
-  {
-   "id": "d05",
-   "start": 16.4,
-   "end": 20.6,
-   "line": "Стол с ноутбуком",
-   "scene": "laptopDesk",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "tpl": "laptopDesk"
-   }
-  },
-  {
-   "id": "d06",
-   "start": 20.6,
-   "end": 25.6,
-   "line": "Обед: эмпанадас, вилка",
+   "id": "d07",
+   "start": 28.2,
+   "end": 33.4,
+   "line": "Обед: вилка без кручения",
    "scene": "mealTable",
    "in": {
     "type": "dip",
@@ -122,91 +150,6 @@
    "params": {
     "noBadge": true,
     "tpl": "mealTable"
-   }
-  },
-  {
-   "id": "d07",
-   "start": 25.6,
-   "end": 29.2,
-   "line": "Календарь: одна смена",
-   "scene": "calendarFlip",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "steps": [
-     [
-      0,
-      "1975",
-      "ÚLTIMO TRAGO"
-     ],
-     [
-      1.6,
-      "0",
-      "TRAGOS DESDE ENTONCES"
-     ]
-    ],
-    "size": 200,
-    "color": "#2a7a3a",
-    "tpl": "calendarFlip"
-   }
-  },
-  {
-   "id": "d08",
-   "start": 29.2,
-   "end": 33.4,
-   "line": "Календарь: счёт дней",
-   "scene": "calendarFlip",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "from": 1,
-    "to": 7,
-    "at": 0.5,
-    "until": 3.4,
-    "sub": "DÍA",
-    "color": "#c8405a",
-    "tpl": "calendarFlip"
-   }
-  },
-  {
-   "id": "d09",
-   "start": 33.4,
-   "end": 37.0,
-   "line": "Календарь: длинные подписи",
-   "scene": "calendarFlip",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "steps": [
-     [
-      0,
-      "4,3",
-      "DÍAS CON ALCOHOL / SEMANA"
-     ],
-     [
-      1.6,
-      "3,3",
-      "SEIS MESES DESPUÉS"
-     ]
-    ],
-    "size": 200,
-    "color": "#2a7a3a",
-    "tpl": "calendarFlip"
    }
   }
  ]

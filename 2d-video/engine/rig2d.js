@@ -269,14 +269,17 @@ function drawProp(g, prop, p, ink) {
       break; }
     case 'vape': rr(g, h[0] - 3, h[1] - 30, 12, 32, 4); g.fillStyle = t.color || '#7a5ad8'; g.fill(); rr(g, h[0] - 1, h[1] - 36, 8, 8, 3); g.fillStyle = '#1a1a22'; g.fill(); circle(g, h[0] + 3, h[1] - 12, 1.8, '#9fffe0'); break;
     case 'can': case 'bottle': case 'beer': case 'wine': {
-      // held in the fist: the body is centred on the grip, a fist is drawn over it; raising the hand past the shoulder tilts it to the mouth
-      const drink = t.tilt ?? clamp((p.sh[1] - h[1]) / 26), sway = (h[0] - p.eF[0]) * 0.004, ang = sway - 1.95 * drink;
-      g.save(); g.translate(h[0] + 3, h[1] - 4); g.rotate(ang);
-      if (t.type === 'can') { rr(g, -8, -18, 16, 30, 4); g.fillStyle = t.color || '#d8262a'; g.fill(); g.fillStyle = '#c8ccd4'; g.fillRect(-7, -20, 14, 3); seg(g, [[-7, -2], [7, -5]], 1.6, '#ffffff'); }
-      else if (t.type === 'bottle') { rr(g, -8, -20, 16, 34, 5); g.fillStyle = 'rgba(160,210,255,.8)'; g.fill(); rr(g, -4, -27, 8, 8, 2); g.fillStyle = '#2a6ad8'; g.fill(); g.fillStyle = alpha('#ffffff', 0.35); g.fillRect(-5, -16, 3, 26); }
-      else if (t.type === 'beer') { rr(g, -7, -14, 14, 28, 5); g.fillStyle = '#9a5a18'; g.fill(); poly(g, [[-7, -12], [7, -12], [3, -22], [-3, -22]], '#9a5a18'); rr(g, -3, -34, 6, 13, 2); g.fillStyle = '#7a4410'; g.fill(); g.fillStyle = '#f2e6c8'; g.fillRect(-6, 0, 12, 9); g.fillStyle = alpha('#ffffff', 0.25); g.fillRect(-5, -10, 3, 22); }
-      else { seg(g, [[0, 12], [0, -2]], 2.4, '#e8eef6'); seg(g, [[-6, 13], [6, 13]], 2.4, '#e8eef6'); g.fillStyle = 'rgba(230,240,250,.55)'; g.beginPath(); g.moveTo(-9, -20); g.lineTo(9, -20); g.quadraticCurveTo(9, -2, 0, -2); g.quadraticCurveTo(-9, -2, -9, -20); g.fill(); g.fillStyle = '#9a1a3a'; g.beginPath(); g.moveTo(-8, -13); g.lineTo(8, -13); g.quadraticCurveTo(7, -3, 0, -3); g.quadraticCurveTo(-7, -3, -8, -13); g.fill(); }
-      const gy = t.type === 'wine' ? 4 : -4; rr(g, -10, gy - 6, 20, 12, 6); g.fillStyle = ink; g.fill();               // the fist over the glass
+      // local frame: the rim/neck tip at the origin, the body runs down +y. Held: upright in the fist at the hand.
+      // Drinking (hand raised past the shoulder): the rim sits at the mouth and the body points up-forward, so the glass never crosses the head.
+      const drink = ease.inOut(t.tilt ?? clamp((p.sh[1] - h[1] - 4) / 22)), HR = 26, mouth = [p.head[0] + HR * 0.62, p.head[1] + HR * 0.4];
+      const L = t.type === 'wine' ? 26 : t.type === 'can' ? 30 : 46, grip = t.type === 'wine' ? 22 : L * 0.55;
+      const hold = [h[0] + 3, h[1] - grip], ox = lerp(hold[0], mouth[0], drink), oy = lerp(hold[1], mouth[1], drink), ang = lerp((h[0] - p.eF[0]) * 0.003, -2.2, drink);
+      g.save(); g.translate(ox, oy); g.rotate(ang);
+      if (t.type === 'can') { rr(g, -8, 0, 16, 30, 4); g.fillStyle = t.color || '#d8262a'; g.fill(); g.fillStyle = '#c8ccd4'; g.fillRect(-7, -1, 14, 3); seg(g, [[-7, 16], [7, 13]], 1.6, '#ffffff'); }
+      else if (t.type === 'bottle') { rr(g, -4, 0, 8, 8, 2); g.fillStyle = '#2a6ad8'; g.fill(); rr(g, -8, 7, 16, 36, 5); g.fillStyle = 'rgba(160,210,255,.85)'; g.fill(); g.fillStyle = alpha('#ffffff', 0.35); g.fillRect(-5, 11, 3, 28); }
+      else if (t.type === 'beer') { rr(g, -3, 0, 6, 13, 2); g.fillStyle = '#7a4410'; g.fill(); poly(g, [[-3, 12], [3, 12], [7, 20], [-7, 20]], '#9a5a18'); rr(g, -7, 18, 14, 28, 5); g.fillStyle = '#9a5a18'; g.fill(); g.fillStyle = '#f2e6c8'; g.fillRect(-6, 30, 12, 9); g.fillStyle = alpha('#ffffff', 0.25); g.fillRect(-5, 20, 3, 22); }
+      else { g.fillStyle = 'rgba(230,240,250,.55)'; g.beginPath(); g.moveTo(-9, 0); g.lineTo(9, 0); g.quadraticCurveTo(9, 18, 0, 18); g.quadraticCurveTo(-9, 18, -9, 0); g.fill(); g.fillStyle = '#9a1a3a'; g.beginPath(); g.moveTo(-8, 7 - drink * 5); g.lineTo(8, 7 - drink * 5); g.quadraticCurveTo(7, 17, 0, 17); g.quadraticCurveTo(-7, 17, -8, 7 - drink * 5); g.fill(); seg(g, [[0, 18], [0, 30]], 2.4, '#e8eef6'); seg(g, [[-6, 31], [6, 31]], 2.4, '#e8eef6'); }
+      rr(g, -10, grip - 6, 20, 12, 6); g.fillStyle = ink; g.fill();                                                  // the fist around it
       g.restore(); break; }
     case 'fork': { const ang = t.angle ?? Math.atan2(h[1] - p.eF[1], h[0] - p.eF[0]) - 0.4; g.save(); g.translate(h[0], h[1]); g.rotate(ang); seg(g, [[-4, 0], [26, 0]], 3, '#c8ccd4'); for (const dy of [-4, 0, 4]) seg(g, [[26, dy * 0.6], [34, dy]], 2, '#c8ccd4'); if (t.bite) circle(g, 36, 0, 6, t.bite); rr(g, -6, -6, 14, 12, 6); g.fillStyle = ink; g.fill(); g.restore(); break; }
     case 'mic': seg(g, [[h[0] + 2, h[1] + 6], [h[0] + 6, h[1] - 16]], 5, '#1a1a1e'); circle(g, h[0] + 7, h[1] - 21, 7, '#5a5e68'); circle(g, h[0] + 6, h[1] - 23, 2.5, '#9aa0aa'); break;

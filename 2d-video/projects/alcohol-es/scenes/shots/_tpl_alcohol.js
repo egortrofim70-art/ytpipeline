@@ -113,7 +113,7 @@ export const ALCOHOL = {
       g.fillStyle = '#f4f0e8'; g.beginPath(); g.ellipse(960, GY - 186, 80, 10, 0, 0, Math.PI * 2); g.fill();
       for (const [x, k] of [[930, 1], [985, 0.8]]) { g.fillStyle = '#d89a4a'; g.beginPath(); g.ellipse(x, GY - 196, 30 * k, 14 * k, 0, Math.PI, 0); g.fill(); g.strokeStyle = '#b87a3a'; g.lineWidth = 3; g.stroke(); }
       rr(g, 1100, GY - 240, 34, 54, 6); g.fillStyle = alpha('#c8e8ff', 0.6); g.fill();
-      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, prop: { type: 'fork', t, bite, angle: lerp(0.15, Math.PI * 1.04, clamp(1 - Math.abs(ph - 0.42) / 0.22)) }, pose, face: fc(ph > 0.3 && ph < 0.55 ? { eyes: 'ball', brows: null, mouth: Math.sin(t * 18) > 0 ? 'o' : 'smallFlat' } : (info.face || 'smile')), look: [0.6, 0.3], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
+      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, prop: { type: 'fork', t, bite, angle: lerp(0.35, -2.4, ease.inOut(clamp(1 - Math.abs(ph - 0.42) / 0.24))) }, pose, face: fc(ph > 0.3 && ph < 0.55 ? { eyes: 'ball', brows: null, mouth: Math.sin(t * 18) > 0 ? 'o' : 'smallFlat' } : (info.face || 'smile')), look: [0.6, 0.3], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
     placeTag(g, t, info.tag); caption(g, t, info);
   },
 
@@ -122,7 +122,8 @@ export const ALCOHOL = {
     const cam = camLerp(camAt(960, 560, 1.35), camAt(1060, 550, 1.45), K(info, t)), { rim, rimDir } = parkSet(g, t, cam);
     layer(g, cam, 1, (g) => {
       for (const [x0, v, c] of [[1700, -60, '#c84a5a'], [200, 70, '#3a6ab8']]) drawFigure(g, { x: x0 + v * t, y: GY + 10, s: HS * 0.85, facing: Math.sign(v), outfit: { top: 'tshirt', color: c, head: v > 0 ? 'capBack' : 'ponytail', headColor: '#3a2a1a' }, pose: walkPose(t * Math.PI * 2 * 0.9 + x0), face: F.smile });
-      drawFigure(g, { x: 700 + 110 * t, y: GY + 18, s: HS * 1.05, facing: 1, outfit: HERO, prop: { type: 'bottle', t }, pose: walkPose(t * Math.PI * 2 * 0.85), face: fc(info.face || 'smile'), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      const wp = walkPose(t * Math.PI * 2 * 0.85), sw = Math.sin(t * Math.PI * 2 * 0.85);
+      drawFigure(g, { x: 700 + 110 * t, y: GY + 18, s: HS * 1.05, facing: 1, outfit: HERO, prop: { type: 'bottle', t }, pose: { ...wp, eF: [wp.sh[0] + 14 + sw * 3, wp.sh[1] + 34], hF: [wp.sh[0] + 30 + sw * 4, wp.sh[1] + 52] }, face: fc(info.face || 'smile'), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
     });
     placeTag(g, t, info.tag); caption(g, t, info);
   },
@@ -137,12 +138,12 @@ export const ALCOHOL = {
   // the hero at the bar counter with a beer (rig prop), sipping on a cycle; cans [[at, n]] appear on the counter; a bartender slides them in
   barCounter(g, t, info) {
     const cam = camLerp(camAt(info.cx ?? 1000, 540, info.z0 ?? 1.3), camAt((info.cx ?? 1000) + 20, 530, info.z1 ?? 1.42), K(info, t)), { rim, rimDir } = barSet(g, t, cam, info);
-    const per = info.period ?? 2.6, ph = (t % per) / per, SIP = { ...POSES.stand, eF: [30, -160], hF: [22, -200] }, HOLD = { ...POSES.stand, eF: [24, -140], hF: [44, -150] };
+    const per = info.period ?? 2.6, ph = (t % per) / per, SIP = { ...POSES.stand, head: [-2, -208], eF: [40, -176], hF: [34, -213] }, HOLD = { ...POSES.stand, eF: [24, -140], hF: [44, -150] }, sipping = ph > 0.22 && ph < 0.6;
     let n = 0; for (const [at, k] of info.cans || []) if (t >= at) n = k;
     layer(g, cam, 1, (g) => {
       drawFigure(g, { x: 1330, y: GY, s: HS, facing: -1, outfit: { top: 'tshirt', color: '#2a2a34', head: 'beanie', headColor: '#8a2a2a' }, pose: breathe({ ...POSES.stand, eF: [40, -150], hF: [80, -170] }, t, 0.6), face: F.smile, look: [-0.6, 0] });
       for (let i = 0; i < n; i++) { const x = 1180 - i * 46, slide = clamp((t - (info.cans.find(([, k]) => k > i) || [0])[0]) / 0.3); beerCan(g, lerp(x + 140, x, ease.out(slide)), GY - 218, 0.62); }
-      drawFigure(g, { x: 900, y: GY, s: HS, facing: 1, outfit: HERO, prop: info.prop === false ? null : { type: info.prop || 'beer', t }, pose: breathe(posesAt(ph * per, [[0, HOLD], [per * 0.3, SIP], [per * 0.55, HOLD]], 0.25), t, 0.6), face: fc(info.face || 'talk'), look: [0.5, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      drawFigure(g, { x: 900, y: GY, s: HS, facing: 1, outfit: HERO, prop: info.prop === false ? null : { type: info.prop || 'beer', t }, pose: breathe(posesAt(ph * per, [[0, HOLD], [per * 0.3, SIP], [per * 0.55, HOLD]], 0.25), t, 0.6), face: fc(sipping ? { eyes: 'ball', brows: null, mouth: 'o', lid: 0.35 } : (info.face || 'talk')), look: sipping ? [0.35, -0.85] : [0.5, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
     });
     placeTag(g, t, info.tag); caption(g, t, info);
   },
