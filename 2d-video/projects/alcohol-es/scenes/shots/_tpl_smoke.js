@@ -52,14 +52,14 @@ export const SMOKE = {
   },
   // the hero smoking: raises the cigarette, takes a drag, exhales a cloud. place: street | kitchen | office. prop: cigarette | vape
   smoker(g, t, info) {
-    const place = info.place || 'street', cam = camLerp(camAt(1000, 620, info.z0 ?? 1.6), camAt(1010, 610, info.z1 ?? 1.72), K(info, t));
+    const place = info.place || 'street', zs = place === 'street' ? 0.78 : 1, cam = camLerp(camAt(1000, place === 'street' ? 560 : 620, (info.z0 ?? 1.6) * zs), camAt(1010, place === 'street' ? 550 : 610, (info.z1 ?? 1.72) * zs), K(info, t));
     const { rim, rimDir } = place === 'kitchen' ? kitchen(g, t, cam) : place === 'office' ? office(g, t, cam) : street(g, t, cam, { dusk: info.dusk ?? 1 });
     if (info.party) { g.save(); g.globalCompositeOperation = 'soft-light'; g.fillStyle = 'rgba(200,80,255,.28)'; g.fillRect(0, 0, E.W, E.H); g.restore(); }
     const per = info.period ?? 2.6, ph = (t % per) / per, drag = ph > 0.25 && ph < 0.5, exhale = ph >= 0.5 ? (ph - 0.5) / 0.5 : 0;
-    const pose = breathe(posesAt(ph * per, [[0, HOLD], [per * 0.25, DRAG], [per * 0.5, HOLD]], 0.25), t, 0.6);
+    const pose = breathe(posesAt(ph * per, [[0, HOLD], [per * 0.25, DRAG], [per * 0.5, HOLD]], 0.25), t, 0.6), atMouth = clamp((pose.sh[1] - pose.hF[1] - 4) / 22) > 0.3;
     const x = 1000, y = place === 'street' ? GY - 80 : GY;
     layer(g, cam, 1, (g) => {
-      drawFigure(g, { x, y, s: HS, facing: 1, outfit: info.outfit || HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6, color: info.propColor }, pose, face: fc(info.face || { eyes: 'ball', brows: null, mouth: drag ? 'o' : 'smallFlat', lid: 0.35 }), look: drag ? [0.35, -0.85] : [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      drawFigure(g, { x, y, s: HS, facing: 1, outfit: info.outfit || HERO, prop: { type: info.prop || 'cigarette', t, angle: -0.6, color: info.propColor }, pose, face: atMouth ? { eyes: 'ball', brows: null, mouth: 'o', lid: 0.45 } : fc(info.face || { eyes: 'ball', brows: null, mouth: 'smallFlat', lid: 0.35 }), look: atMouth ? [0.35, -0.85] : [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
       if (exhale > 0 && info.puff !== false) puff(g, x + 46 * HS, y - 200 * HS, exhale, 1.2, info.prop === 'vape' ? 0.7 : 0.5);
     });
     if (info.counter) { const n = Math.round(lerp(info.counter[0], info.counter[1], prog(t, 0.2, info.dur - 0.2))), cx = E.W * 0.2, cy = E.H * 0.3; rr(g, cx - 200, cy - 110, 400, 210, 28); g.fillStyle = 'rgba(6,8,16,.72)'; g.fill();

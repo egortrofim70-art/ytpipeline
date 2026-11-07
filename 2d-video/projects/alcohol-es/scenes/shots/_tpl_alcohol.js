@@ -107,13 +107,13 @@ export const ALCOHOL = {
   // a meal at the table: a plate of empanadas, the hero eats with a fork on a cycle (plate → mouth)
   mealTable(g, t, info) {
     const cam = camLerp(camAt(1000, 600, 1.55), camAt(1020, 590, 1.65), K(info, t)), { rim, rimDir } = homeRoom(g, t, cam, { ...info, wall: '#5a4436' });
-    const per = info.period ?? 2.4, ph = (t % per) / per, PLATE = { ...POSES.sit, head: [14, -176], sh: [6, -146], eF: [40, -122], hF: [74, -112], eB: [24, -112], hB: [56, -108] }, MOUTH = { ...PLATE, head: [10, -182], eF: [46, -134], hF: [48, -158] };
-    const pose = breathe(posesAt(ph * per, [[0, PLATE], [per * 0.35, MOUTH], [per * 0.6, PLATE]], 0.3), t, 0.4), bite = ph < 0.4 ? '#d8a050' : null;
+    const per = info.period ?? 2.4, ph = (t % per) / per, PLATE = { ...POSES.sit, head: [14, -176], sh: [6, -146], eF: [40, -126], hF: [70, -124], eB: [24, -112], hB: [56, -108] }, MOUTH = { ...PLATE, head: [10, -182], eF: [46, -134], hF: [48, -158] };
+    const stab = ph > 0.75 && ph < 0.95 ? Math.sin((ph - 0.75) / 0.2 * Math.PI) * 4 : 0, base = posesAt(ph * per, [[0, PLATE], [per * 0.35, MOUTH], [per * 0.6, PLATE]], 0.3), pose = breathe({ ...base, hF: [base.hF[0], base.hF[1] + stab] }, t, 0.4), bite = ph < 0.4 ? '#d8a050' : null;
     layer(g, cam, 1, (g) => { chairSide(g, 800); tableSide(g, 860, 1460);
       g.fillStyle = '#f4f0e8'; g.beginPath(); g.ellipse(960, GY - 186, 80, 10, 0, 0, Math.PI * 2); g.fill();
       for (const [x, k] of [[930, 1], [985, 0.8]]) { g.fillStyle = '#d89a4a'; g.beginPath(); g.ellipse(x, GY - 196, 30 * k, 14 * k, 0, Math.PI, 0); g.fill(); g.strokeStyle = '#b87a3a'; g.lineWidth = 3; g.stroke(); }
       rr(g, 1100, GY - 240, 34, 54, 6); g.fillStyle = alpha('#c8e8ff', 0.6); g.fill();
-      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, prop: { type: 'fork', t, bite, angle: lerp(0.35, -2.4, ease.inOut(clamp(1 - Math.abs(ph - 0.42) / 0.24))) }, pose, face: fc(ph > 0.3 && ph < 0.55 ? { eyes: 'ball', brows: null, mouth: Math.sin(t * 18) > 0 ? 'o' : 'smallFlat' } : (info.face || 'smile')), look: [0.6, 0.3], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
+      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, prop: { type: 'fork', t, bite, angle: lerp(0.32, -2.4, ease.inOut(clamp(1 - Math.abs(ph - 0.42) / 0.24))) }, pose, face: fc(ph > 0.3 && ph < 0.55 ? { eyes: 'ball', brows: null, mouth: Math.sin(t * 18) > 0 ? 'o' : 'smallFlat' } : (info.face || 'smile')), look: [0.6, 0.3], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
     placeTag(g, t, info.tag); caption(g, t, info);
   },
 
@@ -143,7 +143,8 @@ export const ALCOHOL = {
     layer(g, cam, 1, (g) => {
       drawFigure(g, { x: 1330, y: GY, s: HS, facing: -1, outfit: { top: 'tshirt', color: '#2a2a34', head: 'beanie', headColor: '#8a2a2a' }, pose: breathe({ ...POSES.stand, eF: [40, -150], hF: [80, -170] }, t, 0.6), face: F.smile, look: [-0.6, 0] });
       for (let i = 0; i < n; i++) { const x = 1180 - i * 46, slide = clamp((t - (info.cans.find(([, k]) => k > i) || [0])[0]) / 0.3); beerCan(g, lerp(x + 140, x, ease.out(slide)), GY - 218, 0.62); }
-      drawFigure(g, { x: 900, y: GY, s: HS, facing: 1, outfit: HERO, prop: info.prop === false ? null : { type: info.prop || 'beer', t }, pose: breathe(posesAt(ph * per, [[0, HOLD], [per * 0.3, SIP], [per * 0.55, HOLD]], 0.25), t, 0.6), face: fc(sipping ? { eyes: 'ball', brows: null, mouth: 'o', lid: 0.35 } : (info.face || 'talk')), look: sipping ? [0.35, -0.85] : [0.5, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+      const bp = breathe(posesAt(ph * per, [[0, HOLD], [per * 0.3, SIP], [per * 0.55, HOLD]], 0.25), t, 0.6), atMouth = clamp((bp.sh[1] - bp.hF[1] - 4) / 22) > 0.3;
+      drawFigure(g, { x: 900, y: GY, s: HS, facing: 1, outfit: HERO, prop: info.prop === false ? null : { type: info.prop || 'beer', t }, pose: bp, face: atMouth ? { eyes: 'ball', brows: null, mouth: 'o', lid: 0.45 } : fc(info.face || 'talk'), look: atMouth ? [0.35, -0.85] : [0.5, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
     });
     placeTag(g, t, info.tag); caption(g, t, info);
   },

@@ -164,7 +164,7 @@ export const NIGHT = {
   },
   streetWalk(g, t, info) {       // walking, slowing down, head dropping, eyes closing
     const slow = (tt) => tt - 0.16 * tt * tt, hx = 700 + 267 * slow(t), droop = ease.inOut(prog(t, info.droop0 ?? 0.5, info.droop1 ?? 1.6));
-    const cam = camAt(hx + 90, 640, 1.5), { rim, rimDir } = street(g, t, cam, { dusk: info.dusk });
+    const cam = camAt(hx + 90, 600, 1.18), { rim, rimDir } = street(g, t, cam, { dusk: info.dusk });
     const p = walkPose(slow(t) * Math.PI * 2 * 0.9), pose = { ...p, head: [p.head[0] + droop * 14, p.head[1] + droop * 16], sh: [p.sh[0] + droop * 6, p.sh[1] + droop * 4] };
     layer(g, cam, 1, (g) => drawFigure(g, { x: hx, y: GY - 80, s: HS, facing: 1, outfit: info.outfit || HERO, pose, rot: droop * 0.06, face: { ...face(info.face || 'day5'), lid: lerp(0.55, 1, droop) }, look: [0, 0.6], rim: { color: rim, dir: rimDir } }));
   },

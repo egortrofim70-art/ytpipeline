@@ -1,6 +1,6 @@
 {
  "title": "Demo 3",
- "duration": 33.4,
+ "duration": 29.0,
  "shots": [
   {
    "id": "d01",
@@ -121,24 +121,7 @@
   {
    "id": "d06",
    "start": 23.8,
-   "end": 28.2,
-   "line": "Парк: несёт бутылку",
-   "scene": "parkWalk",
-   "in": {
-    "type": "dip",
-    "dur": 0.3
-   },
-   "sfx": [],
-   "amb": null,
-   "params": {
-    "noBadge": true,
-    "tpl": "parkWalk"
-   }
-  },
-  {
-   "id": "d07",
-   "start": 28.2,
-   "end": 33.4,
+   "end": 29.0,
    "line": "Обед: вилка без кручения",
    "scene": "mealTable",
    "in": {
