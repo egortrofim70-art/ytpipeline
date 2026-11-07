@@ -25,7 +25,7 @@ function sepia(g, a = 0.3) { g.save(); g.globalCompositeOperation = 'multiply'; 
 function cubeAt(g, x, y, s = 1, a = 1) { if (a <= 0) return; g.save(); g.globalAlpha *= a; g.translate(x, y); g.scale(s, s); rr(g, -30, -30, 60, 60, 8); g.fillStyle = '#f6f6fa'; g.fill(); g.strokeStyle = '#b8bccc'; g.lineWidth = 3; g.stroke(); rr(g, -30, -30, 60, 14, 6); g.fillStyle = '#ffffff'; g.fill(); g.restore(); }
 function bubble(g, t, x, y, str, at, o = {}) {
   const a = pop(t, at, 0.3); if (a <= 0) return;
-  const size = o.size || 44, w = measure(g, str, size, FONTS.ui, 900) + 70, h = size * 1.9;
+  const size = o.size || 44, w = measure(g, str, size, FONTS.ui, 900, 3) + 76, h = size * 1.9;
   g.save(); g.translate(x, y); g.scale(a, a); rr(g, -w / 2, -h / 2, w, h, h / 2); g.fillStyle = '#f4efe6'; g.fill();
   const tl = o.tail ?? -w * 0.2, d = o.dir || 1; poly(g, [[tl, h / 2 - 4], [tl - 30 * d, h / 2 + 28], [tl + 20 * d, h / 2 - 4]], '#f4efe6');
   text(g, str, 0, 2, { size, font: FONTS.ui, weight: 900, color: '#1a1622' }); g.restore();
@@ -166,8 +166,8 @@ export const SUGAR = {
     g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#2a2018', '#3a2e22', '#1a140e']); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); glow(g, E.W / 2, E.H * 0.4, 800, '#ffcf8a', 0.18);
     const mode = info.mode || 'page', z = lerp(1, 1.06, K(info, t)); g.save(); zoom(g, z);
     if (mode === 'page') { g.save(); g.translate(E.W * 0.42, E.H * 0.52); g.rotate(-0.04); rr(g, -360, -420, 720, 840, 8); g.fillStyle = '#efe6cf'; g.fill();
-      text(g, info.head || 'REVISIÓN · 1967', 0, -340, { size: 44, font: FONTS.serif, weight: 900, color: '#2a2018' }); seg(g, [[-320, -300], [320, -300]], 3, '#2a2018');
-      text(g, info.title || 'Grasas, azúcar y el corazón', 0, -240, { size: 40, font: FONTS.serif, weight: 700, italic: true, color: '#3a2a1a' });
+      text(g, info.head || 'REVISIÓN · 1967', 0, -340, { maxW: 640, size: 44, font: FONTS.serif, weight: 900, color: '#2a2018' }); seg(g, [[-320, -300], [320, -300]], 3, '#2a2018');
+      text(g, info.title || 'Grasas, azúcar y el corazón', 0, -240, { maxW: 640, size: 40, font: FONTS.serif, weight: 700, italic: true, color: '#3a2a1a' });
       for (let i = 0; i < 12; i++) rr(g, -320, -170 + i * 44, i % 4 === 3 ? 380 : 640, 14, 4), (g.fillStyle = alpha('#5a4a3a', 0.35)), g.fill();
       const hi = fin(t, info.hiAt ?? 1.0); if (hi > 0) { g.fillStyle = alpha(RED, 0.35 * hi); g.fillRect(-326, -82, 520 * hi, 26); text(g, 'GRASA', 260, -70, { size: 40, font: FONTS.ui, weight: 900, color: RED, alpha: hi }); }
       g.restore(); }

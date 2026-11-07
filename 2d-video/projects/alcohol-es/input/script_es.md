@@ -1,6 +1,6 @@
 # ¿Y si dejaras el alcohol? — guion (~12–13 min, español latino, voz Fernando)
 
-Gancho: escena en 2.ª persona (domingo con resaca) → «imagina que fue la última vez» → Hopkins como prueba (1 frase) → 3 promesas + giro. Público: Sudamérica (asado, fernet, aguardiente, gaseosa). Contador «SIN ALCOHOL»: horas → días → semanas → mes → año.
+Gancho: dato que golpea al espectador (1 cerveza = 1 hora de hígado; el sábado, seis) → «imagina lo contrario» → 3 promesas + giro. Hopkins pasó a la sección 08 (famosos). Público: Sudamérica (asado, fernet, aguardiente, gaseosa). Contador «SIN ALCOHOL»: horas → días → semanas → mes → año.
 Cerramos los huecos de la competencia (5 videos analizados): estudios con nombre y año, un héroe y una línea de tiempo, respuesta a «¿y si solo bebo los fines de semana?»,
 datos de Latinoamérica, el giro de la «copa de vino», y el aviso de seguridad completo.
 Fuentes verificadas: Mehta et al., BMJ Open 2018 (94 personas, 1 mes: HOMA −25,9 %, sistólica −6,6 %, peso −1,5 %, VEGF −41,8 %, EGF −73,9 %; observacional);
@@ -14,13 +14,12 @@ abstinencia grave: convulsiones 6–48 h, delirium 48–72 h (guías clínicas);
 Roberts et al., Addiction 2022 (KCL: 21 ensayos de remedios para la resaca, evidencia de muy baja calidad, nada replicado; paracetamol/aspirina sin ensayos con placebo); disulfiram: Jacobsen y Hald, Dinamarca, década de 1940.
 
 ## 01. Gancho
-Domingo, diez de la mañana. Abres los ojos. La boca seca, la cabeza a punto de explotar, y una sola pregunta: ¿qué hice anoche?
-Ahora imagina que esa fue la última vez. Que desde hoy, cero alcohol.
-Eso hizo Anthony Hopkins, el actor de Hannibal Lecter. En mil novecientos setenta y cinco se despertó en un hotel sin saber cómo había llegado. Y no volvió a tomar nunca más.
-¿Qué le pasaría a tu cuerpo?
-La primera noche vas a dormir peor de lo que crees. En dos semanas, tu cerebro cambia en un escáner. En un mes, tu sangre ya no es la misma.
-Y al final, el error detrás de la famosa copa de vino «buena para el corazón».
-Empezamos.
+Tu hígado tarda una hora en limpiar una sola cerveza. El sábado le diste seis.
+Mientras él trabajaba, tú dormías mal, te secabas por dentro, y una sustancia tóxica daba vueltas por tu sangre.
+Ahora imagina lo contrario: desde hoy, ni una gota.
+En una semana, el domingo sin resaca. En dos, tu cerebro cambia en un escáner. Y en un mes, un análisis de sangre muestra algo que nadie esperaba.
+Y al final te cuento por qué la famosa copa de vino «buena para el corazón» probablemente nunca protegió a nadie.
+Vamos día por día.
 
 ## 02. Antes de empezar
 Una cosa antes: si tomas mucho todos los días, no lo dejes de golpe sin un médico. Puede ser peligroso.
@@ -74,8 +73,9 @@ En solo dos semanas, parte de la materia gris que se había perdido empezó a vo
 Ojo: eran personas que bebían muchísimo. Pero muestra algo importante: el cerebro no se queda dañado para siempre. Cuando le das una pausa, se repara.
 Y el hígado también. El hígado graso por alcohol, cuando la grasa se acumula en sus células, puede empezar a revertirse en pocas semanas sin beber.
 
-## 08. Brad Pitt
+## 08. Famosos que lo dejaron
 Y no hace falta tocar fondo para notarlo.
+En mil novecientos setenta y cinco, Anthony Hopkins, el actor de Hannibal Lecter, se despertó en un hotel de Arizona sin saber cómo había llegado. Ese mismo día dejó de tomar. Y nunca volvió.
 Brad Pitt contó que, después de su divorcio, se dio cuenta de que tomaba demasiado. Entró a Alcohólicos Anónimos y dejó el alcohol.
 Dijo una frase muy honesta: «Llevé las cosas al límite, así que me quité el privilegio de beber».
 Estuvo siete años sin tomar. Y hace poco contó otra cosa: volvió a tomar, pero muy poco, con control.

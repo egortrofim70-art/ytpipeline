@@ -13,19 +13,19 @@ def st(text, at, **k): return {'text': text, 'at': at, **k}
 
 BEATS = [
   # ---------------- 01. GANCHO: historia en frío ----------------
-  ('01', 'Domingo diez de la mañana', 'face', {**NB, 'who': 'hero', 'face': 'wreck', 'dawn': 1}),
-  ('01', 'La boca seca', 'sitEdge', {**NB, 'face': 'wreck'}),
-  ('01', 'y una sola pregunta', 'face', {**NB, 'who': 'hero', 'face': 'shock', 'dawn': 1, 'stamp': st('¿QUÉ HICE ANOCHE?', 'w:anoche', y=950, size=100, color=RED)}),
-  ('01', 'Ahora imagina que esa', 'iconRow', {**NB, 'in': WHIP, 'items': [{'icon': 'beer', 'label': 'LA ÚLTIMA VEZ', 'at': 0.1, 'cross': 'w:cero', 'color': AMBER}], 'caption': 'CERO ALCOHOL', 'capAt': 'w:cero'}),
-  ('01', 'Eso hizo Anthony Hopkins', 'title', {**NB, 'in': FLASH, 'lines': ['ANTHONY HOPKINS', '«HANNIBAL LECTER»'], 'bg': 'dark'}),
-  ('01', 'En mil novecientos setenta', 'hotelWake', {**NB, 'tag': 'ARIZONA · 1975'}),
-  ('01', 'Y no volvió a tomar', 'calendarFlip', {**NB, 'steps': [[0, '1975', 'ÚLTIMO TRAGO'], ['w:nunca', '0', 'TRAGOS DESDE ENTONCES']], 'size': 200, 'color': '#2a7a3a'}),
-  ('01', 'Qué le pasaría a tu cuerpo', 'smoker', {**NB, **BEER, 'in': WHIP, 'place': 'street', 'party': True, 'face': 'think', 'z0': 1.8, 'z1': 1.95}),
-  ('01', 'La primera noche vas', 'face', {'in': WHIP, 'who': 'hero', 'face': 'tired', 'dawn': 0, 'badge': [12, 'h', 'primera']}),
-  ('01', 'En dos semanas', 'mriCompare', {'noFocus': True, 'in': WHIP, 'at': 0.3, 'badge': [2, 'w', 'dos']}),
-  ('01', 'En un mes tu sangre', 'iconRow', {'in': WHIP, 'items': [{'icon': 'blood', 'label': 'TU SANGRE CAMBIA', 'at': 0.2, 'color': RED, 'hi': 'w:sangre'}], 'badge': [1, 'm', 'mes']}),
-  ('01', 'Y al final el error', 'myth', {**NB, 'in': WHIP, 'text': ['«UNA COPA DE VINO', 'ES BUENA PARA EL CORAZÓN»'], 'verdict': '¿ERROR?', 'verdictColor': RED, 'verdictAt': 'w:corazón'}),
-  ('01', 'Empezamos', 'stopwatch', {**NB, 'in': FLASH, 'startAt': 'w:empezamos', 'caption': 'SIN ALCOHOL', 'bg': 'kitchen'}),
+  ('01', 'Tu hígado tarda una hora', 'barCounter', {**NB, 'cans': [[0, 1]], 'face': 'smile', 'stamp': st('1 CERVEZA ≈ 1 HORA', 'w:hora', y=150, size=100, color=GOLD)}),
+  ('01', 'El sábado le diste seis', 'barCounter', {**NB, 'cans': [[0, 1], [0.35, 3], ['w:seis', 6]], 'z0': 1.75, 'z1': 1.9, 'cx': 1060, 'period': 1.6, 'face': 'smile', 'stamp': st('SÁBADO: 6', 'w:seis', y=150, size=120, color=RED)}),
+  ('01', 'Mientras él trabajaba', 'liverQueue', {**NB, 'fast': True}),
+  ('01', 'tú dormías mal', 'eyesOpen', {**NB, 'face': 'tired'}),
+  ('01', 'te secabas por dentro', 'mirror', {**NB, 'face': 'wreck', 'stamp': st('SECO POR DENTRO', 'w:dentro', y=950, size=100, color=BLUE)}),
+  ('01', 'y una sustancia tóxica', 'liverQueue', {**NB, 'mode': 'acet', 'caption': 'TÓXICA', 'capAt': 'w:tóxica'}),
+  ('01', 'Ahora imagina lo contrario', 'smoker', {**NB, 'in': FLASH, 'puff': False, 'prop': 'bottle', 'place': 'kitchen', 'face': 'smile', 'stamp': st('NI UNA GOTA', 'w:gota', y=950, size=120, color=GREEN)}),
+  ('01', 'En una semana el domingo', 'face', {'in': WHIP, 'who': 'hero', 'face': 'smile', 'dawn': 1, 'badge': [1, 'w', 'semana']}),
+  ('01', 'En dos tu cerebro', 'mriCompare', {'in': WHIP, 'at': 0.3, 'badge': [2, 'w', 'dos']}),
+  ('01', 'Y en un mes un análisis', 'iconRow', {'in': WHIP, 'items': [{'icon': 'blood', 'label': 'ALGO QUE NADIE ESPERABA', 'at': 0.2, 'color': RED, 'hi': 'w:esperaba'}], 'badge': [1, 'm', 'mes']}),
+  ('01', 'Y al final te cuento', 'smoker', {**NB, 'in': WHIP, 'puff': False, 'prop': 'wine', 'place': 'kitchen', 'face': 'smile', 'caption': '«BUENA PARA EL CORAZÓN»', 'capAt': 'w:corazón'}),
+  ('01', 'probablemente nunca protegió', 'title', {**NB, 'lines': ['¿NUNCA PROTEGIÓ', 'A NADIE?'], 'bg': 'red'}),
+  ('01', 'Vamos día por día', 'stopwatch', {**NB, 'in': FLASH, 'startAt': 'w:vamos', 'caption': 'SIN ALCOHOL', 'bg': 'kitchen'}),
 
   # ---------------- 02. ANTES DE EMPEZAR ----------------
   ('02', 'Una cosa antes', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'fear', 'bg': 'street', 'stamp': st('CON UN MÉDICO', 'w:médico', y=950, size=110, color=GREEN)}),
@@ -111,6 +111,8 @@ BEATS = [
 
   # ---------------- 08. BRAD PITT ----------------
   ('08', 'Y no hace falta tocar', 'face', {**NB, 'in': DIP, 'who': 'hero', 'face': 'think', 'bg': 'street'}),
+  ('08', 'En mil novecientos setenta', 'hotelWake', {**NB, 'tag': 'ANTHONY HOPKINS · 1975'}),
+  ('08', 'Ese mismo día dejó', 'calendarFlip', {**NB, 'steps': [[0, '1975', 'ÚLTIMO TRAGO'], ['w:nunca', '0', 'TRAGOS DESDE ENTONCES']], 'size': 200, 'color': '#2a7a3a'}),
   ('08', 'Brad Pitt contó que', 'title', {**NB, 'in': FLASH, 'lines': ['BRAD PITT'], 'bg': 'dark'}),
   ('08', 'se dio cuenta de que', 'smoker', {**NB, **BEER, 'place': 'kitchen', 'prop': 'wine', 'outfit': {'top': 'tshirt', 'color': '#5a6a7a'}, 'face': 'tired', 'period': 1.8}),
   ('08', 'Entró a Alcohólicos Anónimos', 'iconRow', {**NB, 'items': [{'icon': 'people', 'label': 'ALCOHÓLICOS ANÓNIMOS', 'at': 'w:alcohólicos', 'color': BLUE}, {'icon': 'beer', 'label': 'DEJÓ EL ALCOHOL', 'at': 'w:dejó', 'cross': 'w:alcohol'}]}),

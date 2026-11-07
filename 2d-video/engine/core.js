@@ -87,14 +87,15 @@ export function backdrop(g, colors, area = [-E.W, -E.H, E.W * 3, E.H * 3]) { g.f
 // ---------- text ----------
 export const FONTS = { title: 'Fredoka', ui: 'Nunito', serif: 'Playfair Display' };
 export function text(g, str, x, y, o = {}) {
-  const { size = 48, font = FONTS.title, weight = 700, color = '#fff', align = 'center', base = 'middle', glow: gl = 0, glowColor = 'rgba(255,140,60,.8)', spacing = 0, alpha: a = 1, stroke = 0, strokeColor = '#000', italic = false } = o;
+  const { size: size0 = 48, font = FONTS.title, weight = 700, color = '#fff', align = 'center', base = 'middle', glow: gl = 0, glowColor = 'rgba(255,140,60,.8)', spacing = 0, alpha: a = 1, stroke = 0, strokeColor = '#000', italic = false } = o;
+  let size = size0; if (o.maxW) { const w0 = measure(g, str, size, font, weight, spacing); if (w0 > o.maxW) size = size * o.maxW / w0; }
   g.save(); g.globalAlpha *= a; g.font = `${italic ? 'italic ' : ''}${weight} ${size}px "${font}"`; g.textAlign = align; g.textBaseline = base;
   if ('letterSpacing' in g) g.letterSpacing = `${spacing}px`;
   if (stroke) { g.lineJoin = 'round'; g.lineWidth = stroke; g.strokeStyle = strokeColor; g.strokeText(str, x, y); }
   if (gl) { g.shadowColor = glowColor; g.shadowBlur = gl; }
   g.fillStyle = color; g.fillText(str, x, y); g.restore();
 }
-export function measure(g, str, size, font = FONTS.title, weight = 700) { g.save(); g.font = `${weight} ${size}px "${font}"`; const w = g.measureText(str).width; g.restore(); return w; }
+export function measure(g, str, size, font = FONTS.title, weight = 700, spacing = 0) { g.save(); g.font = `${weight} ${size}px "${font}"`; if ('letterSpacing' in g) g.letterSpacing = '0px'; const w = g.measureText(String(str)).width + spacing * String(str).length; g.restore(); return w; }
 
 // ---------- camera & parallax ----------
 // cam = {x, y, z (zoom), r (roll, radians)}; depth 1 = character plane, <1 farther, >1 foreground

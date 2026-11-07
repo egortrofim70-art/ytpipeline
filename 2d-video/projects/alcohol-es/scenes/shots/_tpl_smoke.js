@@ -65,7 +65,7 @@ export const SMOKE = {
     if (info.counter) { const n = Math.round(lerp(info.counter[0], info.counter[1], prog(t, 0.2, info.dur - 0.2))), cx = E.W * 0.2, cy = E.H * 0.3; rr(g, cx - 200, cy - 110, 400, 210, 28); g.fillStyle = 'rgba(6,8,16,.72)'; g.fill();
       text(g, `${n}`, cx, cy - 20, { size: 120, font: FONTS.ui, weight: 900, color: GOLD(), glow: 24, glowColor: alpha(GOLD(), 0.5) }); label(g, info.counterLabel || 'ЗАТЯЖЕК', cx, cy + 62, { size: 36 }); }
     placeTag(g, t, info.tag);
-    if (info.caption) { const a = fin(t, info.capAt ?? 0.3), w = measure(g, info.caption, 58, FONTS.ui, 900) + 90; rr(g, E.W / 2 - w / 2, 62, w, 96, 48); g.fillStyle = `rgba(6,8,16,${0.7 * a})`; g.fill(); glowLabel(g, info.caption, E.W / 2, 110, a, 58); }
+    if (info.caption) { const a = fin(t, info.capAt ?? 0.3), w = measure(g, info.caption, 58, FONTS.ui, 900, 3) + 96; rr(g, E.W / 2 - w / 2, 62, w, 96, 48); g.fillStyle = `rgba(6,8,16,${0.7 * a})`; g.fill(); glowLabel(g, info.caption, E.W / 2, 110, a, 58); }
   },
   // receptors as little doors on a nerve membrane: mode smoker (many, filled) | empty (many, red, rattling) | normal (fewer)
   receptors(g, t, info) {
@@ -155,6 +155,6 @@ export const SMOKE = {
       drawFigure(g, { x: 1200, y: GY, s: HS, facing: -1, outfit: { top: 'hoodie', color: '#3a8a5a', head: 'capBack', headColor: '#2a2a2a' }, prop: info.prop ? { type: info.prop, t } : { type: 'cigarette', t, angle: 0.2, lit: false }, pose: breathe(posesAt(t, [[0, POSES.relaxed], [0.3, OFFER]], 0.35), t, 0.6), face: F.smile, look: [-0.6, 0], rim: { color: rim, dir: rimDir } });
       drawFigure(g, { x: 820, y: GY, s: HS, facing: 1, outfit: HERO, pose: breathe(posesAt(t, [[0, POSES.stand], [na, NO]], 0.3), t, 0.6), face: t > na ? fc({ eyes: 'ball', brows: null, mouth: 'smallSmile' }) : fc({ eyes: 'ball', brows: 'raised', mouth: 'flat', eyeSize: 1.15 }), look: [0.7, 0.1], rim: { color: rim, dir: rimDir } });
     });
-    if (info.word) { const a = pop(t, info.wordAt ?? 0.6, 0.3); if (a > 0) { const w = measure(g, info.word, 50, FONTS.ui, 900) + 70; g.save(); g.translate(E.W * 0.64, E.H * 0.2); g.scale(a, a); rr(g, -w / 2, -48, w, 96, 48); g.fillStyle = '#f4efe6'; g.fill(); text(g, info.word, 0, 2, { size: 50, font: FONTS.ui, weight: 900, color: '#1a1622' }); g.restore(); } }
+    if (info.word) { const a = pop(t, info.wordAt ?? 0.6, 0.3); if (a > 0) { const w = measure(g, info.word, 50, FONTS.ui, 900, 3) + 76; g.save(); g.translate(E.W * 0.64, E.H * 0.2); g.scale(a, a); rr(g, -w / 2, -48, w, 96, 48); g.fillStyle = '#f4efe6'; g.fill(); text(g, info.word, 0, 2, { size: 50, font: FONTS.ui, weight: 900, color: '#1a1622' }); g.restore(); } }
   },
 };

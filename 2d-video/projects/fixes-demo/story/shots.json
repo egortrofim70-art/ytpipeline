@@ -1,0 +1,302 @@
+{
+ "title": "Demo",
+ "duration": 43.8,
+ "shots": [
+  {
+   "id": "d01",
+   "start": 0,
+   "end": 3.6,
+   "line": "Календарь: длинные подписи",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "1975",
+      "ÚLTIMO TRAGO"
+     ],
+     [
+      1.6,
+      "0",
+      "TRAGOS DESDE ENTONCES"
+     ]
+    ],
+    "size": 200,
+    "color": "#2a7a3a",
+    "tpl": "calendarFlip"
+   }
+  },
+  {
+   "id": "d02",
+   "start": 3.6,
+   "end": 7.0,
+   "line": "Календарь 2",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "4,3",
+      "DÍAS CON ALCOHOL / SEMANA"
+     ],
+     [
+      1.6,
+      "3,3",
+      "SEIS MESES DESPUÉS"
+     ]
+    ],
+    "size": 200,
+    "color": "#2a7a3a",
+    "tpl": "calendarFlip"
+   }
+  },
+  {
+   "id": "d03",
+   "start": 7.0,
+   "end": 9.6,
+   "line": "Календарь: длинное слово",
+   "scene": "calendarFlip",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "steps": [
+     [
+      0,
+      "VIERNES",
+      "PRIMERO SIN ALCOHOL"
+     ]
+    ],
+    "size": 150,
+    "color": "#c8405a",
+    "tpl": "calendarFlip"
+   }
+  },
+  {
+   "id": "d04",
+   "start": 9.6,
+   "end": 12.6,
+   "line": "Плашка снизу слева",
+   "scene": "hotelWake",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "tag": "ARIZONA · 1975",
+    "tpl": "hotelWake"
+   }
+  },
+  {
+   "id": "d05",
+   "start": 12.6,
+   "end": 15.6,
+   "line": "Плашка: очень длинная",
+   "scene": "stage",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "tag": "ANTHONY HOPKINS · BRAD PITT · 1975–2019",
+    "tpl": "stage"
+   }
+  },
+  {
+   "id": "d06",
+   "start": 15.6,
+   "end": 19.0,
+   "line": "Комментарий: длинный текст",
+   "scene": "comment",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "text": "Lo peor no es dejarlo, es la presión de los amigos del viernes",
+    "typeDur": 1.6,
+    "tpl": "comment"
+   }
+  },
+  {
+   "id": "d07",
+   "start": 19.0,
+   "end": 22.0,
+   "line": "Журнал: длинный заголовок",
+   "scene": "journal",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "head": "OMS · LANCET PUBLIC HEALTH · 2023",
+    "title": "No existe un nivel seguro de consumo de alcohol",
+    "hiAt": 99,
+    "tpl": "journal"
+   }
+  },
+  {
+   "id": "d08",
+   "start": 22.0,
+   "end": 25.0,
+   "line": "Штамп: длинный",
+   "scene": "myth",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "text": [
+     "«UNA COPA AL DÍA",
+     "NO PASA NADA»"
+    ],
+    "verdict": "GRAN PREDICTOR DE RECAÍDA",
+    "verdictColor": "#ff5a4a",
+    "verdictAt": 0.6,
+    "tpl": "myth"
+   }
+  },
+  {
+   "id": "d09",
+   "start": 25.0,
+   "end": 29.0,
+   "line": "Новая локация: бар",
+   "scene": "barCounter",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "cans": [
+     [
+      0,
+      1
+     ],
+     [
+      0.8,
+      3
+     ],
+     [
+      1.6,
+      6
+     ]
+    ],
+    "face": "smile",
+    "tag": "NUEVO: BAR",
+    "tpl": "barCounter"
+   }
+  },
+  {
+   "id": "d10",
+   "start": 29.0,
+   "end": 33.0,
+   "line": "Новая локация: парк",
+   "scene": "parkWalk",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "tag": "NUEVO: PARQUE",
+    "tpl": "parkWalk"
+   }
+  },
+  {
+   "id": "d11",
+   "start": 33.0,
+   "end": 37.0,
+   "line": "Новая локация: гостиная + поза сидя",
+   "scene": "sofaTV",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "tag": "NUEVO: SALA DE ESTAR",
+    "prop": "bottle",
+    "tpl": "sofaTV"
+   }
+  },
+  {
+   "id": "d12",
+   "start": 37.0,
+   "end": 40.4,
+   "line": "Поза сидя за столом (исправлена)",
+   "scene": "deskType",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "face": "calm",
+    "tpl": "deskType"
+   }
+  },
+  {
+   "id": "d13",
+   "start": 40.4,
+   "end": 43.8,
+   "line": "Поза сидя за едой",
+   "scene": "eatTable",
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": null,
+   "params": {
+    "noBadge": true,
+    "who": "hero",
+    "stack": 1,
+    "word": false,
+    "sepia": false,
+    "tpl": "eatTable"
+   }
+  }
+ ]
+}

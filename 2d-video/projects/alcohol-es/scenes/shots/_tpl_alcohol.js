@@ -2,7 +2,7 @@
 // Drinks in hands go through the rig (prop: 'beer' | 'wine' | 'can' | 'mic'), so they move with the hand.
 import { E, S, ease, prog, lerp, clamp, key, rr, seg, circle, ring, poly, text, measure, glow, alpha, shade, mix, linGrad, rng, FONTS, layer, blurLayer, veil } from '/engine/core.js';
 import * as UI from '/engine/ui2d.js';
-import { drawFigure, POSES, breathe, posesAt, bigFace } from '/engine/rig2d.js';
+import { drawFigure, POSES, breathe, posesAt, walkPose, bigFace } from '/engine/rig2d.js';
 import { GY, HS } from '../sets/bedroom.js';
 import { kitchen } from '../sets/week.js';
 import { office } from '../sets/places.js';
@@ -37,7 +37,77 @@ function stick(g, x, y, s, col, o = {}) { // tiny crowd figure
   g.restore();
 }
 
+// ---- a night bar: bottle shelves, neon sign, wall clock, wooden counter; patrons in their own colours (never yellow)
+export function barSet(g, t, cam, o = {}) {
+  layer(g, cam, 0.6, (g) => {
+    g.fillStyle = linGrad(g, 0, -200, 0, GY, ['#1a0e1e', '#2a1626', '#1a0c14']); g.fillRect(-E.W, -E.H, E.W * 4, E.H * 3);
+    for (let r = 0; r < 3; r++) { const y = 230 + r * 150; g.fillStyle = '#3a2418'; g.fillRect(-200, y, E.W + 400, 14);
+      for (let i = 0; i < 26; i++) { const x = -160 + i * 92 + (r % 2) * 40, h = 70 + ((i * 37 + r * 11) % 4) * 14, c = ['#2a6a3a', '#8a4a1a', '#c8a050', '#6a2a3a', '#3a5a8a'][(i + r) % 5];
+        rr(g, x, y - h, 30, h, 6); g.fillStyle = alpha(c, 0.9); g.fill(); g.fillStyle = alpha(c, 0.9); g.fillRect(x + 10, y - h - 22, 10, 24); g.fillStyle = alpha('#ffffff', 0.18); g.fillRect(x + 5, y - h + 8, 5, h - 16); } }
+    const on = 0.85 + 0.15 * Math.sin(t * 13) * (Math.sin(t * 2.3) > 0.7 ? 1 : 0);
+    glow(g, 1500, 150, 300, '#ff4ad8', 0.35 * on); text(g, o.sign || 'BAR', 1500, 150, { size: 120, font: FONTS.title, weight: 700, color: alpha('#ffd0f4', on), glow: 30, glowColor: '#ff4ad8' });
+    const cx = 380, cy = 140; circle(g, cx, cy, 62, '#f4efe6'); g.lineWidth = 6; g.strokeStyle = '#2a1a14'; g.beginPath(); g.arc(cx, cy, 62, 0, Math.PI * 2); g.stroke();
+    const hh = o.clockH ?? 23, mm = o.clockM ?? 0; for (const [a, L, w] of [[(hh % 12 + mm / 60) / 12, 34, 7], [mm / 60, 50, 4]]) { const ang = a * Math.PI * 2 - Math.PI / 2; seg(g, [[cx, cy], [cx + Math.cos(ang) * L, cy + Math.sin(ang) * L]], w, '#2a1a14'); }
+  });
+  if (o.patrons !== false) layer(g, cam, 0.97, (g) => { counter(g); for (const [x, c, f] of [[300, '#3a7a9a', 1], [560, '#8a3a4a', -1], [1620, '#4a8a5a', -1], [1860, '#7a5aa8', 1]]) {
+    drawFigure(g, { x, y: GY, s: HS * 0.95, facing: f, outfit: { top: 'hoodie', color: c, head: x > 1000 ? 'capBack' : null, headColor: '#2a2a2a' }, prop: { type: 'beer', t }, pose: breathe({ ...POSES.stand, eF: [24, -140], hF: [40, -150] }, t + x, 0.6), face: F.smile, look: [f * 0.5, 0] }); } });
+  layer(g, cam, 1, (g) => { g.fillStyle = '#1a0e0a'; g.fillRect(-E.W, GY, E.W * 4, E.H * 2); });
+  return { rim: '#ff9ad8', rimDir: [0.6, -0.8] };
+}
+function counter(g) { g.fillStyle = '#5a3420'; g.fillRect(-E.W, GY - 190, E.W * 4, 30); g.fillStyle = '#3a2014'; g.fillRect(-E.W, GY - 160, E.W * 4, 200); g.fillStyle = alpha('#ffb07a', 0.25); g.fillRect(-E.W, GY - 190, E.W * 4, 5); }
+
+// ---- a city park by day: sky, round trees, a path, benches, people passing in their own colours
+export function parkSet(g, t, cam) {
+  layer(g, cam, 0.2, (g) => { g.fillStyle = linGrad(g, 0, -E.H, 0, GY, ['#6aa8e8', '#a8d0f0', '#e8f2f0']); g.fillRect(-E.W * 2, -E.H * 2, E.W * 6, E.H * 3); for (const [x, y, r] of [[300, 160, 60], [380, 150, 80], [1300, 120, 70], [1390, 130, 50]]) circle(g, x + t * 6, y, r, alpha('#ffffff', 0.8)); });
+  layer(g, cam, 0.5, (g) => { for (let i = -3; i < 12; i++) { const x = i * 230, h = 160 + ((i * 53) % 4) * 40; seg(g, [[x, GY - 120], [x, GY - 120 - h * 0.5]], 14, '#5a4a3a'); for (const [dx, dy, r] of [[0, -h * 0.6, 70], [-40, -h * 0.45, 55], [40, -h * 0.45, 55]]) circle(g, x + dx, GY - 120 + dy, r, ['#4a8a4a', '#5a9a50', '#3a7a46'][((i % 3) + 3) % 3]); } g.fillStyle = '#7ab060'; g.fillRect(-E.W * 2, GY - 130, E.W * 6, 140); });
+  layer(g, cam, 1, (g) => { g.fillStyle = '#d8c8a8'; g.fillRect(-E.W * 2, GY - 20, E.W * 6, 60); g.fillStyle = '#6aa058'; g.fillRect(-E.W * 2, GY + 40, E.W * 6, E.H * 2);
+    for (const x of [-200, 1500]) { rr(g, x, GY - 90, 260, 20, 6); g.fillStyle = '#8a5a3a'; g.fill(); rr(g, x, GY - 140, 260, 16, 6); g.fill(); for (const dx of [20, 230]) seg(g, [[x + dx, GY - 70], [x + dx, GY - 20]], 8, '#3a3a40'); } });
+  return { rim: '#fff4d8', rimDir: [-0.6, -0.8] };
+}
+// ---- a living room at night: sofa, rug, floor lamp, a TV whose light flickers on the walls
+export function livingSet(g, t, cam) {
+  const fl = 0.75 + 0.25 * Math.sin(t * 7) * Math.sin(t * 2.9);
+  layer(g, cam, 0.7, (g) => { g.fillStyle = linGrad(g, 0, -200, 0, GY, ['#2a2440', '#3a2e48', '#2a2234']); g.fillRect(-E.W, -E.H, E.W * 4, E.H * 3);
+    rr(g, 1180, 170, 300, 380, 8); g.fillStyle = '#1a1a2a'; g.fill(); g.fillStyle = linGrad(g, 0, 180, 0, 540, ['#3a5a9a', '#7a5aa0']); g.fillRect(1196, 186, 268, 348); circle(g, 1390, 260, 26, '#f4f0d8');
+    for (const [x, w, h, c] of [[300, 140, 180, '#c8a050'], [480, 120, 150, '#5a8aa8']]) { rr(g, x, 200, w, h, 6); g.fillStyle = '#20182a'; g.fill(); rr(g, x + 10, 210, w - 20, h - 20, 4); g.fillStyle = alpha(c, 0.8); g.fill(); }
+    glow(g, 960, 520, 700, '#7ab8ff', 0.12 * fl); });
+  layer(g, cam, 1, (g) => { g.fillStyle = '#1e1826'; g.fillRect(-E.W, GY, E.W * 4, E.H * 2); g.fillStyle = '#5a3a4a'; g.beginPath(); g.ellipse(960, GY + 40, 520, 50, 0, 0, Math.PI * 2); g.fill();
+    seg(g, [[300, GY], [300, GY - 380]], 8, '#1a1420'); poly(g, [[250, GY - 380], [350, GY - 380], [330, GY - 450], [270, GY - 450]], '#e8d8b0'); glow(g, 300, GY - 400, 260, '#ffd890', 0.25); });
+  return { rim: '#9ac8ff', rimDir: [0.8, -0.5] };
+}
+function sofa(g, x, y, s, col = '#4a6a8a') { g.save(); g.translate(x, y); g.scale(s, s); rr(g, -150, -120, 300, 70, 20); g.fillStyle = shade(col, -0.2); g.fill(); rr(g, -160, -70, 320, 40, 14); g.fillStyle = col; g.fill(); rr(g, -175, -100, 40, 80, 14); g.fill(); rr(g, 135, -100, 40, 80, 14); g.fill(); g.fillStyle = '#2a1e18'; g.fillRect(-150, -30, 14, 30); g.fillRect(136, -30, 14, 30); g.restore(); }
+
 export const ALCOHOL = {
+  // the park: the hero walks (keyed walk cycle) with a water bottle, people pass in the background
+  parkWalk(g, t, info) {
+    const cam = camLerp(camAt(960, 560, 1.35), camAt(1060, 550, 1.45), K(info, t)), { rim, rimDir } = parkSet(g, t, cam);
+    layer(g, cam, 1, (g) => {
+      for (const [x0, v, c] of [[1700, -60, '#c84a5a'], [200, 70, '#3a6ab8']]) drawFigure(g, { x: x0 + v * t, y: GY + 10, s: HS * 0.85, facing: Math.sign(v), outfit: { top: 'tshirt', color: c, head: v > 0 ? 'capBack' : 'ponytail', headColor: '#3a2a1a' }, pose: walkPose(t * Math.PI * 2 * 0.9 + x0), face: F.smile });
+      drawFigure(g, { x: 700 + 110 * t, y: GY + 18, s: HS * 1.05, facing: 1, outfit: HERO, prop: { type: 'bottle', t }, pose: walkPose(t * Math.PI * 2 * 0.85), face: fc(info.face || 'smile'), look: [0.6, -0.1], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+    });
+    placeTag(g, t, info.tag); caption(g, t, info);
+  },
+  // the living room: the hero on the sofa (sit pose), lit by the TV; optional prop
+  sofaTV(g, t, info) {
+    const cam = camLerp(camAt(940, 600, 1.45), camAt(960, 590, 1.55), K(info, t)), { rim, rimDir } = livingSet(g, t, cam);
+    layer(g, cam, 1, (g) => { sofa(g, 900, GY, 1.7); const nod = 0.5 + 0.5 * Math.sin(t * 1.6);
+      drawFigure(g, { x: 880, y: GY + 8, s: HS, facing: 1, outfit: HERO, prop: info.prop ? { type: info.prop, t } : null, pose: breathe({ ...POSES.sit, head: [8 + nod * 3, -180 + nod * 4], hF: [40, -96 - nod * 6] }, t, 0.6), face: fc(info.face || 'calm'), look: [0.8, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
+    placeTag(g, t, info.tag); caption(g, t, info);
+  },
+
+  // the hero at the bar counter with a beer (rig prop), sipping on a cycle; cans [[at, n]] appear on the counter; a bartender slides them in
+  barCounter(g, t, info) {
+    const cam = camLerp(camAt(info.cx ?? 1000, 540, info.z0 ?? 1.3), camAt((info.cx ?? 1000) + 20, 530, info.z1 ?? 1.42), K(info, t)), { rim, rimDir } = barSet(g, t, cam, info);
+    const per = info.period ?? 2.6, ph = (t % per) / per, SIP = { ...POSES.stand, eF: [30, -160], hF: [22, -200] }, HOLD = { ...POSES.stand, eF: [24, -140], hF: [44, -150] };
+    let n = 0; for (const [at, k] of info.cans || []) if (t >= at) n = k;
+    layer(g, cam, 1, (g) => {
+      drawFigure(g, { x: 1330, y: GY, s: HS, facing: -1, outfit: { top: 'tshirt', color: '#2a2a34', head: 'beanie', headColor: '#8a2a2a' }, pose: breathe({ ...POSES.stand, eF: [40, -150], hF: [80, -170] }, t, 0.6), face: F.smile, look: [-0.6, 0] });
+      for (let i = 0; i < n; i++) { const x = 1180 - i * 46, slide = clamp((t - (info.cans.find(([, k]) => k > i) || [0])[0]) / 0.3); beerCan(g, lerp(x + 140, x, ease.out(slide)), GY - 218, 0.62); }
+      drawFigure(g, { x: 900, y: GY, s: HS, facing: 1, outfit: HERO, prop: info.prop === false ? null : { type: info.prop || 'beer', t }, pose: breathe(posesAt(ph * per, [[0, HOLD], [per * 0.3, SIP], [per * 0.55, HOLD]], 0.25), t, 0.6), face: fc(info.face || 'talk'), look: [0.5, -0.05], blink: blinkAt(t), rim: { color: rim, dir: rimDir } });
+    });
+    placeTag(g, t, info.tag); caption(g, t, info);
+  },
+
   // cold open: a man wakes up in an Arizona hotel, not knowing how he got there. Face looks around, "?" marks pop.
   hotelWake(g, t, info) {
     g.fillStyle = linGrad(g, 0, 0, 0, E.H, ['#1a1420', '#2a1e24', '#120c10']); g.fillRect(0, 0, E.W, E.H);

@@ -25,7 +25,7 @@ export const POSES = {
   facepalm:   P({ head: [8, -200], sh: [2, -170], hip: [0, -100], eF: [28, -160], hF: [26, -200], eB: [-7, -136], hB: [-9, -100], kF: [6, -50], fF: [3, 0], kB: [-6, -50], fB: [-11, 0] }),
   ready:      P({ head: [12, -182], sh: [6, -148], hip: [0, -80], eF: [34, -132], hF: [56, -146], eB: [-26, -132], hB: [-46, -146], kF: [26, -44], fF: [22, 0], kB: [-24, -44], fB: [-24, 0] }),
   crouch:     P({ head: [16, -150], sh: [8, -118], hip: [0, -58], eF: [28, -88], hF: [38, -60], eB: [18, -86], hB: [26, -58], kF: [34, -54], fF: [20, 0], kB: [20, -50], fB: [-8, 0] }),
-  sit:        P({ head: [4, -180], sh: [1, -146], hip: [0, -72], eF: [16, -110], hF: [38, -84], eB: [10, -110], hB: [30, -84], kF: [44, -74], fF: [46, 0], kB: [40, -72], fB: [38, 0] }),
+  sit:        P({ head: [8, -180], sh: [4, -147], hip: [0, -72], eF: [18, -110], hF: [40, -86], eB: [12, -110], hB: [32, -86], kF: [46, -70], fF: [50, 0], kB: [30, -66], fB: [24, 0] }),
   sitBack:    P({ head: [-8, -176], sh: [-6, -144], hip: [0, -72], eF: [2, -108], hF: [26, -86], eB: [-14, -110], hB: [-24, -80], kF: [44, -78], fF: [54, -2], kB: [40, -76], fB: [44, 0] }),
   kneel:      P({ head: [10, -168], sh: [5, -134], hip: [0, -62], eF: [24, -100], hF: [38, -76], eB: [-4, -100], hB: [-6, -66], kF: [36, -46], fF: [36, 0], kB: [-6, -4], fB: [-48, 0] }),
   lie:        P({ head: [3, -208], sh: [0, -174], hip: [0, -100], eF: [14, -136], hF: [18, -100], eB: [-12, -138], hB: [-20, -104], kF: [4, -50], fF: [2, 0], kB: [-4, -50], fB: [-6, 0] }), // use with rot: ±Math.PI/2
@@ -181,7 +181,7 @@ function torsoWear(g, o, p, pass) {
     case 'hoodie': case 'tracksuit': case 'jersey': case 'tshirt': case 'suit': case 'dress': {
       const col = o.top === 'suit' ? (sil ? o._sil : o.color || '#2a2833') : c;
       const top = sy - 7, bot = hy + (o.top === 'jersey' || o.top === 'tshirt' ? 4 : 12);
-      g.fillStyle = col; g.beginPath(); g.moveTo(sx - 15, top + 6); g.quadraticCurveTo(sx, top - 4, sx + 15, top + 6); g.lineTo(hx + 15, bot); g.lineTo(hx - 15, bot); g.closePath(); g.fill();
+      g.fillStyle = col; g.beginPath(); g.moveTo(sx - 15, top + 6); g.quadraticCurveTo(sx, top - 4, sx + 15, top + 6); g.lineTo(hx + 12, bot); g.lineTo(hx - 12, bot); g.closePath(); g.fill();
       if (o.top === 'dress') poly(g, [[hx - 14, hy - 8], [hx + 14, hy - 8], [hx + 34, hy + 50], [hx - 34, hy + 50]], col);
       if (!sil && o.top === 'hoodie') { g.fillStyle = d; g.fillRect(hx - 15, bot - 7, 30, 7); seg(g, [[sx + 6, sy - 2], [sx + 7, sy + 18]], 2, shade(c, 0.4)); }
       if (!sil && o.top === 'suit') { poly(g, [[sx - 1, sy - 4], [sx + 4, sy - 4], [sx + 5, sy + 40], [sx + 1, sy + 46]], o.color2 || '#c0392b'); }

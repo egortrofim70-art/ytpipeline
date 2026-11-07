@@ -25,14 +25,14 @@ function sepia(g, a = 0.32) { g.save(); g.globalCompositeOperation = 'multiply';
 function cold(g, a = 0.3) { g.save(); g.globalCompositeOperation = 'soft-light'; g.fillStyle = `rgba(90,140,255,${a})`; g.fillRect(0, 0, E.W, E.H); g.restore(); }
 export function placeTag(g, t, str, at = 0.15) {
   const a = fin(t, at, 0.35); if (a <= 0 || !str) return;
-  const w = measure(g, str, 40, FONTS.ui, 900) + 70, x = 70, y = E.H - 150;
+  const w = measure(g, str, 40, FONTS.ui, 900, 3) + 76, x = 70, y = E.H - 150;
   g.save(); g.globalAlpha *= a; g.translate(-(1 - a) * 60, 0);
   rr(g, x, y, w, 80, 14); g.fillStyle = 'rgba(8,10,20,.82)'; g.fill(); g.fillStyle = GOLD(); g.fillRect(x, y, 8, 80);
   text(g, str, x + 36, y + 40, { size: 40, font: FONTS.ui, weight: 900, color: '#ffffff', align: 'left', spacing: 3 }); g.restore();
 }
 function bubble(g, t, x, y, str, at, o = {}) {
   const a = pop(t, at, 0.3); if (a <= 0) return;
-  const size = o.size || 44, w = measure(g, str, size, FONTS.ui, 900) + 70, h = size * 1.9;
+  const size = o.size || 44, w = measure(g, str, size, FONTS.ui, 900, 3) + 76, h = size * 1.9;
   g.save(); g.translate(x, y); g.scale(a, a);
   rr(g, -w / 2, -h / 2, w, h, h / 2); g.fillStyle = o.bg || '#f4efe6'; g.fill();
   const tl = o.tail ?? -w * 0.2, d = o.dir || 1; poly(g, [[tl, h / 2 - 4], [tl - 30 * d, h / 2 + 28], [tl + 20 * d, h / 2 - 4]], o.bg || '#f4efe6');
@@ -103,12 +103,12 @@ export const HUNGER = {
     let main, sub = info.sub || L('ДЕНЬ', 'DÍA'), flipping = false;
     if (info.steps) { const st = info.steps.filter(([at]) => t >= at); const cur = st.length ? st[st.length - 1] : info.steps[0]; main = cur[1]; sub = cur[2] ?? sub; flipping = st.length && t - cur[0] < 0.25; }
     else { const p = ease.inOut(prog(t, info.at ?? 0.2, info.until ?? info.dur * 0.85)), n = Math.round(lerp(info.from ?? 1, info.to ?? 18, p)); main = String(n); flipping = p > 0 && p < 1; }
-    const w = info.w || 520, h = 600, big = info.size || (main.length > 4 ? 120 : 260);
+    const big0 = info.size || (main.length > 4 ? 120 : 260), all = info.steps ? info.steps.map((x) => [String(x[1]), x[2] ?? sub]) : [[main, sub]], w = info.w || Math.min(1500, Math.max(520, ...all.map(([m, u]) => Math.max(measure(g, m, big0, FONTS.ui, 900) + 140, measure(g, u, 56, FONTS.ui, 900, 6) + 100)))), h = 600, big = Math.min(big0, big0 * (w - 100) / Math.max(1, measure(g, main, big0, FONTS.ui, 900)));
     rr(g, cx - w / 2 + 14, cy - h / 2 + 18, w, h, 22); g.fillStyle = 'rgba(0,0,0,.35)'; g.fill();
     rr(g, cx - w / 2, cy - h / 2, w, h, 22); g.fillStyle = '#f4efe6'; g.fill();
     rr(g, cx - w / 2, cy - h / 2, w, 130, 22); g.fillStyle = info.color || '#e04a3a'; g.fill(); g.fillRect(cx - w / 2, cy - h / 2 + 100, w, 30);
     for (const rx of [-w * 0.3, w * 0.3]) { circle(g, cx + rx, cy - h / 2, 18, '#2a2a34'); }
-    text(g, sub, cx, cy - h / 2 + 66, { size: 56, font: FONTS.ui, weight: 900, color: '#ffffff', spacing: 6 });
+    text(g, sub, cx, cy - h / 2 + 66, { size: 56, font: FONTS.ui, weight: 900, color: '#ffffff', spacing: 6, maxW: w - 60 });
     text(g, main, cx, cy + 70, { size: big, font: FONTS.ui, weight: 900, color: '#1a1622' });
     if (flipping) { const f = (t * 8) % 1; g.save(); g.globalAlpha *= 1 - f; g.translate(cx + f * 220, cy + 60 - f * 160); g.rotate(f * 0.9); rr(g, -w / 2 + 20, -200, w - 40, 400, 12); g.fillStyle = '#ebe5d8'; g.fill(); g.restore(); }
     g.restore();
@@ -545,7 +545,7 @@ export const HUNGER = {
     (Array.isArray(info.text) ? info.text : [info.text || '']).forEach((ln, i, arr) => text(g, ln, cx, cy - 30 + (i - (arr.length - 1) / 2) * 110, { size: 84, font: FONTS.title, weight: 700, color: '#ffffff' }));
     g.restore();
     const va = info.verdictAt ?? 1.2, k = ease.outBack(prog(t, va, va + 0.25)); if (k > 0 && info.verdict) { const col = info.verdictColor || RED; g.save(); g.translate(cx + 420, cy + 220); g.rotate(-0.14); g.scale(1 + (1 - k) * 1.6, 1 + (1 - k) * 1.6); g.globalAlpha *= clamp(k * 2);
-      const w = measure(g, info.verdict, 110, FONTS.ui, 900) + 80; rr(g, -w / 2, -80, w, 160, 18); g.strokeStyle = col; g.lineWidth = 12; g.stroke(); text(g, info.verdict, 0, 4, { size: 110, font: FONTS.ui, weight: 900, color: col }); g.restore(); }
+      const w = Math.min(measure(g, info.verdict, 110, FONTS.ui, 900) + 80, 900); rr(g, -w / 2, -80, w, 160, 18); g.strokeStyle = col; g.lineWidth = 12; g.stroke(); text(g, info.verdict, 0, 4, { maxW: 840, size: 110, font: FONTS.ui, weight: 900, color: col }); g.restore(); }
   },
   // ======== animals ========
   penguin(g, t, info) {          // emperor penguins in the polar night, one with an egg on its feet
@@ -745,8 +745,9 @@ export const HUNGER = {
     label(g, L('КОММЕНТАРИИ', 'COMENTARIOS'), cx - w / 2 + 50, cy - h / 2 + 60, { size: 34, align: 'left', color: '#6a6a7a' });
     circle(g, cx - w / 2 + 100, cy + 40, 50, '#ffd400'); drawFaceAt(g, cx - w / 2 + 100, cy + 40, 44, { front: true, override: F.smile });
     const s = info.text || L('Сколько ты продержался бы без еды?', '¿Cuántos días aguantarías?'), n = Math.floor(clamp((t - 0.3) / (info.typeDur || 1.4)) * s.length);
-    text(g, s.slice(0, n), cx - w / 2 + 180, cy + 40, { size: 50, font: FONTS.ui, weight: 800, color: '#1a1a2a', align: 'left' });
-    if ((t * 2) % 1 < 0.6) { const cw = measure(g, s.slice(0, n), 50, FONTS.ui, 800); g.fillStyle = '#2a6aff'; g.fillRect(cx - w / 2 + 184 + cw, cy + 10, 5, 60); }
+    const fs = Math.min(50, 50 * (w - 260) / Math.max(1, measure(g, s, 50, FONTS.ui, 800)));
+    text(g, s.slice(0, n), cx - w / 2 + 180, cy + 40, { size: fs, font: FONTS.ui, weight: 800, color: '#1a1a2a', align: 'left' });
+    if ((t * 2) % 1 < 0.6) { const cw = measure(g, s.slice(0, n), fs, FONTS.ui, 800); g.fillStyle = '#2a6aff'; g.fillRect(cx - w / 2 + 184 + cw, cy + 10, 5, 60); }
     seg(g, [[cx - w / 2 + 180, cy + 90], [cx + w / 2 - 60, cy + 90]], 3, '#2a6aff');
     g.restore();
   },

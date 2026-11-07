@@ -19,14 +19,14 @@ const who = (n) => ({ hero: HERO, silvano: SILVANO, lugaresi: LUGARESI, gambetti
 // a place/year tag in the lower left: "ITALIA · 1984"
 export function placeTag(g, t, str, at = 0.15) {
   const a = ease.out(prog(t, at, at + 0.35)); if (a <= 0 || !str) return;
-  const w = measure(g, str, 40, FONTS.ui, 900) + 70, x = 70, y = E.H - 150;
+  const w = measure(g, str, 40, FONTS.ui, 900, 3) + 76, x = 70, y = E.H - 150;
   g.save(); g.globalAlpha *= a; g.translate(-(1 - a) * 60, 0);
   rr(g, x, y, w, 76, 12); g.fillStyle = 'rgba(10,10,24,0.88)'; g.fill(); g.fillStyle = '#ffd400'; g.fillRect(x, y, 8, 76);
   text(g, str, x + 36, y + 40, { size: 40, font: FONTS.ui, weight: 900, color: '#ffffff', align: 'left', spacing: 3 }); g.restore();
 }
 function wordBubble(g, t, x, y, str, at, o = {}) {
   const a = pop(t, at, 0.3); if (a <= 0) return;
-  const w = measure(g, str, 44, FONTS.ui, 900) + 70;
+  const w = measure(g, str, 44, FONTS.ui, 900, 3) + 76;
   g.save(); g.translate(x, y); g.scale(a, a);
   rr(g, -w / 2, -42, w, 84, 42); g.fillStyle = o.bg || '#f4efe6'; g.fill();
   poly(g, [[o.tail ?? -w * 0.2, 38], [(o.tail ?? -w * 0.2) - 30 * (o.dir || 1), 70], [(o.tail ?? -w * 0.2) + 20 * (o.dir || 1), 38]], o.bg || '#f4efe6');

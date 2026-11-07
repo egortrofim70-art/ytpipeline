@@ -15,7 +15,7 @@ export function sleepBadge(g, gt, info = {}) {
   const pop = i === 0 ? 1 : lerp(unitSwitch ? 1.32 : 1.16, 1, ease.outBack(prog(since, 0, 0.32)));
   const flash = 1 - ease.out(prog(since, 0, 0.45));
   const num = String(v), ns = 64, uw = unitWord(v, u);
-  const w = Math.max(330, 52 + measure(g, num, ns, FONTS.ui, 900) + 14 + measure(g, uw, 34, FONTS.ui, 900)), h = 116, x = E.W - w - 56, y = 48, cx = x + w / 2, cy = y + h / 2;
+  const w = Math.max(330, 52 + measure(g, num, ns, FONTS.ui, 900) + 14 + measure(g, uw, 34, FONTS.ui, 900, 1)), h = 116, x = E.W - w - 56, y = 48, cx = x + w / 2, cy = y + h / 2;
   g.save();
   g.translate(cx, cy); g.scale(appear * pop, appear * pop); g.translate(-cx, -cy);
   g.globalAlpha *= clamp(appear * 1.4);
