@@ -77,7 +77,46 @@ export function livingSet(g, t, cam) {
 }
 function sofa(g, x, y, s, col = '#4a6a8a') { g.save(); g.translate(x, y); g.scale(s, s); rr(g, -150, -120, 300, 70, 20); g.fillStyle = shade(col, -0.2); g.fill(); rr(g, -160, -70, 320, 40, 14); g.fillStyle = col; g.fill(); rr(g, -175, -100, 40, 80, 14); g.fill(); rr(g, 135, -100, 40, 80, 14); g.fill(); g.fillStyle = '#2a1e18'; g.fillRect(-150, -30, 14, 30); g.fillRect(136, -30, 14, 30); g.restore(); }
 
+// ---- a small home room at night: warm wall, a window on the city, a shelf with plants (for desk and meal scenes)
+export function homeRoom(g, t, cam, o = {}) {
+  layer(g, cam, 0.7, (g) => { g.fillStyle = linGrad(g, 0, -200, 0, GY, [o.wall || '#4a3a48', shade(o.wall || '#4a3a48', -0.15)]); g.fillRect(-E.W, -E.H, E.W * 4, E.H * 3);
+    const wx = 1180, wy = 150, ww = 520, wh = 380; g.save(); rr(g, wx, wy, ww, wh, 8); g.clip(); g.fillStyle = linGrad(g, 0, wy, 0, wy + wh, o.day ? ['#8ab8e8', '#d8e8f0'] : ['#1a2040', '#5a4a7a']); g.fillRect(wx, wy, ww, wh);
+      for (let i = 0; i < 9; i++) { const bx = wx + i * 62, bh = 90 + ((i * 41) % 5) * 30; g.fillStyle = o.day ? '#8a9ab0' : '#141428'; g.fillRect(bx, wy + wh - bh, 54, bh); if (!o.day) for (let j = 0; j < 4; j++) if ((i + j) % 3) { g.fillStyle = '#ffd890'; g.fillRect(bx + 10 + (j % 2) * 22, wy + wh - bh + 14 + Math.floor(j / 2) * 30, 10, 12); } }
+      g.restore(); g.lineWidth = 14; g.strokeStyle = '#2a2028'; rr(g, wx, wy, ww, wh, 8); g.stroke(); seg(g, [[wx + ww / 2, wy], [wx + ww / 2, wy + wh]], 10, '#2a2028');
+    g.fillStyle = '#2a2028'; g.fillRect(260, 300, 380, 14); for (const [x, c] of [[300, '#4a8a4a'], [420, '#c8a050'], [560, '#5a7aa8']]) { rr(g, x, 250, 50, 50, 8); g.fillStyle = c; g.fill(); }
+    circle(g, 330, 230, 34, '#3a7a46'); circle(g, 300, 220, 22, '#4a8a50'); });
+  layer(g, cam, 1, (g) => { g.fillStyle = '#2a2026'; g.fillRect(-E.W, GY, E.W * 4, E.H * 2); g.fillStyle = alpha('#000', 0.15); g.fillRect(-E.W, GY, E.W * 4, 8); });
+  return { rim: o.day ? '#fff4d8' : '#ffc88a', rimDir: [0.7, -0.6] };
+}
+function chairSide(g, x, c = '#3a2a22') { seg(g, [[x - 42, GY - 120], [x - 50, GY - 300]], 10, c); rr(g, x - 50, GY - 126, 110, 14, 6); g.fillStyle = c; g.fill(); for (const dx of [-44, 52]) seg(g, [[x + dx, GY - 114], [x + dx, GY]], 8, c); }
+function tableSide(g, x0, x1, c = '#5a3a2a') { rr(g, x0, GY - 182, x1 - x0, 16, 6); g.fillStyle = c; g.fill(); for (const x of [x0 + 30, x1 - 30]) seg(g, [[x, GY - 168], [x, GY]], 12, shade(c, -0.25)); }
+
 export const ALCOHOL = {
+  // the hero types on a small laptop that faces him; a proper chair under him, a small lamp
+  laptopDesk(g, t, info) {
+    const cam = camLerp(camAt(1000, 600, 1.55), camAt(1020, 590, 1.65), K(info, t)), { rim, rimDir } = homeRoom(g, t, cam, info);
+    const tap = Math.sin(t * 22), TYPE = { ...POSES.sit, head: [12, -178], sh: [6, -146], eF: [34, -118], hF: [64, -110], eB: [28, -116], hB: [58, -108] };
+    const pose = { ...TYPE, hF: [64, -110 + Math.max(0, tap) * 3], hB: [58, -108 + Math.max(0, -tap) * 3] };
+    layer(g, cam, 1, (g) => { chairSide(g, 800); tableSide(g, 860, 1460);
+      rr(g, 900, GY - 190, 120, 8, 3); g.fillStyle = '#9aa0ac'; g.fill(); poly(g, [[1016, GY - 188], [1026, GY - 192], [1046, GY - 300], [1036, GY - 302]], '#7a808c');
+      glow(g, 1000, GY - 250, 140, '#9fd8ff', 0.35 + 0.05 * Math.sin(t * 9));
+      seg(g, [[1380, GY - 182], [1380, GY - 260], [1340, GY - 290]], 6, '#2a2a30'); poly(g, [[1316, GY - 300], [1360, GY - 300], [1352, GY - 278], [1324, GY - 278]], '#c84a3a'); glow(g, 1338, GY - 270, 120, '#ffd890', 0.3);
+      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, pose: breathe(pose, t, 0.4), face: fc(info.face || 'calm'), look: [0.7, 0.25], blink: blinkAt(t), rim: { color: '#9fd8ff', dir: [1, -0.2] } }); });
+    placeTag(g, t, info.tag); caption(g, t, info);
+  },
+  // a meal at the table: a plate of empanadas, the hero eats with a fork on a cycle (plate → mouth)
+  mealTable(g, t, info) {
+    const cam = camLerp(camAt(1000, 600, 1.55), camAt(1020, 590, 1.65), K(info, t)), { rim, rimDir } = homeRoom(g, t, cam, { ...info, wall: '#5a4436' });
+    const per = info.period ?? 2.4, ph = (t % per) / per, PLATE = { ...POSES.sit, head: [14, -176], sh: [6, -146], eF: [40, -122], hF: [74, -112], eB: [24, -112], hB: [56, -108] }, MOUTH = { ...PLATE, head: [10, -182], eF: [46, -134], hF: [48, -158] };
+    const pose = breathe(posesAt(ph * per, [[0, PLATE], [per * 0.35, MOUTH], [per * 0.6, PLATE]], 0.3), t, 0.4), bite = ph < 0.4 ? '#d8a050' : null;
+    layer(g, cam, 1, (g) => { chairSide(g, 800); tableSide(g, 860, 1460);
+      g.fillStyle = '#f4f0e8'; g.beginPath(); g.ellipse(960, GY - 186, 80, 10, 0, 0, Math.PI * 2); g.fill();
+      for (const [x, k] of [[930, 1], [985, 0.8]]) { g.fillStyle = '#d89a4a'; g.beginPath(); g.ellipse(x, GY - 196, 30 * k, 14 * k, 0, Math.PI, 0); g.fill(); g.strokeStyle = '#b87a3a'; g.lineWidth = 3; g.stroke(); }
+      rr(g, 1100, GY - 240, 34, 54, 6); g.fillStyle = alpha('#c8e8ff', 0.6); g.fill();
+      drawFigure(g, { x: 805, y: GY, s: HS, facing: 1, outfit: HERO, prop: { type: 'fork', t, bite, angle: lerp(0.15, Math.PI * 1.04, clamp(1 - Math.abs(ph - 0.42) / 0.22)) }, pose, face: fc(ph > 0.3 && ph < 0.55 ? { eyes: 'ball', brows: null, mouth: Math.sin(t * 18) > 0 ? 'o' : 'smallFlat' } : (info.face || 'smile')), look: [0.6, 0.3], blink: blinkAt(t), rim: { color: rim, dir: rimDir } }); });
+    placeTag(g, t, info.tag); caption(g, t, info);
+  },
+
   // the park: the hero walks (keyed walk cycle) with a water bottle, people pass in the background
   parkWalk(g, t, info) {
     const cam = camLerp(camAt(960, 560, 1.35), camAt(1060, 550, 1.45), K(info, t)), { rim, rimDir } = parkSet(g, t, cam);

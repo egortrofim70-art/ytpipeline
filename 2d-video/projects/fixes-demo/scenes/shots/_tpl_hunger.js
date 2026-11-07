@@ -96,21 +96,27 @@ export const HUNGER = {
     if (info.item) { g.save(); g.translate(E.W * 0.78, 880); icon(g, info.item, 0, 0, 0.9, GOLD(), t); g.restore(); }
   },
   // ======== calendar / counters ========
-  calendarFlip(g, t, info) {     // a wall calendar: day number counts from→to (pages fly) or shows text steps
+  calendarFlip(g, t, info) {     // a wall calendar: one page per change; the old page lifts from the rings and flips up over the top
     bgKind(g, t, info.bg || 'dark');
     const cx = E.W / 2 + (info.dx || 0), cy = E.H * 0.47, a = pop(t, 0.05, 0.4), z = lerp(1, 1.06, K(info, t));
     g.save(); zoom(g, z * a, cx, cy);
-    let main, sub = info.sub || L('ДЕНЬ', 'DÍA'), flipping = false;
-    if (info.steps) { const st = info.steps.filter(([at]) => t >= at); const cur = st.length ? st[st.length - 1] : info.steps[0]; main = cur[1]; sub = cur[2] ?? sub; flipping = st.length && t - cur[0] < 0.25; }
-    else { const p = ease.inOut(prog(t, info.at ?? 0.2, info.until ?? info.dur * 0.85)), n = Math.round(lerp(info.from ?? 1, info.to ?? 18, p)); main = String(n); flipping = p > 0 && p < 1; }
-    const big0 = info.size || (main.length > 4 ? 120 : 260), all = info.steps ? info.steps.map((x) => [String(x[1]), x[2] ?? sub]) : [[main, sub]], w = info.w || Math.min(1500, Math.max(520, ...all.map(([m, u]) => Math.max(measure(g, m, big0, FONTS.ui, 900) + 140, measure(g, u, 56, FONTS.ui, 900, 6) + 100)))), h = 600, big = Math.min(big0, big0 * (w - 100) / Math.max(1, measure(g, main, big0, FONTS.ui, 900)));
+    let pages, idx, ft, fd;
+    if (info.steps) { pages = info.steps.map((x) => [String(x[1]), x[2] ?? info.sub ?? L('ДЕНЬ', 'DÍA'), x[0]]); idx = 0; pages.forEach((pg, i) => { if (t >= pg[2]) idx = i; }); ft = t - pages[idx][2]; fd = 0.55; }
+    else { const from = info.from ?? 1, to = info.to ?? 18, t0 = info.at ?? 0.2, t1 = info.until ?? info.dur * 0.85, n = Math.max(1, Math.abs(to - from)), dt = (t1 - t0) / n, k = clamp((t - t0) / dt, 0, n);
+      pages = Array.from({ length: n + 1 }, (_, i) => [String(from + Math.sign(to - from) * i), info.sub || L('ДЕНЬ', 'DÍA'), t0 + i * dt]); idx = Math.min(n, Math.floor(k)); ft = t - pages[idx][2]; fd = Math.min(0.55, dt * 0.85); }
+    const [main, sub] = pages[idx], prev = idx > 0 ? pages[idx - 1] : null, e = prev ? ease.inOut(clamp(ft / fd)) : 1, flipping = prev && e < 1;
+    const big0 = info.size || (pages.some((pg) => pg[0].length > 4) ? 120 : 260), w = info.w || Math.min(1500, Math.max(520, ...pages.map(([m, u]) => Math.max(measure(g, m, big0, FONTS.ui, 900) + 140, measure(g, u, 56, FONTS.ui, 900, 6) + 100)))), h = 600;
+    const big = (m) => Math.min(big0, big0 * (w - 100) / Math.max(1, measure(g, m, big0, FONTS.ui, 900))), hy = cy - h / 2 + 130;
     rr(g, cx - w / 2 + 14, cy - h / 2 + 18, w, h, 22); g.fillStyle = 'rgba(0,0,0,.35)'; g.fill();
     rr(g, cx - w / 2, cy - h / 2, w, h, 22); g.fillStyle = '#f4efe6'; g.fill();
+    for (let i = 1; i <= 3; i++) { g.fillStyle = alpha('#000000', 0.05 * i); g.fillRect(cx - w / 2 + 6, cy + h / 2 - i * 5, w - 12, 2); }   // page stack edge
+    text(g, main, cx, cy + 70, { size: big(main), font: FONTS.ui, weight: 900, color: '#1a1622' });
     rr(g, cx - w / 2, cy - h / 2, w, 130, 22); g.fillStyle = info.color || '#e04a3a'; g.fill(); g.fillRect(cx - w / 2, cy - h / 2 + 100, w, 30);
-    for (const rx of [-w * 0.3, w * 0.3]) { circle(g, cx + rx, cy - h / 2, 18, '#2a2a34'); }
-    text(g, sub, cx, cy - h / 2 + 66, { size: 56, font: FONTS.ui, weight: 900, color: '#ffffff', spacing: 6, maxW: w - 60 });
-    text(g, main, cx, cy + 70, { size: big, font: FONTS.ui, weight: 900, color: '#1a1622' });
-    if (flipping) { const f = (t * 8) % 1; g.save(); g.globalAlpha *= 1 - f; g.translate(cx + f * 220, cy + 60 - f * 160); g.rotate(f * 0.9); rr(g, -w / 2 + 20, -200, w - 40, 400, 12); g.fillStyle = '#ebe5d8'; g.fill(); g.restore(); }
+    text(g, flipping && e < 0.25 ? prev[1] : sub, cx, cy - h / 2 + 66, { size: 56, font: FONTS.ui, weight: 900, color: '#ffffff', spacing: 6, maxW: w - 60 });
+    if (flipping) { const k = ease.in(e); g.save(); g.globalAlpha *= 1 - k; g.translate(cx + k * 380, hy - k * 260); g.rotate(k * 0.55); g.translate(-cx, -hy);
+      rr(g, cx - w / 2, hy, w, h - 130, 14); g.fillStyle = '#f4efe6'; g.fill(); g.fillStyle = alpha('#000000', 0.08); g.fillRect(cx - w / 2, hy, w, 10);
+      text(g, prev[0], cx, cy + 70, { size: big(prev[0]), font: FONTS.ui, weight: 900, color: '#1a1622' }); g.restore(); }
+    for (const rx of [-w * 0.3, w * 0.3]) { circle(g, cx + rx, cy - h / 2, 18, '#2a2a34'); circle(g, cx + rx, cy - h / 2 + 6, 7, '#8a8a94'); }
     g.restore();
     if (info.caption) glowLabel(g, info.caption, E.W / 2, E.H * 0.92, fin(t, info.capAt ?? 0.4), 52);
   },
